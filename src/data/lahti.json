@@ -1,0 +1,58 @@
+{
+  "id": "lahti",
+  "name": "Lahti",
+  "languages": ["en", "fi"],
+  "stats": { "xp": 0, "streak": 3, "checklistDays": 30, "done": 0, "total": 19 },
+  "cards": [
+    { "id": "arrived", "icon": "✈️", "tone": "red" },
+    { "id": "first48", "icon": "🏠", "tone": "blue" },
+    { "id": "university", "icon": "🎓", "tone": "green" },
+    { "id": "transport", "icon": "🚌", "tone": "purple" },
+    { "id": "everyday", "icon": "🛒", "tone": "orange" },
+    { "id": "local", "icon": "FI", "tone": "indigo" },
+    { "id": "help", "icon": "🆘", "tone": "rose" },
+    { "id": "meet", "icon": "🤝", "tone": "mint" }
+  ],
+  "content": {
+    "en": {
+      "club": "Rotary Club Lahti International",
+      "xp": "XP",
+      "welcome": "Welcome to Lahti.",
+      "tagline": "You are not alone.",
+      "subtitle": "Pick the moment that matches where you are right now.",
+      "checklistTitle": "{days}-Day checklist · {done}/{total} done",
+      "checklistHint": "Open your task list",
+      "sectionTitle": "What do you need?",
+      "cards": {
+        "arrived": { "title": "I just arrived", "desc": "Airport → Lahti, keys, SIM, food" },
+        "first48": { "title": "My first 48 hours", "desc": "Housing, registration, bank, groceries" },
+        "university": { "title": "University", "desc": "LUT / LAB, student card, tutors" },
+        "transport": { "title": "Getting around", "desc": "Bus stops, tickets, cycling, trains" },
+        "everyday": { "title": "Everyday Lahti", "desc": "Supermarkets, pharmacies, second-hand" },
+        "local": { "title": "Finnish life", "desc": "Recycling, sauna, etiquette, seasons" },
+        "help": { "title": "I need help", "desc": "Emergency, healthcare, university, municipal" },
+        "meet": { "title": "Meet people", "desc": "Student orgs, RCLI, events, hobbies" }
+      }
+    },
+    "fi": {
+      "club": "Rotary Club Lahti International",
+      "xp": "XP",
+      "welcome": "Tervetuloa Lahteen.",
+      "tagline": "Et ole yksin.",
+      "subtitle": "Valitse hetki, joka vastaa tilannettasi juuri nyt.",
+      "checklistTitle": "{days} päivän tarkistuslista · {done}/{total} tehty",
+      "checklistHint": "Avaa tehtävälistasi",
+      "sectionTitle": "Mitä tarvitset?",
+      "cards": {
+        "arrived": { "title": "Saavuin juuri", "desc": "Lentokenttä → Lahti, avaimet, SIM, ruoka" },
+        "first48": { "title": "Ensimmäiset 48 tuntia", "desc": "Asuminen, rekisteröinti, pankki, ruokaostokset" },
+        "university": { "title": "Yliopisto", "desc": "LUT / LAB, opiskelijakortti, tutorit" },
+        "transport": { "title": "Liikkuminen", "desc": "Bussipysäkit, liput, pyöräily, junat" },
+        "everyday": { "title": "Arki Lahdessa", "desc": "Kaupat, apteekit, kirpputorit" },
+        "local": { "title": "Suomalainen elämä", "desc": "Kierrätys, sauna, etiketti, vuodenajat" },
+        "help": { "title": "Tarvitsen apua", "desc": "Hätätilanteet, terveydenhuolto, yliopisto, kunta" },
+        "meet": { "title": "Tapaa ihmisiä", "desc": "Opiskelijajärjestöt, RCLI, tapahtumat, harrastukset" }
+      }
+    }
+  }
+}

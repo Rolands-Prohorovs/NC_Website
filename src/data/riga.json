@@ -1,0 +1,58 @@
+{
+  "id": "riga",
+  "name": "Rīga",
+  "languages": ["en", "lv"],
+  "stats": { "xp": 0, "streak": 3, "checklistDays": 30, "done": 0, "total": 19 },
+  "cards": [
+    { "id": "arrived", "icon": "✈️", "tone": "red" },
+    { "id": "first48", "icon": "🏠", "tone": "blue" },
+    { "id": "university", "icon": "🎓", "tone": "green" },
+    { "id": "transport", "icon": "🚌", "tone": "purple" },
+    { "id": "everyday", "icon": "🛒", "tone": "orange" },
+    { "id": "local", "icon": "LV", "tone": "indigo" },
+    { "id": "help", "icon": "🆘", "tone": "rose" },
+    { "id": "meet", "icon": "🤝", "tone": "mint" }
+  ],
+  "content": {
+    "en": {
+      "club": "Rotary Club Riga International",
+      "xp": "XP",
+      "welcome": "Welcome to Riga.",
+      "tagline": "You are not alone.",
+      "subtitle": "Pick the moment that matches where you are right now.",
+      "checklistTitle": "{days}-Day checklist · {done}/{total} done",
+      "checklistHint": "Open your task list",
+      "sectionTitle": "What do you need?",
+      "cards": {
+        "arrived": { "title": "I just arrived", "desc": "Airport → Riga, keys, SIM, food" },
+        "first48": { "title": "My first 48 hours", "desc": "Housing, registration, bank, groceries" },
+        "university": { "title": "University", "desc": "RTU / LU / RSU, student card, mentors" },
+        "transport": { "title": "Getting around", "desc": "Stops, tickets, trams, cycling, trains" },
+        "everyday": { "title": "Everyday Riga", "desc": "Supermarkets, pharmacies, second-hand" },
+        "local": { "title": "Latvian life", "desc": "Recycling, sauna, etiquette, seasons" },
+        "help": { "title": "I need help", "desc": "Emergency, healthcare, university, municipal" },
+        "meet": { "title": "Meet people", "desc": "Student orgs, Rotary, events, hobbies" }
+      }
+    },
+    "lv": {
+      "club": "Rotary Club Riga International",
+      "xp": "XP",
+      "welcome": "Laipni lūdzam Rīgā.",
+      "tagline": "Tu neesi viens/-a.",
+      "subtitle": "Izvēlies brīdi, kas atbilst tavai situācijai tieši tagad.",
+      "checklistTitle": "{days} dienu kontrolsaraksts · {done}/{total} izpildīts",
+      "checklistHint": "Atver savu uzdevumu sarakstu",
+      "sectionTitle": "Kas tev nepieciešams?",
+      "cards": {
+        "arrived": { "title": "Es tikko ierados", "desc": "Lidosta → Rīga, atslēgas, SIM karte, ēdiens" },
+        "first48": { "title": "Manas pirmās 48 stundas", "desc": "Mājoklis, reģistrācija, banka, pārtikas veikali" },
+        "university": { "title": "Universitāte", "desc": "RTU / LU / RSU, studenta karte, mentori" },
+        "transport": { "title": "Pārvietošanās", "desc": "Pieturas, biļetes, tramvaji, velo, vilcieni" },
+        "everyday": { "title": "Ikdiena Rīgā", "desc": "Lielveikali, aptiekas, lietotas preces" },
+        "local": { "title": "Dzīve Latvijā", "desc": "Atkritumu šķirošana, pirts, etiķete, gadalaiki" },
+        "help": { "title": "Man vajag palīdzību", "desc": "Ārkārtas situācijas, veselības aprūpe, universitāte, pašvaldība" },
+        "meet": { "title": "Satiec cilvēkus", "desc": "Studentu organizācijas, Rotary, pasākumi, hobiji" }
+      }
+    }
+  }
+}
