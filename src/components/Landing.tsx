@@ -5,6 +5,7 @@ type Copy = {
   club: string; xp: string; welcome: string; tagline: string; subtitle: string;
   checklistTitle: string; checklistHint: string; sectionTitle: string;
   cards: Record<string, { title: string; desc: string }>;
+  topics?: Record<string, { label: string; body: string }[]>;
 };
 export type City = {
   id: string; name: string; languages: string[];
@@ -40,11 +41,11 @@ export default function Landing({ city, cities }: { city: City; cities: { id: st
       <header className="top">
         <div className="inner">
           <span className="brand">⚙️ {t.club}</span>
-          <nav className="cities" aria-label="City">
-            {cities.map((c) => (
-              <a key={c.id} href={`/${c.id}`} aria-current={c.id === city.id ? 'page' : undefined}>{c.name}</a>
-            ))}
-          </nav>
+        <nav className="cities" aria-label="City">
+          {cities.map((c) => (
+            <a key={c.id} href={`/${c.id}`} aria-current={c.id === city.id ? 'page' : undefined}>{c.name}</a>
+          ))}
+        </nav>
           <div className="right">
             <div className="langs" role="group" aria-label="Language">
               {city.languages.map((l) => (
@@ -79,15 +80,15 @@ export default function Landing({ city, cities }: { city: City; cities: { id: st
 
       <main className="inner">
         <h2 className="section-title">{t.sectionTitle}</h2>
-        <div className="grid">
-          {city.cards.map((c) => (
-            <a key={c.id} className="card" data-tone={c.tone} href={`#${c.id}`}>
-              <span className={`icon${c.icon.length === 2 && /^[A-Z]+$/.test(c.icon) ? ' text' : ''}`}>{c.icon}</span>
-              <h3>{t.cards[c.id].title}</h3>
-              <p>{t.cards[c.id].desc}</p>
-            </a>
-          ))}
-        </div>
+      <div className="grid">
+        {city.cards.map((c) => (
+          <a key={c.id} className="card" data-tone={c.tone} href={`/${city.id}/${c.id}`}>
+            <span className={`icon${c.icon.length === 2 && /^[A-Z]+$/.test(c.icon) ? ' text' : ''}`}>{c.icon}</span>
+            <h3>{t.cards[c.id].title}</h3>
+            <p>{t.cards[c.id].desc}</p>
+          </a>
+        ))}
+      </div>
       </main>
     </>
   );

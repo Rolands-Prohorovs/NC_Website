@@ -32,6 +32,120 @@
         "local": { "title": "Finnish life", "desc": "Recycling, sauna, etiquette, seasons" },
         "help": { "title": "I need help", "desc": "Emergency, healthcare, university, municipal" },
         "meet": { "title": "Meet people", "desc": "Student orgs, RCLI, events, hobbies" }
+      },
+      "topics": {
+        "arrived": [
+          {
+            "label": "Airport → Lahti",
+            "body": "Most people fly into Helsinki Airport (HEL). From there, trains run to Lahti with a change on the way (usually around Tikkurila or Kerava), and the whole trip takes roughly 1.5 hours. Buy your ticket in the VR app or at the station, and check the timetable on vr.fi before you travel."
+          },
+          {
+            "label": "Keys and your first night",
+            "body": "Contact your landlord, student housing provider or host before you land and agree on a key pickup time. Many places use key boxes or require you to arrive during office hours, so do not leave this until the last minute. Save the address and a phone number offline in case your data does not work yet."
+          },
+          {
+            "label": "SIM card and first food",
+            "body": "You can buy a prepaid SIM at kiosks, R-kioski shops and supermarkets, or at the operator shops in the city centre. Bring your passport in case it is asked for. For food on your first evening, a supermarket such as K-Market, S-Market or Prisma is the easiest option, and many close early on Sundays, so plan ahead."
+          }
+        ],
+        "first48": [
+          {
+            "label": "Housing and rental contract",
+            "body": "Make sure you have a signed rental contract and know your address, because you will need it for registration, banking and mail. Put your name on your mailbox and apartment door, otherwise post may not reach you. Take photos of the flat on arrival to document its condition."
+          },
+          {
+            "label": "Registering your address",
+            "body": "If you are staying in Finland for a year or more, you may need to register with the Digital and Population Data Services Agency (DVV) to get a Finnish personal identity code. Bring your passport, residence permit if you have one, and your rental contract. Check the DVV website for the rules that apply to you."
+          },
+          {
+            "label": "Bank account and groceries",
+            "body": "Banks usually ask for your passport, residence permit, student certificate and sometimes your personal identity code, so book an appointment early. In the meantime a debit or credit card from your home country works almost everywhere, as Finland is largely cashless. For groceries, compare prices at Lidl, Prisma and K-Market, since they can differ quite a bit."
+          }
+        ],
+        "university": [
+          {
+            "label": "LUT and LAB campuses",
+            "body": "The two main institutions in Lahti are LUT University and LAB University of Applied Sciences. Both have orientation programmes at the start of term, so look out for emails from your institution and attend the introduction sessions. Your student services office is the best first contact for anything unclear."
+          },
+          {
+            "label": "Student card and student union",
+            "body": "Once you are enrolled, you can usually join the student union and get a student card, which gives discounts on trains, meals and many local services. The process and the card type depend on your institution, so follow the instructions you received when you were admitted."
+          },
+          {
+            "label": "Tutors and support",
+            "body": "Student tutors are experienced students who help new arrivals settle in, from finding your classroom to understanding how studies work in Finland. Ask your tutor anything, however small it seems. If you struggle with studies or wellbeing, contact your institution's student services or study counsellor early."
+          }
+        ],
+        "transport": [
+          {
+            "label": "Buses in Lahti",
+            "body": "Local buses are run by Lahden Seudun Liikenne (LSL). Routes and timetables are available on the LSL website and in journey planners such as Google Maps. Stand by the stop and wave to the driver if you want the bus to stop, especially at quieter stops."
+          },
+          {
+            "label": "Tickets and prices",
+            "body": "Check the LSL website or app for current ticket types, zones and student discounts, as prices and payment options can change. Keep your ticket valid for the whole trip, because ticket inspections happen and fines can be high."
+          },
+          {
+            "label": "Trains and cycling",
+            "body": "Lahti has a central railway station with frequent trains to Helsinki, with a journey time of about an hour. Student discounts are available on VR tickets with a valid student card. Lahti also has many cycle paths, and cycling is a good option from spring to autumn. Use lights in the dark months, as it is required by law."
+          }
+        ],
+        "everyday": [
+          {
+            "label": "Supermarkets",
+            "body": "Main chains include K-Market and K-Supermarket, S-Market and Prisma, Lidl and Alepa. Prisma and larger stores usually have the widest selection. Many stores have loyalty cards (K-Plussa, S-Bonus) that give discounts and bonuses, and they are free to sign up for."
+          },
+          {
+            "label": "Pharmacies",
+            "body": "Pharmacies are called apteekki in Finnish and are marked with a green cross sign. Many medicines you might buy without a prescription elsewhere are only sold in pharmacies in Finland. Pharmacists can give advice on mild symptoms, and some pharmacies have staff who speak English."
+          },
+          {
+            "label": "Second-hand and bargains",
+            "body": "Finns love second-hand shopping. Look for flea markets (kirpputori), charity shops such as UFF, and online marketplaces like Tori.fi or local Facebook groups to furnish your home cheaply. Student groups often share free or cheap items at the start and end of the term."
+          }
+        ],
+        "local": [
+          {
+            "label": "Recycling and deposits",
+            "body": "Finns sort waste carefully into categories such as biowaste, paper, cardboard, glass, metal, plastic and mixed waste, and your building will show the local rules. Drink bottles and cans with a deposit mark can be returned to machines in supermarkets for money back, so do not throw them away."
+          },
+          {
+            "label": "Sauna culture",
+            "body": "Sauna is a big part of Finnish life, and many apartment buildings have a shared sauna that you book for certain slots. Saunas are usually enjoyed without clothes in private or same-gender groups, but a towel or swimwear is fine in mixed company. Stay hydrated and listen to your body."
+          },
+          {
+            "label": "Etiquette and seasons",
+            "body": "Finns value personal space, punctuality and quiet, so do not be surprised if people do not make small talk. Take your shoes off when entering a home. Winters are dark and cold, so get warm layers, boots with a good grip, and consider vitamin D, while summers are bright with very long days."
+          }
+        ],
+        "help": [
+          {
+            "label": "Emergency",
+            "body": "In an emergency, call 112 from any phone. It is free and works across Finland and the EU. Stay calm, say what has happened and where you are, and follow the operator's instructions. Operators speak English."
+          },
+          {
+            "label": "Healthcare",
+            "body": "For non-urgent medical advice, you can call the nationwide advice line 116 117. University students may be able to use student health services, and the rules depend on your institution, so check with your student services. Bring your passport and your health insurance documents, and check what your insurance covers before you need it."
+          },
+          {
+            "label": "University and municipal support",
+            "body": "For study-related problems, contact your student services or study counsellor. For housing, residence permits or municipal services, the City of Lahti and the local service points can guide you. If you do not know who to ask, ask your tutor or Rotary Club Lahti International and we will point you in the right direction."
+          }
+        ],
+        "meet": [
+          {
+            "label": "Student organisations",
+            "body": "Student unions and subject-based associations organise parties, sports, trips and cultural evenings throughout the year. Joining one is the quickest way to meet people, both Finnish and international. Look for information at your orientation week and on your university's social media channels."
+          },
+          {
+            "label": "Rotary Club Lahti International",
+            "body": "RCLI welcomes international students and newcomers to Lahti. We organise events and share local knowledge, and members are happy to help you feel at home. Come to a meeting or an event and say hello."
+          },
+          {
+            "label": "Events and hobbies",
+            "body": "Lahti is known for winter sports, lakes and forests, with many clubs for skiing, running, ball games and more. Check local event calendars and the city's websites for concerts, festivals and community activities. Trying a new hobby is one of the best ways to make friends."
+          }
+        ]
       }
     },
     "fi": {
@@ -52,6 +166,120 @@
         "local": { "title": "Suomalainen elämä", "desc": "Kierrätys, sauna, etiketti, vuodenajat" },
         "help": { "title": "Tarvitsen apua", "desc": "Hätätilanteet, terveydenhuolto, yliopisto, kunta" },
         "meet": { "title": "Tapaa ihmisiä", "desc": "Opiskelijajärjestöt, RCLI, tapahtumat, harrastukset" }
+      },
+      "topics": {
+        "arrived": [
+          {
+            "label": "Lentokentältä Lahteen",
+            "body": "Useimmat lentävät Helsinki-Vantaan lentoasemalle (HEL). Sieltä Lahteen pääsee junalla, ja matkalla tarvitaan yleensä vaihto (usein Tikkurilassa tai Keravalla). Koko matka kestää noin 1,5 tuntia. Osta lippu VR:n sovelluksesta tai asemalta ja tarkista aikataulu osoitteesta vr.fi ennen matkaa."
+          },
+          {
+            "label": "Avaimet ja ensimmäinen yö",
+            "body": "Ota yhteyttä vuokranantajaan, opiskelija-asuntojen tarjoajaan tai isäntääsi ennen saapumista ja sovi avainten noutoajasta. Monessa paikassa käytetään avainlokeroita tai avaimet saa vain toimistoaikaan, joten älä jätä asiaa viime tippaan. Tallenna osoite ja puhelinnumero offline-tilaan siltä varalta, ettei mobiilidata toimi heti."
+          },
+          {
+            "label": "SIM-kortti ja ensimmäinen ruoka",
+            "body": "Prepaid-SIM-kortin saa kioskeista, R-kioskeista ja marketeista sekä operaattorien myymälöistä keskustassa. Ota passi mukaan siltä varalta, että sitä pyydetään. Ensimmäisen illan ruokaostoksiin helpoin vaihtoehto on lähikauppa tai market, kuten K-Market, S-Market tai Prisma. Monet kaupat sulkeutuvat sunnuntaisin aikaisin, joten varaudu etukäteen."
+          }
+        ],
+        "first48": [
+          {
+            "label": "Asunto ja vuokrasopimus",
+            "body": "Varmista, että sinulla on allekirjoitettu vuokrasopimus ja tiedät osoitteesi, sillä tarvitset sitä rekisteröitymiseen, pankkiin ja postiin. Laita nimesi postilaatikkoon ja oveen, muuten posti ei välttämättä löydä perille. Ota saapuessasi kuvia asunnon kunnosta."
+          },
+          {
+            "label": "Osoitteen rekisteröinti",
+            "body": "Jos oleskelet Suomessa vuoden tai pidempään, sinun voi tarvita rekisteröityä Digi- ja väestötietovirastoon (DVV) saadaksesi suomalaisen henkilötunnuksen. Ota mukaan passi, mahdollinen oleskelulupa ja vuokrasopimus. Tarkista DVV:n sivuilta, mitä sääntöjä sinuun sovelletaan."
+          },
+          {
+            "label": "Pankkitili ja ruokaostokset",
+            "body": "Pankit pyytävät yleensä passia, oleskelulupaa, opiskelutodistusta ja joskus henkilötunnusta, joten varaa aika hyvissä ajoin. Sillä välin oman maasi pankki- tai luottokortti toimii lähes kaikkialla, sillä Suomi on pitkälti käteisetön. Vertaile ruokaostosten hintoja esimerkiksi Lidlissä, Prismassa ja K-Marketissa, sillä erot voivat olla suuria."
+          }
+        ],
+        "university": [
+          {
+            "label": "LUT:n ja LAB:n kampukset",
+            "body": "Lahden kaksi keskeistä oppilaitosta ovat LUT-yliopisto ja LAB-ammattikorkeakoulu. Molemmilla on orientaatio lukukauden alussa, joten seuraa oppilaitoksesi sähköposteja ja osallistu perehdytystilaisuuksiin. Opiskelijapalvelut ovat paras ensimmäinen yhteyspiste, jos jokin on epäselvää."
+          },
+          {
+            "label": "Opiskelijakortti ja ylioppilaskunta",
+            "body": "Kun olet ilmoittautunut, voit yleensä liittyä ylioppilas- tai opiskelijakuntaan ja hankkia opiskelijakortin, joka tuo alennuksia junalippuihin, ruokailuun ja moniin paikallisiin palveluihin. Prosessi ja kortin tyyppi riippuvat oppilaitoksestasi, joten noudata hyväksymisen yhteydessä saamiasi ohjeita."
+          },
+          {
+            "label": "Tutorit ja tuki",
+            "body": "Opiskelijatutorit ovat kokeneita opiskelijoita, jotka auttavat uusia tulijoita asettumaan aloilleen luokkahuoneen löytämisestä suomalaisten opintojen käytäntöihin. Kysy tutorilta mitä tahansa, vaikka kysymys tuntuisi pieneltä. Jos opinnot tai jaksaminen tuottavat vaikeuksia, ota ajoissa yhteyttä opiskelijapalveluihin tai opinto-ohjaajaan."
+          }
+        ],
+        "transport": [
+          {
+            "label": "Bussit Lahdessa",
+            "body": "Paikallisbusseja liikennöi Lahden Seudun Liikenne (LSL). Reitit ja aikataulut löytyvät LSL:n verkkosivuilta ja reittioppaista, kuten Google Mapsista. Vilkuta kuljettajalle pysäkillä, jos haluat bussin pysähtyvän, etenkin hiljaisemmilla pysäkeillä."
+          },
+          {
+            "label": "Liput ja hinnat",
+            "body": "Tarkista voimassa olevat lippuvaihtoehdot, vyöhykkeet ja opiskelija-alennukset LSL:n verkkosivuilta tai sovelluksesta, sillä hinnat ja maksutavat voivat muuttua. Pidä lippu voimassa koko matkan ajan, sillä lipuntarkastuksia tehdään ja tarkastusmaksu voi olla korkea."
+          },
+          {
+            "label": "Junat ja pyöräily",
+            "body": "Lahdessa on keskeinen rautatieasema, ja Helsinkiin kulkee tiheästi junia, matka kestää noin tunnin. VR:n lipuissa on opiskelija-alennuksia voimassa olevalla opiskelijakortilla. Lahdessa on myös paljon pyöräteitä, ja pyöräily on hyvä vaihtoehto keväästä syksyyn. Käytä valoja pimeällä, sillä se on lain vaatimus."
+          }
+        ],
+        "everyday": [
+          {
+            "label": "Kaupat ja markkinat",
+            "body": "Suurimpia ketjuja ovat K-Market ja K-Supermarket, S-Market ja Prisma, Lidl sekä Alepa. Prismasta ja isommista kaupoista löytyy yleensä laajin valikoima. Monissa kaupoissa on kanta-asiakaskortti (K-Plussa, S-Bonus), joka tuo alennuksia ja bonuksia, ja liittyminen on ilmaista."
+          },
+          {
+            "label": "Apteekit",
+            "body": "Apteekki on merkitty vihreällä ristillä. Monia lääkkeitä, joita voisi ostaa ilman reseptiä muualla, myydään Suomessa vain apteekeissa. Apteekin henkilökunta antaa neuvoja lieviin oireisiin, ja joissakin apteekeissa palvelu onnistuu englanniksi."
+          },
+          {
+            "label": "Kirpputorit ja löydöt",
+            "body": "Suomalaiset rakastavat kirpputoreja. Etsi kirpputoreja, kierrätysliikkeitä kuten UFF ja verkkomarkkinapaikkoja, kuten Tori.fi tai paikallisia Facebook-ryhmiä, joista saat kodin sisustettua edullisesti. Opiskelijaryhmät jakavat usein ilmaisia tai halpoja tavaroita lukukauden alussa ja lopussa."
+          }
+        ],
+        "local": [
+          {
+            "label": "Kierrätys ja pantit",
+            "body": "Suomalaiset lajittelevat jätteet huolellisesti esimerkiksi biojätteeseen, paperiin, kartonkiin, lasiin, metalliin, muoviin ja sekajätteeseen, ja talosi ohjeet kertovat paikalliset säännöt. Panttimerkityt juomapullot ja -tölkit voi palauttaa kauppojen automaatteihin rahaa vastaan, joten älä heitä niitä pois."
+          },
+          {
+            "label": "Saunakulttuuri",
+            "body": "Sauna on iso osa suomalaista elämää, ja monissa kerrostaloissa on yhteinen sauna, jonka vuoroja voi varata. Saunassa ollaan yleensä ilman vaatteita yksityisesti tai samaa sukupuolta olevien seurassa, mutta pyyhe tai uimapuku käy sekaseurassa. Juo riittävästi ja kuuntele kehoasi."
+          },
+          {
+            "label": "Etiketti ja vuodenajat",
+            "body": "Suomalaiset arvostavat omaa tilaa, täsmällisyyttä ja hiljaisuutta, joten älä ihmettele, ellei ihmisiä kiinnosta jutustelu. Ota kengät pois kotiin tullessasi. Talvet ovat pimeitä ja kylmiä, joten hanki lämpimiä vaatteita ja hyväpitoiset kengät, ja harkitse D-vitamiinia. Kesät ovat valoisia ja päivät hyvin pitkiä."
+          }
+        ],
+        "help": [
+          {
+            "label": "Hätätilanne",
+            "body": "Hätätilanteessa soita numeroon 112 mistä tahansa puhelimesta. Puhelu on maksuton ja numero toimii kaikkialla Suomessa ja EU:ssa. Pysy rauhallisena, kerro mitä on tapahtunut ja missä olet, ja noudata päivystäjän ohjeita. Päivystäjät puhuvat englantia."
+          },
+          {
+            "label": "Terveydenhuolto",
+            "body": "Ei-kiireellisissä terveysasioissa voit soittaa valtakunnalliseen neuvontanumeroon 116 117. Yliopisto-opiskelijat voivat mahdollisesti käyttää opiskelijaterveydenhuoltoa, ja säännöt riippuvat oppilaitoksesta, joten tarkista asia opiskelijapalveluista. Ota mukaan passi ja sairausvakuutusasiakirjat, ja tarkista vakuutuksesi kattavuus ennen kuin tarvitset sitä."
+          },
+          {
+            "label": "Yliopisto ja kunnan tuki",
+            "body": "Opintoihin liittyvissä ongelmissa ota yhteyttä opiskelijapalveluihin tai opinto-ohjaajaan. Asumiseen, oleskelulupiin tai kunnallisiin palveluihin liittyvissä asioissa Lahden kaupunki ja paikalliset palvelupisteet neuvovat. Jos et tiedä keneltä kysyä, kysy tutorilta tai Rotary Club Lahti Internationalilta, niin ohjaamme sinut oikeaan paikkaan."
+          }
+        ],
+        "meet": [
+          {
+            "label": "Opiskelijajärjestöt",
+            "body": "Opiskelijakunnat ja ainejärjestöt järjestävät bileitä, urheilua, matkoja ja kulttuuri-iltoja pitkin vuotta. Liittyminen on nopein tapa tavata ihmisiä, sekä suomalaisia että kansainvälisiä. Löydät tietoa orientaatioviikolla ja oppilaitoksesi sosiaalisen median kanavista."
+          },
+          {
+            "label": "Rotary Club Lahti International",
+            "body": "RCLI toivottaa kansainväliset opiskelijat ja Lahteen muuttaneet tervetulleiksi. Järjestämme tapahtumia ja jaamme paikallista tietoa, ja jäsenemme auttavat mielellään sinua tuntemaan olosi kotoisaksi. Tule kokoukseen tai tapahtumaan sanomaan hei."
+          },
+          {
+            "label": "Tapahtumat ja harrastukset",
+            "body": "Lahti tunnetaan talviurheilusta, järvistä ja metsistä, ja kaupungissa on paljon hiihto-, juoksu-, pallopeli- ja muita seuroja. Tarkista paikalliset tapahtumakalenterit ja kaupungin verkkosivut konserttien, festivaalien ja yhteisötoiminnan löytämiseksi. Uuden harrastuksen aloittaminen on yksi parhaista tavoista saada ystäviä."
+          }
+        ]
       }
     }
   }

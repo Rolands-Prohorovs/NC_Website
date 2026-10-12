@@ -1,0 +1,38 @@
+---
+import Topic from '../../components/Topic';
+import type { City } from '../../components/Landing';
+import lahti from '../../data/lahti.json';
+import riga from '../../data/riga.json';
+import helsinki from '../../data/helsinki.json';
+
+export function getStaticPaths() {
+  return [lahti, riga, helsinki].flatMap((city) =>
+    city.cards.map((c) => ({
+      params: { city: city.id, card: c.id },
+      props: { city },
+    }))
+  );
+}
+
+const { city } = Astro.props as { city: City };
+const card = Astro.params.card as string;
+const title = city.content.en.cards[card]?.title ?? city.name;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · {city.name}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Figtree:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <Topic client:load city={city} cardId={card as string} />
+  </body>
+</html>
