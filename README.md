@@ -19,6 +19,9 @@ Build a website with a strong, scalable foundation that initially serves Lahti L
 | `npm run build`           | Build your production site to `./dist/`          |
 | `npm run preview`         | Preview your build locally, before deploying     |
 
+## Developers
+- Rolands Prohorovs
+- Timofei Smyshliaev
 
 <!-- Badge references -->
 [Astro-badge]: https://img.shields.io/badge/Astro-FF5D01?logo=astro&logoColor=white&style=flat-square
