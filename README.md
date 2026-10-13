@@ -10,7 +10,7 @@ Build a website with a strong, scalable foundation that initially serves Lahti L
 - [![PostgreSQL][Postgres-badge]][Postgres-url] — relational database
 - [![JSON][JSON-badge]][JSON-url] — JSON localization for translations
 
-## 🧞 Commands
+##  Commands
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
@@ -19,7 +19,7 @@ Build a website with a strong, scalable foundation that initially serves Lahti L
 | `npm run build`           | Build your production site to `./dist/`          |
 | `npm run preview`         | Preview your build locally, before deploying     |
 
-## Developers
+## 👤 Developers
 - Rolands Prohorovs
 - Timofei Smyshliaev
 
