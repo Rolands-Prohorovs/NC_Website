@@ -19,7 +19,7 @@ Build a website with a strong, scalable foundation that initially serves Lahti L
 | `npm run build`           | Build your production site to `./dist/`          |
 | `npm run preview`         | Preview your build locally, before deploying     |
 
-## <img width="25" height="25" alt="images" src="https://github.com/user-attachments/assets/97ba90ab-bbc8-4354-b9e6-f9e938bacd99" /> Rotary Club Lahti International
+## <img width="20" height="20" alt="images" src="https://github.com/user-attachments/assets/97ba90ab-bbc8-4354-b9e6-f9e938bacd99" /> Rotary Club Lahti International
 
 ## 👤 Developers
 - Rolands Prohorovs
