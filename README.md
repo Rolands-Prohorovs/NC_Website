@@ -1,6 +1,5 @@
 # Lahti newcomer guide website 
-
-## Goal
+## 🎯 Goal
 Build a website with a strong, scalable foundation that initially serves Lahti Lab/LUT as its first city and university, while making it as easy as possible to add new cities and universities in the future. The site should automate as much as possible and deliver information based on the user's location, with full mobile responsiveness. The first fully functional version, covering the Lahti Lab/LUT location, must be completed by February.
 
 ## Tech stack
