@@ -10,7 +10,7 @@ Build a website with a strong, scalable foundation that initially serves Lahti L
 - [![PostgreSQL][Postgres-badge]][Postgres-url] — relational database
 - [![JSON][JSON-badge]][JSON-url] — JSON localization for translations
 
-##  Commands
+## 💻 Commands
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
