@@ -1,36 +1,48 @@
-.topic { padding-top: 32px; padding-bottom: 64px; max-width: 720px; }
-.topic .back { display: inline-block; margin-bottom: 20px; text-decoration: none; opacity: .7; }
-.topic .back:hover { opacity: 1; }
-.topic h1 { margin: 0 0 24px; }
-
-.accordion { display: flex; flex-direction: column; gap: 12px; }
-
-.acc-item {
-  border: 1px solid rgba(128, 128, 128, .3);
-  border-radius: 14px;
-  overflow: hidden;
-  background: rgba(128, 128, 128, .06);
+.tp-page {
+  --tone: #b8392b;        /* header background */
+  --tone-ink: #b3261e;    /* small labels inside the panels */
+  --tone-sub: #ffd27a;    /* subtitle text on the header */
+  min-height: 100vh;
+  background: #f3f1ec;
+  color: #1a1a1a;
+  font-family: 'Figtree', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-.acc-btn {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  padding: 16px 18px;
-  font: inherit;
-  font-weight: 600;
-  text-align: left;
-  color: inherit;
-  background: none;
-  border: 0;
-  cursor: pointer;
+/* One block per tone. Replace the keys with the values of `tone` in lahti.json. */
+.tp-page[data-tone='red']    { --tone: #b8392b; --tone-ink: #b3261e; --tone-sub: #ffd27a; }
+.tp-page[data-tone='blue']   { --tone: #2b5fb8; --tone-ink: #1f4fa3; --tone-sub: #bfe0ff; }
+.tp-page[data-tone='green']  { --tone: #2f7d4f; --tone-ink: #25693f; --tone-sub: #d3f5c8; }
+.tp-page[data-tone='purple'] { --tone: #6b3fb0; --tone-ink: #5a2f9c; --tone-sub: #e6d4ff; }
+.tp-page[data-tone='orange'] { --tone: #c9651b; --tone-ink: #b0540f; --tone-sub: #ffe3b0; }
+
+.tp-header { background: var(--tone); color: #fff; padding: 18px 20px 24px; }
+.tp-back {
+  display: inline-block; margin-bottom: 14px;
+  color: #fff; text-decoration: none; font-weight: 600; font-size: 14px;
 }
-.acc-btn:focus-visible { outline: 2px solid currentColor; outline-offset: -2px; }
+.tp-hero { display: flex; align-items: center; gap: 14px; max-width: 640px; margin: 0 auto; }
+.tp-icon { font-size: 44px; line-height: 1; }
+.tp-icon.text { font-weight: 800; font-size: 28px; }
+.tp-title {
+  margin: 0; font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800; font-size: 26px; line-height: 1.1;
+}
+.tp-sub { margin: 4px 0 0; font-size: 13.5px; color: var(--tone-sub); }
 
-.chev { transition: transform .2s; }
-.acc-item[data-open='true'] .chev { transform: rotate(180deg); }
+.tp-body { display: grid; gap: 10px; padding: 22px 8px 40px; max-width: 640px; margin: 0 auto; }
 
-.acc-panel { padding: 0 18px 18px; }
-.acc-panel p { margin: 0; line-height: 1.6; }
+.tp-acc { background: #fff; border: 1px solid #e6e2da; border-radius: 20px; overflow: hidden; }
+.tp-acc-btn {
+  all: unset; box-sizing: border-box; cursor: pointer; width: 100%;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 22px;
+  font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15.5px;
+}
+.tp-acc-btn:focus-visible { outline: 2px solid var(--tone); outline-offset: -2px; }
+.tp-chev { width: 14px; height: 14px; transition: transform .2s; }
+.tp-acc[data-open='true'] .tp-chev { transform: rotate(180deg); }
+
+.tp-block { padding: 14px 22px 16px; border-top: 1px solid #e6e2da; }
+.tp-label { margin: 0 0 6px; color: var(--tone-ink); font-weight: 600; font-size: 12.5px; }
+.tp-text { margin: 0; font-size: 16.5px; line-height: 1.5; }

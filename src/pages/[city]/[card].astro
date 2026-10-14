@@ -2,11 +2,9 @@
 import Topic from '../../components/Topic';
 import type { City } from '../../components/Landing';
 import lahti from '../../data/lahti.json';
-import riga from '../../data/riga.json';
-import helsinki from '../../data/helsinki.json';
 
 export function getStaticPaths() {
-  return [lahti, riga, helsinki].flatMap((city) =>
+  return [lahti].flatMap((city) =>
     city.cards.map((c) => ({
       params: { city: city.id, card: c.id },
       props: { city },

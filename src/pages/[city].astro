@@ -1,16 +1,15 @@
 ---
 import Landing from '../components/Landing';
 import lahti from '../data/lahti.json';
-import riga from '../data/riga.json';
-import helsinki from '../data/helsinki.json';
+
 
 
 export function getStaticPaths() {
-  return [lahti, riga, helsinki].map((city) => ({ params: { city: city.id }, props: { city } }));
+  return [lahti].map((city) => ({ params: { city: city.id }, props: { city } }));
 }
 
 const { city } = Astro.props;
-const cities = [lahti, riga, helsinki].map(({ id, name }) => ({ id, name }));
+const cities = [lahti].map(({ id, name }) => ({ id, name }));
 const title = `${city.content.en.welcome} ${city.content.en.tagline}`;
 ---
 
