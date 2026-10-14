@@ -120,18 +120,6 @@ export default function Landing({
 
           <span className="brand">⚙️ {t.club}</span>
 
-          <nav className="cities" aria-label="City">
-            {cities.map((c) => (
-              <a
-                key={c.id}
-                href={`/${c.id}`}
-                aria-current={c.id === city.id ? 'page' : undefined}
-              >
-                {c.name}
-              </a>
-            ))}
-          </nav>
-
           <div className="right">
             <div className="langs" role="group" aria-label="Language">
               {city.languages.map((l) => (
@@ -145,11 +133,9 @@ export default function Landing({
                 </button>
               ))}
             </div>
-
             <span className="pill xp">
               🌱 {s.xp} {t.xp}
             </span>
-
             <span className="pill streak">🔥 {s.streak}</span>
           </div>
         </div>
@@ -190,16 +176,15 @@ export default function Landing({
               <span aria-hidden="true">🏠</span>
               Home
             </a>
-
-            <a className="menu-link" href={`/${city.id}`} onClick={closeMenu}>
+            <a className="menu-link" href={`/${city.id}/tasks`} onClick={closeMenu}>
               <span aria-hidden="true">📋</span>
               Tasks
             </a>
-            <a className="menu-link" href={`/${city.id}`} onClick={closeMenu}>
+            <a className="menu-link" href={`/${city.id}/apps`} onClick={closeMenu}>
               <span aria-hidden="true">📱</span>
               Apps
             </a>
-            <a className="menu-link" href={`/${city.id}`} onClick={closeMenu}>
+            <a className="menu-link" href={`/${city.id}/info`} onClick={closeMenu}>
               <span aria-hidden="true">ℹ️</span>
               Info
             </a>

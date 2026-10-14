@@ -2,8 +2,6 @@
 import Landing from '../components/Landing';
 import lahti from '../data/lahti.json';
 
-
-
 export function getStaticPaths() {
   return [lahti].map((city) => ({ params: { city: city.id }, props: { city } }));
 }
