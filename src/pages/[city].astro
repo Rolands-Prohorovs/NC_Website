@@ -1,30 +1,16 @@
 ---
-import Landing from '../components/Landing';
-import lahti from '../data/lahti.json';
+import Base from '../layouts/Base.astro';
+import Home from '../components/Home';
+import { getCities, getCityLinks } from '../data/cities';
 
 export function getStaticPaths() {
-  return [lahti].map((city) => ({ params: { city: city.id }, props: { city } }));
+  return getCities().map((city) => ({ params: { city: city.id }, props: { city } }));
 }
 
 const { city } = Astro.props;
-const cities = [lahti].map(({ id, name }) => ({ id, name }));
-const title = `${city.content.en.welcome} ${city.content.en.tagline}`;
+const cities = getCityLinks();
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Figtree:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <Landing client:load city={city} cities={cities} />
-  </body>
-</html>
+<Base title={`${city.name} · ${city.content[city.languages[0]].club}`}>
+  <Home client:load city={city} cities={cities} />
+</Base>
