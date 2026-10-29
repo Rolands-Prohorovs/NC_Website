@@ -1,0 +1,99 @@
+{
+  "name": "Lahti",
+  "languages": [
+    "en",
+    "fi"
+  ],
+  "stats": {
+    "xp": 0,
+    "streak": 3,
+    "checklistDays": 30
+  },
+  "tasks": [
+    {
+      "id": "documents",
+      "group": "before",
+      "xp": 10
+    },
+    {
+      "id": "housing",
+      "group": "before",
+      "xp": 15
+    },
+    {
+      "id": "route",
+      "group": "before",
+      "xp": 10
+    },
+    {
+      "id": "insurance",
+      "group": "before",
+      "xp": 10
+    },
+    {
+      "id": "keys",
+      "group": "first48",
+      "xp": 15
+    },
+    {
+      "id": "sim",
+      "group": "first48",
+      "xp": 10
+    },
+    {
+      "id": "groceries",
+      "group": "first48",
+      "xp": 10
+    },
+    {
+      "id": "uni-mail",
+      "group": "first48",
+      "xp": 10
+    },
+    {
+      "id": "dvv",
+      "group": "firstWeeks",
+      "xp": 25
+    },
+    {
+      "id": "bank",
+      "group": "firstWeeks",
+      "xp": 25
+    },
+    {
+      "id": "student-id",
+      "group": "firstWeeks",
+      "xp": 20
+    },
+    {
+      "id": "campus",
+      "group": "firstWeeks",
+      "xp": 15
+    },
+    {
+      "id": "tickets",
+      "group": "firstWeeks",
+      "xp": 10
+    },
+    {
+      "id": "event",
+      "group": "settling",
+      "xp": 20
+    },
+    {
+      "id": "sauna",
+      "group": "settling",
+      "xp": 15
+    },
+    {
+      "id": "winter",
+      "group": "settling",
+      "xp": 20
+    },
+    {
+      "id": "secondhand",
+      "group": "settling",
+      "xp": 10
+    }
+  ]
+}

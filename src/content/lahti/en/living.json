@@ -1,0 +1,245 @@
+{
+  "title": "Living in Lahti",
+  "subtitle": "From your first days to everyday life and Finnish culture.",
+  "sections": [
+    {
+      "id": "first-days",
+      "title": "First days",
+      "intro": "Things to take care of soon after you arrive.",
+      "topics": [
+        {
+          "label": "Getting to Lahti",
+          "body": "Lahti is about 100 km north of Helsinki and is easy to reach by train or bus. Most international visitors arrive in Helsinki first, by plane or ferry, and continue to Lahti from there.",
+          "sections": [
+            {
+              "label": "By plane",
+              "body": "Fly to Helsinki Airport (HEL), the nearest international airport, about 100 km from Lahti.\n\nBy train: You can walk from the terminal to the airport railway station. Take a local P or I train one stop to Tikkurila, then change to a long-distance or regional train to Lahti. The whole journey usually takes 1–1.5 hours, depending on the connection. The Tikkurila–Lahti leg takes about 35–55 minutes.\n\nBy bus: A direct bus runs from the airport to Lahti bus station approximately once an hour. The journey takes about 1 hour 20 minutes and does not require a change at Tikkurila. Check timetables on the Matkahuolto website or app.\n\nBy taxi: A taxi or pre-booked transfer takes about an hour but costs considerably more than public transport. It may be useful if you have a lot of luggage or arrive late at night.",
+              "links": [
+                {
+                  "label": "VR train timetables and tickets",
+                  "url": "https://www.vr.fi/en"
+                },
+                {
+                  "label": "Matkahuolto bus timetables",
+                  "url": "https://www.matkahuolto.fi/en"
+                }
+              ]
+            },
+            {
+              "label": "By ferry",
+              "body": "Ferries arrive in Helsinki from Tallinn (about 2 hours) and Stockholm (overnight). Operators include Viking Line, Tallink Silja and Eckerö Line, and they use different terminals: Katajanokka, Olympia and the West Terminal. Check your ticket to confirm your arrival terminal.\n\nYou can travel from each terminal to Helsinki Central Railway Station by tram; the journey takes about 10–20 minutes. Tram routes vary by terminal, so check your route using the HSL journey planner. From the central railway station, take a train to Lahti. The fastest trains take about 50 minutes, while regional trains take around an hour.",
+              "links": [
+                {
+                  "label": "Port of Helsinki",
+                  "url": "https://www.portofhelsinki.fi/en/"
+                },
+                {
+                  "label": "HSL journey planner",
+                  "url": "https://www.hsl.fi/en"
+                }
+              ]
+            },
+            {
+              "label": "By train or bus from elsewhere in Finland",
+              "body": "By train: Lahti railway station is on the main railway line east and north of Helsinki. VR operates several services to Lahti each day from different parts of Finland. The journey from Helsinki takes about 50 minutes to just over an hour, depending on the train, and services run roughly hourly. From Tampere, change at Riihimäki. From Turku, you will usually need to change in Helsinki. Regional trains run directly to Lahti from Kouvola and Kotka.\n\nBy bus: Buses connect Lahti with the Helsinki metropolitan area and other parts of Finland. Bus travel is often cheaper than train travel, and tickets can cost only a few euros if booked early. Operators include Matkahuolto services, OnniBus and FlixBus. The bus station is in the same travel centre as the railway station, a few minutes' walk from the city centre, making it easy to transfer between trains and buses.\n\nTip: Book train tickets in advance through the VR app or website to find lower prices. Check timetables before travelling, as services may vary by season.",
+              "links": [
+                {
+                  "label": "VR (trains)",
+                  "url": "https://www.vr.fi/en"
+                },
+                {
+                  "label": "Matkahuolto (buses)",
+                  "url": "https://www.matkahuolto.fi/en"
+                }
+              ]
+            }
+          ],
+          "links": []
+        },
+        {
+          "label": "Accommodation and keys",
+          "body": "Contact your landlord, housing provider or host before arriving and agree on when and where to collect the keys. Some places use key safes, while others hand out keys only during office hours, so arrange this in advance. Make sure you have a signed rental agreement. Put your name on the mailbox and door so that your mail can be delivered. Take photos of the apartment's condition when you arrive.",
+          "links": []
+        },
+        {
+          "label": "Official registration",
+          "body": "If you plan to stay in Finland for a year or longer, you may need to register with the Digital and Population Data Services Agency (DVV) to obtain a Finnish personal identity code. Bring your passport, residence permit if applicable, and rental agreement. Residence permit matters are handled by the Finnish Immigration Service (Migri). Check the official guidance to see which rules apply to your situation.",
+          "links": []
+        },
+        {
+          "label": "Banking",
+          "body": "Banks usually ask for a passport, residence permit, proof of student status and sometimes a Finnish personal identity code. Book an appointment well in advance. Until you open a Finnish account, a bank or credit card from your home country is accepted in most places.",
+          "links": []
+        },
+        {
+          "label": "Phone number",
+          "body": "You can buy a prepaid SIM card at kiosks, R-kioski shops, supermarkets and mobile operator stores in the city centre. The main operators are Elisa, DNA and Telia. Bring your passport in case it is requested. Save your address and important phone numbers offline in case mobile data does not work when you arrive.",
+          "links": []
+        },
+        {
+          "label": "Money and payments",
+          "body": "Finland uses the euro and is largely cashless. Contactless payments by card or phone are accepted almost everywhere, and many people use mobile payment apps. Deposit-marked bottles and cans can be returned to machines in shops for a refund.",
+          "links": []
+        },
+        {
+          "label": "International House Lahti",
+          "body": "International House Lahti supports international residents and people moving to Lahti with everyday matters, immigration-related questions and finding the right services. It also organises open events and civic orientation courses in different languages. The service point is located at Palvelutori in the Trio shopping centre.",
+          "links": [
+            {
+              "label": "International House Lahti – official guide",
+              "url": "https://www.lahti.fi/en/work-and-business/international-house-lahti/newcomers-guide/moving-to-lahti/"
+            }
+          ]
+        },
+        {
+          "label": "Personal identity code and municipality of residence",
+          "body": "A Finnish personal identity code is needed in many everyday situations, such as dealing with authorities, opening a bank account and receiving wages. If you did not receive one during your residence permit process, you may need to apply for it separately through the Digital and Population Data Services Agency (DVV). Having a municipality of residence may give you access to local public services, such as early childhood education, schools, healthcare and public transport. Check DVV's guidance to see how registration applies to your situation.",
+          "links": [
+            {
+              "label": "DVV: Moving to Finland",
+              "url": "https://dvv.fi/en/moving-to-finland"
+            },
+            {
+              "label": "Suomi.fi: Personal identity code",
+              "url": "https://www.suomi.fi/"
+            }
+          ]
+        },
+        {
+          "label": "Residence permits and EU citizen registration",
+          "body": "The Finnish Immigration Service (Migri) handles residence permits and registration of the right of residence for EU citizens. Many applications can be submitted through the Enter Finland online service. Check Migri's guidance to find out which permit or registration applies to your situation, and book an appointment if needed.",
+          "links": [
+            {
+              "label": "Finnish Immigration Service (Migri)",
+              "url": "https://migri.fi/en/home"
+            },
+            {
+              "label": "Enter Finland",
+              "url": "https://enterfinland.fi/"
+            },
+            {
+              "label": "Migri appointment booking",
+              "url": "https://migri.vihta.com/"
+            }
+          ]
+        },
+        {
+          "label": "Foreigner's identity card",
+          "body": "The police may issue a foreigner's identity card to a foreign citizen who lives permanently in Finland, has their details registered with DVV, and has a registered right of residence or a valid residence permit or residence card. Their identity must also be reliably verified. A foreigner's identity card is not a travel document.",
+          "links": [
+            {
+              "label": "Police: identity card",
+              "url": "https://poliisi.fi/en/identity-card"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "daily-life",
+      "title": "Everyday life",
+      "topics": [
+        {
+          "label": "Getting around",
+          "body": "Lahti has a central railway station, with frequent trains to Helsinki taking about an hour. Local buses are operated by LSL. VR offers student discounts on train tickets to eligible students with a valid student card. Lahti also has many cycle paths, making cycling a good option from spring to autumn. By law, you must use lights when cycling in the dark."
+        },
+        {
+          "label": "Grocery stores",
+          "body": "Major grocery chains include K-Market and K-Supermarket, S-Market and Prisma, Lidl, and Alepa. Prisma and other large supermarkets usually have the widest selection. Loyalty programmes such as K-Plussa and S-Bonus offer discounts and bonuses; joining is generally free. Many shops close earlier on Sundays."
+        },
+        {
+          "label": "Pharmacies",
+          "body": "Pharmacies are marked with a green cross. Many medicines that are sold over the counter in other countries are available only from pharmacies in Finland. Pharmacy staff can advise you about minor symptoms, and some staff members speak English."
+        },
+        {
+          "label": "Second-hand shops and bargains",
+          "body": "Second-hand shopping is popular in Finland. Look for flea markets, charity and recycling shops such as UFF, and online marketplaces such as Tori.fi or local Facebook groups to find affordable items for your home. Student groups often share free or inexpensive items at the beginning and end of a semester."
+        },
+        {
+          "label": "Things to do and free time",
+          "body": "Lahti is known for winter sports, lakes and forests. Walking by a lake or through the forest is free and a very Finnish way to spend an afternoon. Check the city's website for concerts, festivals and community events."
+        },
+        {
+          "label": "Gyms and sports"
+        },
+        {
+          "label": "Clubs and hobbies"
+        },
+        {
+          "label": "Bank account and strong authentication",
+          "body": "A Finnish bank account makes it easier to receive and manage money. The bank will verify your identity and carry out the required checks. A personal identity code is not always required to open a basic payment account. Online banking credentials can be used for strong electronic identification in public-sector, banking and other online services. Ask your chosen bank which documents you need.",
+          "links": [
+            {
+              "label": "Finnish Financial Supervisory Authority: banking services",
+              "url": "https://www.finanssivalvonta.fi/"
+            }
+          ]
+        },
+        {
+          "label": "Kela and social security",
+          "body": "Kela administers social security benefits for people living in Finland. These include family benefits, student financial aid, pensions and housing benefits, as well as matters related to health insurance, rehabilitation and unemployment security. Eligibility depends on your circumstances, so check with Kela whether you qualify and how to apply.",
+          "links": [
+            {
+              "label": "Kela",
+              "url": "https://www.kela.fi/"
+            },
+            {
+              "label": "Kela service points in Lahti",
+              "url": "https://www.kela.fi/"
+            }
+          ]
+        },
+        {
+          "label": "Taxes and tax card",
+          "body": "Income in Finland is taxed progressively. If you start working in Finland, you need a tax card so your employer can withhold the correct amount of tax from your salary. Without a tax card, withholding may be considerably higher. You can request or update your tax card in MyTax. If your income or deductions change during the year, check whether your tax card needs updating.",
+          "links": [
+            {
+              "label": "Finnish Tax Administration",
+              "url": "https://www.vero.fi/en/"
+            },
+            {
+              "label": "MyTax",
+              "url": "https://www.vero.fi/en/e-file/mytax/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "finnish-life",
+      "title": "Finnish life",
+      "topics": [
+        {
+          "label": "Culture",
+          "body": "Finns value honesty, privacy, nature and equality. People may seem reserved at first, but friendships are often loyal and long-lasting once they develop. Nature is part of everyday life, and spending time outdoors in every season is common."
+        },
+        {
+          "label": "Sauna",
+          "body": "Sauna is an important part of Finnish life. Many apartment buildings have a shared sauna that residents can book. People usually use the sauna naked in private or same-gender groups, while a towel or swimsuit is fine in mixed company. Sit on a towel or sauna seat cover, drink enough water and listen to your body."
+        },
+        {
+          "label": "Weather throughout the year",
+          "body": "Summers are bright with very long days, while winters are dark and cold with short days. Spring and autumn can be wet and slippery. Check the weather forecast daily and dress in layers."
+        },
+        {
+          "label": "Getting through your first winter",
+          "body": "Get warm layers, a good coat, a hat, gloves and shoes with good grip. Wool and similar materials are useful as a layer close to your skin. Wear a reflector in the dark so drivers can see you. Consider getting daylight outdoors and discuss vitamin D with a healthcare professional if you are unsure whether you need a supplement. Be kind to yourself if the dark season affects your mood."
+        },
+        {
+          "label": "Unwritten rules",
+          "body": "Take your shoes off when entering someone's home. Be on time. Give others some personal space at bus stops and in queues. Buses and trains are usually quiet. Many apartment buildings have quiet hours at night, often from 10 pm to 7 am, so keep noise down. Sort your waste carefully and follow the instructions provided by your building."
+        },
+        {
+          "label": "Useful phrases",
+          "body": "Hei or Moi: hello. Kiitos: thank you. Ole hyvä: you're welcome / here you go. Anteeksi: excuse me / sorry. Puhutko englantia?: Do you speak English? Kyllä: yes. Ei: no. Moi moi: bye. Kippis: cheers."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "label": "City of Lahti – Moving to Lahti / Newcomer's Guide",
+      "url": "https://www.lahti.fi/en/work-and-business/international-house-lahti/newcomers-guide/moving-to-lahti/"
+    }
+  ]
+}

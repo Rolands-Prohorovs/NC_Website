@@ -1,0 +1,30 @@
+---
+/** Every city page: header, page body, footer. */
+import Header from '../components/Header';
+import { pageUrl, type Locale, type PageId } from '../lib/pages';
+import type { City, CityLink, SiteCopy } from '../lib/schema';
+import Base from './Base.astro';
+
+interface Props {
+  title: string;
+  city: City;
+  cities: CityLink[];
+  current: PageId;
+  loc: Locale;
+  t: SiteCopy;
+}
+const { title, city, cities, current, loc, t } = Astro.props;
+
+const alternates = city.languages.map((lang) => ({
+  lang,
+  href: pageUrl({ ...loc, lang }, current),
+}));
+---
+
+<Base title={title} lang={loc.lang} alternates={alternates}>
+  <Header client:load city={city} cities={cities} current={current} loc={loc} t={t} />
+  <slot />
+  <footer class="foot">
+    <div class="inner">{t.club}</div>
+  </footer>
+</Base>

@@ -1,0 +1,22 @@
+{
+  "club": "Rotary Club Lahti International",
+  "xp": "XP",
+  "ui": {
+    "nav": {
+      "home": "Etusivu",
+      "progress": "Edistyminen",
+      "students": "Opiskelijat",
+      "living": "Asuminen Lahdessa",
+      "meet": "Tapaa ihmisiä"
+    },
+    "openMenu": "Avaa valikko",
+    "closeMenu": "Sulje valikko",
+    "language": "Kieli",
+    "city": "Kaupunki",
+    "streakDays": "{n} päivän putki",
+    "comingSoon": "Tulossa pian",
+    "comingSoonHint": "Tätä osiota kirjoitetaan parhaillaan.",
+    "jumpTo": "Siirry osioon",
+    "sources": "Lähteet"
+  }
+}

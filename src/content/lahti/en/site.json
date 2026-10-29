@@ -1,0 +1,22 @@
+{
+  "club": "Rotary Club Lahti International",
+  "xp": "XP",
+  "ui": {
+    "nav": {
+      "home": "Home",
+      "progress": "Progress",
+      "students": "Students",
+      "living": "Living in Lahti",
+      "meet": "Meet people"
+    },
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu",
+    "language": "Language",
+    "city": "City",
+    "streakDays": "{n}-day streak",
+    "comingSoon": "Coming soon",
+    "comingSoonHint": "This section is being written.",
+    "jumpTo": "Jump to section",
+    "sources": "Sources"
+  }
+}

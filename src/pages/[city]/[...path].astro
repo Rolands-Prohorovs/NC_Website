@@ -1,0 +1,49 @@
+---
+/**
+ * Every page of every city in every language:
+ *   /lahti, /lahti/living          default (first) language
+ *   /lahti/fi, /lahti/fi/living    other languages
+ */
+import Home from '../../components/Home';
+import InfoPage from '../../components/InfoPage.astro';
+import Progress from '../../components/Progress';
+import Site from '../../layouts/Site.astro';
+import { getCities, getCityLinks, load, loadProgress } from '../../lib/content';
+import { PAGES, isInfoPage, pagePath, type Locale, type PageId } from '../../lib/pages';
+import type { City } from '../../lib/schema';
+
+export async function getStaticPaths() {
+  const cities = await getCities();
+  return cities.flatMap((city) =>
+    city.languages.flatMap((lang) =>
+      PAGES.map((page) => {
+        const loc: Locale = { city: city.id, lang, languages: city.languages };
+        return { params: { city: city.id, path: pagePath(loc, page) }, props: { city, loc, page } };
+      })
+    )
+  );
+}
+
+interface Props {
+  city: City;
+  loc: Locale;
+  page: PageId;
+}
+const { city, loc, page } = Astro.props;
+
+const key = `${city.id}/${loc.lang}`;
+const t = await load('site', key);
+const cities = await getCityLinks();
+const title = page === 'home' ? `${city.name} · ${t.club}` : `${t.ui.nav[page]} · ${city.name}`;
+
+// Only the current page's content is loaded and sent to the browser.
+const home = page === 'home' ? await load('home', key) : undefined;
+const progress = page === 'progress' ? await loadProgress(city, loc.lang) : undefined;
+const info = isInfoPage(page) ? await load('info', `${key}/${page}`) : undefined;
+---
+
+<Site title={title} city={city} cities={cities} current={page} loc={loc} t={t}>
+  {home && <Home client:load city={city} loc={loc} h={home} />}
+  {progress && <Progress client:load city={city} p={progress} t={t} />}
+  {info && isInfoPage(page) && <InfoPage page={page} copy={info} ui={t.ui} />}
+</Site>

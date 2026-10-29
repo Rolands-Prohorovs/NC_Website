@@ -1,0 +1,100 @@
+---
+/**
+ * One component for Students, Living in Lahti and Meet people.
+ * Rendered to plain HTML: topics open and close with <details>, so no JavaScript is needed.
+ */
+import type { InfoPageId } from '../lib/pages';
+import type { InfoCopy, SiteCopy } from '../lib/schema';
+import LinkList from './LinkList.astro';
+
+const TONES: Record<InfoPageId, string> = {
+  students: 'green',
+  living: 'blue',
+  meet: 'orange',
+};
+
+interface Props {
+  page: InfoPageId;
+  copy: InfoCopy;
+  ui: SiteCopy['ui'];
+}
+const { page, copy, ui } = Astro.props;
+
+/** Splits text on blank lines so "\n\n" in the JSON becomes separate paragraphs. */
+const paragraphs = (text: string) =>
+  text
+    .split(/\n{2,}/)
+    .map((p) => p.trim())
+    .filter(Boolean);
+---
+
+<section class="hero hero-compact">
+  <div class="inner">
+    <h1>{copy.title}</h1>
+    <p>{copy.subtitle}</p>
+  </div>
+</section>
+
+{
+  copy.sections.length > 1 && (
+    <nav class="chips" aria-label={ui.jumpTo}>
+      <div class="inner chips-inner">
+        {copy.sections.map((s) => (
+          <a class="chip" href={`#${s.id}`}>
+            {s.title}
+          </a>
+        ))}
+      </div>
+    </nav>
+  )
+}
+
+<main class="inner page" data-tone={TONES[page]}>
+  {
+    copy.sections.map((s) => (
+      <section id={s.id} class="info-section" aria-labelledby={`${s.id}-h`}>
+        <h2 id={`${s.id}-h`}>{s.title}</h2>
+        {s.intro && <p class="block-hint">{s.intro}</p>}
+
+        <div class="topics">
+          {s.topics.map((topic) =>
+            topic.body || topic.sections?.length ? (
+              <details class="topic">
+                <summary>{topic.label}</summary>
+                <div class="topic-body">
+                  {topic.body && paragraphs(topic.body).map((p) => <p>{p}</p>)}
+
+                  {topic.sections?.map((sub) => (
+                    <div class="topic-sub">
+                      <h3>{sub.label}</h3>
+                      {paragraphs(sub.body).map((p) => <p>{p}</p>)}
+                      <LinkList links={sub.links} />
+                    </div>
+                  ))}
+
+                  <LinkList links={topic.links} />
+                </div>
+              </details>
+            ) : (
+              <div class="topic topic-empty">
+                <span>{topic.label}</span>
+                <span class="badge" title={ui.comingSoonHint}>
+                  {ui.comingSoon}
+                </span>
+              </div>
+            )
+          )}
+        </div>
+      </section>
+    ))
+  }
+
+  {
+    copy.sources && copy.sources.length > 0 && (
+      <section class="info-section" aria-labelledby="sources-h">
+        <h2 id="sources-h">{ui.sources}</h2>
+        <LinkList links={copy.sources} />
+      </section>
+    )
+  }
+</main>

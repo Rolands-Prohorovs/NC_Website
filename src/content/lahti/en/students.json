@@ -1,0 +1,72 @@
+{
+  "title": "Students",
+  "subtitle": "Studying at LUT or LAB: where to go, who to ask and what is on campus.",
+  "sections": [
+    {
+      "id": "start",
+      "title": "Where to start",
+      "topics": [
+        {
+          "label": "LUT and LAB in Lahti",
+          "body": "The two main higher education institutions in Lahti are LUT University and LAB University of Applied Sciences. Both run orientation programmes at the start of term, so watch your inbox and attend the introduction sessions. Your student services office is the best first contact for anything unclear."
+        },
+        {
+          "label": "Tutors",
+          "body": "Student tutors are experienced students who help newcomers settle in, from finding your classroom to understanding how studies work in Finland. Ask your tutor anything, however small it seems."
+        }
+      ]
+    },
+    {
+      "id": "getting-there",
+      "title": "Getting to campus",
+      "topics": [
+        {
+          "label": "By bus",
+          "body": "Local buses are run by Lahden Seudun Liikenne (LSL). Check the LSL website or a journey planner such as Google Maps for the route from your address, and look at current ticket types and student discounts before your first week."
+        },
+        {
+          "label": "On foot or by bike"
+        },
+        {
+          "label": "Campus location and map"
+        }
+      ]
+    },
+    {
+      "id": "campus-life",
+      "title": "On campus",
+      "topics": [
+        {
+          "label": "Student services",
+          "body": "Student services help with enrolment, certificates, study plans and wellbeing. If something about your studies or life in Finland is unclear, go there first. They can point you to the right person if they cannot help themselves."
+        },
+        {
+          "label": "Student ID and student union",
+          "body": "Once you are enrolled you can usually join the student union and get a student card, which gives discounts on trains, meals and many local services. The process and the card type depend on your institution, so follow the instructions you received when you were admitted."
+        },
+        {
+          "label": "Eating on campus"
+        },
+        {
+          "label": "Printing, lockers and study spaces"
+        }
+      ]
+    },
+    {
+      "id": "academic",
+      "title": "Academic resources",
+      "topics": [
+        {
+          "label": "Study counsellor",
+          "body": "If you struggle with studies or wellbeing, contact your institution's study counsellor or student services early. Asking sooner makes problems much easier to solve."
+        },
+        {
+          "label": "Library and online resources"
+        },
+        {
+          "label": "Writing and language support"
+        }
+      ]
+    }
+  ]
+}

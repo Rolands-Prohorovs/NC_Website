@@ -1,0 +1,86 @@
+{
+  "welcome": "Welcome to Lahti.",
+  "tagline": "You are not alone.",
+  "subtitle": "A friendly guide for international students, made by Rotary Club Lahti International.",
+  "checklistTitle": "{days}-day checklist · {done}/{total} done",
+  "checklistHint": "Open your task list",
+  "aboutTitle": "What is this website?",
+  "about": "Moving to a new country comes with a lot of small questions. This guide collects the answers in one place: how to get here, how to get set up, how studying works, and how to find your people. Use it on your phone, one question at a time.",
+  "whereTitle": "Where are you right now?",
+  "whereHint": "We will point you to the best first step. You can change this any time.",
+  "stages": [
+    {
+      "id": "planning",
+      "icon": "🧳",
+      "title": "Not in Finland yet",
+      "desc": "Still planning or packing"
+    },
+    {
+      "id": "arrived",
+      "icon": "✈️",
+      "title": "I just arrived",
+      "desc": "Landed in the last few days"
+    },
+    {
+      "id": "settled",
+      "icon": "🏠",
+      "title": "Already settled in",
+      "desc": "Here for a few weeks or more"
+    }
+  ],
+  "startTitle": "Your best first step",
+  "starts": {
+    "none": {
+      "title": "Tell us where you are",
+      "desc": "Pick one of the options above and we will suggest where to start.",
+      "cta": "Or browse the guide",
+      "page": "living"
+    },
+    "planning": {
+      "title": "Get ready before you fly",
+      "desc": "Work through the short pre-arrival checklist: documents, housing, your route from the airport and insurance.",
+      "cta": "Open the checklist",
+      "page": "progress"
+    },
+    "arrived": {
+      "title": "Start with your first days",
+      "desc": "Getting from the airport, picking up your keys, registering, banking and getting a phone number.",
+      "cta": "Read the first days guide",
+      "page": "living",
+      "hash": "first-days"
+    },
+    "settled": {
+      "title": "Find your people",
+      "desc": "Student clubs, events and a few tips on how Finns like to talk (and not talk).",
+      "cta": "Meet people",
+      "page": "meet"
+    }
+  },
+  "exploreTitle": "Explore the guide",
+  "pages": {
+    "progress": {
+      "title": "Progress",
+      "desc": "Your checklist, XP and streak",
+      "icon": "📋",
+      "tone": "purple"
+    },
+    "students": {
+      "title": "Students",
+      "desc": "LUT / LAB, campus, student ID, food",
+      "icon": "🎓",
+      "tone": "green"
+    },
+    "living": {
+      "title": "Living in Lahti",
+      "desc": "First days, daily life, Finnish life",
+      "icon": "📍",
+      "tone": "blue"
+    },
+    "meet": {
+      "title": "Meet people",
+      "desc": "Clubs, events and etiquette",
+      "icon": "🤝",
+      "tone": "orange"
+    }
+  }
+}

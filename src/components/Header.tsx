@@ -1,22 +1,34 @@
 import { useEffect, useRef, useState } from 'react';
-import { fmt, useSite } from './Shell';
-import type { PageId } from './types';
+import { fmt, pageUrl, type Locale, type PageId } from '../lib/pages';
+import { useProgress } from '../lib/progress';
+import type { City, CityLink, SiteCopy } from '../lib/schema';
 
-const NAV: { id: PageId; icon: string; path: string }[] = [
-  { id: 'home', icon: '🏠', path: '' },
-  { id: 'progress', icon: '📋', path: '/progress' },
-  { id: 'students', icon: '🎓', path: '/students' },
-  { id: 'living', icon: '📍', path: '/living' },
-  { id: 'meet', icon: '🤝', path: '/meet' },
+const NAV: { id: PageId; icon: string }[] = [
+  { id: 'home', icon: '🏠' },
+  { id: 'progress', icon: '📋' },
+  { id: 'students', icon: '🎓' },
+  { id: 'living', icon: '📍' },
+  { id: 'meet', icon: '🤝' },
 ];
+
+type Props = {
+  city: City;
+  cities: CityLink[];
+  current: PageId;
+  loc: Locale;
+  t: SiteCopy;
+};
 
 /**
  * One header, two layouts (switched in CSS at 900px):
  *  - wide screens: inline nav bar, language switch, XP/streak pills
  *  - narrow screens: brand + burger button that opens a slide-out drawer
+ * Language options are links to the same page in that language.
  */
-export default function Header() {
-  const { city, cities, current, lang, setLang, t, progress } = useSite();
+export default function Header({ city, cities, current, loc, t }: Props) {
+  const progress = useProgress(city.id, city.tasks, city.stats.xp);
+  const url = (page: PageId) => pageUrl(loc, page);
+  const urlIn = (lang: string) => pageUrl({ ...loc, lang }, current);
   const [open, setOpen] = useState(false);
   const drawerRef = useRef<HTMLElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -53,7 +65,7 @@ export default function Header() {
     <>
       <header className="top">
         <div className="inner top-inner">
-          <a className="brand" href={`/${city.id}`}>
+          <a className="brand" href={url('home')}>
             ⚙️ {t.club}
           </a>
 
@@ -61,7 +73,7 @@ export default function Header() {
             {NAV.map((n) => (
               <a
                 key={n.id}
-                href={`/${city.id}${n.path}`}
+                href={url(n.id)}
                 aria-current={n.id === current ? 'page' : undefined}
               >
                 {t.ui.nav[n.id]}
@@ -70,23 +82,24 @@ export default function Header() {
           </nav>
 
           <div className="right">
-            <a className="pill pill-xp" href={`/${city.id}/progress`}>
+            <a className="pill pill-xp" href={url('progress')}>
               🌱 {progress.xp} {t.xp}
             </a>
-            <a className="pill pill-streak" href={`/${city.id}/progress`} title={streak}>
+            <a className="pill pill-streak" href={url('progress')} title={streak}>
               🔥 {city.stats.streak}
             </a>
 
             <div className="langs" role="group" aria-label={t.ui.language}>
               {city.languages.map((l) => (
-                <button
+                <a
                   key={l}
-                  type="button"
-                  onClick={() => setLang(l)}
-                  aria-pressed={l === lang}
+                  href={urlIn(l)}
+                  hrefLang={l}
+                  lang={l}
+                  aria-current={l === loc.lang ? 'true' : undefined}
                 >
                   {l.toUpperCase()}
-                </button>
+                </a>
               ))}
             </div>
 
@@ -141,7 +154,7 @@ export default function Header() {
               <a
                 key={n.id}
                 className="menu-link"
-                href={`/${city.id}${n.path}`}
+                href={url(n.id)}
                 aria-current={n.id === current ? 'page' : undefined}
                 onClick={close}
               >
@@ -154,18 +167,17 @@ export default function Header() {
               <span className="menu-label">{t.ui.language}</span>
               <div className="menu-languages">
                 {city.languages.map((l) => (
-                  <button
+                  <a
                     key={l}
-                    type="button"
-                    aria-pressed={l === lang}
-                    onClick={() => {
-                      setLang(l);
-                      close();
-                    }}
+                    href={urlIn(l)}
+                    hrefLang={l}
+                    lang={l}
+                    aria-current={l === loc.lang ? 'true' : undefined}
+                    onClick={close}
                   >
                     {l.toUpperCase()}
-                    {l === lang ? ' ✓' : ''}
-                  </button>
+                    {l === loc.lang ? ' ✓' : ''}
+                  </a>
                 ))}
               </div>
             </div>

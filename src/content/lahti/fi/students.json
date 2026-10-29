@@ -1,0 +1,72 @@
+{
+  "title": "Opiskelijat",
+  "subtitle": "Opiskelu LUT:ssa tai LAB:ssa: minne mennä, keneltä kysyä ja mitä kampuksella on.",
+  "sections": [
+    {
+      "id": "start",
+      "title": "Mistä aloittaa",
+      "topics": [
+        {
+          "label": "LUT ja LAB Lahdessa",
+          "body": "Lahden kaksi keskeistä korkeakoulua ovat LUT-yliopisto ja LAB-ammattikorkeakoulu. Molemmilla on orientaatio lukukauden alussa, joten seuraa sähköpostiasi ja osallistu perehdytystilaisuuksiin. Opiskelijapalvelut ovat paras ensimmäinen yhteyspiste, jos jokin on epäselvää."
+        },
+        {
+          "label": "Tutorit",
+          "body": "Opiskelijatutorit ovat kokeneita opiskelijoita, jotka auttavat uusia tulijoita asettumaan aloilleen luokkahuoneen löytämisestä suomalaisten opintojen käytäntöihin. Kysy tutorilta mitä tahansa, vaikka kysymys tuntuisi pieneltä."
+        }
+      ]
+    },
+    {
+      "id": "getting-there",
+      "title": "Matka kampukselle",
+      "topics": [
+        {
+          "label": "Bussilla",
+          "body": "Paikallisbusseja liikennöi Lahden Seudun Liikenne (LSL). Tarkista reitti kotiosoitteestasi LSL:n sivuilta tai reittioppaasta, kuten Google Mapsista, ja katso voimassa olevat lippuvaihtoehdot ja opiskelija-alennukset ennen ensimmäistä viikkoa."
+        },
+        {
+          "label": "Kävellen tai pyörällä"
+        },
+        {
+          "label": "Kampuksen sijainti ja kartta"
+        }
+      ]
+    },
+    {
+      "id": "campus-life",
+      "title": "Kampuksella",
+      "topics": [
+        {
+          "label": "Opiskelijapalvelut",
+          "body": "Opiskelijapalvelut auttavat ilmoittautumisessa, todistuksissa, opintosuunnitelmissa ja hyvinvoinnissa. Jos jokin opinnoissa tai elämässä Suomessa on epäselvää, mene ensin sinne. Jos he eivät itse voi auttaa, he ohjaavat sinut oikean ihmisen luo."
+        },
+        {
+          "label": "Opiskelijakortti ja opiskelijakunta",
+          "body": "Kun olet ilmoittautunut, voit yleensä liittyä opiskelijakuntaan ja hankkia opiskelijakortin, joka tuo alennuksia junalippuihin, ruokailuun ja moniin paikallisiin palveluihin. Prosessi ja kortin tyyppi riippuvat oppilaitoksestasi, joten noudata hyväksymisen yhteydessä saamiasi ohjeita."
+        },
+        {
+          "label": "Ruokailu kampuksella"
+        },
+        {
+          "label": "Tulostus, kaapit ja opiskelutilat"
+        }
+      ]
+    },
+    {
+      "id": "academic",
+      "title": "Opintojen tuki",
+      "topics": [
+        {
+          "label": "Opinto-ohjaaja",
+          "body": "Jos opinnot tai jaksaminen tuottavat vaikeuksia, ota ajoissa yhteyttä oppilaitoksesi opinto-ohjaajaan tai opiskelijapalveluihin. Mitä aiemmin kysyt, sitä helpompi ongelmat on ratkaista."
+        },
+        {
+          "label": "Kirjasto ja verkkoaineistot"
+        },
+        {
+          "label": "Kirjoitus- ja kielituki"
+        }
+      ]
+    }
+  ]
+}

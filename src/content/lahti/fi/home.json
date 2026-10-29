@@ -1,0 +1,86 @@
+{
+  "welcome": "Tervetuloa Lahteen.",
+  "tagline": "Et ole yksin.",
+  "subtitle": "Ystävällinen opas kansainvälisille opiskelijoille, Rotary Club Lahti Internationalin tekemä.",
+  "checklistTitle": "{days} päivän tarkistuslista · {done}/{total} tehty",
+  "checklistHint": "Avaa tehtävälistasi",
+  "aboutTitle": "Mikä tämä sivusto on?",
+  "about": "Uuteen maahan muuttaessa mieleen nousee paljon pieniä kysymyksiä. Tähän oppaaseen on koottu vastaukset yhteen paikkaan: miten tänne tullaan, miten asettua, miten opiskelu toimii ja miten löydät oman porukkasi. Käytä opasta puhelimellasi, yksi kysymys kerrallaan.",
+  "whereTitle": "Missä olet nyt?",
+  "whereHint": "Ohjaamme sinut sopivimman ensimmäisen askeleen luo. Voit vaihtaa valintaa milloin tahansa.",
+  "stages": [
+    {
+      "id": "planning",
+      "icon": "🧳",
+      "title": "En ole vielä Suomessa",
+      "desc": "Suunnittelen tai pakkaan vielä"
+    },
+    {
+      "id": "arrived",
+      "icon": "✈️",
+      "title": "Saavuin juuri",
+      "desc": "Saapunut muutama päivä sitten"
+    },
+    {
+      "id": "settled",
+      "icon": "🏠",
+      "title": "Olen jo asettunut",
+      "desc": "Täällä muutaman viikon tai kauemmin"
+    }
+  ],
+  "startTitle": "Paras ensimmäinen askel",
+  "starts": {
+    "none": {
+      "title": "Kerro, missä olet",
+      "desc": "Valitse yllä oleva vaihtoehto, niin ehdotamme mistä aloittaa.",
+      "cta": "Tai selaa opasta",
+      "page": "living"
+    },
+    "planning": {
+      "title": "Valmistaudu ennen lentoa",
+      "desc": "Käy läpi lyhyt saapumista edeltävä lista: asiakirjat, asuminen, reitti lentokentältä ja vakuutus.",
+      "cta": "Avaa tehtävälista",
+      "page": "progress"
+    },
+    "arrived": {
+      "title": "Aloita ensimmäisistä päivistä",
+      "desc": "Matka lentokentältä, avainten nouto, rekisteröinti, pankki ja puhelinnumero.",
+      "cta": "Lue ensimmäisten päivien opas",
+      "page": "living",
+      "hash": "first-days"
+    },
+    "settled": {
+      "title": "Löydä oma porukkasi",
+      "desc": "Opiskelijakerhot, tapahtumat ja vinkkejä siihen, miten suomalaiset juttelevat (ja eivät juttele).",
+      "cta": "Tapaa ihmisiä",
+      "page": "meet"
+    }
+  },
+  "exploreTitle": "Tutustu oppaaseen",
+  "pages": {
+    "progress": {
+      "title": "Edistyminen",
+      "desc": "Tehtävälista, XP ja putki",
+      "icon": "📋",
+      "tone": "purple"
+    },
+    "students": {
+      "title": "Opiskelijat",
+      "desc": "LUT / LAB, kampus, opiskelijakortti, ruoka",
+      "icon": "🎓",
+      "tone": "green"
+    },
+    "living": {
+      "title": "Asuminen Lahdessa",
+      "desc": "Ensimmäiset päivät, arki, suomalainen elämä",
+      "icon": "📍",
+      "tone": "blue"
+    },
+    "meet": {
+      "title": "Tapaa ihmisiä",
+      "desc": "Kerhot, tapahtumat ja etiketti",
+      "icon": "🤝",
+      "tone": "orange"
+    }
+  }
+}

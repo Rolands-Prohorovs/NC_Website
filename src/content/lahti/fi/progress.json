@@ -1,0 +1,100 @@
+{
+  "title": "Edistymisesi",
+  "subtitle": "Merkitse tehtyjä asioita. Pienet askeleet kasaantuvat.",
+  "xpLabel": "Kokemus",
+  "level": "Taso {n}",
+  "toNext": "{n} XP seuraavaan tasoon",
+  "streakLabel": "Putki",
+  "streakHint": "Peräkkäiset päivät, jolloin avasit oppaan",
+  "tasksLabel": "Tehtävät",
+  "tasksDone": "{done} / {total} tehty",
+  "previewNote": "XP ja putki ovat toistaiseksi esikatselu. Tehtävälistasi tallentuu tälle laitteelle.",
+  "groups": {
+    "before": {
+      "title": "Ennen saapumista",
+      "desc": "Tee nämä kotona, mieluiten muutama viikko etukäteen."
+    },
+    "first48": {
+      "title": "Ensimmäiset 48 tuntia",
+      "desc": "Perusasiat ensimmäisille päiville Lahdessa."
+    },
+    "firstWeeks": {
+      "title": "Ensimmäiset viikot",
+      "desc": "Viralliset asiat ja opintojen aloitus."
+    },
+    "settling": {
+      "title": "Asettuminen",
+      "desc": "Tee Lahdesta koti."
+    }
+  },
+  "tasks": {
+    "documents": {
+      "label": "Tarkista asiakirjasi",
+      "hint": "Passi, tarvittaessa oleskelulupa, hyväksymiskirje"
+    },
+    "housing": {
+      "label": "Varmista asuminen",
+      "hint": "Allekirjoitettu sopimus ja avainten noutoaika"
+    },
+    "route": {
+      "label": "Suunnittele matka Lahteen",
+      "hint": "Lentokentältä tai satamasta Lahteen, liput ja aikataulu"
+    },
+    "insurance": {
+      "label": "Tarkista sairausvakuutus",
+      "hint": "Tiedä mitä se kattaa ennen kuin tarvitset sitä"
+    },
+    "keys": {
+      "label": "Hae avaimet",
+      "hint": "Ota kuvia asunnon kunnosta"
+    },
+    "sim": {
+      "label": "Hanki puhelinnumero",
+      "hint": "Prepaid-SIM kioskista, kaupasta tai marketista"
+    },
+    "groceries": {
+      "label": "Tee ensimmäiset ruokaostokset",
+      "hint": "Monet kaupat sulkeutuvat sunnuntaisin aikaisin"
+    },
+    "uni-mail": {
+      "label": "Lue oppilaitoksen sähköpostit",
+      "hint": "Etsi orientaation päivämäärät"
+    },
+    "dvv": {
+      "label": "Rekisteröi osoite, jos tarpeen",
+      "hint": "DVV: ota passi, lupa ja vuokrasopimus"
+    },
+    "bank": {
+      "label": "Varaa aika pankkiin",
+      "hint": "Ota passi, lupa ja opiskelutodistus"
+    },
+    "student-id": {
+      "label": "Hanki opiskelijakortti",
+      "hint": "Tarvitaan juna- ja ruokaalennuksiin"
+    },
+    "campus": {
+      "label": "Käy kampuksella",
+      "hint": "Löydä opiskelijapalvelut ja luokkahuoneet"
+    },
+    "tickets": {
+      "label": "Hoida bussiliput",
+      "hint": "Tarkista LSL-sovellus ja opiskelija-alennukset"
+    },
+    "event": {
+      "label": "Osallistu yhteen tapahtumaan",
+      "hint": "Opiskelijabileet, kerhoilta tai RCLI-tapaaminen"
+    },
+    "sauna": {
+      "label": "Kokeile saunaa",
+      "hint": "Monissa taloissa on yhteinen sauna"
+    },
+    "winter": {
+      "label": "Valmistaudu talveen",
+      "hint": "Lämpimät kerrokset, hyväpitoiset kengät, heijastin"
+    },
+    "secondhand": {
+      "label": "Käy kirpputorilla",
+      "hint": "Sisusta kotisi edullisesti"
+    }
+  }
+}

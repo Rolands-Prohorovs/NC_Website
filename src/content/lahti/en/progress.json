@@ -1,0 +1,100 @@
+{
+  "title": "Your progress",
+  "subtitle": "Tick things off as you go. Small steps add up.",
+  "xpLabel": "Experience",
+  "level": "Level {n}",
+  "toNext": "{n} XP to the next level",
+  "streakLabel": "Streak",
+  "streakHint": "Days in a row you opened the guide",
+  "tasksLabel": "Tasks",
+  "tasksDone": "{done} of {total} done",
+  "previewNote": "XP and streak are a preview for now. Your checklist is saved on this device.",
+  "groups": {
+    "before": {
+      "title": "Before you arrive",
+      "desc": "Do these at home, ideally a few weeks ahead."
+    },
+    "first48": {
+      "title": "First 48 hours",
+      "desc": "The basics for your first days in Lahti."
+    },
+    "firstWeeks": {
+      "title": "First weeks",
+      "desc": "Official things and getting set up for your studies."
+    },
+    "settling": {
+      "title": "Settling in",
+      "desc": "Make Lahti feel like home."
+    }
+  },
+  "tasks": {
+    "documents": {
+      "label": "Check your documents",
+      "hint": "Passport, residence permit if needed, admission letter"
+    },
+    "housing": {
+      "label": "Confirm your housing",
+      "hint": "Signed contract and a key pickup time"
+    },
+    "route": {
+      "label": "Plan your route to Lahti",
+      "hint": "Airport or port to Lahti, tickets and timetable"
+    },
+    "insurance": {
+      "label": "Check your health insurance",
+      "hint": "Know what it covers before you need it"
+    },
+    "keys": {
+      "label": "Pick up your keys",
+      "hint": "Take photos of the flat's condition"
+    },
+    "sim": {
+      "label": "Get a phone number",
+      "hint": "Prepaid SIM from a kiosk, shop or supermarket"
+    },
+    "groceries": {
+      "label": "Do your first grocery shop",
+      "hint": "Many shops close early on Sundays"
+    },
+    "uni-mail": {
+      "label": "Read your university emails",
+      "hint": "Find your orientation dates"
+    },
+    "dvv": {
+      "label": "Register your address, if required",
+      "hint": "DVV: bring passport, permit and rental contract"
+    },
+    "bank": {
+      "label": "Book a bank appointment",
+      "hint": "Bring passport, permit and student certificate"
+    },
+    "student-id": {
+      "label": "Get your student card",
+      "hint": "Needed for discounts on trains and meals"
+    },
+    "campus": {
+      "label": "Visit your campus",
+      "hint": "Find student services and your classrooms"
+    },
+    "tickets": {
+      "label": "Sort out bus tickets",
+      "hint": "Check the LSL app and student discounts"
+    },
+    "event": {
+      "label": "Go to one event",
+      "hint": "A student party, club night or RCLI meeting"
+    },
+    "sauna": {
+      "label": "Try a sauna",
+      "hint": "Many buildings have a shared one"
+    },
+    "winter": {
+      "label": "Prepare for winter",
+      "hint": "Warm layers, boots with grip, a reflector"
+    },
+    "secondhand": {
+      "label": "Visit a second-hand shop",
+      "hint": "Furnish your home cheaply"
+    }
+  }
+}

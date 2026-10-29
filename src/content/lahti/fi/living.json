@@ -1,0 +1,143 @@
+{
+  "title": "Asuminen Lahdessa",
+  "subtitle": "Ensimmäisistä päivistä arkeen ja suomalaiseen elämäntapaan.",
+  "sections": [
+    {
+      "id": "first-days",
+      "title": "Ensimmäiset päivät",
+      "intro": "Asiat, jotka kannattaa hoitaa heti saavuttuasi.",
+      "topics": [
+        {
+          "label": "Matka Lahteen",
+          "body": "Lahti sijaitsee noin 100 km Helsingistä pohjoiseen, ja sinne pääsee helposti junalla tai bussilla. Useimmat ulkomailta saapuvat tulevat ensin Helsinkiin (lentäen tai laivalla) ja jatkavat sieltä Lahteen.",
+          "sections": [
+            {
+              "label": "Lentäen",
+              "body": "Lennä Helsinki-Vantaan lentoasemalle (HEL), joka on lähin kansainvälinen lentoasema. Lentoasema on noin 100 km:n päässä Lahdesta.\n\nJunalla: lentoaseman rautatieasemalle pääsee kävellen terminaalista. Ota lähijuna (P tai I) yhden pysäkin verran Tikkurilaan ja vaihda siellä kaukojunaan tai taajamajunaan Lahteen. Matka kestää yleensä 1–1,5 tuntia vaihtoyhteydestä riippuen, ja pelkkä Tikkurila–Lahti-osuus kestää noin 35–55 minuuttia.\n\nBussilla: lentoasemalta kulkee suora bussi Lahden linja-autoasemalle noin kerran tunnissa. Matka kestää noin 1 tunnin 20 minuuttia, eikä Tikkurilassa tarvitse vaihtaa. Aikataulut löytyvät Matkahuollon sivuilta ja sovelluksesta.\n\nTaksilla: taksilla tai ennakkoon tilatulla kuljetuksella matka kestää noin tunnin, mutta se maksaa selvästi enemmän kuin julkinen liikenne. Se kannattaa lähinnä silloin, kun matkatavaroita on paljon tai saavut myöhään yöllä.",
+              "links": [
+                {
+                  "label": "VR:n aikataulut ja liput",
+                  "url": "https://www.vr.fi/en"
+                },
+                {
+                  "label": "Matkahuollon bussiaikataulut",
+                  "url": "https://www.matkahuolto.fi/en"
+                }
+              ]
+            },
+            {
+              "label": "Laivalla",
+              "body": "Laivat saapuvat Helsinkiin Tallinnasta (noin 2 tuntia) ja Tukholmasta (yöllä). Liikennöitsijöitä on useita, muun muassa Viking Line, Tallink Silja ja Eckerö Line, ja kukin käyttää eri terminaalia: Katajanokkaa, Olympiaa tai Länsiterminaalia. Tarkista lipustasi, mitä terminaalia käytät.\n\nKaikista terminaaleista pääsee Helsingin päärautatieasemalle ratikalla, matka kestää noin 10–20 minuuttia. Ratikkanumerot vaihtelevat terminaalin mukaan, joten katso oman terminaalisi reitti HSL:n reittioppaasta. Päärautatieasemalta ota juna Lahteen. Nopeimmat junat kulkevat noin 50 minuutissa ja lähijunat noin tunnissa.",
+              "links": [
+                {
+                  "label": "Helsingin Satama",
+                  "url": "https://www.portofhelsinki.fi/en/"
+                },
+                {
+                  "label": "HSL:n reittiopas",
+                  "url": "https://www.hsl.fi/en"
+                }
+              ]
+            },
+            {
+              "label": "Junalla tai bussilla muualta Suomesta",
+              "body": "Juna: Lahden rautatieasema sijaitsee pääradalla Helsingistä itään ja pohjoiseen, ja VR liikennöi Lahteen useita vuoroja päivässä eri puolilta Suomea. Helsingistä matka kestää 50 minuutista hieman yli tuntiin junatyypistä riippuen, ja junia kulkee noin kerran tunnissa. Tampereelta vaihda Riihimäellä. Turusta joudut yleensä vaihtamaan Helsingissä. Kouvolasta ja Kotkasta kulkee taajamajunia suoraan Lahteen.\n\nBussi: Lahteen on bussiyhteyksiä pääkaupunkiseudulta ja muualta Suomesta. Bussilla matkustaminen on usein junaa edullisempaa, ja liput voivat alkaa muutamasta eurosta, jos varaat ajoissa. Liikennöitsijöitä ovat muun muassa Matkahuollon palvelut, OnniBus ja FlixBus. Linja-autoasema on samassa matkakeskuksessa rautatieaseman kanssa, muutaman minuutin kävelymatkan päässä keskustasta, joten junan ja bussin välillä on helppo vaihtaa.\n\nVinkki: osta junaliput etukäteen VR:n sovelluksesta tai vr.fi-sivulta edullisempaan hintaan, ja tarkista aikataulut ennen matkaa, sillä vuorot vaihtelevat vuodenajan mukaan.",
+              "links": [
+                {
+                  "label": "VR (junat)",
+                  "url": "https://www.vr.fi/en"
+                },
+                {
+                  "label": "Matkahuolto (bussit)",
+                  "url": "https://www.matkahuolto.fi/en"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Asunto ja avaimet",
+          "body": "Ota yhteyttä vuokranantajaan, asunnon tarjoajaan tai isäntääsi ennen saapumista ja sovi avainten noutoajasta. Monessa paikassa käytetään avainlokeroita tai avaimet saa vain toimistoaikaan, joten älä jätä asiaa viime tippaan. Varmista, että sinulla on allekirjoitettu vuokrasopimus, ja laita nimesi postilaatikkoon ja oveen, muuten posti ei välttämättä löydä perille. Ota saapuessasi kuvia asunnon kunnosta."
+        },
+        {
+          "label": "Viralliset rekisteröinnit",
+          "body": "Jos oleskelet Suomessa vuoden tai pidempään, sinun voi tarvita rekisteröityä Digi- ja väestötietovirastoon (DVV) saadaksesi suomalaisen henkilötunnuksen. Ota mukaan passi, mahdollinen oleskelulupa ja vuokrasopimus. Oleskelulupa-asioita hoitaa Maahanmuuttovirasto (Migri). Tarkista heidän sivuiltaan, mitä sääntöjä sinuun sovelletaan."
+        },
+        {
+          "label": "Pankki",
+          "body": "Pankit pyytävät yleensä passia, oleskelulupaa, opiskelutodistusta ja joskus henkilötunnusta, joten varaa aika hyvissä ajoin. Siihen asti oman maasi pankki- tai luottokortti toimii lähes kaikkialla."
+        },
+        {
+          "label": "Puhelinnumero",
+          "body": "Prepaid-SIM-kortin saa kioskeista, R-kioskeista ja marketeista sekä operaattorien myymälöistä keskustassa. Pääoperaattorit ovat Elisa, DNA ja Telia. Ota passi mukaan siltä varalta, että sitä pyydetään. Tallenna osoite ja puhelinnumero offline-tilaan siltä varalta, ettei mobiilidata toimi heti."
+        },
+        {
+          "label": "Raha ja maksaminen",
+          "body": "Suomessa käytetään euroa, ja maa on pitkälti käteisetön. Korttien ja puhelimen lähimaksut hyväksytään lähes kaikkialla, ja moni käyttää mobiilimaksusovelluksia. Panttimerkityt juomapullot ja -tölkit voi palauttaa kauppojen automaatteihin rahaa vastaan."
+        }
+      ]
+    },
+    {
+      "id": "daily-life",
+      "title": "Arki",
+      "topics": [
+        {
+          "label": "Liikkuminen",
+          "body": "Lahdessa on keskeinen rautatieasema, ja Helsinkiin kulkee tiheästi junia (matka kestää noin tunnin). Paikallisbusseja liikennöi LSL. VR:n lipuissa on opiskelija-alennuksia voimassa olevalla opiskelijakortilla. Lahdessa on myös paljon pyöräteitä, ja pyöräily on hyvä vaihtoehto keväästä syksyyn. Käytä valoja pimeällä, sillä se on lain vaatimus."
+        },
+        {
+          "label": "Ruokakaupat",
+          "body": "Suurimpia ketjuja ovat K-Market ja K-Supermarket, S-Market ja Prisma, Lidl sekä Alepa. Prismasta ja isommista kaupoista löytyy yleensä laajin valikoima. Kanta-asiakaskortit (K-Plussa, S-Bonus) tuovat alennuksia ja bonuksia, ja liittyminen on ilmaista. Monet kaupat sulkeutuvat sunnuntaisin aikaisin."
+        },
+        {
+          "label": "Apteekit",
+          "body": "Apteekki on merkitty vihreällä ristillä. Monia lääkkeitä, joita voisi ostaa ilman reseptiä muualla, myydään Suomessa vain apteekeissa. Apteekin henkilökunta antaa neuvoja lieviin oireisiin, ja osa henkilökunnasta puhuu englantia."
+        },
+        {
+          "label": "Kirpputorit ja löydöt",
+          "body": "Suomalaiset rakastavat kirpputoreja. Etsi kirpputoreja, kierrätysliikkeitä kuten UFF ja verkkomarkkinapaikkoja, kuten Tori.fi tai paikallisia Facebook-ryhmiä, joista saat kodin sisustettua edullisesti. Opiskelijaryhmät jakavat usein ilmaisia tai halpoja tavaroita lukukauden alussa ja lopussa."
+        },
+        {
+          "label": "Tekemistä ja vapaa-aika",
+          "body": "Lahti tunnetaan talviurheilusta, järvistä ja metsistä. Kävely järven rannalla tai metsässä ei maksa mitään ja on hyvin suomalainen tapa viettää iltapäivä. Kaupungin verkkosivuilta löydät konsertit, festivaalit ja yhteisötapahtumat."
+        },
+        {
+          "label": "Kuntosalit ja urheilu"
+        },
+        {
+          "label": "Kerhot ja harrastukset"
+        }
+      ]
+    },
+    {
+      "id": "finnish-life",
+      "title": "Suomalainen elämä",
+      "topics": [
+        {
+          "label": "Kulttuuri",
+          "body": "Suomalaiset arvostavat rehellisyyttä, yksityisyyttä, luontoa ja tasa-arvoa. Ihmiset voivat vaikuttaa aluksi varautuneilta, mutta ystävyydet ovat yleensä uskollisia ja pitkäikäisiä, kun ne syntyvät. Luonto on osa arkea, ja ulkona oleminen jokaisena vuodenaikana on tavallista."
+        },
+        {
+          "label": "Sauna",
+          "body": "Sauna on iso osa suomalaista elämää, ja monissa kerrostaloissa on yhteinen sauna, jonka vuoroja voi varata. Saunassa ollaan yleensä ilman vaatteita yksityisesti tai samaa sukupuolta olevien seurassa, mutta pyyhe tai uimapuku käy sekaseurassa. Istu pyyhkeen tai pefletin päällä, juo riittävästi ja kuuntele kehoasi."
+        },
+        {
+          "label": "Sää vuoden mittaan",
+          "body": "Kesät ovat valoisia ja päivät hyvin pitkiä, talvet pimeitä ja kylmiä ja päivät lyhyitä. Kevät ja syksy voivat olla märkiä ja liukkaita. Tarkista sääennuste päivittäin ja pukeudu kerroksittain."
+        },
+        {
+          "label": "Ensimmäisestä talvesta selviäminen",
+          "body": "Hanki lämpimiä kerroksia, hyvä takki, pipo, hanskat ja hyväpitoiset kengät. Villa tai vastaavat materiaalit pitävät lämpimänä lähinnä ihoa. Käytä heijastinta pimeällä, sillä se tekee sinut näkyväksi autoilijoille. Harkitse D-vitamiinia ja ulkoilua päivänvalon aikaan, ja ole itsellesi armollinen, jos pimeä aika painaa."
+        },
+        {
+          "label": "Kirjoittamattomat säännöt",
+          "body": "Ota kengät pois kotiin tullessasi. Ole ajoissa. Pidä hieman omaa tilaa esimerkiksi bussipysäkillä ja jonossa. Bussit ja junat ovat yleensä hiljaisia. Monissa kerrostaloissa on yöllä hiljaisuusaika, usein klo 22–07, joten pidä äänet kurissa. Lajittele jätteet huolellisesti, talosi ohjeet kertovat paikalliset säännöt."
+        },
+        {
+          "label": "Hyödyllisiä fraaseja",
+          "body": "Hei tai Moi: hello. Kiitos: thank you. Ole hyvä: you are welcome / here you go. Anteeksi: excuse me tai sorry. Puhutko englantia?: do you speak English? Kyllä: yes. Ei: no. Moi moi: bye. Kippis: cheers."
+        }
+      ]
+    }
+  ]
+}

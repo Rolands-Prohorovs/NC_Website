@@ -1,19 +1,13 @@
-import Shell, { fmt, useSite } from './Shell';
-import type { City, CityLink } from './types';
+import { fmt } from '../lib/pages';
+import { useProgress } from '../lib/progress';
+import type { City, ProgressCopy, SiteCopy } from '../lib/schema';
 
 const XP_PER_LEVEL = 100;
 
-export default function Progress({ city, cities }: { city: City; cities: CityLink[] }) {
-  return (
-    <Shell city={city} cities={cities} current="progress">
-      <ProgressBody />
-    </Shell>
-  );
-}
+type Props = { city: City; p: ProgressCopy; t: SiteCopy };
 
-function ProgressBody() {
-  const { city, t, progress } = useSite();
-  const p = t.progress;
+export default function Progress({ city, p, t }: Props) {
+  const progress = useProgress(city.id, city.tasks, city.stats.xp);
 
   const level = Math.floor(progress.xp / XP_PER_LEVEL) + 1;
   const intoLevel = progress.xp % XP_PER_LEVEL;

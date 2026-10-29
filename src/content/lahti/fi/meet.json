@@ -1,0 +1,57 @@
+{
+  "title": "Tapaa ihmisiä",
+  "subtitle": "Miten saat ystäviä Lahdessa ja mitä suomalaiselta viestinnältä voi odottaa.",
+  "sections": [
+    {
+      "id": "etiquette",
+      "title": "Miten suomalaiset viestivät",
+      "topics": [
+        {
+          "label": "Hiljaisuus on okei",
+          "body": "Suomalaiset ovat sinut hiljaisuuden kanssa eivätkä koe tarvetta täyttää jokaista taukoa. Jos keskustelu hiljenee, se ei yleensä tarkoita, että jokin olisi vialla."
+        },
+        {
+          "label": "Small talk ja suoruus",
+          "body": "Moni suomalainen käy vähän small talkia tuntemattomien kanssa ja sanoo asiansa lyhyesti. Tämä ei ole töykeyttä, vaan tapa kunnioittaa sinun aikaasi ja tilaasi."
+        },
+        {
+          "label": "Keskustelun aloittaminen",
+          "body": "Älä pelkää ottaa ensimmäistä askelta. Kysy opinnoista, harrastuksista tai säästä ja ole kärsivällinen. Kun suomalaiset oppivat tuntemaan sinut, he ovat lämpimiä ja luotettavia ystäviä."
+        }
+      ]
+    },
+    {
+      "id": "clubs",
+      "title": "Kerhot ja järjestöt",
+      "topics": [
+        {
+          "label": "Opiskelijajärjestöt",
+          "body": "Opiskelijakunnat ja ainejärjestöt järjestävät bileitä, urheilua, matkoja ja kulttuuri-iltoja pitkin vuotta. Liittyminen on nopein tapa tavata ihmisiä, sekä suomalaisia että kansainvälisiä. Löydät tietoa orientaatioviikolla ja oppilaitoksesi sosiaalisen median kanavista."
+        },
+        {
+          "label": "Rotary Club Lahti International",
+          "body": "RCLI toivottaa kansainväliset opiskelijat ja Lahteen muuttaneet tervetulleiksi. Järjestämme tapahtumia ja jaamme paikallista tietoa, ja jäsenemme auttavat mielellään sinua tuntemaan olosi kotoisaksi. Tule kokoukseen tai tapahtumaan sanomaan hei."
+        },
+        {
+          "label": "Harrastus- ja urheiluseurat"
+        }
+      ]
+    },
+    {
+      "id": "events",
+      "title": "Tapahtumat ja sovellukset",
+      "topics": [
+        {
+          "label": "Tapahtumat Lahdessa",
+          "body": "Tarkista paikalliset tapahtumakalenterit ja kaupungin verkkosivut konserttien, festivaalien ja yhteisötoiminnan löytämiseksi. Uuden harrastuksen aloittaminen on yksi parhaista tavoista saada ystäviä."
+        },
+        {
+          "label": "Sovellukset ja ryhmät, joihin liittyä"
+        },
+        {
+          "label": "Viikoittaiset tapaamiset"
+        }
+      ]
+    }
+  ]
+}

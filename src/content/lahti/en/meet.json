@@ -1,0 +1,57 @@
+{
+  "title": "Meet people",
+  "subtitle": "How to make friends in Lahti, and what to expect from Finnish communication.",
+  "sections": [
+    {
+      "id": "etiquette",
+      "title": "How Finns communicate",
+      "topics": [
+        {
+          "label": "Silence is fine",
+          "body": "Finns are comfortable with silence and do not feel the need to fill every pause. If a conversation goes quiet, it usually does not mean anything is wrong."
+        },
+        {
+          "label": "Small talk and directness",
+          "body": "Many Finns make little small talk with strangers and say what they mean in a few words. This is not rudeness. It is a way of showing respect for your time and space."
+        },
+        {
+          "label": "Starting a conversation",
+          "body": "Do not be afraid to make the first move. Ask about studies, hobbies or the weather, and be patient. Once Finns get to know you, they are warm, reliable friends."
+        }
+      ]
+    },
+    {
+      "id": "clubs",
+      "title": "Clubs and organisations",
+      "topics": [
+        {
+          "label": "Student organisations",
+          "body": "Student unions and subject-based associations organise parties, sports, trips and cultural evenings throughout the year. Joining one is the quickest way to meet people, both Finnish and international. Look for information during your orientation week and on your university's social media channels."
+        },
+        {
+          "label": "Rotary Club Lahti International",
+          "body": "RCLI welcomes international students and newcomers to Lahti. We organise events and share local knowledge, and members are happy to help you feel at home. Come to a meeting or an event and say hello."
+        },
+        {
+          "label": "Hobby and sports clubs"
+        }
+      ]
+    },
+    {
+      "id": "events",
+      "title": "Events and apps",
+      "topics": [
+        {
+          "label": "Events in Lahti",
+          "body": "Check local event calendars and the city's websites for concerts, festivals and community activities. Trying a new hobby is one of the best ways to make friends."
+        },
+        {
+          "label": "Apps and groups to join"
+        },
+        {
+          "label": "Weekly meetups"
+        }
+      ]
+    }
+  ]
+}

@@ -1,18 +1,12 @@
 import { useEffect, useState } from 'react';
-import Shell, { fmt, useSite } from './Shell';
-import type { City, CityLink } from './types';
+import { fmt, pageUrl, type Locale } from '../lib/pages';
+import { useProgress } from '../lib/progress';
+import type { City, HomeCopy } from '../lib/schema';
 
-export default function Home({ city, cities }: { city: City; cities: CityLink[] }) {
-  return (
-    <Shell city={city} cities={cities} current="home">
-      <HomeBody />
-    </Shell>
-  );
-}
+type Props = { city: City; loc: Locale; h: HomeCopy };
 
-function HomeBody() {
-  const { city, t, progress } = useSite();
-  const h = t.home;
+export default function Home({ city, loc, h }: Props) {
+  const progress = useProgress(city.id, city.tasks, city.stats.xp);
 
   // Where the user is in their journey. Stored on this device for now.
   // TODO: store in the database once accounts exist.
@@ -38,9 +32,7 @@ function HomeBody() {
   };
 
   const start = h.starts[stage ?? 'none'] ?? h.starts.none;
-  const startHref = `/${city.id}${start.page === 'home' ? '' : `/${start.page}`}${
-    start.hash ? `#${start.hash}` : ''
-  }`;
+  const startHref = pageUrl(loc, start.page, start.hash);
 
   const pct = progress.total ? (progress.doneCount / progress.total) * 100 : 0;
   const checklistTitle = fmt(h.checklistTitle, {
@@ -59,7 +51,7 @@ function HomeBody() {
           </h1>
           <p>{h.subtitle}</p>
 
-          <a className="checklist" href={`/${city.id}/progress`}>
+          <a className="checklist" href={pageUrl(loc, 'progress')}>
             <span className="check-icon" aria-hidden="true">☑</span>
             <span className="check-text">
               <strong>{checklistTitle}</strong>
@@ -120,7 +112,7 @@ function HomeBody() {
             {(Object.keys(h.pages) as (keyof typeof h.pages)[]).map((id) => {
               const p = h.pages[id];
               return (
-                <a key={id} className="card" data-tone={p.tone} href={`/${city.id}/${id}`}>
+                <a key={id} className="card" data-tone={p.tone} href={pageUrl(loc, id)}>
                   <span className="icon" aria-hidden="true">{p.icon}</span>
                   <h3>{p.title}</h3>
                   <p>{p.desc}</p>
