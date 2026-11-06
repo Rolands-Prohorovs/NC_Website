@@ -17,6 +17,11 @@
     "comingSoon": "Tulossa pian",
     "comingSoonHint": "Tätä osiota kirjoitetaan parhaillaan.",
     "jumpTo": "Siirry osioon",
-    "sources": "Lähteet"
+    "sources": "Lähteet",
+    "officialSource": "Virallinen lähde",
+    "checked": "Tarkistettu {date}",
+    "need": "Tarvitset",
+    "cost": "Hinta",
+    "time": "Kesto"
   }
 }

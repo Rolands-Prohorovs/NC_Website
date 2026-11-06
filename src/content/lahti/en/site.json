@@ -17,6 +17,11 @@
     "comingSoon": "Coming soon",
     "comingSoonHint": "This section is being written.",
     "jumpTo": "Jump to section",
-    "sources": "Sources"
+    "sources": "Sources",
+    "officialSource": "Official source",
+    "checked": "Checked {date}",
+    "need": "What you need",
+    "cost": "Cost",
+    "time": "Time"
   }
 }

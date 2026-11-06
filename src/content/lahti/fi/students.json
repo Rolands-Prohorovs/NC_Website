@@ -49,6 +49,10 @@
         },
         {
           "label": "Tulostus, kaapit ja opiskelutilat"
+        },
+        {
+          "id": "sports",
+          "label": "Liikunta ja kuntosalit"
         }
       ]
     },

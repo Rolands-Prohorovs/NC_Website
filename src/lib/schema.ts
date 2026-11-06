@@ -7,6 +7,12 @@ import { z } from 'astro/zod';
 import { PAGES } from './pages';
 
 const link = z.strictObject({ label: z.string(), url: z.url() });
+// A link to another page of the same city and language, optionally to one topic on it (its `id`).
+const pageLink = z.strictObject({
+  label: z.string(),
+  page: z.enum(PAGES),
+  topic: z.string().optional(),
+});
 
 // src/content/<city>/city.json
 export const citySchema = z.strictObject({
@@ -37,6 +43,11 @@ export const siteSchema = z.strictObject({
     comingSoonHint: z.string(),
     jumpTo: z.string(),
     sources: z.string(),
+    officialSource: z.string(),
+    checked: z.string(),
+    need: z.string(),
+    cost: z.string(),
+    time: z.string(),
   }),
 });
 
@@ -95,11 +106,46 @@ export const progressSchema = z.strictObject({
   tasks: z.record(z.string(), z.strictObject({ label: z.string(), hint: z.string() })),
 });
 
-const topicSection = z.strictObject({
-  label: z.string(),
-  body: z.string(),
-  links: z.array(link).optional(),
-});
+// Short format (ROADMAP.md "Content format"): the answer in one sentence, then a few
+// numbered steps or bulleted facts, plus optional chips. Shared by topics and sub-sections.
+const short = {
+  summary: z.string().optional(),
+  steps: z.array(z.string()).min(1).max(5).optional(),
+  facts: z.array(z.string()).min(1).max(5).optional(),
+  need: z.array(z.string()).optional(),
+  cost: z.string().optional(),
+  time: z.string().optional(),
+  // Longer text, only where it really helps. Blank lines ("\n\n") split it into paragraphs.
+  body: z.string().optional(),
+  links: z.array(z.union([link, pageLink])).optional(),
+};
+
+const notStepsAndFacts = (t: { steps?: unknown; facts?: unknown }) => !(t.steps && t.facts);
+const stepsOrFacts = { message: 'use steps or facts, not both' };
+
+const topicSection = z
+  .strictObject({ label: z.string(), ...short })
+  .refine(notStepsAndFacts, stepsOrFacts)
+  .refine((s) => s.summary || s.body, { message: 'a sub-section needs a summary or body' });
+
+const topic = z
+  .strictObject({
+    // Anchor for links from other pages ({ page, topic }); lowercase letters, digits and dashes.
+    id: z
+      .string()
+      .regex(/^[a-z0-9-]+$/)
+      .optional(),
+    label: z.string(),
+    ...short,
+    sections: z.array(topicSection).optional(),
+    // Official page the facts come from, and the day they were last confirmed there.
+    source: link.optional(),
+    checked: z.iso.date().optional(),
+  })
+  .refine(notStepsAndFacts, stepsOrFacts)
+  .refine((t) => !t.source === !t.checked, { message: 'source and checked go together' })
+  // Every short-format topic needs an official source (DECISIONS.md D10).
+  .refine((t) => !t.summary || t.source, { message: 'a topic with a summary needs a source' });
 
 // src/content/<city>/<lang>/{students,living,meet}.json
 export const infoSchema = z.strictObject({
@@ -110,16 +156,8 @@ export const infoSchema = z.strictObject({
       id: z.string(),
       title: z.string(),
       intro: z.string().optional(),
-      topics: z.array(
-        z.strictObject({
-          label: z.string(),
-          // Leave out body and sections to show a "coming soon" placeholder.
-          // Blank lines ("\n\n") in body split it into paragraphs.
-          body: z.string().optional(),
-          sections: z.array(topicSection).optional(),
-          links: z.array(link).optional(),
-        })
-      ),
+      // A topic with no summary, body or sections shows a "coming soon" placeholder.
+      topics: z.array(topic),
     })
   ),
   sources: z.array(link).optional(),
@@ -133,4 +171,5 @@ export type SiteCopy = z.infer<typeof siteSchema>;
 export type HomeCopy = z.infer<typeof homeSchema>;
 export type ProgressCopy = z.infer<typeof progressSchema>;
 export type InfoCopy = z.infer<typeof infoSchema>;
-export type TopicLink = z.infer<typeof link>;
+export type TopicLink = z.infer<typeof link> | z.infer<typeof pageLink>;
+export type ShortContent = z.infer<z.ZodObject<typeof short>>;

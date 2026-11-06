@@ -30,7 +30,8 @@ src/content/lahti/<lang>/{students,living,meet}.json
 
 - Schemas are in `src/lib/schema.ts` and are strict: unknown keys fail the build. When adding a field, add it to the schema and to every language's file. Component prop types are inferred from these schemas (`HomeCopy`, `InfoCopy`, ...).
 - `src/lib/content.ts` loads entries; a missing file throws with the expected path, and `loadProgress` checks that every task/group in `city.json` has text in `progress.json`.
-- In info-page text, blank lines (`\n\n`) split paragraphs. A topic with no `body`/`sections` renders as "coming soon".
+- Info-page topics use the short format (ROADMAP.md "Content format"): `summary`, then `steps` (numbered) or `facts` (bullets, max 5), optional chips `need`/`cost`/`time`, and `source` + `checked` (YYYY-MM-DD), rendered by `TopicContent.astro`. A topic with a `summary` must have a `source`, so the build enforces D10. `body` is for longer text only; blank lines (`\n\n`) split paragraphs. A topic with no `summary`/`body`/`sections` renders as "coming soon".
+- `links` entries are either external (`{ label, url }`, opens in a new tab) or another page of the site (`{ label, page, topic? }`). `topic` is the target topic's optional `id`; `loadInfo` in `content.ts` fails the build if no topic has that id.
 - UI strings are per city (not shared) because Finnish inflects place names (Lahti → Lahdessa), so `{city}` templating doesn't work.
 
 ## Routing
@@ -45,3 +46,7 @@ A single route, `src/pages/[city]/[...path].astro`, generates all pages from `ge
 - Checklist progress is shared across islands via a module-level store in `src/lib/progress.ts` (`useProgress`, `useSyncExternalStore`) persisted to `localStorage` key `progress:<cityId>`. Home's stage picker uses `stage:<cityId>`. Both are TODO to move to a PostgreSQL-backed API.
 
 **Styling.** Single global stylesheet `src/style/site.css`. Components use plain class names, no CSS modules or framework.
+
+## Planning files
+
+`ROADMAP.md` holds the phases, dates and task split (Rolands: frontend, Timofei: backend + DB). `DECISIONS.md` holds the decisions made and the open ones. `SOURCES.md` lists every content source; log new ones there. `API.md` is the draft API contract with the backend. Read ROADMAP.md and DECISIONS.md before planning work, and follow the content format and automation rules in ROADMAP.md.

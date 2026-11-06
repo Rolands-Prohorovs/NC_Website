@@ -4,6 +4,7 @@ import {
   type CollectionEntry,
   type CollectionKey,
 } from 'astro:content';
+import { isInfoPage, type InfoPageId, type Locale } from './pages';
 import type { City, CityLink } from './schema';
 
 export async function getCities(): Promise<City[]> {
@@ -26,6 +27,25 @@ export async function load<C extends CollectionKey>(
     throw new Error(`Missing content file: src/content/${file}`);
   }
   return entry.data;
+}
+
+/** Loads an info page and checks that its links to topics on other pages point at real topic ids. */
+export async function loadInfo(loc: Locale, page: InfoPageId) {
+  const key = `${loc.city}/${loc.lang}`;
+  const copy = await load('info', `${key}/${page}`);
+  const file = `src/content/${key}/${page}.json`;
+  const links = copy.sections
+    .flatMap((s) => s.topics)
+    .flatMap((t) => [t, ...(t.sections ?? [])])
+    .flatMap((c) => c.links ?? []);
+  for (const l of links) {
+    if (!('page' in l) || !l.topic) continue;
+    if (!isInfoPage(l.page)) throw new Error(`${file}: "${l.label}" links to a topic on ${l.page}, which has no topics`);
+    const target = l.page === page ? copy : await load('info', `${key}/${l.page}`);
+    if (!target.sections.some((s) => s.topics.some((t) => t.id === l.topic)))
+      throw new Error(`${file}: "${l.label}" links to topic "${l.topic}", but ${l.page}.json has no topic with that id`);
+  }
+  return copy;
 }
 
 /** Checks that progress.json has copy for every task and group in city.json. */

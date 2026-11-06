@@ -1,0 +1,67 @@
+---
+/**
+ * The short format of a topic or sub-section: summary, chips, steps or facts,
+ * then any longer text and links. Older topics with only `body` render as paragraphs.
+ */
+import type { Locale } from '../lib/pages';
+import type { ShortContent, SiteCopy } from '../lib/schema';
+import LinkList from './LinkList.astro';
+
+interface Props {
+  content: ShortContent;
+  ui: SiteCopy['ui'];
+  loc: Locale;
+}
+const { content: c, ui, loc } = Astro.props;
+
+/** Splits text on blank lines so "\n\n" in the JSON becomes separate paragraphs. */
+const paragraphs = (text: string) =>
+  text
+    .split(/\n{2,}/)
+    .map((p) => p.trim())
+    .filter(Boolean);
+
+const chips = [
+  c.need?.length && { label: ui.need, value: c.need.join(', ') },
+  c.cost && { label: ui.cost, value: c.cost },
+  c.time && { label: ui.time, value: c.time },
+].filter((chip) => !!chip);
+---
+
+{c.summary && <p class="topic-summary">{c.summary}</p>}
+
+{
+  chips.length > 0 && (
+    <dl class="topic-chips">
+      {chips.map((chip) => (
+        <div class="topic-chip">
+          <dt>{chip.label}</dt>
+          <dd>{chip.value}</dd>
+        </div>
+      ))}
+    </dl>
+  )
+}
+
+{
+  c.steps && (
+    <ol class="topic-list topic-steps">
+      {c.steps.map((s) => (
+        <li>{s}</li>
+      ))}
+    </ol>
+  )
+}
+{
+  c.facts && (
+    <ul class="topic-list">
+      {c.facts.map((f) => (
+        <li>{f}</li>
+      ))}
+    </ul>
+  )
+}
+
+{c.body && paragraphs(c.body).map((p) => <p>{p}</p>)}
+
+<LinkList links={c.links} loc={loc} />

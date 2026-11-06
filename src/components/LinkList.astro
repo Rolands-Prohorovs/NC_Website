@@ -1,10 +1,13 @@
 ---
+/** External links open in a new tab; links to another page of the site stay in the same tab. */
+import { pageUrl, type Locale } from '../lib/pages';
 import type { TopicLink } from '../lib/schema';
 
 interface Props {
   links?: TopicLink[];
+  loc: Locale;
 }
-const { links } = Astro.props;
+const { links, loc } = Astro.props;
 ---
 
 {
@@ -12,9 +15,13 @@ const { links } = Astro.props;
     <ul class="topic-links">
       {links.map((l) => (
         <li>
-          <a href={l.url} target="_blank" rel="noreferrer">
-            {l.label}
-          </a>
+          {'url' in l ? (
+            <a href={l.url} target="_blank" rel="noreferrer">
+              {l.label}
+            </a>
+          ) : (
+            <a href={pageUrl(loc, l.page, l.topic)}>{l.label}</a>
+          )}
         </li>
       ))}
     </ul>

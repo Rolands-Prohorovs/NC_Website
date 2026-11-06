@@ -49,6 +49,10 @@
         },
         {
           "label": "Printing, lockers and study spaces"
+        },
+        {
+          "id": "sports",
+          "label": "Sports and gyms"
         }
       ]
     },

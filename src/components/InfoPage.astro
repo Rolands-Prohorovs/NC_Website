@@ -3,9 +3,10 @@
  * One component for Students, Living in Lahti and Meet people.
  * Rendered to plain HTML: topics open and close with <details>, so no JavaScript is needed.
  */
-import type { InfoPageId } from '../lib/pages';
+import { fmt, type InfoPageId, type Locale } from '../lib/pages';
 import type { InfoCopy, SiteCopy } from '../lib/schema';
 import LinkList from './LinkList.astro';
+import TopicContent from './TopicContent.astro';
 
 const TONES: Record<InfoPageId, string> = {
   students: 'green',
@@ -17,15 +18,16 @@ interface Props {
   page: InfoPageId;
   copy: InfoCopy;
   ui: SiteCopy['ui'];
+  loc: Locale;
 }
-const { page, copy, ui } = Astro.props;
+const { page, copy, ui, loc } = Astro.props;
 
-/** Splits text on blank lines so "\n\n" in the JSON becomes separate paragraphs. */
-const paragraphs = (text: string) =>
-  text
-    .split(/\n{2,}/)
-    .map((p) => p.trim())
-    .filter(Boolean);
+const dateFormat = new Intl.DateTimeFormat(loc.lang, { day: 'numeric', month: 'long', year: 'numeric' });
+/** "2026-11-03" -> "3 November 2026" / "3. marraskuuta 2026". */
+const showDate = (iso: string) => dateFormat.format(new Date(`${iso}T00:00:00Z`));
+
+type Topic = InfoCopy['sections'][number]['topics'][number];
+const hasContent = (t: Topic) => !!(t.summary || t.body || t.sections?.length);
 ---
 
 <section class="hero hero-compact">
@@ -58,25 +60,31 @@ const paragraphs = (text: string) =>
 
         <div class="topics">
           {s.topics.map((topic) =>
-            topic.body || topic.sections?.length ? (
-              <details class="topic">
+            hasContent(topic) ? (
+              <details class="topic" id={topic.id}>
                 <summary>{topic.label}</summary>
                 <div class="topic-body">
-                  {topic.body && paragraphs(topic.body).map((p) => <p>{p}</p>)}
+                  <TopicContent content={topic} ui={ui} loc={loc} />
 
                   {topic.sections?.map((sub) => (
                     <div class="topic-sub">
                       <h3>{sub.label}</h3>
-                      {paragraphs(sub.body).map((p) => <p>{p}</p>)}
-                      <LinkList links={sub.links} />
+                      <TopicContent content={sub} ui={ui} loc={loc} />
                     </div>
                   ))}
 
-                  <LinkList links={topic.links} />
+                  {topic.source && topic.checked && (
+                    <p class="topic-source">
+                      <a class="source-btn" href={topic.source.url} target="_blank" rel="noreferrer">
+                        {ui.officialSource}: {topic.source.label}
+                      </a>
+                      <span>{fmt(ui.checked, { date: showDate(topic.checked) })}</span>
+                    </p>
+                  )}
                 </div>
               </details>
             ) : (
-              <div class="topic topic-empty">
+              <div class="topic topic-empty" id={topic.id}>
                 <span>{topic.label}</span>
                 <span class="badge" title={ui.comingSoonHint}>
                   {ui.comingSoon}
@@ -93,7 +101,7 @@ const paragraphs = (text: string) =>
     copy.sources && copy.sources.length > 0 && (
       <section class="info-section" aria-labelledby="sources-h">
         <h2 id="sources-h">{ui.sources}</h2>
-        <LinkList links={copy.sources} />
+        <LinkList links={copy.sources} loc={loc} />
       </section>
     )
   }
