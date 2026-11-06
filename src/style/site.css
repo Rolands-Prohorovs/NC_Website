@@ -35,7 +35,9 @@ button { font-family: inherit; }
   font-family: var(--display); font-weight: 800; color: var(--gold); text-decoration: none;
   min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
   font-size: 14px;
+  display: flex; align-items: center; flex-shrink: 0;
 }
+.brand img { display: block; height: 36px; width: auto; }
 
 /* Phone first: nav bar, language switch and pills are hidden; burger is shown. */
 .topbar { display: none; gap: 4px; }
@@ -64,6 +66,7 @@ button { font-family: inherit; }
 /* Laptop and up: show the bar, hide the burger. */
 @media (min-width: 900px) {
   .brand { font-size: 16px; }
+  .brand img { height: 42px; }
   .topbar { display: flex; }
   .langs { display: flex; }
   .pill { display: inline-block; }

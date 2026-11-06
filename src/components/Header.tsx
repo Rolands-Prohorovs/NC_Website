@@ -66,7 +66,7 @@ export default function Header({ city, cities, current, loc, t }: Props) {
       <header className="top">
         <div className="inner top-inner">
           <a className="brand" href={url('home')}>
-            ⚙️ {t.club}
+            <img src="/rotary-logo.png" alt={t.club} width="335" height="82" />
           </a>
 
           <nav className="topbar" aria-label="Main">

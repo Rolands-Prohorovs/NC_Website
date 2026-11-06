@@ -22,12 +22,12 @@ How to use it:
 | Health in Lahti (social and health services) | https://www.lahti.fi/en/leisure-and-sports/social-and-health-services/ | Living: Health care and pharmacies | 2026-11-03 |
 | International House Lahti | https://www.lahti.fi/en/work-and-business/international-house-lahti/ | Living: International House Lahti | 2026-11-03 |
 | Palvelutori Service Centre | https://www.lahti.fi/en/city-and-decision-making/palvelutori-service-centre/ | Living: International House Lahti, Finding a rental apartment (address: Trio, 2nd floor, Aleksanterinkatu 18) | 2026-11-03 |
-| Education in Lahti | https://www.lahti.fi/en/work-and-business/international-house-lahti/newcomers-guide/education-in-lahti/ | Students | to review |
+| Education in Lahti | https://www.lahti.fi/en/work-and-business/international-house-lahti/newcomers-guide/education-in-lahti/ | Not used: nothing on LUT/LAB beyond a link to "Studying in Lahti" | 2026-11-06 |
 | Family life in Lahti | https://www.lahti.fi/en/newcomers-guide/family-life-in-lahti/ | (maybe later) | to review |
 | Working in Lahti | https://www.lahti.fi/en/work-and-business/lahti-employment-services/working-in-lahti/ | (maybe later) | to review |
 | Residents' waste management | https://www.lahti.fi/en/housing-and-environment/living-in-lahti/residents-waste-management/ | Living: Unwritten rules (waste sorting), not used yet | to review |
 | Sports services | https://www.lahti.fi/en/leisure-and-sports/sports-services/ | Living: Gyms and sports (swimming halls Lahti, Kivimaa, Saksala, Nastola, Maauimala; ~180 km ski trails, Salpausselkä) | 2026-11-06 |
-| Lahti map service | https://kartta.lahti.fi/ims/en/Map | Students: campus location | to review |
+| Lahti map service | https://kartta.lahti.fi/ims/en/Map | Not used (Students links to the campus map on eLAB instead) | to review |
 
 ## Official: national
 | Source | URL | Used for | Checked |
@@ -64,10 +64,26 @@ Migri page itself does not say this, so neither is on the site. Confirm on Migri
 ## Universities
 | Source | URL | Used for | Checked |
 |---|---|---|---|
-| LAB eLab: Moveo sport and well-being | https://elab.lab.fi/en/study-guidance-and-support-services/student-support-and-wellbeing/moveo-sport-and-well-being | Living: Gyms and sports (Moveo, ~€30/semester, gym + ball games + group classes); Students: Sports and gyms (to write) | 2026-11-06 |
-| LAB eLab: Starting studies (to-do list for new students) | https://elab.lab.fi/en/starting-studies | Students page; ideas for checklist tasks | to review |
-
-To add: LUT University (Lahti campus), LAB University of Applied Sciences, student unions.
+| LAB eLab: Moveo sport and well-being | https://elab.lab.fi/en/study-guidance-and-support-services/student-support-and-wellbeing/moveo-sport-and-well-being | Living: Gyms and sports (Moveo, ~€30/semester, gym + ball games + group classes); Students: Sports (source; €30/semester, LUT Shop, mobile key in 2–3 days, N73 door B2, 6:00–22:30, free Zoom classes / instruction / gear loan, validity end Jan / end Aug) | 2026-11-06 |
+| LAB eLab: Starting studies (to-do list for new students) | https://elab.lab.fi/en/starting-studies | Students: Your first steps (source; Studyinfo, LUT ID + Duo, Moodle orientation, Sisu, DVV with stamped study certificate, TimeEdit, BYOD, Newcomers Discord). Many dates on the page are still placeholders, so the site gives no dates. Ideas for checklist tasks | 2026-11-06 |
+| LUT eLUT: Starting studies | https://elut.lut.fi/en/starting-studies | Students: Your first steps (losing the study right if not enrolled; DVV on campus in autumn); Student card (LTKY compulsory, €75/year, €43/semester 2026–27) | 2026-11-06 |
+| LAB eLab: Lahti campus | https://elab.lab.fi/en/campuses/lahti-campus | Students: One campus (M19 + N73), Access card and opening hours (source; doors Mon–Fri 7:30–16, card access 6–24, lost and found) | 2026-11-06 |
+| LUT eLUT: Lahti campus | https://elut.lut.fi/en/campuses-and-units/lahti-campus | Students: One campus (same buildings and hours as eLAB) | 2026-11-06 |
+| LUT: Studying in Lahti | https://www.lut.fi/en/studies/studying-lut/studying-lahti | Students: One campus (3 km from centre, renovated factory shared with LAB). Says facilities are open 24/7, but eLAB/eLUT say card access 6–24, so the site uses 6–24 | 2026-11-06 |
+| LAB eLab: Electronic access card (Lahti) | https://elab.lab.fi/en/campuses/lahti-campus/electronic-access-card-lahti | Students: Student card, Access card (order via KOE, identity code + student number needed, ordered once, no card needed in orientation week, pick-up at M19_A141) | 2026-11-06 |
+| LAB eLab: Restaurants and cafeterias (Lahti) | https://elab.lab.fi/en/campuses/lahti-campus/students-restaurants-and-cafeterias-lahti | Students: Lunch (Food&Co Isku Center, Lamkooma, Shiksha, Kanttis has no Kela price) | 2026-11-06 |
+| LAB eLab: LUT Academic Library | https://elab.lab.fi/en/study-guidance-and-support-services/lut-academic-library | Students: Library (source; D267, silent + group spaces, Tuudo library card, Primo) | 2026-11-06 |
+| LAB eLab: Printers on Lahti campus | https://elab.lab.fi/en/student-it-guide/printing/location-printers-lahti-campus | Students: Library and printing (SecurePrint, rooms C234 / D238) | 2026-11-06 |
+| LAB eLab: Student customer service | https://elab.lab.fi/en/study-guidance-and-support-services/student-customer-service | Students: Who to ask (source; studentservices@lab.fi, C205 Tue + Thu 12–15, meal subsidy cards) | 2026-11-06 |
+| LAB eLab: Student IT helpdesk | https://elab.lab.fi/en/student-it-guide/student-it-helpdesk | Students: Who to ask (student.ithelpdesk@lut.fi, C205 Tue 12–14) | 2026-11-06 |
+| LAB eLab: Tutoring | https://elab.lab.fi/en/starting-studies/tutoring | Students: Who to ask (peer tutors meet weekly in the first study period) | 2026-11-06 |
+| LAB eLab: Orientation for exchange students | https://elab.lab.fi/en/starting-studies/orientation-new-exchange-students | Students: Student life (ESN at orientation), Your first steps (orientation is mandatory) | 2026-11-06 |
+| LAB eLab: Health care for exchange students | https://elab.lab.fi/en/study-guidance-and-support-services/student-health-care-services/student-healthcare-services | Students: Health care, exchange sub-section (no FSHS, Harjunterveys, Akuutti24, EHIC, private insurance) | 2026-11-06 |
+| FSHS (YTHS): Lahti | https://www.yths.fi/en/service-units/lahti-2/ | Students: Health care (source; Niemenkatu 73 B wing 2nd floor, dental C wing 5th floor, Mon–Thu 8–15, Fri 8–14, YTHSDigi, no evening/weekend service) | 2026-11-06 |
+| Kela: Meal subsidy | https://www.kela.fi/meal-subsidy | Students: Lunch (source; max €3.10, special €4.50–5.90, one meal a day, exchange students eligible, Slice/Tuudo/physical cards accepted) | 2026-11-06 |
+| KOE: Membership | https://www.koe.fi/liity | Students: Student card (source; €25 semester / €35 year, optional, exchange students can join) | 2026-11-06 |
+| KOE: Student card | https://www.koe.fi/opiskelijakortti | Students: Student card (Slice digital card in a few days, physical card ~4 weeks, doubles as key card) | 2026-11-06 |
+| LTKY: Student card | https://ltky.fi/en/for-students/student-card/ | Students: Student card (Slice via slice.fi/ltky, allow data from Sisu, Lahti combined card free) | 2026-11-06 |
 
 ## Companies and services
 Not official, but the company's own page is the best source for its own offer.

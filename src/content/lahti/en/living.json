@@ -183,6 +183,7 @@
           "checked": "2026-11-06"
         },
         {
+          "id": "identity-code",
           "label": "Personal identity code (DVV)",
           "summary": "You need a Finnish personal identity code for work, banking and most services. If your residence permit didn’t give you one, register with DVV.",
           "steps": [
@@ -216,6 +217,7 @@
           "checked": "2026-11-03"
         },
         {
+          "id": "kela",
           "label": "Kela and social security",
           "summary": "Kela handles basic social security: student, housing, family and unemployment benefits, pensions and health insurance. Whether you qualify depends on your situation, so check with Kela.",
           "facts": [
@@ -305,6 +307,7 @@
       "title": "Everyday life",
       "topics": [
         {
+          "id": "getting-around",
           "label": "Getting around",
           "summary": "Blue LSL buses cover Lahti and the region. Get on through the front door and touch the card reader with your card, phone or ticket every time you board.",
           "facts": [
@@ -340,6 +343,7 @@
           "checked": "2026-11-06"
         },
         {
+          "id": "health",
           "label": "Health care and pharmacies",
           "summary": "In an emergency, call 112. For urgent advice in the evening, at night or at weekends, call 116 117.",
           "facts": [
@@ -440,6 +444,7 @@
           "checked": "2026-11-06"
         },
         {
+          "id": "gyms",
           "label": "Gyms and sports",
           "summary": "Lahti has gym chains, city swimming halls and about 180 km of ski trails. LAB and LUT students get a cheap campus gym through Moveo.",
           "facts": [

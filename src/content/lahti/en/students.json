@@ -1,74 +1,271 @@
 {
   "title": "Students",
-  "subtitle": "Studying at LUT or LAB: where to go, who to ask and what is on campus.",
+  "subtitle": "Studying at LUT or LAB in Lahti: your first steps, life on campus and who to ask.",
   "sections": [
     {
-      "id": "start",
-      "title": "Where to start",
+      "id": "first-weeks",
+      "title": "Your first weeks",
       "topics": [
         {
-          "label": "LUT and LAB in Lahti",
-          "body": "The two main higher education institutions in Lahti are LUT University and LAB University of Applied Sciences. Both run orientation programmes at the start of term, so watch your inbox and attend the introduction sessions. Your student services office is the best first contact for anything unclear."
+          "id": "campus",
+          "label": "LUT and LAB: one campus",
+          "summary": "LUT University and LAB University of Applied Sciences share one campus in Lahti, about 3 km from the city centre. They also share IT accounts, the library and campus services.",
+          "facts": [
+            "Main building: Mukkulankatu 19 (M19), a renovated factory. Second building: Niemenkatu 73 (N73), with the Moveo gym and the student health clinic FSHS.",
+            "Room codes start with the building: M19_C205 is room C205 at Mukkulankatu 19.",
+            "Students of both universities log in with one LUT ID: email, Moodle, Sisu and the campus Wi-Fi.",
+            "Your timetable is in TimeEdit. The official instructions for everything are in the student intranets eLAB (LAB) and eLUT (LUT).",
+            "Bring your own laptop. The universities expect every student to have one."
+          ],
+          "links": [
+            { "label": "Getting to campus by bus", "page": "living", "topic": "getting-around" },
+            { "label": "eLAB: Lahti campus", "url": "https://elab.lab.fi/en/campuses/lahti-campus" },
+            { "label": "eLUT: Lahti campus", "url": "https://elut.lut.fi/en/campuses-and-units/lahti-campus" },
+            { "label": "Campus map", "url": "https://elab.lab.fi/en/campuses/lahti-campus/campus-map-lahti" },
+            { "label": "TimeEdit", "url": "https://cloud.timeedit.net/lut-saimia/web" }
+          ],
+          "source": {
+            "label": "eLAB: Lahti campus",
+            "url": "https://elab.lab.fi/en/campuses/lahti-campus"
+          },
+          "checked": "2026-11-06"
         },
         {
-          "label": "Tutors",
-          "body": "Student tutors are experienced students who help newcomers settle in, from finding your classroom to understanding how studies work in Finland. Ask your tutor anything, however small it seems."
+          "id": "first-steps",
+          "label": "Your first steps",
+          "summary": "Your university emails you instructions before studies start, and it is easy to miss one. Do these in order.",
+          "steps": [
+            "Degree students: accept your study place in My Studyinfo and register as present for the academic year. If you miss the deadline, you lose your study place.",
+            "Activate your LUT ID at id.lut.fi and set up Duo, the login app. The instructions come by email at least a week before studies start, so check your spam folder.",
+            "Do the online orientation in Moodle, then come to the orientation days on campus. Attendance is expected.",
+            "Make your study plan and enrol in courses in Sisu before the deadline. Your tutor teacher helps with this.",
+            "Register with DVV for a Finnish personal identity code. In autumn DVV comes to the campus for a few days. Bring your passport and a stamped study certificate."
+          ],
+          "links": [
+            { "label": "eLAB: Starting studies", "url": "https://elab.lab.fi/en/starting-studies" },
+            { "label": "eLUT: Starting studies", "url": "https://elut.lut.fi/en/starting-studies" },
+            { "label": "Activate your LUT ID", "url": "https://id.lut.fi" },
+            { "label": "Personal identity code (DVV)", "page": "living", "topic": "identity-code" }
+          ],
+          "source": {
+            "label": "eLAB: Starting studies",
+            "url": "https://elab.lab.fi/en/starting-studies"
+          },
+          "checked": "2026-11-06"
+        },
+        {
+          "id": "student-card",
+          "label": "Student card and student union",
+          "summary": "You get your student card by joining your student union. It gets you the cheap student lunch and student prices on trains, coaches and buses.",
+          "sections": [
+            {
+              "label": "LAB students: KOE",
+              "summary": "Joining the student union KOE is optional, but it is how LAB students get a student card. Exchange students can join too.",
+              "facts": [
+                "Join online or at the KOE office at M19 (room A141).",
+                "The digital card in the Slice app works a few days after you join. The plastic card takes about 4 weeks and is also your campus key card.",
+                "To order the card you need your student number (in Sisu) and a Finnish personal identity code. Order early: August and September are the busiest months."
+              ],
+              "cost": "€25 per semester, €35 per year",
+              "links": [
+                { "label": "Join KOE", "url": "https://member.koe.fi/" },
+                { "label": "KOE: student card", "url": "https://www.koe.fi/opiskelijakortti" }
+              ]
+            },
+            {
+              "label": "LUT students: LTKY",
+              "summary": "Membership of the LUT Student Union (LTKY) is compulsory for degree students. You pay it when you register as present for the academic year.",
+              "facts": [
+                "Your student card is digital, in the Slice app. Fill in the form at slice.fi/ltky with your student email, then allow Slice to read your data in Sisu.",
+                "In Lahti you also get a combined access and student card for free."
+              ],
+              "cost": "€75 per year, €43 per semester (2026–27)",
+              "links": [
+                { "label": "LTKY: student card", "url": "https://ltky.fi/en/for-students/student-card/" }
+              ]
+            }
+          ],
+          "source": {
+            "label": "KOE: Membership",
+            "url": "https://www.koe.fi/liity"
+          },
+          "checked": "2026-11-06"
         }
       ]
     },
     {
-      "id": "getting-there",
-      "title": "Getting to campus",
-      "topics": [
-        {
-          "label": "By bus",
-          "body": "Local buses are run by Lahden Seudun Liikenne (LSL). Check the LSL website or a journey planner such as Google Maps for the route from your address, and look at current ticket types and student discounts before your first week."
-        },
-        {
-          "label": "On foot or by bike"
-        },
-        {
-          "label": "Campus location and map"
-        }
-      ]
-    },
-    {
-      "id": "campus-life",
+      "id": "on-campus",
       "title": "On campus",
       "topics": [
         {
-          "label": "Student services",
-          "body": "Student services help with enrolment, certificates, study plans and wellbeing. If something about your studies or life in Finland is unclear, go there first. They can point you to the right person if they cannot help themselves."
+          "id": "access",
+          "label": "Access card and opening hours",
+          "summary": "The main doors are open on weekdays from 7:30 to 16:00. With your access card you can get into M19 every day from 6:00 to midnight.",
+          "facts": [
+            "LAB students order the card from KOE, as a student card or as a key card only. LUT students get a free combined access and student card.",
+            "You order the card once and it works for all your studies. During orientation week you can get in without one.",
+            "The card is personal. Don't let other people in with yours.",
+            "Lost something? Email the lobby service (tilapalvelut.lahti@lut.fi) before you come to look."
+          ],
+          "links": [
+            { "label": "eLAB: access card", "url": "https://elab.lab.fi/en/campuses/lahti-campus/electronic-access-card-lahti" },
+            { "label": "eLUT: access card", "url": "https://elut.lut.fi/en/campuses-and-units/lahti-campus/electronic-access-card-lahti" }
+          ],
+          "source": {
+            "label": "eLAB: Lahti campus",
+            "url": "https://elab.lab.fi/en/campuses/lahti-campus"
+          },
+          "checked": "2026-11-06"
         },
         {
-          "label": "Student ID and student union",
-          "body": "Once you are enrolled you can usually join the student union and get a student card, which gives discounts on trains, meals and many local services. The process and the card type depend on your institution, so follow the instructions you received when you were admitted."
+          "id": "lunch",
+          "label": "Lunch on campus",
+          "summary": "A standard student lunch costs at most €3.10 thanks to Kela's meal subsidy. Show your student card at the till. The subsidy covers one meal a day.",
+          "facts": [
+            "Food&Co Isku Center (M19) serves breakfast and lunch. Shiksha (M19, 2nd floor by the auditorium, and N73) serves Finnish-Indian food.",
+            "Lamkooma is the student-run café and bar in the student living room at M19.",
+            "Kanttis at N73 doesn't offer the student price.",
+            "Degree and exchange students both get the subsidy. No student card yet? Student services can give you a meal subsidy card."
+          ],
+          "cost": "€3.10 (special dishes €4.50–5.90)",
+          "links": [
+            { "label": "Food&Co Isku Center menu", "url": "https://www.compass-group.fi/en/ravintolat-ja-ruokalistat/food--co/kaupungit/lahti/isku-center/" },
+            { "label": "eLAB: restaurants and cafés", "url": "https://elab.lab.fi/en/campuses/lahti-campus/students-restaurants-and-cafeterias-lahti" }
+          ],
+          "source": {
+            "label": "Kela: Meal subsidy",
+            "url": "https://www.kela.fi/meal-subsidy"
+          },
+          "checked": "2026-11-06"
         },
         {
-          "label": "Eating on campus"
-        },
-        {
-          "label": "Printing, lockers and study spaces"
+          "id": "library",
+          "label": "Library, study spaces and printing",
+          "summary": "The LUT Academic Library is on the 2nd floor of M19 (room D267). It has silent study spaces and group rooms you can book.",
+          "facts": [
+            "Your library card is in the Tuudo app. You need it to borrow books.",
+            "E-books and articles: log in to Primo with your LUT ID.",
+            "To print, choose the SecurePrint printer, then collect your printout from any student printer on campus, for example in room C234 or D238 at M19."
+          ],
+          "links": [
+            { "label": "Library opening hours", "url": "https://www.lut.fi/en/about-us/lut-academic-library/opening-hours-contact-information-and-locations" },
+            { "label": "eLAB: printing", "url": "https://elab.lab.fi/en/student-it-guide/printing/location-printers-lahti-campus" }
+          ],
+          "source": {
+            "label": "eLAB: LUT Academic Library",
+            "url": "https://elab.lab.fi/en/study-guidance-and-support-services/lut-academic-library"
+          },
+          "checked": "2026-11-06"
         },
         {
           "id": "sports",
-          "label": "Sports and gyms"
+          "label": "Sports: Moveo",
+          "summary": "Moveo is the campus sports service for LAB and LUT students: the gym, ball games and group classes with one pass.",
+          "facts": [
+            "Buy the pass in the LUT Shop. The mobile key for the gym door comes by email in 2–3 working days.",
+            "The gym is at Niemenkatu 73 (door B2) and is open every day from 6:00 to 22:30. On weekdays it is sometimes booked for teaching.",
+            "Book group classes in advance in the booking system. Places are limited.",
+            "Free without a pass: break classes on Zoom, gym instruction (email moveo@lut.fi) and borrowing sports gear from the KOE office.",
+            "The autumn pass is valid until the end of January, the spring pass until the end of August."
+          ],
+          "cost": "€30 per semester",
+          "links": [
+            { "label": "Buy a Moveo pass (LUT Shop)", "url": "https://lutshop.lut.fi/product-category/moveo-sports/?lang=en" },
+            { "label": "Other gyms and sports in Lahti", "page": "living", "topic": "gyms" }
+          ],
+          "source": {
+            "label": "eLAB: Moveo sport and well-being",
+            "url": "https://elab.lab.fi/en/study-guidance-and-support-services/student-support-and-wellbeing/moveo-sport-and-well-being"
+          },
+          "checked": "2026-11-06"
         }
       ]
     },
     {
-      "id": "academic",
-      "title": "Academic resources",
+      "id": "help",
+      "title": "Help and wellbeing",
       "topics": [
         {
-          "label": "Study counsellor",
-          "body": "If you struggle with studies or wellbeing, contact your institution's study counsellor or student services early. Asking sooner makes problems much easier to solve."
+          "id": "who-to-ask",
+          "label": "Who to ask",
+          "summary": "Ask student services about your studies and the IT helpdesk about accounts and logins. Email is the fastest way to reach both.",
+          "facts": [
+            "LAB student services: studentservices@lab.fi. Desk at M19, room C205, on Tuesdays and Thursdays 12–15. Study rights, registration and certificates.",
+            "LUT student services: opinto@lut.fi.",
+            "IT helpdesk (LUT ID, Duo, Moodle): student.ithelpdesk@lut.fi. Desk at M19, room C205, on Tuesdays 12–14.",
+            "Your tutor is a fellow student who meets your group every week in the first study period. LAB newcomers can also ask tutors on the LAB Newcomers Discord.",
+            "Check your student email every day. All official messages are sent there."
+          ],
+          "links": [
+            { "label": "LAB student services", "url": "https://elab.lab.fi/en/study-guidance-and-support-services/student-customer-service" },
+            { "label": "LUT student services", "url": "https://elut.lut.fi/en/study-guidance-and-support-services/student-customer-service" },
+            { "label": "IT helpdesk", "url": "https://elab.lab.fi/en/student-it-guide/student-it-helpdesk" },
+            { "label": "LAB Newcomers Discord", "url": "https://discord.gg/hsqfsmvdca" }
+          ],
+          "source": {
+            "label": "eLAB: Student customer service",
+            "url": "https://elab.lab.fi/en/study-guidance-and-support-services/student-customer-service"
+          },
+          "checked": "2026-11-06"
         },
         {
-          "label": "Library and online resources"
+          "id": "health",
+          "label": "Health care",
+          "summary": "Degree students use the student health service FSHS (YTHS), with no fee per visit. Exchange students use public health centres or private clinics. In an emergency, call 112.",
+          "sections": [
+            {
+              "label": "Degree students: FSHS",
+              "summary": "You pay Kela's student healthcare fee every term, and FSHS visits are then free.",
+              "facts": [
+                "FSHS Lahti is at Niemenkatu 73, B wing, 2nd floor. Dental care is in the C wing, 5th floor.",
+                "Contact FSHS through the YTHSDigi chat or log in to YTHSDigi. Open Mon–Thu 8–15 and Fri 8–14.",
+                "FSHS has no evening, night or weekend service. At those times, use the public on-call service.",
+                "Cancel at least 24 hours before your appointment, or you pay a fee for missing it."
+              ],
+              "cost": "Kela fee €35.35 per term (2026)",
+              "links": [
+                { "label": "Kela student healthcare fee", "page": "living", "topic": "kela" },
+                { "label": "Health care in Lahti", "page": "living", "topic": "health" }
+              ]
+            },
+            {
+              "label": "Exchange students",
+              "summary": "You can't use FSHS. For routine care, call a Harjunterveys health centre or go to a private clinic.",
+              "facts": [
+                "Urgent care that can't wait until the next day: Akuutti24 at the Central Hospital.",
+                "EU and EEA students: bring your European Health Insurance Card (EHIC) and you pay the same as residents.",
+                "Other students: get private health insurance that also covers private clinics such as Mehiläinen, Pihlajalinna or Terveystalo."
+              ],
+              "links": [
+                { "label": "eLAB: health care for exchange students", "url": "https://elab.lab.fi/en/study-guidance-and-support-services/student-health-care-services/student-healthcare-services" },
+                { "label": "Health care in Lahti", "page": "living", "topic": "health" }
+              ]
+            }
+          ],
+          "source": {
+            "label": "FSHS: Lahti",
+            "url": "https://www.yths.fi/en/service-units/lahti-2/"
+          },
+          "checked": "2026-11-06"
         },
         {
-          "label": "Writing and language support"
+          "id": "student-life",
+          "label": "Student life and events",
+          "summary": "Most student events in Lahti are open to both LAB and LUT students. Tickets and memberships are sold in the Kide.app app.",
+          "facts": [
+            "The student unions KOE and LTKY and many student associations organise parties, sitsit (dinner parties with singing), sports and trips.",
+            "ESN Lahti organises events and trips for international and exchange students.",
+            "Lamkooma at M19 is the student living room and an event space."
+          ],
+          "links": [
+            { "label": "Kide.app", "url": "https://kide.app/" },
+            { "label": "Meet people", "page": "meet" }
+          ],
+          "source": {
+            "label": "LAB: The ABCs of student events",
+            "url": "https://lab.fi/en/story/peek-student-life-abcs-student-events"
+          },
+          "checked": "2026-11-06"
         }
       ]
     }

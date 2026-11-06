@@ -34,7 +34,7 @@ Goal: show the new content format on one real page.
 
 ## Phase B: Nov 11 to Nov 19 (Rotary presentation) ~10 h
 Goal: the whole site looks like the finished product, on a phone.
-- [ ] Students + Meet people: short format + sources (EN)
+- [ ] Students + Meet people: short format + sources (EN). Students done 2026-11-06 (10 topics, new structure); fi/students.json still has the old structure
 - [ ] Finnish: catch up (fi/living has 19 topics vs 26 in en) and translate the new content
 - [ ] Fill or cut the "coming soon" topics (Students 6, Meet 3, Living 2)
 - [ ] Mobile pass on real phones
