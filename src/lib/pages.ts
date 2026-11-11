@@ -1,11 +1,19 @@
 export const INFO_PAGES = ['students', 'living', 'meet'] as const;
-export const PAGES = ['home', 'progress', ...INFO_PAGES] as const;
+// Account pages (login, register): one React form island each, not in the nav bar.
+export const AUTH_PAGES = ['login', 'register'] as const;
+export const PAGES = ['home', 'progress', ...INFO_PAGES, ...AUTH_PAGES] as const;
 
 export type PageId = (typeof PAGES)[number];
 export type InfoPageId = (typeof INFO_PAGES)[number];
+export type AuthPageId = (typeof AUTH_PAGES)[number];
+/** Pages with an entry in the nav (site.json `ui.nav`). */
+export type NavPageId = Exclude<PageId, AuthPageId>;
 
 export const isInfoPage = (page: PageId): page is InfoPageId =>
   (INFO_PAGES as readonly string[]).includes(page);
+
+export const isAuthPage = (page: PageId): page is AuthPageId =>
+  (AUTH_PAGES as readonly string[]).includes(page);
 
 /** Which city and language a page belongs to. The first language is the default. */
 export type Locale = { city: string; lang: string; languages: string[] };

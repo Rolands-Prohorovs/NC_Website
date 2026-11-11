@@ -1,6 +1,7 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import {
+  authSchema,
   citySchema,
   homeSchema,
   infoSchema,
@@ -31,6 +32,10 @@ export const collections = {
   progress: defineCollection({
     loader: glob({ base, pattern: '*/*/progress.json', generateId: cityLang }),
     schema: progressSchema,
+  }),
+  auth: defineCollection({
+    loader: glob({ base, pattern: '*/*/auth.json', generateId: cityLang }),
+    schema: authSchema,
   }),
   // id: "lahti/en/living"
   info: defineCollection({

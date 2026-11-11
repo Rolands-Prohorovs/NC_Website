@@ -47,7 +47,7 @@ Goal: the whole site looks like the finished product, on a phone.
 - [ ] Daily tasks (D11): pool of tasks in content (EN + FI), "today's 3" UI, XP. May slip past Dec 17. Started 2026-11-08: fixed list of 5 placeholder daily tasks on the Progress page, reset at midnight, stored on the device (no XP yet)
 - [x] Mandatory to-do tasks (D13): badge, mandatory first in each group, "x/y mandatory done" counter
 - [ ] Final task list (incl. ideas from the Rotary meeting), EN + FI
-- [ ] Account UI: register / log in / log out with nickname + password; progress works without logging in (D-open-1)
+- [x] Account UI: register / log in / log out with nickname + password; progress works without logging in (D-open-1). Done 2026-11-11 against a **mock** API (`src/lib/auth.ts`, users in localStorage, `USE_MOCK_API`); `/login` + `/register` pages, header Log in button / account menu (D14). Progress import on login is a stub until the real API exists
 - [ ] Connect frontend to Timofei's API (mock -> real), migrate localStorage progress into the account on first login
 - [ ] Live data: bus journey planner / stops via backend proxy (see Automation)
 - [ ] Automated source-link checker in the build (flags dead official links)

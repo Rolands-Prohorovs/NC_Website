@@ -1,9 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
-import { fmt, pageUrl, type Locale, type PageId } from '../lib/pages';
+import { useEffect, useRef, useState, type FocusEvent } from 'react';
+import { useAuth } from '../lib/auth';
+import { fmt, isAuthPage, pageUrl, type Locale, type NavPageId, type PageId } from '../lib/pages';
 import { useProgress } from '../lib/progress';
 import type { City, CityLink, SiteCopy } from '../lib/schema';
 
-const NAV: { id: PageId; icon: string }[] = [
+const NAV: { id: NavPageId; icon: string }[] = [
   { id: 'home', icon: '🏠' },
   { id: 'progress', icon: '📋' },
   { id: 'students', icon: '🎓' },
@@ -23,10 +24,18 @@ type Props = {
  * One header, two layouts (switched in CSS at 900px):
  *  - wide screens: inline nav bar, language switch, XP/streak pills
  *  - narrow screens: brand + burger button that opens a slide-out drawer
+ * The account control (Log in, or the nickname with a small menu) is in the top bar on both.
  * Language options are links to the same page in that language.
  */
 export default function Header({ city, cities, current, loc, t }: Props) {
   const progress = useProgress(city.id, city.tasks, city.stats.xp);
+  const auth = useAuth();
+  const loginRef = useRef<HTMLAnchorElement>(null);
+  const focusLoginAfterLogout = useRef(false);
+  // Come back to this page after logging in (not when already on an account page).
+  const loginUrl = isAuthPage(current)
+    ? pageUrl(loc, 'login')
+    : `${pageUrl(loc, 'login')}?next=${encodeURIComponent(pageUrl(loc, current))}`;
   const url = (page: PageId) => pageUrl(loc, page);
   const urlIn = (lang: string) => pageUrl({ ...loc, lang }, current);
   const [open, setOpen] = useState(false);
@@ -36,6 +45,19 @@ export default function Header({ city, cities, current, loc, t }: Props) {
 
   const close = () => setOpen(false);
   const streak = fmt(t.ui.streakDays, { n: city.stats.streak });
+
+  const logout = async () => {
+    focusLoginAfterLogout.current = true;
+    const result = await auth.logout();
+    if ('error' in result) console.warn('Logout failed', result.error);
+  };
+
+  // The account menu disappears on logout; put focus on the Log in link that replaces it.
+  useEffect(() => {
+    if (auth.user || !focusLoginAfterLogout.current) return;
+    focusLoginAfterLogout.current = false;
+    if (!open) loginRef.current?.focus();
+  }, [auth.user, open]);
 
   useEffect(() => {
     if (!open) return;
@@ -102,6 +124,26 @@ export default function Header({ city, cities, current, loc, t }: Props) {
                 </a>
               ))}
             </div>
+
+            {auth.user ? (
+              <AccountMenu
+                nickname={auth.user.nickname}
+                progressHref={url('progress')}
+                t={t}
+                onLogout={logout}
+              />
+            ) : (
+              <a
+                ref={loginRef}
+                className="account-login"
+                href={loginUrl}
+                aria-current={current === 'login' ? 'page' : undefined}
+                // Hidden (but keeping its space) until we know whether someone is logged in.
+                data-pending={auth.status === 'unknown' ? '' : undefined}
+              >
+                {t.ui.account.login}
+              </a>
+            )}
 
             <button
               ref={toggleRef}
@@ -182,6 +224,43 @@ export default function Header({ city, cities, current, loc, t }: Props) {
               </div>
             </div>
 
+            <div className="menu-section">
+              {auth.user ? (
+                <>
+                  <span className="menu-label">
+                    {fmt(t.ui.account.loggedInAs, { nickname: auth.user.nickname })}
+                  </span>
+                  <button
+                    type="button"
+                    className="menu-link"
+                    onClick={() => {
+                      close();
+                      void logout();
+                    }}
+                  >
+                    <span aria-hidden="true">↩</span>
+                    {t.ui.account.logout}
+                  </button>
+                </>
+              ) : (
+                <>
+                  <a className="menu-link" href={loginUrl} onClick={close}>
+                    <span aria-hidden="true">👤</span>
+                    {t.ui.account.login}
+                  </a>
+                  <a
+                    className="menu-link"
+                    href={pageUrl(loc, 'register')}
+                    aria-current={current === 'register' ? 'page' : undefined}
+                    onClick={close}
+                  >
+                    <span aria-hidden="true">✚</span>
+                    {t.ui.account.register}
+                  </a>
+                </>
+              )}
+            </div>
+
             {cities.length > 1 && (
               <div className="menu-section">
                 <span className="menu-label">{t.ui.city}</span>
@@ -210,5 +289,74 @@ export default function Header({ city, cities, current, loc, t }: Props) {
         </div>
       )}
     </>
+  );
+}
+
+type AccountMenuProps = {
+  nickname: string;
+  progressHref: string;
+  t: SiteCopy;
+  onLogout: () => void;
+};
+
+/**
+ * Logged-in control: a button with the nickname that opens a small menu (disclosure pattern:
+ * plain links/buttons reached with Tab). Closes on Escape, outside click, or when focus leaves.
+ */
+function AccountMenu({ nickname, progressHref, t, onLogout }: AccountMenuProps) {
+  const [open, setOpen] = useState(false);
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const onPointer = (e: PointerEvent) => {
+      if (!wrapRef.current?.contains(e.target as Node)) setOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape') return;
+      setOpen(false);
+      buttonRef.current?.focus();
+    };
+    document.addEventListener('pointerdown', onPointer);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('pointerdown', onPointer);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [open]);
+
+  const onBlur = (e: FocusEvent<HTMLDivElement>) => {
+    if (!wrapRef.current?.contains(e.relatedTarget as Node | null)) setOpen(false);
+  };
+
+  return (
+    <div className="account" ref={wrapRef} onBlur={onBlur}>
+      <button
+        ref={buttonRef}
+        type="button"
+        className="account-toggle"
+        aria-expanded={open}
+        aria-controls="account-menu"
+        onClick={() => setOpen((o) => !o)}
+      >
+        <span aria-hidden="true">👤</span>
+        <span className="sr-only">{t.ui.account.menu}: </span>
+        <span className="account-name">{nickname}</span>
+        <span className="account-caret" aria-hidden="true">
+          ▾
+        </span>
+      </button>
+
+      <div id="account-menu" className="account-menu" hidden={!open}>
+        <p className="account-who">{fmt(t.ui.account.loggedInAs, { nickname })}</p>
+        <a href={progressHref}>{t.ui.nav.progress}</a>
+        <button type="button" onClick={onLogout}>
+          {t.ui.account.logout}
+        </button>
+        {/* TODO (Privacy page, ROADMAP Phase C): "Delete account" goes here.
+            DELETE /api/me with { password } (API.md). Not built yet. */}
+      </div>
+    </div>
   );
 }

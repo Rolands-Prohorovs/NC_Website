@@ -4,8 +4,8 @@ import {
   type CollectionEntry,
   type CollectionKey,
 } from 'astro:content';
-import { isInfoPage, type InfoPageId, type Locale } from './pages';
-import type { City, CityLink } from './schema';
+import { isInfoPage, type AuthPageId, type InfoPageId, type Locale } from './pages';
+import type { AuthPageCopy, City, CityLink } from './schema';
 
 export async function getCities(): Promise<City[]> {
   const entries = await getCollection('cities');
@@ -60,4 +60,10 @@ export async function loadProgress(city: City, lang: string) {
     if (!copy.dailyTasks[task.id]) throw new Error(`${file}: no text for daily task "${task.id}"`);
   }
   return copy;
+}
+
+/** Loads auth.json and keeps only what one page (login or register) needs. */
+export async function loadAuth(loc: Locale, page: AuthPageId): Promise<AuthPageCopy> {
+  const { login, register, ...shared } = await load('auth', `${loc.city}/${loc.lang}`);
+  return { ...shared, page: page === 'login' ? login : register };
 }

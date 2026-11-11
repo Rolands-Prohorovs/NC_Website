@@ -45,7 +45,7 @@ button { font-family: inherit; }
 .topbar a:hover { background: #ebe6d9; }
 .topbar a[aria-current='page'] { background: var(--navy); color: #fff; }
 
-.right { display: flex; align-items: center; gap: 8px; margin-left: auto; flex-shrink: 0; }
+.right { display: flex; align-items: center; gap: 8px; margin-left: auto; min-width: 0; }
 .langs, .pill { display: none; }
 
 .pill { padding: 6px 12px; border-radius: 999px; font-weight: 700; font-size: 13px; text-decoration: none; white-space: nowrap; }
@@ -63,6 +63,36 @@ button { font-family: inherit; }
 }
 .menu-toggle:hover { background: #eae7df; }
 
+/* Account control: shown in the top bar at every width, next to the burger on phones. */
+.account-login, .account-toggle {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 8px 14px;
+  border-radius: 999px; font: 700 14px var(--font); white-space: nowrap; cursor: pointer;
+}
+.account-login { background: var(--navy); color: #fff; text-decoration: none; }
+.account-login:hover { background: #234a85; }
+.account-login[data-pending] { visibility: hidden; }
+.account { position: relative; min-width: 0; }
+.account-toggle { max-width: 100%; border: 1px solid #d8d5cc; background: #fff; color: var(--navy); }
+.account-toggle:hover { background: #eae7df; }
+.account-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.account-caret { font-size: 12px; }
+.account-menu {
+  position: absolute; right: 0; top: calc(100% + 6px); z-index: 30; min-width: 200px; padding: 6px;
+  background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 10px 30px rgb(0 0 0 / 12%);
+}
+.account-menu[hidden] { display: none; }
+.account-who { margin: 0; padding: 8px 12px; color: var(--muted); font-size: 13px; overflow-wrap: anywhere; border-bottom: 1px solid var(--line); }
+.account-menu :is(a, button) {
+  display: flex; align-items: center; width: 100%; min-height: 44px; padding: 8px 12px; margin-top: 2px;
+  border: 0; border-radius: 10px; background: none; color: var(--ink); font: 600 15px var(--font);
+  text-align: left; text-decoration: none; cursor: pointer;
+}
+.account-menu :is(a, button):hover { background: #eaf1fd; }
+@media (max-width: 359px) {
+  /* Very narrow phones: icon only, the nickname is in the menu. */
+  .account-toggle .account-name { display: none; }
+}
+
 /* Laptop and up: show the bar, hide the burger. */
 @media (min-width: 900px) {
   .brand { font-size: 16px; }
@@ -71,6 +101,8 @@ button { font-family: inherit; }
   .langs { display: flex; }
   .pill { display: inline-block; }
   .menu-toggle { display: none; }
+  .right { flex-shrink: 0; }
+  .account-toggle { max-width: 200px; }
 }
 @media (min-width: 900px) and (max-width: 1100px) {
   .pill-xp { display: none; }
@@ -94,6 +126,7 @@ button { font-family: inherit; }
 .menu-link { display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 10px 12px; border-radius: 10px; color: #14294b; text-decoration: none; font-size: 16px; }
 .menu-link > span:first-child { display: inline-flex; justify-content: center; min-width: 24px; }
 .menu-link:hover { background: #e5eaf3; }
+button.menu-link { width: 100%; border: 0; background: none; font: inherit; text-align: left; cursor: pointer; }
 .menu-link[aria-current='page'] { background: #dfe7f5; font-weight: 700; }
 .menu-section { padding-top: 16px; margin-top: 12px; border-top: 1px solid #dedbd2; }
 .menu-label { display: block; margin: 0 12px 8px; color: #69758a; font-size: 13px; font-weight: 700; }
@@ -290,6 +323,43 @@ button { font-family: inherit; }
 .task input:checked ~ .task-text strong { color: var(--muted); text-decoration: line-through; }
 .task-xp { flex: none; padding: 4px 10px; border-radius: 999px; background: #e4eddc; color: #2f6b2f; font-size: 13px; font-weight: 700; }
 .note { margin: 32px 0 0; padding: 14px 16px; border-radius: 12px; background: #ece7da; color: var(--muted); font-size: 14px; max-width: 760px; }
+
+/* ---------- Login / register ---------- */
+.auth { padding-top: 24px; }
+.auth-card { display: flex; flex-direction: column; gap: 18px; max-width: 440px; padding: 20px; border-radius: 18px; background: #fff; border: 1px solid var(--line); }
+@media (min-width: 720px) { .auth-card { padding: 28px; } }
+.auth-done { margin: 0; font-weight: 600; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-weight: 700; }
+.field-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.field input {
+  width: 100%; min-height: 48px; padding: 10px 14px; border: 2px solid #cfc8b6; border-radius: 12px;
+  background: #fff; color: var(--ink); font: 16px var(--font); /* 16px: no zoom on iOS */
+}
+.field input:focus-visible { outline: 3px solid var(--navy); outline-offset: 1px; border-color: var(--navy); }
+.field input[aria-invalid='true'] { border-color: #b3261e; }
+.field-hint { margin: 0; color: var(--muted); font-size: 14px; }
+.field-error { margin: 0; color: #b3261e; font-size: 14px; font-weight: 600; }
+.field-error::before { content: '⚠ '; }
+.pw-toggle {
+  min-height: 44px; padding: 8px 4px; border: 0; background: none; color: var(--navy);
+  font: 600 14px var(--font); text-decoration: underline; cursor: pointer;
+}
+.form-error { padding: 12px 14px; border-radius: 12px; background: #fdeceb; color: #8c1d18; font-weight: 600; }
+.form-error:empty { display: block; padding: 0; margin-bottom: -18px; }
+.form-error:focus { outline: none; }
+.form-error:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+.btn-primary { background: var(--navy); color: #fff; border: 0; font: 700 16px var(--font); cursor: pointer; }
+.btn-primary:hover { background: #234a85; }
+.btn-primary:disabled { background: #7d8fae; cursor: progress; }
+.btn-block { justify-content: center; width: 100%; align-self: stretch; }
+.auth-forgot, .auth-switch { margin: 0; font-size: 14px; color: var(--muted); }
+.auth-switch a { color: var(--navy); font-weight: 700; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
 
 /* ---------- Footer ---------- */
 .foot { padding: 28px 0 40px; color: var(--muted); font-size: 14px; }

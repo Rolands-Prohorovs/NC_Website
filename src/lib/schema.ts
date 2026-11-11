@@ -53,6 +53,14 @@ export const siteSchema = z.strictObject({
     need: z.string(),
     cost: z.string(),
     time: z.string(),
+    // Account control in the header. `loggedInAs` takes {nickname}.
+    account: z.strictObject({
+      login: z.string(),
+      register: z.string(),
+      logout: z.string(),
+      menu: z.string(),
+      loggedInAs: z.string(),
+    }),
   }),
 });
 
@@ -179,6 +187,48 @@ export const infoSchema = z.strictObject({
   sources: z.array(link).optional(),
 });
 
+const authPage = z.strictObject({
+  title: z.string(),
+  subtitle: z.string(),
+  submit: z.string(),
+  // Button text while the request is in flight.
+  busy: z.string(),
+  // "No account yet?" + link to the other form.
+  switchPrompt: z.string(),
+  switchLink: z.string(),
+});
+
+// src/content/<city>/<lang>/auth.json — login and register pages (one island each)
+export const authSchema = z.strictObject({
+  nickname: z.string(),
+  password: z.string(),
+  // Rules shown under the fields on the register page only.
+  nicknameHint: z.string(),
+  passwordHint: z.string(),
+  showPassword: z.string(),
+  hidePassword: z.string(),
+  // Shown instead of the form when already logged in; {nickname}.
+  loggedIn: z.string(),
+  continue: z.string(),
+  errors: z.strictObject({
+    // Stable API codes (API.md "Accounts"), plus `network` when there is no answer.
+    nickname_taken: z.string(),
+    invalid_nickname: z.string(),
+    weak_password: z.string(),
+    wrong_credentials: z.string(),
+    too_many_attempts: z.string(),
+    not_logged_in: z.string(),
+    network: z.string(),
+    // Client-side checks only.
+    nicknameRequired: z.string(),
+    passwordRequired: z.string(),
+    passwordTooLong: z.string(),
+  }),
+  // Forgotten password (DECISIONS.md D-open-5, undecided): one line on the login page.
+  login: authPage.extend({ forgot: z.string() }),
+  register: authPage,
+});
+
 export type CityData = z.infer<typeof citySchema>;
 export type City = CityData & { id: string };
 export type CityLink = { id: string; name: string };
@@ -188,5 +238,10 @@ export type SiteCopy = z.infer<typeof siteSchema>;
 export type HomeCopy = z.infer<typeof homeSchema>;
 export type ProgressCopy = z.infer<typeof progressSchema>;
 export type InfoCopy = z.infer<typeof infoSchema>;
+export type AuthCopy = z.infer<typeof authSchema>;
+/** What one auth page island gets: the shared strings plus its own page's. */
+export type AuthPageCopy = Omit<AuthCopy, 'login' | 'register'> & {
+  page: AuthCopy['register'] & { forgot?: string };
+};
 export type TopicLink = z.infer<typeof link> | z.infer<typeof pageLink>;
 export type ShortContent = z.infer<z.ZodObject<typeof short>>;
