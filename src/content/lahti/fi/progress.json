@@ -8,7 +8,40 @@
   "streakHint": "Peräkkäiset päivät, jolloin avasit oppaan",
   "tasksLabel": "Tehtävät",
   "tasksDone": "{done} / {total} tehty",
+  "mandatoryDone": "{done} / {total} pakollista tehty",
   "previewNote": "XP ja putki ovat toistaiseksi esikatselu. Tehtävälistasi tallentuu tälle laitteelle.",
+  "daily": {
+    "title": "Päivittäiset tehtävät",
+    "desc": "Pieniä asioita, jotka kannattaa tehdä joka päivä. Ne nollautuvat keskiyöllä.",
+    "done": "{done}/{total} tänään"
+  },
+  "dailyTasks": {
+    "mail": {
+      "label": "Tarkista posti ja sähköposti",
+      "hint": "Viralliset kirjeet Migriltä, Kelalta, DVV:ltä tai verottajalta"
+    },
+    "applications": {
+      "label": "Tarkista vireillä olevat hakemukset",
+      "hint": "Enter Finland tai OmaKela, jos odotat päätöstä"
+    },
+    "finnish": {
+      "label": "Harjoittele suomea 10 minuuttia",
+      "hint": "Sovellus, podcast tai kaupan kyltit"
+    },
+    "daylight": {
+      "label": "Käy ulkona päivänvalossa",
+      "hint": "Jo 15 minuuttia auttaa pimeinä kuukausina"
+    },
+    "say-hi": {
+      "label": "Juttele jonkun uuden kanssa",
+      "hint": "Opiskelukaveri, naapuri tai kahvilan myyjä"
+    }
+  },
+  "todo": {
+    "title": "Tehtävälista",
+    "desc": "Asiat, jotka hoidetaan kerran. Pakolliset ovat kunkin ryhmän alussa."
+  },
+  "mandatory": "Pakollinen",
   "groups": {
     "before": {
       "title": "Ennen saapumista",

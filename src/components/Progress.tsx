@@ -1,5 +1,5 @@
 import { fmt } from '../lib/pages';
-import { useProgress } from '../lib/progress';
+import { useDaily, useProgress } from '../lib/progress';
 import type { City, ProgressCopy, SiteCopy } from '../lib/schema';
 
 const XP_PER_LEVEL = 100;
@@ -8,10 +8,14 @@ type Props = { city: City; p: ProgressCopy; t: SiteCopy };
 
 export default function Progress({ city, p, t }: Props) {
   const progress = useProgress(city.id, city.tasks, city.stats.xp);
+  const daily = useDaily(city.id, city.dailyTasks);
 
   const level = Math.floor(progress.xp / XP_PER_LEVEL) + 1;
   const intoLevel = progress.xp % XP_PER_LEVEL;
   const tasksPct = progress.total ? (progress.doneCount / progress.total) * 100 : 0;
+  const mandatoryPct = progress.mandatoryTotal
+    ? (progress.mandatoryDone / progress.mandatoryTotal) * 100
+    : 0;
 
   // Streak is a static preview for now (from the JSON). Last 7 days as dots.
   // TODO: compute from real visit dates once the backend exists.
@@ -68,11 +72,64 @@ export default function Progress({ city, p, t }: Props) {
             <span className="meter" aria-hidden="true">
               <i style={{ width: `${tasksPct}%` }} />
             </span>
+            {progress.mandatoryTotal > 0 && (
+              <>
+                <span className="tile-sub tile-mandatory">
+                  {fmt(p.mandatoryDone, {
+                    done: progress.mandatoryDone,
+                    total: progress.mandatoryTotal,
+                  })}
+                </span>
+                <span className="meter meter-mandatory" aria-hidden="true">
+                  <i style={{ width: `${mandatoryPct}%` }} />
+                </span>
+              </>
+            )}
           </div>
         </div>
 
+        {daily.total > 0 && (
+          <section className="task-group daily" aria-labelledby="daily-title">
+            <div className="group-head">
+              <h2 id="daily-title">{p.daily.title}</h2>
+              <span className="group-count">
+                {fmt(p.daily.done, { done: daily.doneCount, total: daily.total })}
+              </span>
+            </div>
+            <p className="block-hint">{p.daily.desc}</p>
+
+            <div className="tasks">
+              {city.dailyTasks.map((task) => {
+                const copy = p.dailyTasks[task.id];
+                return (
+                  <label key={task.id} className="task">
+                    <input
+                      type="checkbox"
+                      checked={daily.done.has(task.id)}
+                      onChange={() => daily.toggle(task.id)}
+                    />
+                    <span className="box" aria-hidden="true" />
+                    <span className="task-text">
+                      <strong>{copy.label}</strong>
+                      <small>{copy.hint}</small>
+                    </span>
+                  </label>
+                );
+              })}
+            </div>
+          </section>
+        )}
+
+        <div className="list-head">
+          <h2>{p.todo.title}</h2>
+          <p className="block-hint">{p.todo.desc}</p>
+        </div>
+
         {groupIds.map((gid) => {
-          const tasks = city.tasks.filter((task) => task.group === gid);
+          // Mandatory tasks first; otherwise keep the order from city.json (sort is stable).
+          const tasks = city.tasks
+            .filter((task) => task.group === gid)
+            .sort((a, b) => Number(b.mandatory) - Number(a.mandatory));
           if (!tasks.length) return null;
           const doneInGroup = tasks.filter((task) => progress.done.has(task.id)).length;
           const g = p.groups[gid];
@@ -80,7 +137,7 @@ export default function Progress({ city, p, t }: Props) {
           return (
             <section key={gid} className="task-group" aria-labelledby={`g-${gid}`}>
               <div className="group-head">
-                <h2 id={`g-${gid}`}>{g.title}</h2>
+                <h3 id={`g-${gid}`}>{g.title}</h3>
                 <span className="group-count">
                   {doneInGroup}/{tasks.length}
                 </span>
@@ -91,7 +148,7 @@ export default function Progress({ city, p, t }: Props) {
                 {tasks.map((task) => {
                   const copy = p.tasks[task.id];
                   return (
-                    <label key={task.id} className="task">
+                    <label key={task.id} className={task.mandatory ? 'task task-mandatory' : 'task'}>
                       <input
                         type="checkbox"
                         checked={progress.done.has(task.id)}
@@ -99,7 +156,10 @@ export default function Progress({ city, p, t }: Props) {
                       />
                       <span className="box" aria-hidden="true" />
                       <span className="task-text">
-                        <strong>{copy.label}</strong>
+                        <span className="task-title">
+                          <strong>{copy.label}</strong>
+                          {task.mandatory && <span className="badge badge-mandatory">{p.mandatory}</span>}
+                        </span>
                         <small>{copy.hint}</small>
                       </span>
                       <span className="task-xp">+{task.xp} {t.xp}</span>

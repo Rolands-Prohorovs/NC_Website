@@ -48,13 +48,16 @@ export async function loadInfo(loc: Locale, page: InfoPageId) {
   return copy;
 }
 
-/** Checks that progress.json has copy for every task and group in city.json. */
+/** Checks that progress.json has copy for every task, daily task and group in city.json. */
 export async function loadProgress(city: City, lang: string) {
   const copy = await load('progress', `${city.id}/${lang}`);
   const file = `src/content/${city.id}/${lang}/progress.json`;
   for (const task of city.tasks) {
     if (!copy.tasks[task.id]) throw new Error(`${file}: no text for task "${task.id}"`);
     if (!copy.groups[task.group]) throw new Error(`${file}: no group "${task.group}"`);
+  }
+  for (const task of city.dailyTasks) {
+    if (!copy.dailyTasks[task.id]) throw new Error(`${file}: no text for daily task "${task.id}"`);
   }
   return copy;
 }

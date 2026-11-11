@@ -250,7 +250,23 @@ button { font-family: inherit; }
 
 .task-group { margin: 32px 0; }
 .group-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
-.group-head h2 { font-family: var(--display); font-size: 22px; margin: 0; color: var(--c); }
+.group-head :is(h2, h3) { font-family: var(--display); font-size: 22px; margin: 0; color: var(--c); }
+
+/* Daily tasks: a tinted panel above the to-do list */
+.daily { max-width: 760px; padding: 16px; border-radius: 18px; background: var(--bgc); }
+.daily .task { min-height: 56px; }
+
+/* Heading of the to-do list; its groups use h3 */
+.list-head { margin-top: 40px; }
+.list-head h2 { font-family: var(--display); font-size: 28px; margin: 0; }
+.list-head .block-hint { margin: 4px 0 0; }
+
+/* Mandatory to-do tasks */
+.task-mandatory { box-shadow: inset 4px 0 0 #b3261e; }
+.task-title { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; }
+.badge-mandatory { background: #fdeceb; color: #b3261e; }
+.tile-mandatory { color: #b3261e; font-weight: 600; }
+.meter-mandatory i { background: #b3261e; }
 .group-count { font-weight: 700; font-size: 14px; color: var(--muted); }
 .task-group .block-hint { margin-top: 2px; margin-bottom: 12px; }
 .tasks { display: grid; gap: 8px; max-width: 760px; }

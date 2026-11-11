@@ -67,6 +67,8 @@ It never needs the text.
   nothing is removed), then the frontend clears localStorage. Imported ticks don't count as
   streak days (we don't know when they happened).
 - Unknown `:city` or `:taskId`: `404 unknown_city` / `404 unknown_task`.
+- Some to-do tasks are `mandatory: true` in `city.json` (D13). That flag is content only: the
+  frontend counts "x/y mandatory done" from `todo.done`, so the API needs no change for it.
 - When every to-do task is done, `todo.badge` becomes `{ "earnedAt": "..." }`. Proposal: the badge
   is kept even if a task is un-ticked later.
 
@@ -96,6 +98,11 @@ It never needs the text.
   "can't un-tick after the day has passed": yesterday's tasks are no longer offered.
 - XP is stored with each completion (the task's XP at that moment), not recalculated from the
   pool, so changing a task's XP later doesn't change anyone's past XP.
+- **Until this API exists (frontend only):** `city.json` has a fixed `dailyTasks` list
+  (`[{ "id": "mail" }, ...]`, no XP, no daily offer), and today's ticks are kept on the device in
+  localStorage `daily:<city>` as `{ "date": "2026-11-20", "done": ["mail", "finnish"] }`. `date` is
+  the device's local day; if it isn't today, nothing counts as done. This is not imported on login:
+  only today's ticks exist and they give no XP.
 - **Q9:** may the user complete all 3, or pick only 1? How are tasks picked (random, no repeats
   within N days)? What happens when the pool runs out?
 

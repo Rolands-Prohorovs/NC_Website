@@ -44,7 +44,8 @@ Goal: the whole site looks like the finished product, on a phone.
 ## Phase C: Nov 19 to Dec 17 (feature freeze) ~40 h
 - [ ] Styling and colours (Miro step 4): final visual design
 - [ ] Progress page logic: streak and a badge when all to-do tasks are done (D9, D11)
-- [ ] Daily tasks (D11): pool of tasks in content (EN + FI), "today's 3" UI, XP. May slip past Dec 17
+- [ ] Daily tasks (D11): pool of tasks in content (EN + FI), "today's 3" UI, XP. May slip past Dec 17. Started 2026-11-08: fixed list of 5 placeholder daily tasks on the Progress page, reset at midnight, stored on the device (no XP yet)
+- [x] Mandatory to-do tasks (D13): badge, mandatory first in each group, "x/y mandatory done" counter
 - [ ] Final task list (incl. ideas from the Rotary meeting), EN + FI
 - [ ] Account UI: register / log in / log out with nickname + password; progress works without logging in (D-open-1)
 - [ ] Connect frontend to Timofei's API (mock -> real), migrate localStorage progress into the account on first login

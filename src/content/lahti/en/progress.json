@@ -8,7 +8,40 @@
   "streakHint": "Days in a row you opened the guide",
   "tasksLabel": "Tasks",
   "tasksDone": "{done} of {total} done",
+  "mandatoryDone": "{done} of {total} mandatory done",
   "previewNote": "XP and streak are a preview for now. Your checklist is saved on this device.",
+  "daily": {
+    "title": "Daily tasks",
+    "desc": "Small things worth doing every day. They reset at midnight.",
+    "done": "{done}/{total} today"
+  },
+  "dailyTasks": {
+    "mail": {
+      "label": "Check your mail and email",
+      "hint": "Official letters from Migri, Kela, DVV or the tax office"
+    },
+    "applications": {
+      "label": "Check your pending applications",
+      "hint": "Enter Finland or OmaKela, if you are waiting for a decision"
+    },
+    "finnish": {
+      "label": "Practise Finnish for 10 minutes",
+      "hint": "An app, a podcast or the signs in a shop"
+    },
+    "daylight": {
+      "label": "Get outside in daylight",
+      "hint": "Even 15 minutes helps in the dark months"
+    },
+    "say-hi": {
+      "label": "Talk to someone new",
+      "hint": "A classmate, a neighbour or the person at the café"
+    }
+  },
+  "todo": {
+    "title": "To do",
+    "desc": "Things to sort out once. Mandatory ones come first in each group."
+  },
+  "mandatory": "Mandatory",
   "groups": {
     "before": {
       "title": "Before you arrive",

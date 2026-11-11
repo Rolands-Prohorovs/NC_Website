@@ -13,87 +13,121 @@
     {
       "id": "documents",
       "group": "before",
-      "xp": 10
+      "xp": 10,
+      "mandatory": true
     },
     {
       "id": "housing",
       "group": "before",
-      "xp": 15
+      "xp": 15,
+      "mandatory": true
     },
     {
       "id": "route",
       "group": "before",
-      "xp": 10
+      "xp": 10,
+      "mandatory": false
     },
     {
       "id": "insurance",
       "group": "before",
-      "xp": 10
+      "xp": 10,
+      "mandatory": true
     },
     {
       "id": "keys",
       "group": "first48",
-      "xp": 15
+      "xp": 15,
+      "mandatory": true
     },
     {
       "id": "sim",
       "group": "first48",
-      "xp": 10
+      "xp": 10,
+      "mandatory": true
     },
     {
       "id": "groceries",
       "group": "first48",
-      "xp": 10
+      "xp": 10,
+      "mandatory": false
     },
     {
       "id": "uni-mail",
       "group": "first48",
-      "xp": 10
+      "xp": 10,
+      "mandatory": true
     },
     {
       "id": "dvv",
       "group": "firstWeeks",
-      "xp": 25
+      "xp": 25,
+      "mandatory": true
     },
     {
       "id": "bank",
       "group": "firstWeeks",
-      "xp": 25
+      "xp": 25,
+      "mandatory": true
     },
     {
       "id": "student-id",
       "group": "firstWeeks",
-      "xp": 20
+      "xp": 20,
+      "mandatory": false
     },
     {
       "id": "campus",
       "group": "firstWeeks",
-      "xp": 15
+      "xp": 15,
+      "mandatory": false
     },
     {
       "id": "tickets",
       "group": "firstWeeks",
-      "xp": 10
+      "xp": 10,
+      "mandatory": false
     },
     {
       "id": "event",
       "group": "settling",
-      "xp": 20
+      "xp": 20,
+      "mandatory": false
     },
     {
       "id": "sauna",
       "group": "settling",
-      "xp": 15
+      "xp": 15,
+      "mandatory": false
     },
     {
       "id": "winter",
       "group": "settling",
-      "xp": 20
+      "xp": 20,
+      "mandatory": false
     },
     {
       "id": "secondhand",
       "group": "settling",
-      "xp": 10
+      "xp": 10,
+      "mandatory": false
+    }
+  ],
+  "dailyTasks": [
+    {
+      "id": "mail"
+    },
+    {
+      "id": "applications"
+    },
+    {
+      "id": "finnish"
+    },
+    {
+      "id": "daylight"
+    },
+    {
+      "id": "say-hi"
     }
   ]
 }

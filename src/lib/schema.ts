@@ -19,7 +19,12 @@ export const citySchema = z.strictObject({
   name: z.string(),
   languages: z.array(z.string()).min(1),
   stats: z.strictObject({ xp: z.number(), streak: z.number(), checklistDays: z.number() }),
-  tasks: z.array(z.strictObject({ id: z.string(), group: z.string(), xp: z.number() })),
+  // To-do list: done once. `mandatory` = legally or practically required for a newcomer.
+  tasks: z.array(
+    z.strictObject({ id: z.string(), group: z.string(), xp: z.number(), mandatory: z.boolean() })
+  ),
+  // Small repeatable tasks whose ticks reset every day at local midnight. May be empty.
+  dailyTasks: z.array(z.strictObject({ id: z.string() })),
 });
 
 // src/content/<city>/<lang>/site.json — strings used on every page
@@ -89,6 +94,8 @@ export const homeSchema = z.strictObject({
   }),
 });
 
+const taskCopy = z.strictObject({ label: z.string(), hint: z.string() });
+
 // src/content/<city>/<lang>/progress.json
 export const progressSchema = z.strictObject({
   title: z.string(),
@@ -100,10 +107,19 @@ export const progressSchema = z.strictObject({
   streakHint: z.string(),
   tasksLabel: z.string(),
   tasksDone: z.string(),
+  // "{done} of {total} mandatory done"
+  mandatoryDone: z.string(),
   previewNote: z.string(),
+  // Daily tasks section; `done` is the counter, e.g. "{done}/{total} today".
+  daily: z.strictObject({ title: z.string(), desc: z.string(), done: z.string() }),
+  dailyTasks: z.record(z.string(), taskCopy),
+  // Heading of the to-do list, above the groups.
+  todo: z.strictObject({ title: z.string(), desc: z.string() }),
+  // Badge text on mandatory to-do tasks.
+  mandatory: z.string(),
   // Group order here is the order shown on the page.
   groups: z.record(z.string(), z.strictObject({ title: z.string(), desc: z.string() })),
-  tasks: z.record(z.string(), z.strictObject({ label: z.string(), hint: z.string() })),
+  tasks: z.record(z.string(), taskCopy),
 });
 
 // Short format (ROADMAP.md "Content format"): the answer in one sentence, then a few
@@ -167,6 +183,7 @@ export type CityData = z.infer<typeof citySchema>;
 export type City = CityData & { id: string };
 export type CityLink = { id: string; name: string };
 export type Task = CityData['tasks'][number];
+export type DailyTask = CityData['dailyTasks'][number];
 export type SiteCopy = z.infer<typeof siteSchema>;
 export type HomeCopy = z.infer<typeof homeSchema>;
 export type ProgressCopy = z.infer<typeof progressSchema>;
