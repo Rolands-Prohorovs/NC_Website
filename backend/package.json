@@ -7,9 +7,13 @@
   },
   "scripts": {
     "dev": "tsx watch --env-file=.env src/server.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "migrate": "tsx --env-file=.env src/migrate.ts"
+    
   },
   "dependencies": {
+    "@fastify/cookie": "^11.1.5",
+    "bcryptjs": "^3.0.3",
     "fastify": "^5.12.8",
     "pg": "^8.23.1"
   },
