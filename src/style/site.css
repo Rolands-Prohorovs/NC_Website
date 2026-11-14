@@ -257,10 +257,6 @@ button.menu-link { width: 100%; border: 0; background: none; font: inherit; text
 .source-btn::after { content: '↗'; margin-left: 6px; }
 .source-btn:hover { filter: brightness(1.15); }
 
-.topic-empty {
-  display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 56px; padding: 14px 18px;
-  background: transparent; border: 1px dashed color-mix(in srgb, var(--c) 40%, transparent); color: var(--muted); font-weight: 600;
-}
 .badge { flex: none; padding: 3px 10px; border-radius: 999px; background: var(--bgc); color: var(--c); font-size: 12px; font-weight: 700; }
 
 /* ---------- Progress page ---------- */

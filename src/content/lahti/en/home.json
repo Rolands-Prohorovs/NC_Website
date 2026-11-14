@@ -38,8 +38,8 @@
     },
     "planning": {
       "title": "Get ready before you fly",
-      "desc": "Work through the short pre-arrival checklist: documents, housing, your route from the airport and insurance.",
-      "cta": "Open the checklist",
+      "desc": "Work through the short pre-arrival list: documents, housing and insurance.",
+      "cta": "Open the to-do list",
       "page": "progress"
     },
     "arrived": {

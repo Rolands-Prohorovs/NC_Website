@@ -38,7 +38,7 @@
     },
     "planning": {
       "title": "Valmistaudu ennen lentoa",
-      "desc": "Käy läpi lyhyt saapumista edeltävä lista: asiakirjat, asuminen, reitti lentokentältä ja vakuutus.",
+      "desc": "Käy läpi lyhyt saapumista edeltävä lista: asiakirjat, asuminen ja vakuutus.",
       "cta": "Avaa tehtävälista",
       "page": "progress"
     },

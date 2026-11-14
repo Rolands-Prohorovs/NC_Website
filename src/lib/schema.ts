@@ -42,8 +42,6 @@ export const siteSchema = z.strictObject({
     language: z.string(),
     city: z.string(),
     streakDays: z.string(),
-    comingSoon: z.string(),
-    comingSoonHint: z.string(),
     jumpTo: z.string(),
     sources: z.string(),
     officialSource: z.string(),
@@ -172,7 +170,11 @@ const topic = z
   .refine(notStepsAndFacts, stepsOrFacts)
   .refine((t) => !t.source === !t.checked, { message: 'source and checked go together' })
   // Every short-format topic needs an official source (DECISIONS.md D10).
-  .refine((t) => !t.summary || t.source, { message: 'a topic with a summary needs a source' });
+  .refine((t) => !t.summary || t.source, { message: 'a topic with a summary needs a source' })
+  // No empty placeholders: a topic that isn't written yet stays out of the file.
+  .refine((t) => t.summary || t.body || t.sections?.length, {
+    message: 'a topic needs a summary, body or sections',
+  });
 
 // src/content/<city>/<lang>/{students,living,meet}.json
 export const infoSchema = z.strictObject({
@@ -183,7 +185,6 @@ export const infoSchema = z.strictObject({
       id: z.string(),
       title: z.string(),
       intro: z.string().optional(),
-      // A topic with no summary, body or sections shows a "coming soon" placeholder.
       topics: z.array(topic),
     })
   ),

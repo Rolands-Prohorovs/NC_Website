@@ -31,25 +31,16 @@
         {
           "label": "Rotary Club Lahti International",
           "body": "RCLI welcomes international students and newcomers to Lahti. We organise events and share local knowledge, and members are happy to help you feel at home. Come to a meeting or an event and say hello."
-        },
-        {
-          "label": "Hobby and sports clubs"
         }
       ]
     },
     {
       "id": "events",
-      "title": "Events and apps",
+      "title": "Events",
       "topics": [
         {
           "label": "Events in Lahti",
           "body": "Check local event calendars and the city's websites for concerts, festivals and community activities. Trying a new hobby is one of the best ways to make friends."
-        },
-        {
-          "label": "Apps and groups to join"
-        },
-        {
-          "label": "Weekly meetups"
         }
       ]
     }

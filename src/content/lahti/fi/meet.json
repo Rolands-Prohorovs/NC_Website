@@ -31,25 +31,16 @@
         {
           "label": "Rotary Club Lahti International",
           "body": "RCLI toivottaa kansainväliset opiskelijat ja Lahteen muuttaneet tervetulleiksi. Järjestämme tapahtumia ja jaamme paikallista tietoa, ja jäsenemme auttavat mielellään sinua tuntemaan olosi kotoisaksi. Tule kokoukseen tai tapahtumaan sanomaan hei."
-        },
-        {
-          "label": "Harrastus- ja urheiluseurat"
         }
       ]
     },
     {
       "id": "events",
-      "title": "Tapahtumat ja sovellukset",
+      "title": "Tapahtumat",
       "topics": [
         {
           "label": "Tapahtumat Lahdessa",
           "body": "Tarkista paikalliset tapahtumakalenterit ja kaupungin verkkosivut konserttien, festivaalien ja yhteisötoiminnan löytämiseksi. Uuden harrastuksen aloittaminen on yksi parhaista tavoista saada ystäviä."
-        },
-        {
-          "label": "Sovellukset ja ryhmät, joihin liittyä"
-        },
-        {
-          "label": "Viikoittaiset tapaamiset"
         }
       ]
     }

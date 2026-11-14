@@ -25,9 +25,6 @@ const { page, copy, ui, loc } = Astro.props;
 const dateFormat = new Intl.DateTimeFormat(loc.lang, { day: 'numeric', month: 'long', year: 'numeric' });
 /** "2026-11-03" -> "3 November 2026" / "3. marraskuuta 2026". */
 const showDate = (iso: string) => dateFormat.format(new Date(`${iso}T00:00:00Z`));
-
-type Topic = InfoCopy['sections'][number]['topics'][number];
-const hasContent = (t: Topic) => !!(t.summary || t.body || t.sections?.length);
 ---
 
 <section class="hero hero-compact">
@@ -59,39 +56,30 @@ const hasContent = (t: Topic) => !!(t.summary || t.body || t.sections?.length);
         {s.intro && <p class="block-hint">{s.intro}</p>}
 
         <div class="topics">
-          {s.topics.map((topic) =>
-            hasContent(topic) ? (
-              <details class="topic" id={topic.id}>
-                <summary>{topic.label}</summary>
-                <div class="topic-body">
-                  <TopicContent content={topic} ui={ui} loc={loc} />
+          {s.topics.map((topic) => (
+            <details class="topic" id={topic.id}>
+              <summary>{topic.label}</summary>
+              <div class="topic-body">
+                <TopicContent content={topic} ui={ui} loc={loc} />
 
-                  {topic.sections?.map((sub) => (
-                    <div class="topic-sub">
-                      <h3>{sub.label}</h3>
-                      <TopicContent content={sub} ui={ui} loc={loc} />
-                    </div>
-                  ))}
+                {topic.sections?.map((sub) => (
+                  <div class="topic-sub">
+                    <h3>{sub.label}</h3>
+                    <TopicContent content={sub} ui={ui} loc={loc} />
+                  </div>
+                ))}
 
-                  {topic.source && topic.checked && (
-                    <p class="topic-source">
-                      <a class="source-btn" href={topic.source.url} target="_blank" rel="noreferrer">
-                        {ui.officialSource}: {topic.source.label}
-                      </a>
-                      <span>{fmt(ui.checked, { date: showDate(topic.checked) })}</span>
-                    </p>
-                  )}
-                </div>
-              </details>
-            ) : (
-              <div class="topic topic-empty" id={topic.id}>
-                <span>{topic.label}</span>
-                <span class="badge" title={ui.comingSoonHint}>
-                  {ui.comingSoon}
-                </span>
+                {topic.source && topic.checked && (
+                  <p class="topic-source">
+                    <a class="source-btn" href={topic.source.url} target="_blank" rel="noreferrer">
+                      {ui.officialSource}: {topic.source.label}
+                    </a>
+                    <span>{fmt(ui.checked, { date: showDate(topic.checked) })}</span>
+                  </p>
+                )}
               </div>
-            )
-          )}
+            </details>
+          ))}
         </div>
       </section>
     ))
