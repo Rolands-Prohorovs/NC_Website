@@ -12,7 +12,7 @@ import type { City, Task } from './schema';
 // TODO: replace with API calls once the backend (PostgreSQL) exists.
 //
 // State lives in this module rather than in a component, so every island on the
-// page (header pills, home checklist, progress page) sees the same ticks.
+// page (header pills, home dashboard, progress page) sees the same ticks.
 
 const EMPTY: ReadonlySet<string> = new Set();
 const listeners = new Set<() => void>();

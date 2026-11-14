@@ -38,7 +38,9 @@ const cities = await getCityLinks();
 
 // Only the current page's content is loaded and sent to the browser.
 const home = page === 'home' ? await load('home', key) : undefined;
-const progress = page === 'progress' ? await loadProgress(city, loc.lang) : undefined;
+// Home shows a small dashboard (tiles, daily tasks, next to-do task), so it gets the progress copy too.
+const progress =
+  page === 'progress' || page === 'home' ? await loadProgress(city, loc.lang) : undefined;
 const info = isInfoPage(page) ? await loadInfo(loc, page) : undefined;
 const auth = isAuthPage(page) ? await loadAuth(loc, page) : undefined;
 
@@ -49,8 +51,8 @@ const title =
 ---
 
 <Site title={title} city={city} cities={cities} current={page} loc={loc} t={t}>
-  {home && <Home client:load city={city} loc={loc} h={home} />}
-  {progress && <Progress client:load city={city} loc={loc} p={progress} t={t} />}
+  {home && progress && <Home client:load city={city} loc={loc} h={home} p={progress} t={t} />}
+  {page === 'progress' && progress && <Progress client:load city={city} loc={loc} p={progress} t={t} />}
   {info && isInfoPage(page) && <InfoPage page={page} copy={info} ui={t.ui} loc={loc} />}
   {auth && isAuthPage(page) && <AuthForm client:load mode={page} cityId={city.id} loc={loc} a={auth} />}
 </Site>

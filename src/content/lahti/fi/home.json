@@ -2,10 +2,19 @@
   "welcome": "Tervetuloa Lahteen.",
   "tagline": "Et ole yksin.",
   "subtitle": "Ystävällinen opas kansainvälisille opiskelijoille, Rotary Club Lahti Internationalin tekemä.",
-  "checklistTitle": "{days} päivän tarkistuslista · {done}/{total} tehty",
-  "checklistHint": "Avaa tehtävälistasi",
+  "dashboard": {
+    "statsLabel": "Edistymisesi tähän mennessä",
+    "xpEmpty": "tee ensimmäinen tehtäväsi, niin saat XP:tä",
+    "dailyTitle": "Päivän tehtävät",
+    "dailyDesc": "Pieniä asioita tälle päivälle, helposta vaikeaan. Uudet tehtävät tulevat keskiyöllä.",
+    "todoTitle": "Tehtävälistasi",
+    "todoEmpty": "Et ole vielä merkinnyt mitään tehdyksi. Tästä on hyvä aloittaa:",
+    "todoNext": "Seuraavaksi:",
+    "todoAllDone": "Kaikki tehtävälistan asiat on tehty. Hienoa!",
+    "todoCta": "Avaa koko lista"
+  },
   "aboutTitle": "Mikä tämä sivusto on?",
-  "about": "Uuteen maahan muuttaessa mieleen nousee paljon pieniä kysymyksiä. Tähän oppaaseen on koottu vastaukset yhteen paikkaan: miten tänne tullaan, miten asettua, miten opiskelu toimii ja miten löydät oman porukkasi. Käytä opasta puhelimellasi, yksi kysymys kerrallaan.",
+  "about": "Uuteen maahan muuttaessa mieleen nousee paljon pieniä kysymyksiä. Tämä opas vastaa niihin yksi kerrallaan, kätevästi puhelimellasi.",
   "whereTitle": "Missä olet nyt?",
   "whereHint": "Ohjaamme sinut sopivimman ensimmäisen askeleen luo. Voit vaihtaa valintaa milloin tahansa.",
   "stages": [
@@ -60,7 +69,7 @@
   "pages": {
     "progress": {
       "title": "Edistyminen",
-      "desc": "Tehtävälista, XP ja putki",
+      "desc": "Tehtävälista, XP, putki ja liiga",
       "icon": "📋",
       "tone": "purple"
     },

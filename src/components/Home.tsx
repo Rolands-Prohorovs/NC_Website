@@ -1,12 +1,22 @@
 import { useEffect, useState } from 'react';
 import { fmt, pageUrl, type Locale } from '../lib/pages';
 import { useProgress } from '../lib/progress';
-import type { City, HomeCopy } from '../lib/schema';
+import type { City, HomeCopy, ProgressCopy, SiteCopy } from '../lib/schema';
+import DailyTasks from './DailyTasks';
+import StatTiles from './StatTiles';
 
-type Props = { city: City; loc: Locale; h: HomeCopy };
+/** `p` and `t` are needed for the dashboard: task texts, tile labels and the XP unit. */
+type Props = { city: City; loc: Locale; h: HomeCopy; p: ProgressCopy; t: SiteCopy };
 
-export default function Home({ city, loc, h }: Props) {
+/**
+ * Home: a welcome for first-timers and a small dashboard for returning users.
+ * Order: stats, today's daily tasks + the to-do list, the stage picker with the best first
+ * step, the explore cards, and a short "what is this" at the bottom.
+ * Ticks use the same stores as the Progress page, so the two stay in sync.
+ */
+export default function Home({ city, loc, h, p, t }: Props) {
   const progress = useProgress(city.id, city.tasks, city.stats.xp);
+  const d = h.dashboard;
 
   // Where the user is in their journey. Stored on this device for now.
   // TODO: store in the database once accounts exist.
@@ -34,43 +44,98 @@ export default function Home({ city, loc, h }: Props) {
   const start = h.starts[stage ?? 'none'] ?? h.starts.none;
   const startHref = pageUrl(loc, start.page, start.hash);
 
-  const pct = progress.total ? (progress.doneCount / progress.total) * 100 : 0;
-  const checklistTitle = fmt(h.checklistTitle, {
-    days: city.stats.checklistDays,
-    done: progress.doneCount,
-    total: progress.total,
-  });
+  // The next to-do task, in the order the Progress page lists them (by group).
+  const next = Object.keys(p.groups)
+    .flatMap((group) => city.tasks.filter((task) => task.group === group))
+    .find((task) => !progress.done.has(task.id));
+  const todoPct = progress.total ? (progress.doneCount / progress.total) * 100 : 0;
+  const todoText = fmt(p.tasksDone, { done: progress.doneCount, total: progress.total });
 
   return (
     <>
-      <section className="hero">
+      <section className="hero hero-home">
         <div className="inner">
           <h1>
             {h.welcome}
             <span>{h.tagline}</span>
           </h1>
           <p>{h.subtitle}</p>
-
-          <a className="checklist" href={pageUrl(loc, 'progress')}>
-            <span className="check-icon" aria-hidden="true">☑</span>
-            <span className="check-text">
-              <strong>{checklistTitle}</strong>
-              <small>{h.checklistHint}</small>
-            </span>
-            <span
-              className="bar"
-              role="progressbar"
-              aria-valuemin={0}
-              aria-valuemax={progress.total}
-              aria-valuenow={progress.doneCount}
-            >
-              <i style={{ width: `${pct}%` }} />
-            </span>
-          </a>
         </div>
       </section>
 
       <main className="inner">
+        <div data-tone="purple">
+          <StatTiles
+            cityId={city.id}
+            progress={progress}
+            p={p}
+            t={t}
+            compact
+            label={d.statsLabel}
+            xpEmptyHint={d.xpEmpty}
+          />
+
+          <div className="dash">
+            <DailyTasks
+              city={city}
+              lang={loc.lang}
+              copy={p.daily}
+              title={d.dailyTitle}
+              desc={d.dailyDesc}
+              xpLabel={t.xp}
+              headingId="daily-title"
+            />
+
+            <section className="task-group panel" aria-labelledby="todo-title">
+              <div className="group-head">
+                <h2 id="todo-title">{d.todoTitle}</h2>
+                <span className="group-count">
+                  {progress.doneCount}/{progress.total}
+                </span>
+              </div>
+              <span
+                className="meter"
+                role="progressbar"
+                aria-label={todoText}
+                aria-valuemin={0}
+                aria-valuemax={progress.total}
+                aria-valuenow={progress.doneCount}
+              >
+                <i style={{ width: `${todoPct}%` }} />
+              </span>
+
+              {next ? (
+                <>
+                  <p className="panel-hint">{progress.doneCount === 0 ? d.todoEmpty : d.todoNext}</p>
+                  <label className="task">
+                    <input
+                      type="checkbox"
+                      checked={false}
+                      onChange={() => progress.toggle(next.id)}
+                    />
+                    <span className="box" aria-hidden="true" />
+                    <span className="task-text">
+                      <strong>{p.tasks[next.id].label}</strong>
+                      <small>{p.tasks[next.id].hint}</small>
+                    </span>
+                    <span className="task-xp">
+                      +{next.xp} {t.xp}
+                    </span>
+                  </label>
+                </>
+              ) : (
+                <p className="panel-done">
+                  <span aria-hidden="true">🎉</span> {d.todoAllDone}
+                </p>
+              )}
+
+              <a className="btn btn-primary" href={pageUrl(loc, 'progress')}>
+                {d.todoCta}
+              </a>
+            </section>
+          </div>
+        </div>
+
         <section className="block" aria-labelledby="where-title">
           <h2 id="where-title" className="block-title">{h.whereTitle}</h2>
           <p className="block-hint">{h.whereHint}</p>
@@ -101,25 +166,25 @@ export default function Home({ city, loc, h }: Props) {
           </div>
         </section>
 
-        <section className="block about" aria-labelledby="about-title">
-          <h2 id="about-title" className="block-title">{h.aboutTitle}</h2>
-          <p>{h.about}</p>
-        </section>
-
         <section className="block" aria-labelledby="explore-title">
           <h2 id="explore-title" className="block-title">{h.exploreTitle}</h2>
           <div className="grid">
             {(Object.keys(h.pages) as (keyof typeof h.pages)[]).map((id) => {
-              const p = h.pages[id];
+              const card = h.pages[id];
               return (
-                <a key={id} className="card" data-tone={p.tone} href={pageUrl(loc, id)}>
-                  <span className="icon" aria-hidden="true">{p.icon}</span>
-                  <h3>{p.title}</h3>
-                  <p>{p.desc}</p>
+                <a key={id} className="card" data-tone={card.tone} href={pageUrl(loc, id)}>
+                  <span className="icon" aria-hidden="true">{card.icon}</span>
+                  <h3>{card.title}</h3>
+                  <p>{card.desc}</p>
                 </a>
               );
             })}
           </div>
+        </section>
+
+        <section className="block about" aria-labelledby="about-title">
+          <h2 id="about-title" className="block-title">{h.aboutTitle}</h2>
+          <p>{h.about}</p>
         </section>
       </main>
     </>

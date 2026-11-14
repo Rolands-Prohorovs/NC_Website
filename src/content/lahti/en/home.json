@@ -2,10 +2,19 @@
   "welcome": "Welcome to Lahti.",
   "tagline": "You are not alone.",
   "subtitle": "A friendly guide for international students, made by Rotary Club Lahti International.",
-  "checklistTitle": "{days}-day checklist · {done}/{total} done",
-  "checklistHint": "Open your task list",
+  "dashboard": {
+    "statsLabel": "Your progress so far",
+    "xpEmpty": "tick your first task to earn XP",
+    "dailyTitle": "Today’s daily tasks",
+    "dailyDesc": "Small things for today, from easy to hard. New ones arrive at midnight.",
+    "todoTitle": "Your to-do list",
+    "todoEmpty": "Nothing ticked yet. A good one to start with:",
+    "todoNext": "Next up:",
+    "todoAllDone": "Everything on your to-do list is done. Well done!",
+    "todoCta": "Open the full list"
+  },
   "aboutTitle": "What is this website?",
-  "about": "Moving to a new country comes with a lot of small questions. This guide collects the answers in one place: how to get here, how to get set up, how studying works, and how to find your people. Use it on your phone, one question at a time.",
+  "about": "Moving to a new country comes with a lot of small questions. This guide answers them one at a time, right on your phone.",
   "whereTitle": "Where are you right now?",
   "whereHint": "We will point you to the best first step. You can change this any time.",
   "stages": [
@@ -60,7 +69,7 @@
   "pages": {
     "progress": {
       "title": "Progress",
-      "desc": "Your checklist, XP and streak",
+      "desc": "Your to-do list, XP, streak and league",
       "icon": "📋",
       "tone": "purple"
     },

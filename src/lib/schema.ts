@@ -27,7 +27,8 @@ export const citySchema = z.strictObject({
   // The Rotary club's own website; the header logo links to it.
   clubUrl: z.url(),
   languages: z.array(z.string()).min(1),
-  stats: z.strictObject({ xp: z.number(), checklistDays: z.number() }),
+  // `xp` is the XP every user starts with (0).
+  stats: z.strictObject({ xp: z.number() }),
   // To-do list: only things nearly every newcomer has to do (DECISIONS.md D15). Done once.
   tasks: z.array(z.strictObject({ id: z.string(), group: z.string(), xp: z.number() })),
   // Daily tasks (DECISIONS.md D16): the XP of each tier, and how many tasks of each tier are
@@ -104,8 +105,22 @@ export const homeSchema = z.strictObject({
   welcome: z.string(),
   tagline: z.string(),
   subtitle: z.string(),
-  checklistTitle: z.string(),
-  checklistHint: z.string(),
+  // The dashboard at the top of Home: stats row, today's daily tasks, the to-do list card.
+  // Tile labels and task texts come from progress.json; these are Home's own strings.
+  dashboard: z.strictObject({
+    // Accessible name of the stats row.
+    statsLabel: z.string(),
+    // XP tile at 0 XP, after "Level 1 · ".
+    xpEmpty: z.string(),
+    dailyTitle: z.string(),
+    dailyDesc: z.string(),
+    todoTitle: z.string(),
+    // Line above the next task: nothing ticked yet / some ticked. `todoAllDone` replaces both.
+    todoEmpty: z.string(),
+    todoNext: z.string(),
+    todoAllDone: z.string(),
+    todoCta: z.string(),
+  }),
   aboutTitle: z.string(),
   about: z.string(),
   whereTitle: z.string(),

@@ -1,11 +1,10 @@
 import { useAuth } from '../lib/auth';
-import { levelOf } from '../lib/level';
 import { useLeague } from '../lib/league';
 import { fmt, pageUrl, type Locale } from '../lib/pages';
 import { useProgress } from '../lib/progress';
 import type { City, ProgressCopy, SiteCopy } from '../lib/schema';
-import { useStreak } from '../lib/streak';
 import DailyTasks from './DailyTasks';
+import StatTiles from './StatTiles';
 
 const MEDALS = ['🥇', '🥈', '🥉'];
 
@@ -21,13 +20,6 @@ export default function Progress({ city, loc, p, t }: Props) {
   );
   const loginUrl = `${pageUrl(loc, 'login')}?next=${encodeURIComponent(pageUrl(loc, 'progress'))}`;
 
-  const level = levelOf(progress.xp);
-  const tasksPct = progress.total ? (progress.doneCount / progress.total) * 100 : 0;
-
-  // Last 7 days as dots, assuming the streak runs up to today.
-  const streak = useStreak(city.id);
-  const week = Array.from({ length: 7 }, (_, i) => i >= 7 - Math.min(streak, 7));
-
   // Group tasks in the order groups appear in the copy.
   const groupIds = Object.keys(p.groups);
 
@@ -41,57 +33,7 @@ export default function Progress({ city, loc, p, t }: Props) {
       </section>
 
       <main className="inner page" data-tone="purple">
-        <div className="stats">
-          <div className="tile tile-xp">
-            <span className="tile-label">{p.xpLabel}</span>
-            <strong className="tile-big">
-              {progress.xp} <small>{t.xp}</small>
-            </strong>
-            <span className="tile-sub">
-              {fmt(p.level, { n: level.level })} · {fmt(p.toNext, { n: level.toNext })}
-            </span>
-            <span className="meter" aria-hidden="true">
-              <i style={{ width: `${level.pct}%` }} />
-            </span>
-          </div>
-
-          <div className="tile">
-            <span className="tile-label">{p.streakLabel}</span>
-            {streak > 0 ? (
-              <>
-                <strong className="tile-big">🔥 {streak}</strong>
-                <span className="dots" role="img" aria-label={fmt(t.ui.streakDays, { n: streak })}>
-                  {week.map((on, i) => (
-                    <i key={i} className={on ? 'on' : ''} />
-                  ))}
-                </span>
-                <span className="tile-sub">{p.streakHint}</span>
-              </>
-            ) : (
-              <>
-                {/* No streak yet: an invitation, not a dead 0 and a row of empty dots. */}
-                <strong className="tile-big tile-idle" aria-hidden="true">
-                  🔥
-                </strong>
-                <span className="tile-sub">{t.ui.streakStart}</span>
-              </>
-            )}
-          </div>
-
-          <div className="tile">
-            <span className="tile-label">{p.tasksLabel}</span>
-            <strong className="tile-big">
-              {progress.doneCount}
-              <small> / {progress.total}</small>
-            </strong>
-            <span className="tile-sub">
-              {fmt(p.tasksDone, { done: progress.doneCount, total: progress.total })}
-            </span>
-            <span className="meter" aria-hidden="true">
-              <i style={{ width: `${tasksPct}%` }} />
-            </span>
-          </div>
-        </div>
+        <StatTiles cityId={city.id} progress={progress} p={p} t={t} />
 
         <DailyTasks
           city={city}
