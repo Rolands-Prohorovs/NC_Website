@@ -15,6 +15,7 @@
     "language": "Language",
     "city": "City",
     "streakDays": "{n}-day streak",
+    "streakStart": "Complete a task today to start your streak",
     "jumpTo": "Jump to section",
     "sources": "Sources",
     "officialSource": "Official source",

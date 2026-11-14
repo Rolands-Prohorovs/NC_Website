@@ -5,7 +5,7 @@
   "level": "Taso {n}",
   "toNext": "{n} XP seuraavaan tasoon",
   "streakLabel": "Putki",
-  "streakHint": "Peräkkäiset päivät, jolloin avasit oppaan",
+  "streakHint": "Peräkkäiset päivät, joina teit vähintään yhden tehtävän",
   "tasksLabel": "Tehtävät",
   "tasksDone": "{done} / {total} tehty",
   "daily": {

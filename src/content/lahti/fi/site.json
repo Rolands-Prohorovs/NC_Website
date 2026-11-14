@@ -15,6 +15,7 @@
     "language": "Kieli",
     "city": "Kaupunki",
     "streakDays": "{n} päivän putki",
+    "streakStart": "Tee tänään yksi tehtävä, niin putkesi alkaa",
     "jumpTo": "Siirry osioon",
     "sources": "Lähteet",
     "officialSource": "Virallinen lähde",

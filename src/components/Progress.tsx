@@ -3,6 +3,7 @@ import { useLeague } from '../lib/league';
 import { fmt, pageUrl, type Locale } from '../lib/pages';
 import { useDaily, useProgress } from '../lib/progress';
 import type { City, ProgressCopy, SiteCopy } from '../lib/schema';
+import { useStreak } from '../lib/streak';
 
 const XP_PER_LEVEL = 100;
 
@@ -25,9 +26,8 @@ export default function Progress({ city, loc, p, t }: Props) {
   const intoLevel = progress.xp % XP_PER_LEVEL;
   const tasksPct = progress.total ? (progress.doneCount / progress.total) * 100 : 0;
 
-  // Streak is a static preview for now (from the JSON). Last 7 days as dots.
-  // TODO: compute from real visit dates once the backend exists.
-  const streak = city.stats.streak;
+  // Last 7 days as dots, assuming the streak runs up to today.
+  const streak = useStreak(city.id);
   const week = Array.from({ length: 7 }, (_, i) => i >= 7 - Math.min(streak, 7));
 
   // Group tasks in the order groups appear in the copy.
@@ -59,13 +59,25 @@ export default function Progress({ city, loc, p, t }: Props) {
 
           <div className="tile">
             <span className="tile-label">{p.streakLabel}</span>
-            <strong className="tile-big">🔥 {streak}</strong>
-            <span className="dots" role="img" aria-label={fmt(t.ui.streakDays, { n: streak })}>
-              {week.map((on, i) => (
-                <i key={i} className={on ? 'on' : ''} />
-              ))}
-            </span>
-            <span className="tile-sub">{p.streakHint}</span>
+            {streak > 0 ? (
+              <>
+                <strong className="tile-big">🔥 {streak}</strong>
+                <span className="dots" role="img" aria-label={fmt(t.ui.streakDays, { n: streak })}>
+                  {week.map((on, i) => (
+                    <i key={i} className={on ? 'on' : ''} />
+                  ))}
+                </span>
+                <span className="tile-sub">{p.streakHint}</span>
+              </>
+            ) : (
+              <>
+                {/* No streak yet: an invitation, not a dead 0 and a row of empty dots. */}
+                <strong className="tile-big tile-idle" aria-hidden="true">
+                  🔥
+                </strong>
+                <span className="tile-sub">{t.ui.streakStart}</span>
+              </>
+            )}
           </div>
 
           <div className="tile">

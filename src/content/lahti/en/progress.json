@@ -5,7 +5,7 @@
   "level": "Level {n}",
   "toNext": "{n} XP to the next level",
   "streakLabel": "Streak",
-  "streakHint": "Days in a row you opened the guide",
+  "streakHint": "Days in a row with at least one task done",
   "tasksLabel": "Tasks",
   "tasksDone": "{done} of {total} done",
   "daily": {

@@ -20,7 +20,7 @@ export const citySchema = z.strictObject({
   // The Rotary club's own website; the header logo links to it.
   clubUrl: z.url(),
   languages: z.array(z.string()).min(1),
-  stats: z.strictObject({ xp: z.number(), streak: z.number(), checklistDays: z.number() }),
+  stats: z.strictObject({ xp: z.number(), checklistDays: z.number() }),
   // To-do list: only things nearly every newcomer has to do (DECISIONS.md D15). Done once.
   tasks: z.array(z.strictObject({ id: z.string(), group: z.string(), xp: z.number() })),
   // Small repeatable tasks whose ticks reset every day at local midnight. May be empty.
@@ -45,7 +45,9 @@ export const siteSchema = z.strictObject({
     closeMenu: z.string(),
     language: z.string(),
     city: z.string(),
+    // `streakDays` takes {n}; `streakStart` is shown instead while the streak is 0.
     streakDays: z.string(),
+    streakStart: z.string(),
     jumpTo: z.string(),
     sources: z.string(),
     officialSource: z.string(),

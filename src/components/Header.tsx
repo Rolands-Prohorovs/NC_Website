@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type FocusEvent } from 'react';
 import { useAuth } from '../lib/auth';
 import { fmt, isAuthPage, pageUrl, type Locale, type NavPageId, type PageId } from '../lib/pages';
 import { useProgress } from '../lib/progress';
+import { useStreak } from '../lib/streak';
 import type { City, CityLink, SiteCopy } from '../lib/schema';
 
 const NAV: { id: NavPageId; icon: string }[] = [
@@ -44,7 +45,9 @@ export default function Header({ city, cities, current, loc, t }: Props) {
   const toggleRef = useRef<HTMLButtonElement>(null);
 
   const close = () => setOpen(false);
-  const streak = fmt(t.ui.streakDays, { n: city.stats.streak });
+  const streak = useStreak(city.id);
+  // With no streak yet, invite the user to start one instead of announcing "0 days".
+  const streakText = streak > 0 ? fmt(t.ui.streakDays, { n: streak }) : t.ui.streakStart;
 
   const logout = async () => {
     focusLoginAfterLogout.current = true;
@@ -115,8 +118,13 @@ export default function Header({ city, cities, current, loc, t }: Props) {
             <a className="pill pill-xp" href={url('progress')}>
               🌱 {progress.xp} {t.xp}
             </a>
-            <a className="pill pill-streak" href={url('progress')} title={streak}>
-              🔥 {city.stats.streak}
+            <a
+              className="pill pill-streak"
+              href={url('progress')}
+              title={streakText}
+              aria-label={streakText}
+            >
+              🔥 {streak}
             </a>
 
             <div className="langs" role="group" aria-label={t.ui.language}>
@@ -291,7 +299,7 @@ export default function Header({ city, cities, current, loc, t }: Props) {
               <span>
                 🌱 {progress.xp} {t.xp}
               </span>
-              <span>🔥 {streak}</span>
+              <span>🔥 {streakText}</span>
             </div>
           </nav>
         </div>
