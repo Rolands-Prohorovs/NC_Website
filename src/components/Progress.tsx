@@ -146,8 +146,9 @@ export default function Progress({ city, loc, p, t }: Props) {
           );
         })}
 
+        {/* One card: heading, rows, and the login line or empty state all inside it. */}
         <section className="league" aria-labelledby="league-title">
-          <div className="list-head">
+          <div className="league-head">
             <h2 id="league-title">{p.league.title}</h2>
             <p className="block-hint">{p.league.desc}</p>
           </div>
