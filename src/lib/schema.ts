@@ -17,6 +17,8 @@ const pageLink = z.strictObject({
 // src/content/<city>/city.json
 export const citySchema = z.strictObject({
   name: z.string(),
+  // The Rotary club's own website; the header logo links to it.
+  clubUrl: z.url(),
   languages: z.array(z.string()).min(1),
   stats: z.strictObject({ xp: z.number(), streak: z.number(), checklistDays: z.number() }),
   // To-do list: only things nearly every newcomer has to do (DECISIONS.md D15). Done once.
@@ -28,6 +30,8 @@ export const citySchema = z.strictObject({
 // src/content/<city>/<lang>/site.json — strings used on every page
 export const siteSchema = z.strictObject({
   club: z.string(),
+  // Accessible name of the header logo link: says where it goes and that it opens a new tab.
+  clubLink: z.string(),
   xp: z.string(),
   ui: z.strictObject({
     nav: z.strictObject({

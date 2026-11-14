@@ -87,8 +87,16 @@ export default function Header({ city, cities, current, loc, t }: Props) {
     <>
       <header className="top">
         <div className="inner top-inner">
-          <a className="brand" href={url('home')}>
-            <img src="/rotary-logo.png" alt={t.club} width="335" height="82" />
+          {/* The logo goes to the club's own site; Home is the first link in the nav. */}
+          <a
+            className="brand"
+            href={city.clubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={t.clubLink}
+            title={t.clubLink}
+          >
+            <img src="/rotary-logo.png" alt="" width="335" height="82" />
           </a>
 
           <nav className="topbar" aria-label="Main">
