@@ -1,52 +1,271 @@
 {
   "title": "Opiskelijat",
-  "subtitle": "Opiskelu LUT:ssa tai LAB:ssa: minne mennä, keneltä kysyä ja mitä kampuksella on.",
+  "subtitle": "Opiskelu LUTissa tai LABissa Lahdessa: ensimmäiset askeleet, elämä kampuksella ja keneltä kysyä.",
   "sections": [
     {
-      "id": "start",
-      "title": "Mistä aloittaa",
+      "id": "first-weeks",
+      "title": "Ensimmäiset viikot",
       "topics": [
         {
-          "label": "LUT ja LAB Lahdessa",
-          "body": "Lahden kaksi keskeistä korkeakoulua ovat LUT-yliopisto ja LAB-ammattikorkeakoulu. Molemmilla on orientaatio lukukauden alussa, joten seuraa sähköpostiasi ja osallistu perehdytystilaisuuksiin. Opiskelijapalvelut ovat paras ensimmäinen yhteyspiste, jos jokin on epäselvää."
+          "id": "campus",
+          "label": "LUT ja LAB: yhteinen kampus",
+          "summary": "LUT-yliopisto ja LAB-ammattikorkeakoulu toimivat Lahdessa samalla kampuksella, noin 3 km keskustasta. Myös IT-tunnukset, kirjasto ja kampuspalvelut ovat yhteisiä.",
+          "facts": [
+            "Päärakennus: Mukkulankatu 19 (M19), kunnostettu tehdasrakennus. Toinen rakennus: Niemenkatu 73 (N73), jossa ovat Moveon kuntosali ja opiskelijoiden terveysasema YTHS.",
+            "Tilojen tunnukset alkavat rakennuksella: M19_C205 on huone C205 osoitteessa Mukkulankatu 19.",
+            "Molempien korkeakoulujen opiskelijat kirjautuvat yhdellä LUT-tunnuksella sähköpostiin, Moodleen, Sisuun ja kampuksen Wi-Fi-verkkoon.",
+            "Lukujärjestyksesi on TimeEditissä. Viralliset ohjeet kaikkeen löytyvät opiskelijan intranetistä: eLAB (LAB) ja eLUT (LUT).",
+            "Ota mukaan oma kannettava tietokone. Korkeakoulut edellyttävät, että jokaisella opiskelijalla on sellainen."
+          ],
+          "links": [
+            { "label": "Bussilla kampukselle", "page": "living", "topic": "getting-around" },
+            { "label": "eLAB: Lahden kampus", "url": "https://elab.lab.fi/fi/kampukset/lahden-kampus" },
+            { "label": "eLUT: Lahden kampus", "url": "https://elut.lut.fi/fi/kampukset-ja-alueyksikot/lahden-kampus" },
+            { "label": "Kampuskartta", "url": "https://elab.lab.fi/fi/kampukset/lahden-kampus/kampuskartta-lahti" },
+            { "label": "TimeEdit", "url": "https://cloud.timeedit.net/lut-saimia/web" }
+          ],
+          "source": {
+            "label": "eLAB: Lahden kampus",
+            "url": "https://elab.lab.fi/fi/kampukset/lahden-kampus"
+          },
+          "checked": "2026-11-06"
         },
         {
-          "label": "Tutorit",
-          "body": "Opiskelijatutorit ovat kokeneita opiskelijoita, jotka auttavat uusia tulijoita asettumaan aloilleen luokkahuoneen löytämisestä suomalaisten opintojen käytäntöihin. Kysy tutorilta mitä tahansa, vaikka kysymys tuntuisi pieneltä."
-        }
-      ]
-    },
-    {
-      "id": "getting-there",
-      "title": "Matka kampukselle",
-      "topics": [
+          "id": "first-steps",
+          "label": "Ensimmäiset askeleet",
+          "summary": "Korkeakoulusi lähettää ohjeet sähköpostilla ennen opintojen alkua, ja jokin viesti jää helposti huomaamatta. Tee nämä tässä järjestyksessä.",
+          "steps": [
+            "Tutkinto-opiskelijat: ota opiskelupaikka vastaan Oma Opintopolku -palvelussa ja ilmoittaudu läsnäolevaksi lukuvuodelle. Jos määräaika menee ohi, menetät opiskelupaikkasi.",
+            "Aktivoi LUT-tunnuksesi osoitteessa id.lut.fi ja ota käyttöön kirjautumissovellus Duo. Ohjeet tulevat sähköpostilla viimeistään viikkoa ennen opintojen alkua, joten tarkista myös roskapostikansio.",
+            "Suorita verkko-orientaatio Moodlessa ja tule sitten orientaatiopäiville kampukselle. Osallistumista edellytetään.",
+            "Tee opintosuunnitelma ja ilmoittaudu kursseille Sisussa ennen määräaikaa. Opettajatuutorisi auttaa tässä.",
+            "Rekisteröidy DVV:ssä saadaksesi suomalaisen henkilötunnuksen. Syksyllä DVV tulee kampukselle muutamaksi päiväksi. Ota mukaan passi ja leimattu opiskelutodistus."
+          ],
+          "links": [
+            { "label": "eLAB: opintojen aloittaminen", "url": "https://elab.lab.fi/fi/opintojen-aloittaminen" },
+            { "label": "eLUT: opintojen aloittaminen", "url": "https://elut.lut.fi/fi/opintojen-aloittaminen" },
+            { "label": "Aktivoi LUT-tunnus", "url": "https://id.lut.fi" },
+            { "label": "Henkilötunnus (DVV)", "page": "living", "topic": "identity-code" }
+          ],
+          "source": {
+            "label": "eLAB: Opintojen aloittaminen",
+            "url": "https://elab.lab.fi/fi/opintojen-aloittaminen"
+          },
+          "checked": "2026-11-06"
+        },
         {
-          "label": "Bussilla",
-          "body": "Paikallisbusseja liikennöi Lahden Seudun Liikenne (LSL). Tarkista reitti kotiosoitteestasi LSL:n sivuilta tai reittioppaasta, kuten Google Mapsista, ja katso voimassa olevat lippuvaihtoehdot ja opiskelija-alennukset ennen ensimmäistä viikkoa."
+          "id": "student-card",
+          "label": "Opiskelijakortti ja opiskelijakunta",
+          "summary": "Saat opiskelijakortin liittymällä oman korkeakoulusi opiskelija- tai ylioppilaskuntaan. Kortilla saat edullisen opiskelijalounaan ja opiskelijahinnat junissa, kaukoliikenteen busseissa ja paikallisbusseissa.",
+          "sections": [
+            {
+              "label": "LABin opiskelijat: KOE",
+              "summary": "Opiskelijakunta KOEn jäsenyys on vapaaehtoinen, mutta sen kautta LABin opiskelijat saavat opiskelijakortin. Myös vaihto-opiskelijat voivat liittyä.",
+              "facts": [
+                "Liity verkossa tai KOEn toimistolla M19:ssä (huone A141).",
+                "Digitaalinen kortti Slice-sovelluksessa toimii muutaman päivän kuluttua liittymisestä. Muovinen kortti tulee noin 4 viikossa, ja se toimii myös kampuksen kulkukorttina.",
+                "Kortin tilaamiseen tarvitset opiskelijanumerosi (löytyy Sisusta) ja suomalaisen henkilötunnuksen. Tilaa ajoissa: elo- ja syyskuu ovat kiireisimmät kuukaudet."
+              ],
+              "cost": "25 € lukukaudessa, 35 € vuodessa",
+              "links": [
+                { "label": "Liity KOEen", "url": "https://member.koe.fi/" },
+                { "label": "KOE: opiskelijakortti", "url": "https://www.koe.fi/opiskelijakortti" }
+              ]
+            },
+            {
+              "label": "LUTin opiskelijat: LTKY",
+              "summary": "LUTin ylioppilaskunnan (LTKY) jäsenyys on tutkinto-opiskelijoille pakollinen. Maksat jäsenmaksun, kun ilmoittaudut läsnäolevaksi lukuvuodelle.",
+              "facts": [
+                "Opiskelijakorttisi on digitaalinen ja toimii Slice-sovelluksessa. Täytä lomake osoitteessa slice.fi/ltky opiskelijasähköpostillasi ja anna sitten Slicelle lupa lukea tietosi Sisusta.",
+                "Lahdessa saat lisäksi maksutta yhdistetyn kulku- ja opiskelijakortin."
+              ],
+              "cost": "75 € vuodessa, 43 € lukukaudessa (2026–27)",
+              "links": [
+                { "label": "LTKY: opiskelijakortti", "url": "https://ltky.fi/opiskelijalle/opiskelijakortti/" }
+              ]
+            }
+          ],
+          "source": {
+            "label": "KOE: Jäsenyys",
+            "url": "https://www.koe.fi/liity"
+          },
+          "checked": "2026-11-06"
         }
       ]
     },
     {
-      "id": "campus-life",
+      "id": "on-campus",
       "title": "Kampuksella",
       "topics": [
         {
-          "label": "Opiskelijapalvelut",
-          "body": "Opiskelijapalvelut auttavat ilmoittautumisessa, todistuksissa, opintosuunnitelmissa ja hyvinvoinnissa. Jos jokin opinnoissa tai elämässä Suomessa on epäselvää, mene ensin sinne. Jos he eivät itse voi auttaa, he ohjaavat sinut oikean ihmisen luo."
+          "id": "access",
+          "label": "Kulkukortti ja aukioloajat",
+          "summary": "Pääovet ovat auki arkisin klo 7.30–16. Kulkukortilla pääset M19:ään joka päivä klo 6–24.",
+          "facts": [
+            "LABin opiskelijat tilaavat kortin KOElta joko opiskelijakorttina tai pelkkänä kulkukorttina. LUTin opiskelijat saavat maksutta yhdistetyn kulku- ja opiskelijakortin.",
+            "Tilaat kortin kerran, ja se toimii koko opintojesi ajan. Orientaatioviikolla pääset sisään ilman korttia.",
+            "Kortti on henkilökohtainen. Älä päästä muita sisään omalla kortillasi.",
+            "Kadotitko jotain? Lähetä sähköpostia aulapalveluun (tilapalvelut.lahti@lut.fi) ennen kuin tulet etsimään."
+          ],
+          "links": [
+            { "label": "eLAB: kulkukortti", "url": "https://elab.lab.fi/fi/kampukset/lahden-kampus/kulkukortti-lahti" },
+            { "label": "eLUT: kulkukortti", "url": "https://elut.lut.fi/fi/kampukset-ja-alueyksikot/lahden-kampus/kulkukortti-lahti" }
+          ],
+          "source": {
+            "label": "eLAB: Lahden kampus",
+            "url": "https://elab.lab.fi/fi/kampukset/lahden-kampus"
+          },
+          "checked": "2026-11-06"
         },
         {
-          "label": "Opiskelijakortti ja opiskelijakunta",
-          "body": "Kun olet ilmoittautunut, voit yleensä liittyä opiskelijakuntaan ja hankkia opiskelijakortin, joka tuo alennuksia junalippuihin, ruokailuun ja moniin paikallisiin palveluihin. Prosessi ja kortin tyyppi riippuvat oppilaitoksestasi, joten noudata hyväksymisen yhteydessä saamiasi ohjeita."
+          "id": "lunch",
+          "label": "Lounas kampuksella",
+          "summary": "Tavallinen opiskelijalounas maksaa Kelan ateriatuen ansiosta enintään 3,10 €. Näytä opiskelijakorttisi kassalla. Tuki koskee yhtä ateriaa päivässä.",
+          "facts": [
+            "Food&Co Isku Center (M19) tarjoaa aamiaista ja lounasta. Shiksha (M19, 2. kerros auditorion vieressä, ja N73) tarjoaa suomalais-intialaista ruokaa.",
+            "Lamkooma on opiskelijoiden pyörittämä kahvila ja baari M19:n opiskelijoiden olohuoneessa.",
+            "N73:n Kanttiksesta ei saa opiskelijahintaista lounasta.",
+            "Ateriatuen saavat sekä tutkinto- että vaihto-opiskelijat. Eikö sinulla ole vielä opiskelijakorttia? Opiskelijapalveluista saa ateriatukikortin."
+          ],
+          "cost": "3,10 € (erikoisannokset 4,50–5,90 €)",
+          "links": [
+            { "label": "Food&Co Isku Centerin ruokalista", "url": "https://www.compass-group.fi/ravintolat-ja-ruokalistat/foodco/kaupungit/lahti/isku-center/" },
+            { "label": "eLAB: opiskelijaravintolat ja kahvilat", "url": "https://elab.lab.fi/fi/kampukset/lahden-kampus/opiskelijaravintolat-ja-kahvilat-lahti" }
+          ],
+          "source": {
+            "label": "Kela: Ateriatuki",
+            "url": "https://www.kela.fi/ateriatuki"
+          },
+          "checked": "2026-11-06"
+        },
+        {
+          "id": "library",
+          "label": "Kirjasto, opiskelutilat ja tulostus",
+          "summary": "LUT-tiedekirjasto on M19:n 2. kerroksessa (huone D267). Siellä on hiljaisia opiskelutiloja ja varattavia ryhmätyötiloja.",
+          "facts": [
+            "Kirjastokorttisi on Tuudo-sovelluksessa. Tarvitset sitä kirjojen lainaamiseen.",
+            "E-kirjat ja artikkelit: kirjaudu Primoon LUT-tunnuksellasi.",
+            "Kun tulostat, valitse tulostimeksi SecurePrint ja hae tuloste miltä tahansa kampuksen opiskelijatulostimelta, esimerkiksi M19:n huoneesta C234 tai D238."
+          ],
+          "links": [
+            { "label": "Kirjaston aukioloajat", "url": "https://www.lut.fi/fi/tutustu-meihin/lut-tiedekirjasto/aukioloajat-tilat-ja-yhteystiedot" },
+            { "label": "eLAB: tulostaminen", "url": "https://elab.lab.fi/fi/opiskelijan-it-opas/tulostaminen/tulostimien-sijainnit-lahdessa" }
+          ],
+          "source": {
+            "label": "eLAB: LUT-tiedekirjasto",
+            "url": "https://elab.lab.fi/fi/opintojen-ohjaus-ja-palvelut/lut-tiedekirjasto"
+          },
+          "checked": "2026-11-06"
+        },
+        {
+          "id": "sports",
+          "label": "Liikunta: Moveo",
+          "summary": "Moveo on LABin ja LUTin opiskelijoiden liikuntapalvelu kampuksella: kuntosali, palloiluvuorot ja ryhmäliikunta yhdellä passilla.",
+          "facts": [
+            "Osta passi LUT Shopista. Kuntosalin oven mobiiliavain tulee sähköpostilla 2–3 arkipäivässä.",
+            "Kuntosali on osoitteessa Niemenkatu 73 (ovi B2), ja se on auki joka päivä klo 6–22.30. Arkisin se on välillä varattu opetukseen.",
+            "Varaa ryhmäliikuntatunnit etukäteen varausjärjestelmästä. Paikkoja on rajoitetusti.",
+            "Maksutta ilman passia: taukoliikunta Zoomissa, kuntosaliopastus (sähköposti moveo@lut.fi) ja liikuntavälineiden lainaus KOEn toimistolta.",
+            "Syksyn passi on voimassa tammikuun loppuun ja kevään passi elokuun loppuun."
+          ],
+          "cost": "30 € lukukaudessa",
+          "links": [
+            { "label": "Osta Moveo-passi (LUT Shop)", "url": "https://lutshop.lut.fi/tuote-osasto/moveo-liikuntapalvelut/" },
+            { "label": "Muut kuntosalit ja liikunta Lahdessa", "page": "living", "topic": "gyms" }
+          ],
+          "source": {
+            "label": "eLAB: MOVEO Lahti",
+            "url": "https://elab.lab.fi/fi/opintojen-ohjaus-ja-palvelut/opiskelijoiden-tuki-ja-hyvinvointipalvelut/moveo-hyvinvointi-ja"
+          },
+          "checked": "2026-11-06"
         }
       ]
     },
     {
-      "id": "academic",
-      "title": "Opintojen tuki",
+      "id": "help",
+      "title": "Apu ja hyvinvointi",
       "topics": [
         {
-          "label": "Opinto-ohjaaja",
-          "body": "Jos opinnot tai jaksaminen tuottavat vaikeuksia, ota ajoissa yhteyttä oppilaitoksesi opinto-ohjaajaan tai opiskelijapalveluihin. Mitä aiemmin kysyt, sitä helpompi ongelmat on ratkaista."
+          "id": "who-to-ask",
+          "label": "Keneltä kysyä",
+          "summary": "Kysy opinnoista opiskelijapalveluista ja tunnuksista ja kirjautumisesta IT-helpdeskistä. Sähköposti on nopein tapa tavoittaa molemmat.",
+          "facts": [
+            "LABin opiskelijapalvelut: studentservices@lab.fi. Palvelupiste M19:ssä, huone C205, tiistaisin ja torstaisin klo 12–15. Opinto-oikeus, ilmoittautuminen ja todistukset.",
+            "LUTin opiskelijapalvelut: opinto@lut.fi.",
+            "IT-helpdesk (LUT-tunnus, Duo, Moodle): student.ithelpdesk@lut.fi. Palvelupiste M19:ssä, huone C205, tiistaisin klo 12–14.",
+            "Tuutorisi on toinen opiskelija, joka tapaa ryhmäsi viikoittain ensimmäisen opetusperiodin ajan. LABin uudet opiskelijat voivat kysyä tuutoreilta myös LAB Newcomers -Discordissa.",
+            "Lue opiskelijasähköpostisi joka päivä. Kaikki viralliset viestit lähetetään sinne."
+          ],
+          "links": [
+            { "label": "LABin opiskelijapalvelut", "url": "https://elab.lab.fi/fi/opintojen-ohjaus-ja-palvelut/opiskelijoiden-asiakaspalvelu" },
+            { "label": "LUTin opiskelijapalvelut", "url": "https://elut.lut.fi/fi/opintojen-ohjaus-ja-palvelut/opiskelijoiden-asiakaspalvelu" },
+            { "label": "IT-helpdesk", "url": "https://elab.lab.fi/fi/opiskelijan-it-opas/opiskelijoiden-it-helpdesk" },
+            { "label": "LAB Newcomers -Discord", "url": "https://discord.gg/hsqfsmvdca" }
+          ],
+          "source": {
+            "label": "eLAB: Opiskelijoiden asiakaspalvelu",
+            "url": "https://elab.lab.fi/fi/opintojen-ohjaus-ja-palvelut/opiskelijoiden-asiakaspalvelu"
+          },
+          "checked": "2026-11-06"
+        },
+        {
+          "id": "health",
+          "label": "Terveydenhuolto",
+          "summary": "Tutkinto-opiskelijat käyttävät Ylioppilaiden terveydenhoitosäätiön (YTHS) palveluja ilman käyntimaksuja. Vaihto-opiskelijat käyttävät julkisia terveysasemia tai yksityisiä lääkäriasemia. Hätätilanteessa soita 112.",
+          "sections": [
+            {
+              "label": "Tutkinto-opiskelijat: YTHS",
+              "summary": "Maksat Kelalle terveydenhoitomaksun joka lukukausi, ja YTHS:n käynnit ovat sen jälkeen maksuttomia.",
+              "facts": [
+                "YTHS Lahti on osoitteessa Niemenkatu 73, B-siipi, 2. kerros. Suun terveydenhuolto on C-siivessä, 5. kerroksessa.",
+                "Ota yhteyttä YTHS:ään YTHSDigin chatissa tai kirjautumalla YTHSDigiin. Avoinna ma–to klo 8–15 ja pe klo 8–14.",
+                "YTHS ei päivystä iltaisin, öisin eikä viikonloppuisin. Käytä silloin julkista päivystystä.",
+                "Peru aikasi viimeistään 24 tuntia ennen, muuten maksat käyttämättä jääneestä ajasta maksun."
+              ],
+              "cost": "Kelan maksu 35,35 € lukukaudessa (2026)",
+              "links": [
+                { "label": "Kelan terveydenhoitomaksu", "page": "living", "topic": "kela" },
+                { "label": "Terveydenhuolto Lahdessa", "page": "living", "topic": "health" }
+              ]
+            },
+            {
+              "label": "Vaihto-opiskelijat",
+              "summary": "Et voi käyttää YTHS:n palveluja. Kiireettömissä asioissa soita Harjunterveyden terveysasemalle tai mene yksityiselle lääkäriasemalle.",
+              "facts": [
+                "Kiireellinen hoito, joka ei voi odottaa seuraavaan päivään: Akuutti24 keskussairaalassa.",
+                "EU- ja Eta-maiden opiskelijat: ota mukaan eurooppalainen sairaanhoitokortti (EHIC), niin maksat saman verran kuin paikalliset asukkaat.",
+                "Muut opiskelijat: hanki yksityinen sairausvakuutus, joka kattaa myös yksityiset lääkäriasemat, kuten Mehiläisen, Pihlajalinnan tai Terveystalon."
+              ],
+              "links": [
+                { "label": "eLAB: vaihto-opiskelijoiden terveydenhuolto", "url": "https://elab.lab.fi/fi/opintojen-ohjaus-ja-palvelut/opiskeluterveydenhuolto/opiskeluterveydenhuolto-vaihto-opiskelijat" },
+                { "label": "Terveydenhuolto Lahdessa", "page": "living", "topic": "health" }
+              ]
+            }
+          ],
+          "source": {
+            "label": "YTHS: Lahti",
+            "url": "https://www.yths.fi/palvelupisteet/lahti/"
+          },
+          "checked": "2026-11-06"
+        },
+        {
+          "id": "student-life",
+          "label": "Opiskelijaelämä ja tapahtumat",
+          "summary": "Useimmat Lahden opiskelijatapahtumat ovat avoimia sekä LABin että LUTin opiskelijoille. Liput ja jäsenyydet myydään Kide.app-sovelluksessa.",
+          "facts": [
+            "Opiskelijakunta KOE, ylioppilaskunta LTKY ja monet opiskelijajärjestöt järjestävät bileitä, sitsejä (pöytäjuhlia, joissa lauletaan), liikuntaa ja matkoja.",
+            "ESN Lahti järjestää tapahtumia ja matkoja kansainvälisille ja vaihto-opiskelijoille.",
+            "Lamkooma M19:ssä on opiskelijoiden olohuone ja tapahtumatila."
+          ],
+          "links": [
+            { "label": "Kide.app", "url": "https://kide.app/" },
+            { "label": "Tapaa ihmisiä", "page": "meet" }
+          ],
+          "source": {
+            "label": "LAB: Opiskelijatapahtumien ABC",
+            "url": "https://lab.fi/fi/artikkeli/kurkistus-opiskelijaelamaan-opiskelijatapahtumien-abc"
+          },
+          "checked": "2026-11-06"
         }
       ]
     }

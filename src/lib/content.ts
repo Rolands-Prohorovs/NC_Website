@@ -5,7 +5,7 @@ import {
   type CollectionKey,
 } from 'astro:content';
 import type { DailyPoolFile } from './daily';
-import { isInfoPage, type AuthPageId, type InfoPageId, type Locale } from './pages';
+import { INFO_PAGES, isInfoPage, type AuthPageId, type InfoPageId, type Locale } from './pages';
 import type { AuthPageCopy, City, CityLink } from './schema';
 
 export async function getCities(): Promise<City[]> {
@@ -89,4 +89,100 @@ export async function loadDailyPool(city: City, lang: string): Promise<DailyPool
 export async function loadAuth(loc: Locale, page: AuthPageId): Promise<AuthPageCopy> {
   const { login, register, ...shared } = await load('auth', `${loc.city}/${loc.lang}`);
   return { ...shared, page: page === 'login' ? login : register };
+}
+
+// ---------- Language parity ----------
+// Every language of a city must have the same content structure as the default (first)
+// language: the same sections, topic ids, tasks, fields and list lengths. Only the text may
+// differ. Without this a translation silently falls behind when the default language changes.
+
+/** Keys that are ids or wiring, not text: their values must be identical in every language. */
+const SAME_VALUE = new Set(['id', 'page', 'topic', 'hash', 'icon', 'tone']);
+
+const kind = (v: unknown) => (Array.isArray(v) ? 'list' : v === null ? 'null' : typeof v);
+const idOf = (v: unknown) =>
+  v && typeof v === 'object' && 'id' in v && typeof v.id === 'string' ? v.id : undefined;
+
+/** Lists where `other` differs in shape from `base`, as "path: what is wrong". */
+function shapeDiff(base: unknown, other: unknown, path: string, langs: [string, string], out: string[]) {
+  const [baseLang, lang] = langs;
+  if (kind(base) !== kind(other)) {
+    out.push(`${path}: is a ${kind(other)} in ${lang} but a ${kind(base)} in ${baseLang}`);
+  } else if (Array.isArray(base) && Array.isArray(other)) {
+    if (base.length !== other.length) {
+      const ids = (list: unknown[]) => list.map(idOf).filter((id) => id !== undefined);
+      const missing = ids(base).filter((id) => !ids(other).includes(id));
+      const extra = ids(other).filter((id) => !ids(base).includes(id));
+      const detail = [
+        missing.length ? `${lang} lacks ${missing.map((id) => `"${id}"`).join(', ')}` : '',
+        extra.length ? `only ${lang} has ${extra.map((id) => `"${id}"`).join(', ')}` : '',
+      ].filter(Boolean);
+      out.push(
+        `${path}: ${other.length} item(s) in ${lang}, ${base.length} in ${baseLang}` +
+          (detail.length ? ` (${detail.join('; ')})` : '')
+      );
+    }
+    base.slice(0, other.length).forEach((item, i) => {
+      const label = idOf(item) ? `${path}[${i} "${idOf(item)}"]` : `${path}[${i}]`;
+      shapeDiff(item, other[i], label, langs, out);
+    });
+  } else if (base && other && typeof base === 'object' && typeof other === 'object') {
+    const a = base as Record<string, unknown>;
+    const b = other as Record<string, unknown>;
+    for (const key of Object.keys(a)) {
+      const here = path ? `${path}.${key}` : key;
+      if (!(key in b)) out.push(`${here}: missing in ${lang} (${baseLang} has it)`);
+      else if (SAME_VALUE.has(key) && typeof a[key] === 'string' && a[key] !== b[key])
+        out.push(`${here}: "${String(b[key])}" in ${lang} but "${a[key]}" in ${baseLang}`);
+      else shapeDiff(a[key], b[key], here, langs, out);
+    }
+    for (const key of Object.keys(b)) {
+      if (!(key in a)) out.push(`${path ? `${path}.${key}` : key}: only in ${lang} (${baseLang} has no such field)`);
+    }
+  }
+}
+
+const parityChecked = new Map<string, Promise<void>>();
+
+/**
+ * Fails the build if any language of the city has a different content structure than the
+ * default language, in any content file. Called from every page; runs once per city per build.
+ */
+export function checkParity(city: City): Promise<void> {
+  // In dev, check on every request so an edit shows up without restarting the server.
+  const cached = import.meta.env.PROD ? parityChecked.get(city.id) : undefined;
+  if (cached) return cached;
+
+  const run = (async () => {
+    const [baseLang, ...others] = city.languages;
+    const files: { collection: CollectionKey; name: string }[] = [
+      { collection: 'site', name: 'site' },
+      { collection: 'home', name: 'home' },
+      { collection: 'progress', name: 'progress' },
+      { collection: 'auth', name: 'auth' },
+      { collection: 'dailyCopy', name: 'daily' },
+      ...INFO_PAGES.map((page) => ({ collection: 'info' as const, name: page })),
+    ];
+    const problems: string[] = [];
+    for (const { collection, name } of files) {
+      const idFor = (lang: string) =>
+        collection === 'info' ? `${city.id}/${lang}/${name}` : `${city.id}/${lang}`;
+      const base = await load(collection, idFor(baseLang));
+      for (const lang of others) {
+        const found: string[] = [];
+        shapeDiff(base, await load(collection, idFor(lang)), '', [baseLang, lang], found);
+        const file = `src/content/${city.id}/${lang}/${name}.json`;
+        problems.push(...found.map((problem) => `${file}: ${problem}`));
+      }
+    }
+    if (problems.length) {
+      const shown = problems.slice(0, 25);
+      const more = problems.length > shown.length ? `\n  ...and ${problems.length - shown.length} more` : '';
+      throw new Error(
+        `Languages are out of sync with "${baseLang}" (${problems.length} problem(s)):\n  ${shown.join('\n  ')}${more}`
+      );
+    }
+  })();
+  parityChecked.set(city.id, run);
+  return run;
 }

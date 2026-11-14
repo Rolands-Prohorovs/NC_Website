@@ -9,7 +9,7 @@ import Home from '../../components/Home';
 import InfoPage from '../../components/InfoPage.astro';
 import Progress from '../../components/Progress';
 import Site from '../../layouts/Site.astro';
-import { getCities, getCityLinks, load, loadAuth, loadInfo, loadProgress } from '../../lib/content';
+import { checkParity, getCities, getCityLinks, load, loadAuth, loadInfo, loadProgress } from '../../lib/content';
 import { PAGES, isAuthPage, isInfoPage, pagePath, type Locale, type PageId } from '../../lib/pages';
 import type { City } from '../../lib/schema';
 
@@ -31,6 +31,9 @@ interface Props {
   page: PageId;
 }
 const { city, loc, page } = Astro.props;
+
+// Every language must have the same sections, topics and tasks as the default one.
+await checkParity(city);
 
 const key = `${city.id}/${loc.lang}`;
 const t = await load('site', key);

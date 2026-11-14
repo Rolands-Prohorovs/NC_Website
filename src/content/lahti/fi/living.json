@@ -5,75 +5,300 @@
     {
       "id": "first-days",
       "title": "Ensimmäiset päivät",
-      "intro": "Asiat, jotka kannattaa hoitaa heti saavuttuasi.",
+      "intro": "Asiat, jotka kannattaa hoitaa pian saapumisen jälkeen.",
       "topics": [
         {
           "label": "Matka Lahteen",
-          "body": "Lahti sijaitsee noin 100 km Helsingistä pohjoiseen, ja sinne pääsee helposti junalla tai bussilla. Useimmat ulkomailta saapuvat tulevat ensin Helsinkiin (lentäen tai laivalla) ja jatkavat sieltä Lahteen.",
+          "summary": "Useimmat saapuvat Helsinkiin lentäen tai laivalla ja jatkavat Lahteen bussilla tai junalla. Matka kestää noin tunnin.",
           "sections": [
             {
               "label": "Lentäen",
-              "body": "Lennä Helsinki-Vantaan lentoasemalle (HEL), joka on lähin kansainvälinen lentoasema. Lentoasema on noin 100 km:n päässä Lahdesta.\n\nJunalla: lentoaseman rautatieasemalle pääsee kävellen terminaalista. Ota lähijuna (P tai I) yhden pysäkin verran Tikkurilaan ja vaihda siellä kaukojunaan tai taajamajunaan Lahteen. Matka kestää yleensä 1–1,5 tuntia vaihtoyhteydestä riippuen, ja pelkkä Tikkurila–Lahti-osuus kestää noin 35–55 minuuttia.\n\nBussilla: lentoasemalta kulkee suora bussi Lahden linja-autoasemalle noin kerran tunnissa. Matka kestää noin 1 tunnin 20 minuuttia, eikä Tikkurilassa tarvitse vaihtaa. Aikataulut löytyvät Matkahuollon sivuilta ja sovelluksesta.\n\nTaksilla: taksilla tai ennakkoon tilatulla kuljetuksella matka kestää noin tunnin, mutta se maksaa selvästi enemmän kuin julkinen liikenne. Se kannattaa lähinnä silloin, kun matkatavaroita on paljon tai saavut myöhään yöllä.",
+              "summary": "Helsinki-Vantaan lentoasemalta pääset Lahteen suoralla bussilla tai junalla Tikkurilan kautta.",
+              "facts": [
+                "Suora bussi lentoasemalta Lahteen: noin 1 h 20 min. Aikataulut ja liput Matkahuollosta.",
+                "Juna: matkusta lentoaseman asemalta yksi pysäkinväli Tikkurilaan ja vaihda siellä Lahden junaan (VR)."
+              ],
               "links": [
                 {
-                  "label": "VR:n aikataulut ja liput",
-                  "url": "https://www.vr.fi/en"
+                  "label": "Matkahuolto (bussit)",
+                  "url": "https://www.matkahuolto.fi/"
                 },
                 {
-                  "label": "Matkahuollon bussiaikataulut",
-                  "url": "https://www.matkahuolto.fi/en"
+                  "label": "VR (junat)",
+                  "url": "https://www.vr.fi/"
                 }
               ]
             },
             {
               "label": "Laivalla",
-              "body": "Laivat saapuvat Helsinkiin Tallinnasta (noin 2 tuntia) ja Tukholmasta (yöllä). Liikennöitsijöitä on useita, muun muassa Viking Line, Tallink Silja ja Eckerö Line, ja kukin käyttää eri terminaalia: Katajanokkaa, Olympiaa tai Länsiterminaalia. Tarkista lipustasi, mitä terminaalia käytät.\n\nKaikista terminaaleista pääsee Helsingin päärautatieasemalle ratikalla, matka kestää noin 10–20 minuuttia. Ratikkanumerot vaihtelevat terminaalin mukaan, joten katso oman terminaalisi reitti HSL:n reittioppaasta. Päärautatieasemalta ota juna Lahteen. Nopeimmat junat kulkevat noin 50 minuutissa ja lähijunat noin tunnissa.",
+              "summary": "Helsingin matkustajasatamien ja Lahden välillä kulkee kaukoliikenteen busseja. Voit myös mennä junalla Helsingistä.",
+              "facts": [
+                "Bussit matkustajaterminaaleista: katso Matkahuollosta.",
+                "Junat Helsingistä: Z-lähijuna kulkee noin kerran tunnissa, ja matka kestää noin tunnin. Nopeimmat kaukojunat kulkevat 50 minuutissa."
+              ],
               "links": [
                 {
-                  "label": "Helsingin Satama",
-                  "url": "https://www.portofhelsinki.fi/en/"
+                  "label": "Matkahuolto (bussit)",
+                  "url": "https://www.matkahuolto.fi/"
                 },
                 {
-                  "label": "HSL:n reittiopas",
+                  "label": "VR (junat)",
+                  "url": "https://www.vr.fi/"
+                },
+                {
+                  "label": "HSL:n reittiopas (raitiovaunut Helsingissä)",
                   "url": "https://www.hsl.fi/en"
                 }
               ]
             },
             {
-              "label": "Junalla tai bussilla muualta Suomesta",
-              "body": "Juna: Lahden rautatieasema sijaitsee pääradalla Helsingistä itään ja pohjoiseen, ja VR liikennöi Lahteen useita vuoroja päivässä eri puolilta Suomea. Helsingistä matka kestää 50 minuutista hieman yli tuntiin junatyypistä riippuen, ja junia kulkee noin kerran tunnissa. Tampereelta vaihda Riihimäellä. Turusta joudut yleensä vaihtamaan Helsingissä. Kouvolasta ja Kotkasta kulkee taajamajunia suoraan Lahteen.\n\nBussi: Lahteen on bussiyhteyksiä pääkaupunkiseudulta ja muualta Suomesta. Bussilla matkustaminen on usein junaa edullisempaa, ja liput voivat alkaa muutamasta eurosta, jos varaat ajoissa. Liikennöitsijöitä ovat muun muassa Matkahuollon palvelut, OnniBus ja FlixBus. Linja-autoasema on samassa matkakeskuksessa rautatieaseman kanssa, muutaman minuutin kävelymatkan päässä keskustasta, joten junan ja bussin välillä on helppo vaihtaa.\n\nVinkki: osta junaliput etukäteen VR:n sovelluksesta tai vr.fi-sivulta edullisempaan hintaan, ja tarkista aikataulut ennen matkaa, sillä vuorot vaihtelevat vuodenajan mukaan.",
+              "label": "Muualta Suomesta",
+              "summary": "Junat ja bussit pysähtyvät Lahden matkakeskuksessa, jossa voit vaihtaa kulkuvälineestä toiseen.",
+              "facts": [
+                "Kaukojunat pysähtyvät Lahden rautatieasemalla.",
+                "Taajamajunat kulkevat Lahdesta Riihimäelle, Helsinkiin, Kouvolaan ja Kotkaan.",
+                "Kaukoliikenteen bussit löydät Matkahuollosta."
+              ],
               "links": [
                 {
                   "label": "VR (junat)",
-                  "url": "https://www.vr.fi/en"
+                  "url": "https://www.vr.fi/"
                 },
                 {
                   "label": "Matkahuolto (bussit)",
-                  "url": "https://www.matkahuolto.fi/en"
+                  "url": "https://www.matkahuolto.fi/"
+                },
+                {
+                  "label": "Lahden matkakeskus",
+                  "url": "https://visitlahti.fi/etusivu/saapuminen/lahden-matkakeskus/"
                 }
               ]
             }
-          ]
+          ],
+          "source": {
+            "label": "Lahden kaupunki: Joukkoliikenne",
+            "url": "https://www.lahti.fi/asuminen-ja-ymparisto/liikenne-ja-kadut/joukkoliikenne/"
+          },
+          "checked": "2026-11-03"
         },
         {
-          "label": "Asunto ja avaimet",
-          "body": "Ota yhteyttä vuokranantajaan, asunnon tarjoajaan tai isäntääsi ennen saapumista ja sovi avainten noutoajasta. Monessa paikassa käytetään avainlokeroita tai avaimet saa vain toimistoaikaan, joten älä jätä asiaa viime tippaan. Varmista, että sinulla on allekirjoitettu vuokrasopimus, ja laita nimesi postilaatikkoon ja oveen, muuten posti ei välttämättä löydä perille. Ota saapuessasi kuvia asunnon kunnosta."
+          "label": "Vuokra-asunnon etsiminen",
+          "summary": "Noin 40 % Lahden asunnoista on vuokra-asuntoja. Kaupungin omistamalta Lahden Taloilta on helpointa vuokrata ulkomailta käsin. Yksityiset vuokra-asunnot voivat olla halvempia, mutta vaativat enemmän järjestelyjä.",
+          "facts": [
+            "Lahden Talot (myös opiskelija-asunnot): hae asuntoa verkkosivuilla ja allekirjoita vuokrasopimus verkossa tai toimistolla. Opiskelijahuoneiden vuokraan sisältyvät sähkö, vesi ja Wi-Fi.",
+            "Muita vuokranantajia ovat muun muassa Lumo, Sato, M2-kodit ja NAL Asunnot. Vuokraovessa ja Oikotiellä on yksityisiä vuokra-asuntoja, joista pyydetään yleensä vakuus.",
+            "Osa yksityisistä vuokranantajista haluaa tavata sinut tai näyttää asunnon paikan päällä ennen sopimuksen tekoa, mikä on vaikea järjestää ulkomailta.",
+            "Monessa vuokra-asunnossa teet sähkösopimuksen itse ja maksat veden erikseen. Tarkista asia ilmoituksesta ja tee sähkösopimus ennen muuttoa.",
+            "Maksutonta asumis- ja talousneuvontaa saa Palvelutorilta (kauppakeskus Trio, 2. kerros) ajanvarauksella."
+          ],
+          "cost": "Lahden Talot: huone 350–450 €, yksiö noin 500 €, kaksio noin 600 € kuukaudessa",
+          "links": [
+            {
+              "label": "Lahden Talot",
+              "url": "https://lahdentalot.fi/"
+            },
+            {
+              "label": "Lahden Talot: kansainvälisille opiskelijoille (englanniksi)",
+              "url": "https://lahdentalot.fi/en/exchangestudents/"
+            },
+            {
+              "label": "Vuokraovi",
+              "url": "https://www.vuokraovi.com/"
+            },
+            {
+              "label": "Oikotien vuokra-asunnot",
+              "url": "https://asunnot.oikotie.fi/vuokrattavat-asunnot"
+            }
+          ],
+          "source": {
+            "label": "Lahden kaupunki: Living in Lahti (englanniksi)",
+            "url": "https://www.lahti.fi/en/newcomers-guide/living-in-lahti/"
+          },
+          "checked": "2026-11-06"
         },
         {
-          "label": "Viralliset rekisteröinnit",
-          "body": "Jos oleskelet Suomessa vuoden tai pidempään, sinun voi tarvita rekisteröityä Digi- ja väestötietovirastoon (DVV) saadaksesi suomalaisen henkilötunnuksen. Ota mukaan passi, mahdollinen oleskelulupa ja vuokrasopimus. Oleskelulupa-asioita hoitaa Maahanmuuttovirasto (Migri). Tarkista heidän sivuiltaan, mitä sääntöjä sinuun sovelletaan."
+          "label": "Oleskelulupa tai EU-rekisteröinti",
+          "summary": "Se, mitä tarvitset, riippuu kansalaisuudestasi. Etsi oma tilanteesi alta. Kaikki rekisteröityvät lisäksi DVV:ssä saadakseen henkilötunnuksen.",
+          "sections": [
+            {
+              "label": "EU:n ulkopuolisten maiden kansalaiset",
+              "summary": "Jos opiskelet tai työskentelet Suomessa yli 90 päivää, tarvitset oleskeluluvan. Hae sitä ennen matkaa.",
+              "facts": [
+                "Hae verkossa Enter Finland -palvelussa ja käy sen jälkeen Suomen suurlähetystössä tai konsulaatissa todistamassa henkilöllisyytesi ja antamassa sormenjäljet.",
+                "Opiskelijat: hakemus maksaa 600 € verkossa tai 750 € paperilla (2026). Tarvitset elämiseen 800 € kuukaudessa (9 600 € tililläsi, jos opinnot kestävät vuoden tai pidempään) sekä yksityisen sairausvakuutuksen.",
+                "Opiskelijoiden hakemukset käsitellään ensin. Tarkista ajankohtaiset odotusajat Migrin käsittelyaikasivulta.",
+                "Oleskelulupakortti noudetaan noutopisteestä Suomessa. D-viisumilla voit matkustaa heti, kun lupa on myönnetty.",
+                "Jos kortissa ei ole suomalaista henkilötunnusta, rekisteröidy DVV:ssä saavuttuasi."
+              ],
+              "links": [
+                {
+                  "label": "Enter Finland",
+                  "url": "https://enterfinland.fi/eServices"
+                },
+                {
+                  "label": "Migri: opiskelu Suomessa",
+                  "url": "https://migri.fi/opiskelu-suomessa"
+                },
+                {
+                  "label": "Migri: opiskelijan toimeentuloedellytys",
+                  "url": "https://migri.fi/opiskelu-suomessa/toimeentulo"
+                },
+                {
+                  "label": "Migri: käsittelyajat",
+                  "url": "https://migri.fi/kasittelyajat"
+                }
+              ]
+            },
+            {
+              "label": "EU-maiden, Liechtensteinin ja Sveitsin kansalaiset",
+              "summary": "Et tarvitse oleskelulupaa. Jos oleskelet Suomessa yli 3 kuukautta, rekisteröi oleskeluoikeutesi Migrissä muutettuasi.",
+              "facts": [
+                "Hae Enter Finlandissa tai paperilomakkeella ja käy sitten Migrin palvelupisteessä todistamassa henkilöllisyytesi. Ota mukaan passi tai henkilökortti ja liitteiden alkuperäiskappaleet.",
+                "Opiskelijat liittävät mukaan todistuksen opinnoista ja osoittavat, että heillä on riittävästi rahaa elämiseen. Työntekijät liittävät työsopimuksen.",
+                "Voit hakea vasta, kun olet muuttanut Suomeen. Opiskelijat voivat hakea, kun opinnot ovat alkaneet.",
+                "Jos kaikki on kunnossa, voit saada todistuksen jo käynnillä. Se on voimassa toistaiseksi, eikä sitä tarvitse uusia.",
+                "Rekisteröidy sen jälkeen DVV:ssä, niin saat kotikunnan ja vakinaisen osoitteen."
+              ],
+              "cost": "53 €",
+              "links": [
+                {
+                  "label": "Migri: oleskeluoikeuden rekisteröinti",
+                  "url": "https://migri.fi/oleskeluoikeuden-rekisterointi"
+                },
+                {
+                  "label": "Migrin ajanvaraus",
+                  "url": "https://migri.vihta.com/public/migri/#/home"
+                }
+              ]
+            },
+            {
+              "label": "Pohjoismaiden kansalaiset",
+              "summary": "Tanskan, Islannin, Norjan ja Ruotsin kansalaiset eivät tarvitse oleskelulupaa eivätkä Migrin rekisteröintiä. Rekisteröityminen DVV:ssä riittää."
+            }
+          ],
+          "source": {
+            "label": "Migri: Opiskelu Suomessa",
+            "url": "https://migri.fi/opiskelu-suomessa"
+          },
+          "checked": "2026-11-06"
         },
         {
-          "label": "Pankki",
-          "body": "Pankit pyytävät yleensä passia, oleskelulupaa, opiskelutodistusta ja joskus henkilötunnusta, joten varaa aika hyvissä ajoin. Siihen asti oman maasi pankki- tai luottokortti toimii lähes kaikkialla."
+          "id": "identity-code",
+          "label": "Henkilötunnus (DVV)",
+          "summary": "Tarvitset suomalaisen henkilötunnuksen töihin, pankkiasioihin ja useimpiin palveluihin. Jos et saanut sitä oleskeluluvan yhteydessä, rekisteröidy DVV:ssä.",
+          "steps": [
+            "Täytä DVV:n verkkolomake ulkomaalaisen rekisteröintiä varten. Kirjautumista ei tarvita.",
+            "Varaa aika ja käy DVV:ssä henkilökohtaisesti kuukauden kuluessa lomakkeen lähettämisestä. Opiskelijat: tarkista ensin, onko oppilaitoksesi varannut ryhmäkäynnin.",
+            "Ota mukaan yllä luetellut asiakirjat. Jokaisen muuttajan, myös lasten, on tultava paikalle henkilökohtaisesti.",
+            "Odota päätöstä: yleensä 2–3 viikkoa, jos työskentelet tai opiskelet.",
+            "Jos ehdot täyttyvät, DVV merkitsee sinulle myös kotikunnan. Sen myötä saat käyttöösi paikalliset palvelut, kuten terveydenhuollon ja joukkoliikenteen, usein edullisemmin."
+          ],
+          "need": [
+            "Passi (EU-kansalaisilla henkilökortti)",
+            "Oleskelulupakortti tai EU-rekisteröintitodistus",
+            "Todistus opinnoista tai työstä"
+          ],
+          "cost": "maksuton",
+          "time": "2–3 viikkoa",
+          "links": [
+            {
+              "label": "DVV:n verkkolomake",
+              "url": "https://lomakkeet.dvv.fi/lomakkeet/wuY0J/lomake.html"
+            },
+            {
+              "label": "DVV:n palvelupaikat",
+              "url": "https://dvv.fi/palvelupaikat"
+            }
+          ],
+          "source": {
+            "label": "DVV: Ulkomaalaisen rekisteröinti",
+            "url": "https://dvv.fi/ulkomaalaisen-rekisterointi"
+          },
+          "checked": "2026-11-03"
+        },
+        {
+          "id": "kela",
+          "label": "Kela ja sosiaaliturva",
+          "summary": "Kela hoitaa perusturvaa: opintotuen, asumisen tuet, perhe-etuudet, työttömyysturvan, eläkkeet ja sairausvakuutuksen. Oikeutesi etuuksiin riippuu tilanteestasi, joten tarkista asia Kelasta.",
+          "facts": [
+            "LABin ja LUTin tutkinto-opiskelijat maksavat Kelalle joka lukukausi korkeakouluopiskelijan terveydenhoitomaksun. Sillä saat käyttää Ylioppilaiden terveydenhoitosäätiön (YTHS) palveluja ilman käyntimaksuja. Vaihto-opiskelijat eivät maksa maksua.",
+            "Eräpäivät: syyslukukaudella 15.11. ja kevätlukukaudella 15.3. Sen jälkeen Kela lisää maksuun 5 euron viivästysmaksun.",
+            "Maksa OmaKela-verkkopalvelussa. Jos sinulla ei ole suomalaisia verkkopankkitunnuksia, maksa tilisiirrolla Kelan sivulla olevilla tiedoilla.",
+            "Jos kuulut toisen EU- tai Eta-maan, Sveitsin tai Ison-Britannian sosiaaliturvaan, et maksa maksua. Lähetä Kelalle kuva EHIC- tai GHIC-kortistasi.",
+            "Kelan Lahden palvelupiste on osoitteessa Kirkkokatu 12."
+          ],
+          "cost": "terveydenhoitomaksu 35,35 € lukukaudessa (2026)",
+          "links": [
+            {
+              "label": "Kela",
+              "url": "https://www.kela.fi/henkiloasiakkaat"
+            },
+            {
+              "label": "Kelan Lahden palvelupiste",
+              "url": "https://www.kela.fi/tule-kaymaan/palvelupiste/kela-lahden-palvelupiste"
+            }
+          ],
+          "source": {
+            "label": "Kela: Korkeakouluopiskelijan terveydenhoitomaksu",
+            "url": "https://www.kela.fi/terveydenhoitomaksu"
+          },
+          "checked": "2026-11-06"
+        },
+        {
+          "label": "Raha ja pankkitili",
+          "summary": "Suomessa käytetään euroa, ja useimmat maksavat kortilla tai puhelimella. Avaa suomalainen pankkitili ajoissa: saat samalla verkkopankkitunnukset, joilla kirjaudutaan viranomaisten palveluihin.",
+          "facts": [
+            "Suurimmat pankit ovat OP, Nordea, Danske Bank, S-Pankki ja Aktia. Jokaisella on omat ohjeensa uusille asiakkaille, joten katso ensin pankin verkkosivut.",
+            "Varaa aika heti, kun tiedät saapumispäiväsi: ensimmäinen vapaa aika voi olla viikkojen tai jopa kuukausien päässä. Helsingin konttoreissa on joskus aikoja aiemmin.",
+            "Ota mukaan passi, oleskelulupakortti tai EU-rekisteröintitodistus sekä todistus opinnoista tai työstä. Perustiliin ei aina vaadita suomalaista henkilötunnusta.",
+            "Kaikki pankit eivät anna verkkopankkitunnuksia jokaisella ulkomaisella passilla. Jos omasi ei kelpaa, katso alta kohta Ulkomaalaisen henkilökortti.",
+            "S-Pankki kuuluu S-ryhmään: kun maksat sen S-Etukortti Visa -kortilla, saat S-ryhmän kaupoissa, kuten S-marketissa ja Prismassa, 0,5 % lisää takaisin."
+          ],
+          "links": [
+            {
+              "label": "Finanssivalvonta: peruspankkipalvelut",
+              "url": "https://www.finanssivalvonta.fi/kuluttajalle/peruspankkipalvelut/"
+            },
+            {
+              "label": "S-Etukortti",
+              "url": "https://s-etukortti.fi/"
+            }
+          ],
+          "source": {
+            "label": "Lahden kaupunki: Moving to Lahti (englanniksi)",
+            "url": "https://www.lahti.fi/en/newcomers-guide/moving-to-lahti/"
+          },
+          "checked": "2026-11-06"
         },
         {
           "label": "Puhelinnumero",
-          "body": "Prepaid-SIM-kortin saa kioskeista, R-kioskeista ja marketeista sekä operaattorien myymälöistä keskustassa. Pääoperaattorit ovat Elisa, DNA ja Telia. Ota passi mukaan siltä varalta, että sitä pyydetään. Tallenna osoite ja puhelinnumero offline-tilaan siltä varalta, ettei mobiilidata toimi heti."
+          "body": "Prepaid-SIM-kortin saa kioskeista, R-kioskeista ja marketeista sekä operaattorien myymälöistä keskustassa. Pääoperaattorit ovat Elisa, DNA ja Telia. Ota passi mukaan siltä varalta, että sitä pyydetään. Tallenna osoitteesi ja tärkeät puhelinnumerot offline-tilaan siltä varalta, ettei mobiilidata toimi saapuessasi."
         },
         {
-          "label": "Raha ja maksaminen",
-          "body": "Suomessa käytetään euroa, ja maa on pitkälti käteisetön. Korttien ja puhelimen lähimaksut hyväksytään lähes kaikkialla, ja moni käyttää mobiilimaksusovelluksia. Panttimerkityt juomapullot ja -tölkit voi palauttaa kauppojen automaatteihin rahaa vastaan."
+          "label": "Ulkomaalaisen henkilökortti",
+          "summary": "Poliisi myöntää henkilökortin Suomessa vakinaisesti asuville ulkomaan kansalaisille. Se on suomalainen henkilötodistus, jonka pankit ja muut palvelut hyväksyvät.",
+          "facts": [
+            "Sinun on oltava rekisteröity DVV:ssä, ja sinulla on oltava rekisteröity oleskeluoikeus tai voimassa oleva oleskelulupa tai oleskelukortti.",
+            "Kortilla pankkisi voi antaa sinulle verkkopankkitunnukset (vahva sähköinen tunnistautuminen), vaikka se ei hyväksyisi passiasi.",
+            "Eikö sinulla ole vielä korttia? Poliisi voi tunnistaa sinut kertaluonteisesti ja lähettää tuloksen suoraan pankkiisi pelkkiä pankkitunnuksia varten.",
+            "Voimassa enintään viisi vuotta.",
+            "Se ei ole matkustusasiakirja: matkustamiseen tarvitset edelleen passin."
+          ],
+          "links": [
+            {
+              "label": "Poliisi: henkilökortti",
+              "url": "https://poliisi.fi/henkilokortti"
+            },
+            {
+              "label": "Poliisi: todistus ensitunnistuksesta",
+              "url": "https://poliisi.fi/todistus-ensitunnistuksesta"
+            }
+          ],
+          "source": {
+            "label": "Lahden kaupunki: Moving to Lahti (englanniksi)",
+            "url": "https://www.lahti.fi/en/newcomers-guide/moving-to-lahti/"
+          },
+          "checked": "2026-11-06"
         }
       ]
     },
@@ -82,24 +307,237 @@
       "title": "Arki",
       "topics": [
         {
+          "id": "getting-around",
           "label": "Liikkuminen",
-          "body": "Lahdessa on keskeinen rautatieasema, ja Helsinkiin kulkee tiheästi junia (matka kestää noin tunnin). Paikallisbusseja liikennöi LSL. VR:n lipuissa on opiskelija-alennuksia voimassa olevalla opiskelijakortilla. Lahdessa on myös paljon pyöräteitä, ja pyöräily on hyvä vaihtoehto keväästä syksyyn. Käytä valoja pimeällä, sillä se on lain vaatimus."
+          "summary": "Siniset LSL:n bussit kulkevat Lahdessa ja lähiseudulla. Nouse kyytiin etuovesta ja näytä korttia, puhelinta tai lippua kortinlukijalle joka kerta, kun nouset bussiin.",
+          "facts": [
+            "Maksa bussissa lähimaksulla pankkikortilla tai puhelimella tai osta mobiililippu Waltti Mobiili -sovelluksesta. Käteinen ei käy.",
+            "Lippu on voimassa 70 minuuttia, joten voit vaihtaa bussia sen aikana. Lahti-Pisteestä ostettuihin paperilippuihin ei sisälly vaihto-oikeutta.",
+            "Kausilippu ladataan henkilökohtaiselle Waltti-kortille, ja se alkaa, kun näytät korttia lukijalle ensimmäisen kerran.",
+            "Päätoimiset opiskelijat matkustavat opiskelijahinnalla opiskelijan Waltti-kortilla. Ota henkilötodistus ja opiskelijakortti mukaan LSL:n asiakaspalveluun.",
+            "Kaupunkipyörät (Freebike-sovellus) ovat käytössä marraskuun alkuun asti, ja Lahdessa on yli 500 km pyöräteitä."
+          ],
+          "cost": "kertalippu 2,95–3,10 € (opiskelijat 2,10 € sovelluksessa), 30 päivää 62 € (opiskelijat 44 €)",
+          "links": [
+            {
+              "label": "Lahden reittiopas",
+              "url": "https://lahti.digitransit.fi/"
+            },
+            {
+              "label": "LSL: opiskelijaliput",
+              "url": "https://www.lsl.fi/liput-ja-hinnat/opiskelija/"
+            },
+            {
+              "label": "LSL:n asiakaspalvelu",
+              "url": "https://www.lsl.fi/asiakaspalvelu/"
+            },
+            {
+              "label": "Kaupunkipyörät",
+              "url": "https://www.lahti.fi/asuminen-ja-ymparisto/liikenne-ja-kadut/pyoraily/"
+            }
+          ],
+          "source": {
+            "label": "LSL: Liput ja hinnat",
+            "url": "https://www.lsl.fi/liput-ja-hinnat/"
+          },
+          "checked": "2026-11-06"
+        },
+        {
+          "id": "health",
+          "label": "Terveydenhuolto ja apteekit",
+          "summary": "Hätätilanteessa soita 112. Jos tarvitset kiireellistä neuvontaa illalla, yöllä tai viikonloppuna, soita 116 117.",
+          "facts": [
+            "Julkinen terveydenhuolto on tarkoitettu niille, joilla on vakinainen osoite Suomessa. Aloita omalta terveysasemaltasi; sieltä saat tarvittaessa lähetteen erikoislääkärille.",
+            "Yksityisille lääkäriasemille (Mehiläinen, Terveystalo, Pihlajalinna) voi varata ajan ilman lähetettä, mutta maksat käynnin itse. Kela voi korvata siitä pienen osan.",
+            "Lääkkeitä myydään vain apteekeissa, ei ruokakaupoissa.",
+            "Reseptit ovat sähköisiä, ja lääkkeet saa mistä tahansa suomalaisesta apteekista henkilötodistuksella. Ulkomailla kirjoitettua reseptiä ei välttämättä hyväksytä.",
+            "Käyntimerkintäsi, tutkimustuloksesi ja reseptisi näet OmaKannasta."
+          ],
+          "source": {
+            "label": "Lahden kaupunki: Sosiaali- ja terveyspalvelut",
+            "url": "https://www.lahti.fi/vapaa-aika/sosiaali-ja-terveyspalvelut/"
+          },
+          "checked": "2026-11-03"
         },
         {
           "label": "Ruokakaupat",
-          "body": "Suurimpia ketjuja ovat K-Market ja K-Supermarket, S-Market ja Prisma, Lidl sekä Alepa. Prismasta ja isommista kaupoista löytyy yleensä laajin valikoima. Kanta-asiakaskortit (K-Plussa, S-Bonus) tuovat alennuksia ja bonuksia, ja liittyminen on ilmaista. Monet kaupat sulkeutuvat sunnuntaisin aikaisin."
-        },
-        {
-          "label": "Apteekit",
-          "body": "Apteekki on merkitty vihreällä ristillä. Monia lääkkeitä, joita voisi ostaa ilman reseptiä muualla, myydään Suomessa vain apteekeissa. Apteekin henkilökunta antaa neuvoja lieviin oireisiin, ja osa henkilökunnasta puhuu englantia."
+          "summary": "Suuret ketjut ovat K-ryhmä (K-Market, K-Supermarket, K-Citymarket), S-ryhmä (S-market, Prisma, Alepa) ja Lidl. Isoissa kaupoissa on laajin valikoima, ja moni kauppa sulkeutuu sunnuntaisin aikaisemmin.",
+          "facts": [
+            "Kanta-asiakasohjelmat K-Plussa ja S-Etukortti tuovat alennuksia ja rahaa takaisin.",
+            "Useimmissa tölkeissä ja pulloissa on pantti: tölkit 0,15 €, muovipullot 0,10–0,40 €, lasipullot 0,10 €. Palauta ne palautusautomaattiin ja käytä kuitti kassalla.",
+            "Panttimerkityt pullot ja tölkit voi palauttaa minkä tahansa kaupan automaattiin, myös Lidliin. Lidlin omat muovipullot palautetaan vain Lidliin.",
+            "Ulkomailta ostetuista pulloista ja tölkeistä ei saa panttia.",
+            "Virolaista, balttilaista ja itäeurooppalaista ruokaa: Eestin Elintarvikkeet (Vesijärvenkatu 4) ja Baltia Market (Huovilankatu 2)."
+          ],
+          "links": [
+            {
+              "label": "Eestin Elintarvikkeet",
+              "url": "https://eestinelintarvikkeet.fi/"
+            },
+            {
+              "label": "Baltia Market",
+              "url": "https://baltiamarket.fi/"
+            }
+          ],
+          "source": {
+            "label": "Palpa: usein kysytyt kysymykset",
+            "url": "https://www.palpa.fi/kuluttajille/ukk/"
+          },
+          "checked": "2026-11-06"
         },
         {
           "label": "Kirpputorit ja löydöt",
-          "body": "Suomalaiset rakastavat kirpputoreja. Etsi kirpputoreja, kierrätysliikkeitä kuten UFF ja verkkomarkkinapaikkoja, kuten Tori.fi tai paikallisia Facebook-ryhmiä, joista saat kodin sisustettua edullisesti. Opiskelijaryhmät jakavat usein ilmaisia tai halpoja tavaroita lukukauden alussa ja lopussa."
+          "summary": "Käytetyn tavaran ostaminen on Suomessa suosittua ja edullisin tapa kalustaa koti: huonekaluja, vaatteita, astioita, elektroniikkaa ja paljon muuta.",
+          "facts": [
+            "Kierrätyskeskus Patina: Katsastajankatu 14, Kärpänen.",
+            "SPR Kontti (Suomen Punainen Risti): Ajokatu 65, Laune.",
+            "Fida Secondhand: Launeenkatu 70, Laune. Huonekaluja, vaatteita, kodintavaraa ja harrastusvälineitä.",
+            "Verkossa: Tori.fi ja paikalliset Facebook-ryhmät.",
+            "Opiskelijaryhmissä annetaan tai myydään tavaraa usein halvalla lukukauden alussa ja lopussa."
+          ],
+          "links": [
+            {
+              "label": "Patina kartalla",
+              "url": "https://www.google.com/maps/search/?api=1&query=Kierr%C3%A4tyskeskus+Patina%2C+Katsastajankatu+14%2C+Lahti"
+            },
+            {
+              "label": "SPR Kontti Lahti",
+              "url": "https://www.sprkontti.fi/pages/lahden-kontti"
+            },
+            {
+              "label": "Fida Lahti",
+              "url": "https://fida.fi/myymalat/lahti/"
+            },
+            {
+              "label": "Tori.fi",
+              "url": "https://tori.fi/"
+            }
+          ],
+          "source": {
+            "label": "Fida: Lahden myymälä",
+            "url": "https://fida.fi/myymalat/lahti/"
+          },
+          "checked": "2026-11-06"
         },
         {
           "label": "Tekemistä ja vapaa-aika",
-          "body": "Lahti tunnetaan talviurheilusta, järvistä ja metsistä. Kävely järven rannalla tai metsässä ei maksa mitään ja on hyvin suomalainen tapa viettää iltapäivä. Kaupungin verkkosivuilta löydät konsertit, festivaalit ja yhteisötapahtumat."
+          "summary": "Lahti tunnetaan talviurheilusta, järvistä ja metsistä. Kävely järven rannalla tai metsässä ei maksa mitään ja on hyvin suomalainen tapa viettää iltapäivä.",
+          "facts": [
+            "Visit Lahden tapahtumakalenterista löydät konsertit, urheilutapahtumat, festivaalit, markkinat, teatterin ja näyttelyt.",
+            "Opiskelijatapahtumien (bileet, sitsit, matkat) liput myydään Kide.app-sovelluksessa, ja opiskelijajärjestöt myyvät siellä myös jäsenyyksiä.",
+            "Useimmat Lahden opiskelijatapahtumat ovat avoimia sekä LABin että LUTin opiskelijoille."
+          ],
+          "links": [
+            {
+              "label": "Visit Lahti: tapahtumat",
+              "url": "https://visitlahti.fi/etusivu/tapahtumat/"
+            },
+            {
+              "label": "Kide.app",
+              "url": "https://kide.app/"
+            }
+          ],
+          "source": {
+            "label": "Visit Lahti: Tapahtumat",
+            "url": "https://visitlahti.fi/etusivu/tapahtumat/"
+          },
+          "checked": "2026-11-06"
+        },
+        {
+          "id": "gyms",
+          "label": "Kuntosalit ja liikunta",
+          "summary": "Lahdessa on kuntosaliketjuja, kaupungin uimahalleja ja noin 180 km latuja. LABin ja LUTin opiskelijat pääsevät Moveon kautta edulliselle kampuksen kuntosalille.",
+          "facts": [
+            "Lahden kuntosaliketjuja ovat muun muassa Fressi, GoGo Express ja Kuntokeskus Liikku. Vertaile hintoja ja aukioloaikoja niiden verkkosivuilla.",
+            "Opiskelijat: Moveon liikuntapassi maksaa noin 30 € lukukaudessa, ja siihen kuuluvat kampuksen kuntosali, palloiluvuorot ja ryhmäliikunta.",
+            "Kaupungin uimahallit ovat Lahdessa, Kivimaalla, Saksalassa ja Nastolassa, ja kesällä on auki Maauimala.",
+            "Noin 180 km hiihtolatuja ja merkittyjä retkeilyreittejä, joista moni kulkee Salpausselän harjuilla."
+          ],
+          "links": [
+            {
+              "label": "Opiskelijat: liikunta ja kuntosali",
+              "page": "students",
+              "topic": "sports"
+            },
+            {
+              "label": "Fressi",
+              "url": "https://www.fressi.fi/"
+            },
+            {
+              "label": "GoGo Express",
+              "url": "https://www.gogoexpress.fi/"
+            },
+            {
+              "label": "Kuntokeskus Liikku",
+              "url": "https://www.liikku.fi/"
+            },
+            {
+              "label": "Uimahallit",
+              "url": "https://www.lahti.fi/vapaa-aika/liikunta-ja-ulkoilu/uimahallit/"
+            },
+            {
+              "label": "Kävely-, pyöräily- ja hiihtoreitit (englanniksi)",
+              "url": "https://www.lahti.fi/en/leisure-and-sports/sports-services/trails-for-walking-biking-and-skiing/"
+            }
+          ],
+          "source": {
+            "label": "Lahden kaupunki: Liikunta ja ulkoilu",
+            "url": "https://www.lahti.fi/vapaa-aika/liikunta-ja-ulkoilu/"
+          },
+          "checked": "2026-11-06"
+        },
+        {
+          "label": "International House Lahti",
+          "summary": "International House Lahti auttaa muita kieliä kuin suomea puhuvia asettumaan Lahteen.",
+          "facts": [
+            "Neuvontaa usealla kielellä arjesta, maahanmuutosta ja oikean palvelun löytämisestä.",
+            "Säännöllisiä tapahtumia verkostoitumiseen ja tiedon saamiseen.",
+            "Yhteiskuntaorientaatiokursseja usealla kielellä: ilmoittaudu International House Lahden kautta.",
+            "Löydät sen Palvelutorilta, kauppakeskus Trion 2. kerroksesta, Aleksanterinkatu 18."
+          ],
+          "links": [
+            {
+              "label": "Ajankohtaista ja tapahtumat",
+              "url": "https://www.lahti.fi/tyo-ja-yrittaminen/international-house-lahti/ajankohtaista-ihlssa/"
+            },
+            {
+              "label": "Palvelutorin aukioloajat",
+              "url": "https://www.lahti.fi/kaupunki-ja-paatoksenteko/palvelutori/"
+            }
+          ],
+          "source": {
+            "label": "Lahden kaupunki: International House Lahti",
+            "url": "https://www.lahti.fi/tyo-ja-yrittaminen/international-house-lahti/"
+          },
+          "checked": "2026-11-03"
+        },
+        {
+          "label": "Verokortti",
+          "summary": "Hanki verokortti ennen kuin aloitat työt. Ilman sitä työnantaja voi pidättää palkastasi veroa jopa 60 %.",
+          "steps": [
+            "Tilaa verokortti OmaVero-verkkopalvelusta.",
+            "Toimita se työnantajallesi.",
+            "Jos tulosi tai vähennyksesi muuttuvat, tilaa uusi verokortti, jossa on päivitetty veroprosentti."
+          ],
+          "links": [
+            {
+              "label": "Vero: verokortti",
+              "url": "https://www.vero.fi/henkiloasiakkaat/verokortti-ja-veroilmoitus/verokortti/"
+            },
+            {
+              "label": "Vero: töihin Suomeen",
+              "url": "https://vero.fi/henkiloasiakkaat/verokortti-ja-veroilmoitus/ulkomailta_suomeen/toihin_suomeen/"
+            },
+            {
+              "label": "Lahden verotoimisto",
+              "url": "https://www.vero.fi/tietoa-verohallinnosta/yhteystiedot-ja-asiointi/verotoimistot/lahden-toimipiste/"
+            }
+          ],
+          "source": {
+            "label": "Lahden kaupunki: Moving to Lahti (englanniksi)",
+            "url": "https://www.lahti.fi/en/newcomers-guide/moving-to-lahti/"
+          },
+          "checked": "2026-11-03"
         }
       ]
     },
@@ -113,7 +551,7 @@
         },
         {
           "label": "Sauna",
-          "body": "Sauna on iso osa suomalaista elämää, ja monissa kerrostaloissa on yhteinen sauna, jonka vuoroja voi varata. Saunassa ollaan yleensä ilman vaatteita yksityisesti tai samaa sukupuolta olevien seurassa, mutta pyyhe tai uimapuku käy sekaseurassa. Istu pyyhkeen tai pefletin päällä, juo riittävästi ja kuuntele kehoasi."
+          "body": "Sauna on tärkeä osa suomalaista elämää. Monissa kerrostaloissa on yhteinen sauna, jonka vuoroja asukkaat voivat varata. Saunassa ollaan yleensä ilman vaatteita yksin tai samaa sukupuolta olevien seurassa, mutta sekaseurassa pyyhe tai uimapuku käy hyvin. Istu pyyhkeen tai pefletin päällä, juo riittävästi vettä ja kuuntele kehoasi."
         },
         {
           "label": "Sää vuoden mittaan",
@@ -121,17 +559,23 @@
         },
         {
           "label": "Ensimmäisestä talvesta selviäminen",
-          "body": "Hanki lämpimiä kerroksia, hyvä takki, pipo, hanskat ja hyväpitoiset kengät. Villa tai vastaavat materiaalit pitävät lämpimänä lähinnä ihoa. Käytä heijastinta pimeällä, sillä se tekee sinut näkyväksi autoilijoille. Harkitse D-vitamiinia ja ulkoilua päivänvalon aikaan, ja ole itsellesi armollinen, jos pimeä aika painaa."
+          "body": "Hanki lämpimiä kerroksia, hyvä takki, pipo, hanskat ja hyväpitoiset kengät. Villa ja vastaavat materiaalit sopivat ihoa vasten olevaan kerrokseen. Käytä pimeällä heijastinta, jotta autoilijat näkevät sinut. Ulkoile päivänvalon aikaan ja kysy D-vitamiinista terveydenhuollon ammattilaiselta, jos et ole varma, tarvitsetko lisää. Ole itsellesi armollinen, jos pimeä aika painaa mieltä."
         },
         {
           "label": "Kirjoittamattomat säännöt",
-          "body": "Ota kengät pois kotiin tullessasi. Ole ajoissa. Pidä hieman omaa tilaa esimerkiksi bussipysäkillä ja jonossa. Bussit ja junat ovat yleensä hiljaisia. Monissa kerrostaloissa on yöllä hiljaisuusaika, usein klo 22–07, joten pidä äänet kurissa. Lajittele jätteet huolellisesti, talosi ohjeet kertovat paikalliset säännöt."
+          "body": "Ota kengät pois, kun menet jonkun kotiin. Ole ajoissa. Anna muille omaa tilaa bussipysäkillä ja jonossa. Bussit ja junat ovat yleensä hiljaisia. Monissa kerrostaloissa on yöllä hiljaisuusaika, usein klo 22–7, joten pidä äänet kurissa. Lajittele jätteet huolellisesti ja noudata taloyhtiösi ohjeita."
         },
         {
           "label": "Hyödyllisiä fraaseja",
-          "body": "Hei tai Moi: hello. Kiitos: thank you. Ole hyvä: you are welcome / here you go. Anteeksi: excuse me tai sorry. Puhutko englantia?: do you speak English? Kyllä: yes. Ei: no. Moi moi: bye. Kippis: cheers."
+          "body": "Hei tai Moi: hello. Kiitos: thank you. Ole hyvä: you’re welcome / here you go. Anteeksi: excuse me / sorry. Puhutko englantia?: Do you speak English? Kyllä: yes. Ei: no. Moi moi: bye. Kippis: cheers."
         }
       ]
+    }
+  ],
+  "sources": [
+    {
+      "label": "Lahden kaupunki: Newcomer’s Guide",
+      "url": "https://www.lahti.fi/tyo-ja-yrittaminen/international-house-lahti/newcomers-guide/"
     }
   ]
 }

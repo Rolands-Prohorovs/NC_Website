@@ -104,6 +104,56 @@ Not official, but the company's own page is the best source for its own offer.
 | LAB: The ABCs of student events | https://lab.fi/en/story/peek-student-life-abcs-student-events | Living: Things to do (events open to LAB and LUT students) | 2026-11-06 |
 | Fressi, GoGo Express, Kuntokeskus Liikku | https://www.fressi.fi/ , https://www.gogoexpress.fi/ , https://www.liikku.fi/ | Living: Gyms and sports (names and links only; prices and hours not copied) | 2026-11-06 |
 
+## Finnish versions (fi pages)
+The Finnish pages (`fi/living.json`, `fi/students.json`) have the same topics as the English
+ones and link to the Finnish version of each page where the site has one. Each Finnish URL was
+taken from the English page's own language link (`hreflang="fi"` or its language switcher),
+never guessed, and answered HTTP 200 on 2026-11-14. Only the link was verified that day, not
+the facts on the Finnish page, so the `checked` dates in the fi files are the same as in en.
+
+Topic sources (the "Virallinen lähde" button):
+
+| English source (above) | Finnish page used in fi |
+|---|---|
+| City of Lahti: Public transport | https://www.lahti.fi/asuminen-ja-ymparisto/liikenne-ja-kadut/joukkoliikenne/ |
+| City of Lahti: Health in Lahti | https://www.lahti.fi/vapaa-aika/sosiaali-ja-terveyspalvelut/ |
+| City of Lahti: Sports services | https://www.lahti.fi/vapaa-aika/liikunta-ja-ulkoilu/ |
+| City of Lahti: International House Lahti | https://www.lahti.fi/tyo-ja-yrittaminen/international-house-lahti/ |
+| City of Lahti: Newcomer's Guide (page-level) | https://www.lahti.fi/tyo-ja-yrittaminen/international-house-lahti/newcomers-guide/ (the Finnish site's entry page to the guide; the guide itself is in English) |
+| Migri: Studying in Finland | https://migri.fi/opiskelu-suomessa |
+| DVV: Registration of a foreigner | https://dvv.fi/ulkomaalaisen-rekisterointi |
+| Kela: Healthcare fee for students | https://www.kela.fi/terveydenhoitomaksu |
+| Kela: Meal subsidy | https://www.kela.fi/ateriatuki |
+| LSL: Tickets and prices | https://www.lsl.fi/liput-ja-hinnat/ (the Finnish tickets section; found in lsl.fi's own menu, the English page has no language link) |
+| Palpa: consumer FAQ | https://www.palpa.fi/kuluttajille/ukk/ |
+| Fida Lahti | https://fida.fi/myymalat/lahti/ |
+| Visit Lahti: Events | https://visitlahti.fi/etusivu/tapahtumat/ |
+| eLAB: Lahti campus | https://elab.lab.fi/fi/kampukset/lahden-kampus |
+| eLAB: Starting studies | https://elab.lab.fi/fi/opintojen-aloittaminen |
+| eLAB: LUT Academic Library | https://elab.lab.fi/fi/opintojen-ohjaus-ja-palvelut/lut-tiedekirjasto |
+| eLAB: Moveo sport and well-being | https://elab.lab.fi/fi/opintojen-ohjaus-ja-palvelut/opiskelijoiden-tuki-ja-hyvinvointipalvelut/moveo-hyvinvointi-ja |
+| eLAB: Student customer service | https://elab.lab.fi/fi/opintojen-ohjaus-ja-palvelut/opiskelijoiden-asiakaspalvelu |
+| FSHS (YTHS): Lahti | https://www.yths.fi/palvelupisteet/lahti/ |
+| LAB: The ABCs of student events | https://lab.fi/fi/artikkeli/kurkistus-opiskelijaelamaan-opiskelijatapahtumien-abc |
+| KOE: Membership | https://www.koe.fi/liity (already Finnish, same URL) |
+
+The other links inside topics (Matkahuolto, VR, Migri, DVV, Kela, Vero, Police, eLAB/eLUT,
+LTKY, LUT, Compass Group, LUT Shop, Lahden Talot, Vuokraovi, S-Etukortti, Finanssivalvonta,
+Baltia Market, Lahti journey planner, city pages) were switched to their Finnish versions the
+same way. The DVV online form is the same form without `?rinnakkaislomake=en`.
+
+Still English in the fi pages, because no Finnish version was found (labelled "(englanniksi)"
+where the page is English-only):
+- City of Lahti: Living in Lahti and Moving to Lahti (Newcomer's Guide pages; no Finnish
+  alternate). Both old `/en/newcomers-guide/...` URLs now redirect to
+  `/en/housing-and-environment/living-in-lahti/` and
+  `/en/work-and-business/international-house-lahti/newcomers-guide/moving-to-lahti/`; the
+  content files (en and fi) still use the old URLs.
+- City of Lahti: Trails for walking, biking and skiing (no Finnish alternate).
+- Lahden Talot: For international students (English-only page).
+- HSL journey planner: `https://www.hsl.fi/en` kept, because hsl.fi answers automated requests
+  with 403, so its Finnish front page could not be verified.
+
 ## Team experience (not official)
 Practical tips from the team, worded as "may" / "often". Re-check with newcomers during testing.
 
