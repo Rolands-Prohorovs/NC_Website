@@ -1,5 +1,12 @@
-import { useCallback, useMemo, useSyncExternalStore } from 'react';
-import type { DailyTask, Task } from './schema';
+import { useCallback, useEffect, useMemo, useState, useSyncExternalStore } from 'react';
+import {
+  dailyPoolUrl,
+  pickDaily,
+  type DailyPoolEntry,
+  type DailyPoolFile,
+  type Tier,
+} from './daily';
+import type { City, Task } from './schema';
 
 // Checklist progress and daily-task ticks, stored on this device for now.
 // TODO: replace with API calls once the backend (PostgreSQL) exists.
@@ -90,6 +97,8 @@ export function useProgress(cityId: string, tasks: Task[], baseXp: number): Prog
 
 // ---------- Daily tasks: daily:<cityId> = { date: "YYYY-MM-DD", done: ["taskId", ...], xp: 35 } ----------
 // Ticks count only for `date`; on any other (local) day every daily task shows as unchecked.
+// Ids in `done` that are not offered today (data saved before the pool existed, or a task that
+// was removed from the pool) are ignored; the XP stays.
 // `xp` is all XP ever earned from daily tasks (today's included): ticking adds the task's XP,
 // un-ticking the same day removes it, and it is kept when the ticks reset.
 // TODO: replace with the API's /daily endpoints once the backend (PostgreSQL) exists (API.md).
@@ -161,37 +170,103 @@ function subscribeDaily(listener: () => void) {
   };
 }
 
+// The pool is fetched once per city + language and shared by every island on the page.
+const poolCache = new Map<string, Promise<DailyPoolEntry[]>>();
+
+function fetchPool(cityId: string, lang: string): Promise<DailyPoolEntry[]> {
+  const url = dailyPoolUrl(cityId, lang);
+  let pool = poolCache.get(url);
+  if (!pool) {
+    pool = fetch(url).then(async (res) => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return ((await res.json()) as DailyPoolFile).tasks;
+    });
+    // A failed download is not remembered, so the next page view tries again.
+    pool.catch(() => poolCache.delete(url));
+    poolCache.set(url, pool);
+  }
+  return pool;
+}
+
+/** A task offered today: its text in the page's language and the XP of its tier. */
+export type OfferedTask = { id: string; tier: Tier; xp: number; label: string; hint: string };
+
 export type Daily = {
+  /** `loading` during server render, hydration and the download of the pool. */
+  status: 'loading' | 'ready' | 'error';
+  /** Today's tasks, easy first. Empty until `ready`. */
+  tasks: OfferedTask[];
+  /** How many tasks a day offers according to city.json; known before the pool has loaded. */
+  quota: number;
   done: ReadonlySet<string>;
   toggle: (id: string) => void;
   doneCount: number;
   total: number;
 };
 
-export function useDaily(cityId: string, tasks: DailyTask[]): Daily {
-  const done = useSyncExternalStore(subscribeDaily, () => dailySnapshot(cityId), () => EMPTY);
+/**
+ * Today's daily tasks for a city and their ticks (DECISIONS.md D16).
+ *
+ * The site is built statically, so "today" is only known in the browser: the first render (and
+ * the server's) has no tasks, then the pool for this language is downloaded and `pickDaily`
+ * chooses today's. Same store as before, so Home and Progress stay in sync.
+ * TODO: replace with GET /api/cities/:city/daily once the backend exists (API.md).
+ */
+export function useDaily(city: City, lang: string): Daily {
+  const cityId = city.id;
+  // null on the server and while hydrating, so the HTML never depends on the date.
+  const date = useSyncExternalStore(subscribeDaily, today, () => null);
+  const ticked = useSyncExternalStore(subscribeDaily, () => dailySnapshot(cityId), () => EMPTY);
+  const [pool, setPool] = useState<DailyPoolEntry[] | 'error' | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetchPool(cityId, lang)
+      .then((tasks) => !cancelled && setPool(tasks))
+      .catch((err) => {
+        console.warn('Daily tasks failed to load', err);
+        if (!cancelled) setPool('error');
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [cityId, lang]);
+
+  const { xp: tierXp, perDay } = city.daily;
+  const tasks = useMemo<OfferedTask[]>(() => {
+    if (!date || !pool || pool === 'error') return [];
+    const byId = new Map(pool.map((task) => [task.id, task]));
+    return pickDaily(pool, perDay, cityId, date).map(({ id, tier }) => {
+      const { label, hint } = byId.get(id)!;
+      return { id, tier, xp: tierXp[tier], label, hint };
+    });
+  }, [pool, date, cityId, tierXp, perDay]);
 
   const toggle = useCallback(
     (id: string) => {
       const task = tasks.find((t) => t.id === id);
       if (!task) return;
-      const date = today();
-      const before = dailySnapshot(cityId);
+      const day = today();
+      // Only today's offered tasks are kept; anything else in storage is stale.
+      const before = new Set(tasks.filter((t) => dailySnapshot(cityId).has(t.id)).map((t) => t.id));
       const next = toggled(before, id);
       const xp = Math.max(0, readDaily(cityId).xp + (before.has(id) ? -task.xp : task.xp));
-      dailyCache.set(cityId, { date, done: next, xp });
-      save(dailyKeyFor(cityId), { date, done: [...next], xp });
+      dailyCache.set(cityId, { date: day, done: next, xp });
+      save(dailyKeyFor(cityId), { date: day, done: [...next], xp });
     },
     [cityId, tasks]
   );
 
-  return useMemo(
-    () => ({
-      done,
+  return useMemo(() => {
+    const status = pool === 'error' ? 'error' : date && pool ? 'ready' : 'loading';
+    return {
+      status,
+      tasks,
+      quota: perDay.easy + perDay.medium + perDay.hard,
+      done: ticked,
       toggle,
-      doneCount: tasks.filter((task) => done.has(task.id)).length,
+      doneCount: tasks.filter((task) => ticked.has(task.id)).length,
       total: tasks.length,
-    }),
-    [done, toggle, tasks]
-  );
+    };
+  }, [pool, date, tasks, perDay, ticked, toggle]);
 }

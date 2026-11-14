@@ -1,0 +1,40 @@
+{
+  "tasks": [
+    {
+      "id": "placeholder-mail",
+      "tier": "easy"
+    },
+    {
+      "id": "placeholder-finnish",
+      "tier": "easy"
+    },
+    {
+      "id": "placeholder-say-hi",
+      "tier": "easy"
+    },
+    {
+      "id": "placeholder-walk",
+      "tier": "medium"
+    },
+    {
+      "id": "placeholder-cook",
+      "tier": "medium"
+    },
+    {
+      "id": "placeholder-new-place",
+      "tier": "medium"
+    },
+    {
+      "id": "placeholder-event",
+      "tier": "hard"
+    },
+    {
+      "id": "placeholder-finnish-only",
+      "tier": "hard"
+    },
+    {
+      "id": "placeholder-invite",
+      "tier": "hard"
+    }
+  ]
+}

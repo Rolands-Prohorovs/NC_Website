@@ -4,6 +4,7 @@
  * disappearing. Types for components are inferred from these schemas.
  */
 import { z } from 'astro/zod';
+import { TIERS } from './daily';
 import { PAGES } from './pages';
 
 const link = z.strictObject({ label: z.string(), url: z.url() });
@@ -14,6 +15,12 @@ const pageLink = z.strictObject({
   topic: z.string().optional(),
 });
 
+const tierNumbers = {
+  easy: z.number().int().min(0),
+  medium: z.number().int().min(0),
+  hard: z.number().int().min(0),
+};
+
 // src/content/<city>/city.json
 export const citySchema = z.strictObject({
   name: z.string(),
@@ -23,9 +30,25 @@ export const citySchema = z.strictObject({
   stats: z.strictObject({ xp: z.number(), checklistDays: z.number() }),
   // To-do list: only things nearly every newcomer has to do (DECISIONS.md D15). Done once.
   tasks: z.array(z.strictObject({ id: z.string(), group: z.string(), xp: z.number() })),
-  // Small repeatable tasks whose ticks reset every day at local midnight. May be empty.
-  dailyTasks: z.array(z.strictObject({ id: z.string(), xp: z.number() })),
+  // Daily tasks (DECISIONS.md D16): the XP of each tier, and how many tasks of each tier are
+  // offered per day. The pool itself is in daily.json; a quota of 0 switches a tier off.
+  daily: z.strictObject({
+    xp: z.strictObject(tierNumbers),
+    perDay: z.strictObject(tierNumbers),
+  }),
 });
+
+// src/content/<city>/daily.json — the pool of daily tasks: id + tier only. Texts are per
+// language in <lang>/daily.json. Written by scripts/import-daily.mjs, or by hand.
+export const dailyPoolSchema = z
+  .strictObject({
+    tasks: z.array(
+      z.strictObject({ id: z.string().regex(/^[a-z0-9-]+$/), tier: z.enum(TIERS) })
+    ),
+  })
+  .refine((p) => new Set(p.tasks.map((t) => t.id)).size === p.tasks.length, {
+    message: 'daily task ids must be unique',
+  });
 
 // src/content/<city>/<lang>/site.json — strings used on every page
 export const siteSchema = z.strictObject({
@@ -117,9 +140,15 @@ export const progressSchema = z.strictObject({
   streakHint: z.string(),
   tasksLabel: z.string(),
   tasksDone: z.string(),
-  // Daily tasks section; `done` is the counter, e.g. "{done}/{total} today".
-  daily: z.strictObject({ title: z.string(), desc: z.string(), done: z.string() }),
-  dailyTasks: z.record(z.string(), taskCopy),
+  // Daily tasks section; `done` is the counter, e.g. "{done}/{total} today". `loading` and
+  // `error` show while today's tasks are fetched after the page has loaded.
+  daily: z.strictObject({
+    title: z.string(),
+    desc: z.string(),
+    done: z.string(),
+    loading: z.string(),
+    error: z.string(),
+  }),
   // Heading of the to-do list, above the groups.
   todo: z.strictObject({ title: z.string(), desc: z.string() }),
   // Group order here is the order shown on the page.
@@ -136,6 +165,9 @@ export const progressSchema = z.strictObject({
     empty: z.string(),
   }),
 });
+
+// src/content/<city>/<lang>/daily.json — text of every daily task in the pool, keyed by id
+export const dailyCopySchema = z.record(z.string(), taskCopy);
 
 // Short format (ROADMAP.md "Content format"): the answer in one sentence, then a few
 // numbered steps or bulleted facts, plus optional chips. Shared by topics and sub-sections.
@@ -243,7 +275,6 @@ export type CityData = z.infer<typeof citySchema>;
 export type City = CityData & { id: string };
 export type CityLink = { id: string; name: string };
 export type Task = CityData['tasks'][number];
-export type DailyTask = CityData['dailyTasks'][number];
 export type SiteCopy = z.infer<typeof siteSchema>;
 export type HomeCopy = z.infer<typeof homeSchema>;
 export type ProgressCopy = z.infer<typeof progressSchema>;

@@ -1,0 +1,38 @@
+{
+  "placeholder-mail": {
+    "label": "Check your mail and email",
+    "hint": "Official letters from Migri, Kela, DVV or the tax office"
+  },
+  "placeholder-finnish": {
+    "label": "Practise Finnish for 10 minutes",
+    "hint": "An app, a podcast or the signs in a shop"
+  },
+  "placeholder-say-hi": {
+    "label": "Talk to someone new",
+    "hint": "A classmate, a neighbour or the person at the café"
+  },
+  "placeholder-walk": {
+    "label": "Take a 30-minute walk outside",
+    "hint": "By the lake, in the forest or just around your block"
+  },
+  "placeholder-cook": {
+    "label": "Cook a meal at home",
+    "hint": "Try one ingredient you have never bought before"
+  },
+  "placeholder-new-place": {
+    "label": "Visit a place in Lahti you have not been to",
+    "hint": "A café, a library, a park or a shop"
+  },
+  "placeholder-event": {
+    "label": "Go to an event or a club meeting",
+    "hint": "A student event, a hobby group or something from the city’s event calendar"
+  },
+  "placeholder-finnish-only": {
+    "label": "Handle one errand in Finnish",
+    "hint": "Order a coffee or ask the way without switching to English"
+  },
+  "placeholder-invite": {
+    "label": "Invite someone for a coffee or a meal",
+    "hint": "A classmate or neighbour you would like to know better"
+  }
+}

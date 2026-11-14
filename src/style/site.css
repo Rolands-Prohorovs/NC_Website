@@ -286,6 +286,10 @@ button.menu-link { width: 100%; border: 0; background: none; font: inherit; text
 /* Daily tasks: a tinted panel above the to-do list */
 .daily { max-width: 760px; padding: 16px; border-radius: 18px; background: var(--bgc); }
 .daily .task { min-height: 56px; }
+/* Today's tasks are picked in the browser; these hold their place until then. */
+.task-skeleton { background: rgb(255 255 255 / 55%); border-style: dashed; cursor: default; }
+.task-skeleton:hover { background: rgb(255 255 255 / 55%); }
+.daily-status { margin: 0; color: var(--muted); }
 
 /* Heading of the to-do list; its groups use h3 */
 .list-head { margin-top: 40px; }

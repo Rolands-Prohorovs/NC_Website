@@ -21,10 +21,12 @@ There is no test suite or linter. `npm run build` is the main correctness check:
 All text lives in `src/content/<city>/`, loaded as Astro content collections (`src/content.config.ts`):
 
 ```
-src/content/lahti/city.json           name, languages (first = default), stats, checklist tasks
+src/content/lahti/city.json           name, clubUrl, languages (first = default), stats, to-do tasks, daily tiers
+src/content/lahti/daily.json          pool of daily tasks: id + tier only
 src/content/lahti/<lang>/site.json    strings used on every page (club, nav, menu labels)
 src/content/lahti/<lang>/home.json
 src/content/lahti/<lang>/progress.json
+src/content/lahti/<lang>/daily.json   text of every daily task, keyed by id
 src/content/lahti/<lang>/{students,living,meet}.json
 ```
 
@@ -32,6 +34,7 @@ src/content/lahti/<lang>/{students,living,meet}.json
 - `src/lib/content.ts` loads entries; a missing file throws with the expected path, and `loadProgress` checks that every task/group in `city.json` has text in `progress.json`.
 - Info-page topics use the short format (ROADMAP.md "Content format"): `summary`, then `steps` (numbered) or `facts` (bullets, max 5), optional chips `need`/`cost`/`time`, and `source` + `checked` (YYYY-MM-DD), rendered by `TopicContent.astro`. A topic with a `summary` must have a `source`, so the build enforces D10. `body` is for longer text only; blank lines (`\n\n`) split paragraphs. Every topic needs a `summary`, `body` or `sections`: there are no "coming soon" placeholders, so an unwritten topic stays out of the file.
 - `links` entries are either external (`{ label, url }`, opens in a new tab) or another page of the site (`{ label, page, topic? }`). `topic` is the target topic's optional `id`; `loadInfo` in `content.ts` fails the build if no topic has that id.
+- Daily tasks (D16): `city.json` `daily` holds the XP of each tier (`easy`/`medium`/`hard`) and how many of each are offered per day; a task is just `{ id, tier }`. `loadDailyPool` fails the build if a task lacks text in any language. To add or replace tasks in bulk, fill a CSV with the columns `id,tier,en_label,en_hint,fi_label,fi_hint` (template: `scripts/daily-placeholder.csv`) and run `node scripts/import-daily.mjs tasks.csv` (merges by id; `--replace` makes the pool exactly the CSV, `--city <id>` for another city), then `npm run build`. Ids starting `placeholder-` are stand-ins to be replaced.
 - UI strings are per city (not shared) because Finnish inflects place names (Lahti → Lahdessa), so `{city}` templating doesn't work.
 
 ## Routing
@@ -43,7 +46,8 @@ A single route, `src/pages/[city]/[...path].astro`, generates all pages from `ge
 - `src/layouts/Site.astro` wraps every city page: `Base.astro` (html `lang`, hreflang alternates, fonts, global CSS) + `Header` island + footer.
 - Info pages (`InfoPage.astro`) are static Astro with no JS; topics use `<details>`.
 - React islands (`client:load`): `Header`, `Home`, `Progress`. Each receives only its own slice of content as props.
-- Checklist progress is shared across islands via a module-level store in `src/lib/progress.ts` (`useProgress`, `useSyncExternalStore`) persisted to `localStorage` key `progress:<cityId>`. Daily-task ticks and the XP earned from them are in `daily:<cityId>` (`useDaily`). Home's stage picker uses `stage:<cityId>`. All are TODO to move to a PostgreSQL-backed API.
+- Checklist progress is shared across islands via a module-level store in `src/lib/progress.ts` (`useProgress`, `useSyncExternalStore`) persisted to `localStorage` key `progress:<cityId>`. Daily-task ticks and the XP earned from them are in `daily:<cityId>` (`useDaily`).
+- Today's daily tasks are not in the HTML: the build can't know the date. `useDaily` fetches the pool for the page's language from the static endpoint `src/pages/data/[city]/[lang]/daily.json.ts` after hydration and picks today's with `pickDaily` (`src/lib/daily.ts`, a pure function the backend will take over; the same algorithm is written out in API.md). `DailyTasks.tsx` renders them. Level maths is in `src/lib/level.ts`. Home's stage picker uses `stage:<cityId>`. All are TODO to move to a PostgreSQL-backed API.
 - The streak is read only through `useStreak()` in `src/lib/streak.ts`, which returns 0 until the backend provides it (API.md "Progress"); at 0 the UI shows `ui.streakStart` instead of a number.
 - XP = to-do task XP + daily task XP (`useProgress().xp`). The league on the Progress page (`src/lib/league.ts`, `useLeague`) ranks users by it; until the backend has the endpoint it shows invented `MOCK_PLAYERS` plus the logged-in user, behind `USE_MOCK_API` from `src/lib/auth.ts`.
 

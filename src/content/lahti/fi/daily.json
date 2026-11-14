@@ -1,0 +1,38 @@
+{
+  "placeholder-mail": {
+    "label": "Tarkista posti ja sähköposti",
+    "hint": "Viralliset kirjeet Migriltä, Kelalta, DVV:ltä tai verottajalta"
+  },
+  "placeholder-finnish": {
+    "label": "Harjoittele suomea 10 minuuttia",
+    "hint": "Sovellus, podcast tai kaupan kyltit"
+  },
+  "placeholder-say-hi": {
+    "label": "Juttele jonkun uuden kanssa",
+    "hint": "Opiskelukaveri, naapuri tai kahvilan myyjä"
+  },
+  "placeholder-walk": {
+    "label": "Käy 30 minuutin kävelyllä",
+    "hint": "Järven rannalla, metsässä tai omassa korttelissasi"
+  },
+  "placeholder-cook": {
+    "label": "Laita ruokaa kotona",
+    "hint": "Kokeile yhtä raaka-ainetta, jota et ole ennen ostanut"
+  },
+  "placeholder-new-place": {
+    "label": "Käy Lahdessa paikassa, jossa et ole ennen käynyt",
+    "hint": "Kahvila, kirjasto, puisto tai kauppa"
+  },
+  "placeholder-event": {
+    "label": "Mene tapahtumaan tai kerhon tapaamiseen",
+    "hint": "Opiskelijatapahtuma, harrastusryhmä tai jotain kaupungin tapahtumakalenterista"
+  },
+  "placeholder-finnish-only": {
+    "label": "Hoida yksi asia suomeksi",
+    "hint": "Tilaa kahvi tai kysy tietä vaihtamatta englantiin"
+  },
+  "placeholder-invite": {
+    "label": "Kutsu joku kahville tai syömään",
+    "hint": "Opiskelukaveri tai naapuri, johon haluaisit tutustua paremmin"
+  }
+}

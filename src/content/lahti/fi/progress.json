@@ -10,22 +10,10 @@
   "tasksDone": "{done} / {total} tehty",
   "daily": {
     "title": "Päivittäiset tehtävät",
-    "desc": "Pieniä asioita, jotka kannattaa tehdä joka päivä. Jokaisesta saa XP:tä, ja ne nollautuvat keskiyöllä.",
-    "done": "{done}/{total} tänään"
-  },
-  "dailyTasks": {
-    "mail": {
-      "label": "Tarkista posti ja sähköposti",
-      "hint": "Viralliset kirjeet Migriltä, Kelalta, DVV:ltä tai verottajalta"
-    },
-    "finnish": {
-      "label": "Harjoittele suomea 10 minuuttia",
-      "hint": "Sovellus, podcast tai kaupan kyltit"
-    },
-    "say-hi": {
-      "label": "Juttele jonkun uuden kanssa",
-      "hint": "Opiskelukaveri, naapuri tai kahvilan myyjä"
-    }
+    "desc": "Joka päivä muutama uusi tehtävä helposta vaikeaan. Merkitse ne tehdyiksi ja saat XP:tä. Uudet tehtävät tulevat keskiyöllä.",
+    "done": "{done}/{total} tänään",
+    "loading": "Ladataan päivän tehtäviä…",
+    "error": "Päivän tehtäviä ei voitu ladata. Tarkista yhteys ja lataa sivu uudelleen."
   },
   "todo": {
     "title": "Tehtävälista",

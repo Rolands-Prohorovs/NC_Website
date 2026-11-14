@@ -4,6 +4,7 @@ import {
   type CollectionEntry,
   type CollectionKey,
 } from 'astro:content';
+import type { DailyPoolFile } from './daily';
 import { isInfoPage, type AuthPageId, type InfoPageId, type Locale } from './pages';
 import type { AuthPageCopy, City, CityLink } from './schema';
 
@@ -23,7 +24,8 @@ export async function load<C extends CollectionKey>(
 ): Promise<CollectionEntry<C>['data']> {
   const entry = await getEntry(collection, id);
   if (!entry) {
-    const file = collection === 'info' ? `${id}.json` : `${id}/${collection}.json`;
+    const name: Record<string, string> = { dailyPool: 'daily', dailyCopy: 'daily' };
+    const file = collection === 'info' ? `${id}.json` : `${id}/${name[collection] ?? collection}.json`;
     throw new Error(`Missing content file: src/content/${file}`);
   }
   return entry.data;
@@ -48,7 +50,7 @@ export async function loadInfo(loc: Locale, page: InfoPageId) {
   return copy;
 }
 
-/** Checks that progress.json has copy for every task, daily task and group in city.json. */
+/** Checks that progress.json has copy for every task and group in city.json. */
 export async function loadProgress(city: City, lang: string) {
   const copy = await load('progress', `${city.id}/${lang}`);
   const file = `src/content/${city.id}/${lang}/progress.json`;
@@ -56,10 +58,31 @@ export async function loadProgress(city: City, lang: string) {
     if (!copy.tasks[task.id]) throw new Error(`${file}: no text for task "${task.id}"`);
     if (!copy.groups[task.group]) throw new Error(`${file}: no group "${task.group}"`);
   }
-  for (const task of city.dailyTasks) {
-    if (!copy.dailyTasks[task.id]) throw new Error(`${file}: no text for daily task "${task.id}"`);
-  }
   return copy;
+}
+
+/**
+ * The city's pool of daily tasks with the texts of one language, as served to the browser by
+ * src/pages/data/[city]/[lang]/daily.json.ts. Fails the build if a task of the pool has no
+ * text in ANY of the city's languages, or if a language has text for a task that isn't in the
+ * pool (a typo'd or forgotten id).
+ */
+export async function loadDailyPool(city: City, lang: string): Promise<DailyPoolFile> {
+  const pool = (await load('dailyPool', city.id)).tasks;
+  const ids = new Set(pool.map((task) => task.id));
+  for (const l of city.languages) {
+    const texts = await load('dailyCopy', `${city.id}/${l}`);
+    const file = `src/content/${city.id}/${l}/daily.json`;
+    for (const { id } of pool) {
+      if (!texts[id]?.label) throw new Error(`${file}: no text for daily task "${id}"`);
+    }
+    for (const id of Object.keys(texts)) {
+      if (!ids.has(id))
+        throw new Error(`${file}: text for "${id}", which is not in src/content/${city.id}/daily.json`);
+    }
+  }
+  const texts = await load('dailyCopy', `${city.id}/${lang}`);
+  return { tasks: pool.map((task) => ({ ...task, ...texts[task.id] })) };
 }
 
 /** Loads auth.json and keeps only what one page (login or register) needs. */

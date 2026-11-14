@@ -1,0 +1,10 @@
+id,tier,en_label,en_hint,fi_label,fi_hint
+placeholder-mail,easy,Check your mail and email,"Official letters from Migri, Kela, DVV or the tax office",Tarkista posti ja sähköposti,"Viralliset kirjeet Migriltä, Kelalta, DVV:ltä tai verottajalta"
+placeholder-finnish,easy,Practise Finnish for 10 minutes,"An app, a podcast or the signs in a shop",Harjoittele suomea 10 minuuttia,"Sovellus, podcast tai kaupan kyltit"
+placeholder-say-hi,easy,Talk to someone new,"A classmate, a neighbour or the person at the café",Juttele jonkun uuden kanssa,"Opiskelukaveri, naapuri tai kahvilan myyjä"
+placeholder-walk,medium,Take a 30-minute walk outside,"By the lake, in the forest or just around your block",Käy 30 minuutin kävelyllä,"Järven rannalla, metsässä tai omassa korttelissasi"
+placeholder-cook,medium,Cook a meal at home,Try one ingredient you have never bought before,Laita ruokaa kotona,"Kokeile yhtä raaka-ainetta, jota et ole ennen ostanut"
+placeholder-new-place,medium,Visit a place in Lahti you have not been to,"A café, a library, a park or a shop","Käy Lahdessa paikassa, jossa et ole ennen käynyt","Kahvila, kirjasto, puisto tai kauppa"
+placeholder-event,hard,Go to an event or a club meeting,"A student event, a hobby group or something from the city’s event calendar",Mene tapahtumaan tai kerhon tapaamiseen,"Opiskelijatapahtuma, harrastusryhmä tai jotain kaupungin tapahtumakalenterista"
+placeholder-finnish-only,hard,Handle one errand in Finnish,Order a coffee or ask the way without switching to English,Hoida yksi asia suomeksi,Tilaa kahvi tai kysy tietä vaihtamatta englantiin
+placeholder-invite,hard,Invite someone for a coffee or a meal,A classmate or neighbour you would like to know better,Kutsu joku kahville tai syömään,"Opiskelukaveri tai naapuri, johon haluaisit tutustua paremmin"

@@ -1,11 +1,11 @@
 import { useAuth } from '../lib/auth';
+import { levelOf } from '../lib/level';
 import { useLeague } from '../lib/league';
 import { fmt, pageUrl, type Locale } from '../lib/pages';
-import { useDaily, useProgress } from '../lib/progress';
+import { useProgress } from '../lib/progress';
 import type { City, ProgressCopy, SiteCopy } from '../lib/schema';
 import { useStreak } from '../lib/streak';
-
-const XP_PER_LEVEL = 100;
+import DailyTasks from './DailyTasks';
 
 const MEDALS = ['🥇', '🥈', '🥉'];
 
@@ -13,7 +13,6 @@ type Props = { city: City; loc: Locale; p: ProgressCopy; t: SiteCopy };
 
 export default function Progress({ city, loc, p, t }: Props) {
   const progress = useProgress(city.id, city.tasks, city.stats.xp);
-  const daily = useDaily(city.id, city.dailyTasks);
   const auth = useAuth();
   // Only logged-in users are in the league; their row uses the XP shown on this page.
   const league = useLeague(
@@ -22,8 +21,7 @@ export default function Progress({ city, loc, p, t }: Props) {
   );
   const loginUrl = `${pageUrl(loc, 'login')}?next=${encodeURIComponent(pageUrl(loc, 'progress'))}`;
 
-  const level = Math.floor(progress.xp / XP_PER_LEVEL) + 1;
-  const intoLevel = progress.xp % XP_PER_LEVEL;
+  const level = levelOf(progress.xp);
   const tasksPct = progress.total ? (progress.doneCount / progress.total) * 100 : 0;
 
   // Last 7 days as dots, assuming the streak runs up to today.
@@ -50,10 +48,10 @@ export default function Progress({ city, loc, p, t }: Props) {
               {progress.xp} <small>{t.xp}</small>
             </strong>
             <span className="tile-sub">
-              {fmt(p.level, { n: level })} · {fmt(p.toNext, { n: XP_PER_LEVEL - intoLevel })}
+              {fmt(p.level, { n: level.level })} · {fmt(p.toNext, { n: level.toNext })}
             </span>
             <span className="meter" aria-hidden="true">
-              <i style={{ width: `${(intoLevel / XP_PER_LEVEL) * 100}%` }} />
+              <i style={{ width: `${level.pct}%` }} />
             </span>
           </div>
 
@@ -95,38 +93,13 @@ export default function Progress({ city, loc, p, t }: Props) {
           </div>
         </div>
 
-        {daily.total > 0 && (
-          <section className="task-group daily" aria-labelledby="daily-title">
-            <div className="group-head">
-              <h2 id="daily-title">{p.daily.title}</h2>
-              <span className="group-count">
-                {fmt(p.daily.done, { done: daily.doneCount, total: daily.total })}
-              </span>
-            </div>
-            <p className="block-hint">{p.daily.desc}</p>
-
-            <div className="tasks">
-              {city.dailyTasks.map((task) => {
-                const copy = p.dailyTasks[task.id];
-                return (
-                  <label key={task.id} className="task">
-                    <input
-                      type="checkbox"
-                      checked={daily.done.has(task.id)}
-                      onChange={() => daily.toggle(task.id)}
-                    />
-                    <span className="box" aria-hidden="true" />
-                    <span className="task-text">
-                      <strong>{copy.label}</strong>
-                      <small>{copy.hint}</small>
-                    </span>
-                    <span className="task-xp">+{task.xp} {t.xp}</span>
-                  </label>
-                );
-              })}
-            </div>
-          </section>
-        )}
+        <DailyTasks
+          city={city}
+          lang={loc.lang}
+          copy={p.daily}
+          xpLabel={t.xp}
+          headingId="daily-title"
+        />
 
         <div className="list-head">
           <h2>{p.todo.title}</h2>

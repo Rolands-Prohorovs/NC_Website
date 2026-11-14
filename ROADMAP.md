@@ -43,8 +43,9 @@ Goal: the whole site looks like the finished product, on a phone.
 
 ## Phase C: Nov 19 to Dec 17 (feature freeze) ~40 h
 - [ ] Styling and colours (Miro step 4): final visual design
-- [ ] Progress page logic: streak and a badge when all to-do tasks are done (D9, D11)
-- [ ] Daily tasks (D11): pool of tasks in content (EN + FI), "today's 3" UI, XP. May slip past Dec 17. Started 2026-11-08: fixed list of placeholder daily tasks on the Progress page, reset at midnight, stored on the device. 2026-11-13: cut to 3, each gives XP (D15)
+- [ ] Progress page logic: streak and a badge when all to-do tasks are done (D9, D11). Streak shows 0 with an empty state until the backend sends it (`useStreak()` in `src/lib/streak.ts`, 2026-11-14)
+- [x] Daily tasks system (D11, D16): tiered pool in content (easy 5 / medium 10 / hard 15 XP), "today's 3" picked from it (same for everyone, seeded by city + date), ticks and XP on the device. Done 2026-11-14 with a pool of 9 **placeholder** tasks; the selection moves to the backend later (API.md "Daily offer algorithm")
+- [ ] Write the real daily task pool (~300, EN + FI) and import it: `node scripts/import-daily.mjs tasks.csv --replace`
 - [x] ~~Mandatory to-do tasks (D13)~~ removed 2026-11-13 (D15): the to-do list now holds only must-do tasks (8), no badge or separate counter
 - [x] League UI on the Progress page (D15): all users ranked by XP (to-do + daily). Done 2026-11-13 against **mock** players (`src/lib/league.ts`); needs `GET /api/cities/:city/league` from Timofei
 - [ ] Final task list (incl. ideas from the Rotary meeting), EN + FI

@@ -3,6 +3,8 @@ import { glob } from 'astro/loaders';
 import {
   authSchema,
   citySchema,
+  dailyCopySchema,
+  dailyPoolSchema,
   homeSchema,
   infoSchema,
   progressSchema,
@@ -20,6 +22,11 @@ export const collections = {
     loader: glob({ base, pattern: '*/city.json', generateId: ({ entry }) => entry.split('/')[0] }),
     schema: citySchema,
   }),
+  // id: "lahti" — the pool of daily tasks (ids + tiers)
+  dailyPool: defineCollection({
+    loader: glob({ base, pattern: '*/daily.json', generateId: ({ entry }) => entry.split('/')[0] }),
+    schema: dailyPoolSchema,
+  }),
   // id: "lahti/en"
   site: defineCollection({
     loader: glob({ base, pattern: '*/*/site.json', generateId: cityLang }),
@@ -32,6 +39,10 @@ export const collections = {
   progress: defineCollection({
     loader: glob({ base, pattern: '*/*/progress.json', generateId: cityLang }),
     schema: progressSchema,
+  }),
+  dailyCopy: defineCollection({
+    loader: glob({ base, pattern: '*/*/daily.json', generateId: cityLang }),
+    schema: dailyCopySchema,
   }),
   auth: defineCollection({
     loader: glob({ base, pattern: '*/*/auth.json', generateId: cityLang }),

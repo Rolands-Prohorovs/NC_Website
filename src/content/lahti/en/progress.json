@@ -10,22 +10,10 @@
   "tasksDone": "{done} of {total} done",
   "daily": {
     "title": "Daily tasks",
-    "desc": "Small things worth doing every day. Each gives XP, and they reset at midnight.",
-    "done": "{done}/{total} today"
-  },
-  "dailyTasks": {
-    "mail": {
-      "label": "Check your mail and email",
-      "hint": "Official letters from Migri, Kela, DVV or the tax office"
-    },
-    "finnish": {
-      "label": "Practise Finnish for 10 minutes",
-      "hint": "An app, a podcast or the signs in a shop"
-    },
-    "say-hi": {
-      "label": "Talk to someone new",
-      "hint": "A classmate, a neighbour or the person at the café"
-    }
+    "desc": "A few new tasks every day, from easy to hard. Tick them off for XP. New ones arrive at midnight.",
+    "done": "{done}/{total} today",
+    "loading": "Loading today’s tasks…",
+    "error": "Today’s tasks could not be loaded. Check your connection and reload the page."
   },
   "todo": {
     "title": "To do",

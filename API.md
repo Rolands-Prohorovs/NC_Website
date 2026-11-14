@@ -2,7 +2,7 @@
 
 Contract between the frontend (Rolands) and the backend (Timofei). Status: **draft for discussion**.
 Answered questions are marked **(agreed)**, still-open ones **Q**. Based on DECISIONS.md D6, D7, D9,
-D11, D12, D15, D-open-1 and D-open-5.
+D11, D12, D15, D16, D-open-1 and D-open-5.
 
 ## Basics
 - Base path: `/api`, JSON in and out, UTF-8.
@@ -45,7 +45,8 @@ Two kinds of tasks (D11, D15):
   housing, insurance, keys, phone number, university email, DVV, bank), defined in `city.json`
   (ids, XP) + `<lang>/progress.json` (text). Done once, can be un-ticked any time. Works without
   an account (stored on the device). All done = badge. **Each gives XP (D15).**
-- **Daily tasks**: 3 per day. They give XP too. On the server they need an account.
+- **Daily tasks**: 3 per day from a pool, one easy (5 XP), one medium (10 XP), one hard
+  (15 XP), the same for everyone in the city (D16). On the server they need an account.
 
 XP from both kinds adds up to one total per user and city, which ranks the **league** (below).
 
@@ -53,7 +54,8 @@ The frontend only sends "task done / not done"; **XP, streak, badge and the dail
 calculated by the backend** (D7), so a future app gets the same rules.
 
 **Where definitions live (agreed, Q5):** task ids, text and XP values are content
-(`src/content/<city>/`), so translations and new cities need no database changes. The backend
+(`src/content/<city>/`: `city.json` for the to-do list and the daily tiers, `daily.json` for
+the daily pool), so translations and new cities need no database changes. The backend
 reads the ids and XP values from the same files: same repo, or copied at deploy.
 It never needs the text.
 
@@ -75,7 +77,7 @@ It never needs the text.
 - When every to-do task is done, `todo.badge` becomes `{ "earnedAt": "..." }`. Proposal: the badge
   is kept even if a task is un-ticked later.
 
-### Daily tasks (later; shape agreed now so `Progress` doesn't change)
+### Daily tasks (D16; later on the server, shape agreed now so `Progress` doesn't change)
 | Method | Path | Body | Response |
 |---|---|---|---|
 | GET | `/api/cities/:city/daily` | none | `200` + `Daily` |
@@ -87,29 +89,89 @@ It never needs the text.
 {
   "day": "2026-11-20",
   "offered": [
-    { "id": "try-salmiakki", "xp": 15 },
-    { "id": "library-card", "xp": 20 },
-    { "id": "walk-harbour", "xp": 10 }
+    { "id": "say-moi", "tier": "easy", "xp": 5 },
+    { "id": "library-card", "tier": "medium", "xp": 10 },
+    { "id": "walk-harbour", "tier": "hard", "xp": 15 }
   ],
   "done": ["library-card"]
 }
 ```
 
-- The backend picks the 3 tasks the first time the user asks for that day and stores them, so
-  reloading or switching devices shows the same 3.
+- **The pool (D16).** Each city has a pool of daily tasks (about 300 planned for Lahti) in three
+  tiers. Definitions are `src/content/<city>/daily.json`: `{ "tasks": [{ "id", "tier" }] }`, no
+  per-task XP. `city.json` holds the rest in one place:
+  `"daily": { "xp": { "easy": 5, "medium": 10, "hard": 15 }, "perDay": { "easy": 1, "medium": 1, "hard": 1 } }`.
+  A task's XP is `daily.xp[tier]`; a day offers `daily.perDay[tier]` tasks of each tier (3 tasks,
+  max. 30 XP a day). Texts are in `<lang>/daily.json` and the backend never needs them.
+- **Everyone in a city gets the same tasks on the same day** (Q9, answered by D16): the offer is
+  a pure function of city + date + pool, see "Daily offer algorithm" below. Nothing has to be
+  stored per user to make a reload or another device show the same tasks. The user may complete
+  all of them.
 - PUT/DELETE on a task that isn't in today's offer: `409 not_offered_today`. This covers
   "can't un-tick after the day has passed": yesterday's tasks are no longer offered.
-- XP is stored with each completion (the task's XP at that moment), not recalculated from the
-  pool, so changing a task's XP later doesn't change anyone's past XP.
-- **Until this API exists (frontend only):** `city.json` has a fixed `dailyTasks` list of 3
-  (`[{ "id": "mail", "xp": 5 }, ...]`, no pool, no daily offer), and the state is kept on the
-  device in localStorage `daily:<city>` as
-  `{ "date": "2026-11-20", "done": ["mail", "finnish"], "xp": 35 }`. `date` is the device's local
-  day; if it isn't today, nothing counts as done. `xp` is all XP earned from daily tasks so far
-  (ticking adds the task's XP, un-ticking the same day removes it). **Open:** this XP is not
-  imported on login yet (the import endpoint only takes to-do ticks).
-- **Q9:** may the user complete all 3, or pick only 1? How are tasks picked (random, no repeats
-  within N days)? What happens when the pool runs out?
+- XP is stored with each completion (the tier's XP at that moment), not recalculated from the
+  pool, so changing the XP of a tier later doesn't change anyone's past XP.
+- **Until this API exists (frontend only):** the browser downloads the pool with the texts of
+  its language from a static file (`/data/<city>/<lang>/daily.json`) and runs the algorithm
+  itself (`pickDaily` in `src/lib/daily.ts`) with the **device's local date**. The state is kept
+  on the device in localStorage `daily:<city>` as
+  `{ "date": "2026-11-20", "done": ["say-moi", "library-card"], "xp": 35 }`. `date` is the
+  device's local day; if it isn't today, nothing counts as done. Ids in `done` that are not in
+  today's offer are ignored. `xp` is all XP earned from daily tasks so far (ticking adds the
+  task's XP, un-ticking the same day removes it). **Open:** this XP is not imported on login yet
+  (the import endpoint only takes to-do ticks).
+
+#### Daily offer algorithm (D16)
+The frontend runs this today; the backend should implement exactly the same steps so the offer
+doesn't change for anyone on the day the API goes live. Reference implementation:
+`src/lib/daily.ts` (`pickDaily`, pure TypeScript, no browser APIs, can be copied as is).
+
+Input: the city id (`"lahti"`), the calendar date `YYYY-MM-DD` (backend: today in
+`Europe/Helsinki`), the pool, and `perDay`. For each tier, in the order easy, medium, hard:
+
+1. `tasks` = the pool's tasks of this tier, **sorted by id** (plain ascending byte order; ids
+   are `a-z 0-9 -` only). The order in the content file must not matter.
+2. `count = min(perDay[tier], tasks.length)`. If it is 0, the tier offers nothing. So a pool
+   smaller than the quota simply offers all it has, every day.
+3. `day` = whole days from 1970-01-01 to the date (`2026-11-14` -> `20771`).
+4. `daysPerRound = floor(tasks.length / count)`, `round = floor(day / daysPerRound)`,
+   `slot = day mod daysPerRound`.
+5. Shuffle `tasks` with the seed `hash32(city + ":" + tier + ":" + round)`, e.g.
+   `"lahti:easy:6923"`:
+   - `hash32` = 32-bit FNV-1a over the bytes of the string (offset basis `0x811c9dc5`, prime
+     `0x01000193`, all arithmetic modulo 2^32).
+   - Random numbers = **mulberry32** seeded with that hash. Each call:
+     `a = (a + 0x6D2B79F5) mod 2^32; t = a; t = imul(t xor (t >>> 15), t | 1);`
+     `t = t xor (t + imul(t xor (t >>> 7), t | 61)); result = ((t xor (t >>> 14)) >>> 0) / 2^32`
+     (`imul` = 32-bit multiplication, `>>>` = unsigned shift).
+   - Fisher-Yates from the end: `for i = n-1 down to 1: j = floor(random() * (i + 1)); swap(i, j)`.
+6. The tier's offer = items `slot * count` to `slot * count + count - 1` of the shuffled list.
+
+The offer is the three tiers' results one after the other.
+
+Why this way: within a round each task of a tier is offered at most once, so nothing repeats
+until the whole tier has been used; then the next round reshuffles with a new seed. Known and
+accepted: (a) if `count` doesn't divide the tier's size, the left-over `tasks.length mod count`
+tasks of a round are skipped in that round; (b) the last task of one round can be the first of
+the next (two days in a row), about once per round with a chance of `count / tasks.length`;
+(c) adding or removing a task of a tier changes that tier's offer from that day on.
+
+Test vectors (`hash32("") = 2166136261`, `hash32("a") = 3826002220`,
+`hash32("lahti:easy:4154") = 3937242945`). Pool: easy `e1 e2 e3 e4 e5`, medium `m1 m2 m3 m4`,
+hard `h1 h2 h3`; city `lahti`:
+
+| Date | perDay 1 / 1 / 1 | perDay 2 / 1 / 0 |
+|---|---|---|
+| 2026-11-19 | `e4 m2 h2` | `e5 e4 m2` |
+| 2026-11-20 | `e2 m1 h1` | `e3 e1 m1` |
+| 2026-11-21 | `e5 m3 h3` | `e2 e3 m3` |
+| 2027-01-01 | `e4 m4 h2` | `e2 e3 m4` |
+
+- **Q11 (new):** the frontend uses the device's local date, the backend Helsinki time. For a
+  user abroad the offer can differ for a few hours around midnight until the API takes over.
+  Fine for v1?
+- `daily_offer` in the suggested storage below is no longer needed for showing the same tasks;
+  keep it only if you want a record of what was offered.
 
 ### Progress
 ```json
@@ -131,7 +193,10 @@ It never needs the text.
 - `streak.current` is still shown on the day after `lastDay` (the user can still keep it); it
   drops to 0 once a whole day has passed without activity. `best` is never lowered.
 - **Q7: level.** Not decided yet. Proposal stays: fixed XP thresholds per level in the backend;
-  the frontend only shows `level` (+ `xpForNextLevel` if we want a progress bar).
+  the frontend only shows `level` (+ `xpForNextLevel` if we want a progress bar). Until then the
+  frontend uses 100 XP per level (`src/lib/level.ts`).
+- **Frontend today:** the streak is always 0. Every place that shows it reads one hook,
+  `useStreak()` in `src/lib/streak.ts`, which is where `streak.current` gets plugged in.
 - **Un-ticking (Q8, updated by D15):** to-do tasks can be un-ticked any time, which removes
   their XP. Daily
   tasks can be un-ticked only on the same day, which removes their XP and, if it was the day's

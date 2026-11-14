@@ -22,6 +22,11 @@ Short log of decisions and why. Newest at the bottom of each list.
   - To-do tasks give XP as well as daily tasks (D11 said only daily tasks do).
   - 3 daily tasks, not 5. Still a fixed list per city until the backend offers 3 from a pool.
   - League: all users with an account, ranked by total XP, shown on the Progress page. No opt-in (API.md used to say opt-in), so the privacy page must say that nickname and XP are public. Until the backend has the endpoint the table shows invented mock players (`src/lib/league.ts`).
+- **D16: Daily tasks come from a tiered pool; everyone gets the same 3 per day** (Rolands, 2026-11-14). Replaces the "3 fixed daily tasks" part of D15 and answers API.md Q9.
+  - Pool of about 300 tasks per city in three tiers: easy = 5 XP, medium = 10 XP, hard = 15 XP. A day offers 1 easy + 1 medium + 1 hard (max. 30 XP a day). The tier -> XP map and the per-day quota are in `city.json` (`daily`); a task definition is only id + tier (`src/content/<city>/daily.json`), texts are per language (`<lang>/daily.json`). The 8 to-do tasks and their XP are unchanged.
+  - The offer is the same for everyone in a city on the same day: a pure function of city + date + pool, with no repeats within a tier until that tier's pool has been used (`pickDaily` in `src/lib/daily.ts`, written out in API.md "Daily offer algorithm"). Why not random per user: nothing to store, a reload or second device shows the same tasks, and people can talk about "today's tasks".
+  - Until the backend owns it (D7) the browser picks the tasks after the page has loaded, from a static JSON file per city and language, using the device's local date. The pool is not embedded in the pages.
+  - The real tasks are still to be written (Rolands, EN + FI, imported from a CSV with `scripts/import-daily.mjs`); until then the pool is 9 placeholders with ids starting `placeholder-`.
 
 ## Open
 - **D-open-1: Is an account required?** Proposal: no. Progress works without an account (stored on the device). An optional account (nickname + password) saves it to the server and enables the league. Fewer people forced to sign up, less personal data, and the backend is still fully needed. Decide with Timofei + customer.

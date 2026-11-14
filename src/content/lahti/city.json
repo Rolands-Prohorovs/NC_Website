@@ -51,18 +51,16 @@
       "xp": 25
     }
   ],
-  "dailyTasks": [
-    {
-      "id": "mail",
-      "xp": 5
+  "daily": {
+    "xp": {
+      "easy": 5,
+      "medium": 10,
+      "hard": 15
     },
-    {
-      "id": "finnish",
-      "xp": 5
-    },
-    {
-      "id": "say-hi",
-      "xp": 5
+    "perDay": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
     }
-  ]
+  }
 }
