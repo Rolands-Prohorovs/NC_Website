@@ -29,7 +29,7 @@ Goal: show the new content format on one real page.
 - [x] Living in Lahti page: rewrite in the short format with official sources (EN). Start from the content already there; main reference: City of Lahti Newcomer's Guide (see SOURCES.md). Done for 12 of 25 topics; the rest have no official source yet (SOURCES.md "Needs a source")
 - [x] Log every source used in `SOURCES.md`
 - [x] Add `source` + `checked` (date) to topics; show "Official source / checked <date>" in the UI
-- [ ] With Timofei: first draft of the API spec (auth, progress, streak, XP). Draft 2 is in `API.md`; Q4, Q7, Q9 still open
+- [ ] With Timofei: first draft of the API spec (auth, progress, streak, XP). Draft 2 is in `API.md`; Q4, Q7, Q9, Q10 (league) still open
 - [ ] Find out what the Rotary club's hosting supports (see Risks), ask at the meeting if unknown
 
 ## Phase B: Nov 11 to Nov 19 (Rotary presentation) ~10 h
@@ -44,8 +44,9 @@ Goal: the whole site looks like the finished product, on a phone.
 ## Phase C: Nov 19 to Dec 17 (feature freeze) ~40 h
 - [ ] Styling and colours (Miro step 4): final visual design
 - [ ] Progress page logic: streak and a badge when all to-do tasks are done (D9, D11)
-- [ ] Daily tasks (D11): pool of tasks in content (EN + FI), "today's 3" UI, XP. May slip past Dec 17. Started 2026-11-08: fixed list of 5 placeholder daily tasks on the Progress page, reset at midnight, stored on the device (no XP yet)
-- [x] Mandatory to-do tasks (D13): badge, mandatory first in each group, "x/y mandatory done" counter
+- [ ] Daily tasks (D11): pool of tasks in content (EN + FI), "today's 3" UI, XP. May slip past Dec 17. Started 2026-11-08: fixed list of placeholder daily tasks on the Progress page, reset at midnight, stored on the device. 2026-11-13: cut to 3, each gives XP (D15)
+- [x] ~~Mandatory to-do tasks (D13)~~ removed 2026-11-13 (D15): the to-do list now holds only must-do tasks (8), no badge or separate counter
+- [x] League UI on the Progress page (D15): all users ranked by XP (to-do + daily). Done 2026-11-13 against **mock** players (`src/lib/league.ts`); needs `GET /api/cities/:city/league` from Timofei
 - [ ] Final task list (incl. ideas from the Rotary meeting), EN + FI
 - [x] Account UI: register / log in / log out with nickname + password; progress works without logging in (D-open-1). Done 2026-11-11 against a **mock** API (`src/lib/auth.ts`, users in localStorage, `USE_MOCK_API`); `/login` + `/register` pages, header Log in button / account menu (D14). Progress import on login is a stub until the real API exists
 - [ ] Connect frontend to Timofei's API (mock -> real), migrate localStorage progress into the account on first login

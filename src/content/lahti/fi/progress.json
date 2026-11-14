@@ -8,11 +8,9 @@
   "streakHint": "Peräkkäiset päivät, jolloin avasit oppaan",
   "tasksLabel": "Tehtävät",
   "tasksDone": "{done} / {total} tehty",
-  "mandatoryDone": "{done} / {total} pakollista tehty",
-  "previewNote": "XP ja putki ovat toistaiseksi esikatselu. Tehtävälistasi tallentuu tälle laitteelle.",
   "daily": {
     "title": "Päivittäiset tehtävät",
-    "desc": "Pieniä asioita, jotka kannattaa tehdä joka päivä. Ne nollautuvat keskiyöllä.",
+    "desc": "Pieniä asioita, jotka kannattaa tehdä joka päivä. Jokaisesta saa XP:tä, ja ne nollautuvat keskiyöllä.",
     "done": "{done}/{total} tänään"
   },
   "dailyTasks": {
@@ -20,17 +18,9 @@
       "label": "Tarkista posti ja sähköposti",
       "hint": "Viralliset kirjeet Migriltä, Kelalta, DVV:ltä tai verottajalta"
     },
-    "applications": {
-      "label": "Tarkista vireillä olevat hakemukset",
-      "hint": "Enter Finland tai OmaKela, jos odotat päätöstä"
-    },
     "finnish": {
       "label": "Harjoittele suomea 10 minuuttia",
       "hint": "Sovellus, podcast tai kaupan kyltit"
-    },
-    "daylight": {
-      "label": "Käy ulkona päivänvalossa",
-      "hint": "Jo 15 minuuttia auttaa pimeinä kuukausina"
     },
     "say-hi": {
       "label": "Juttele jonkun uuden kanssa",
@@ -39,9 +29,8 @@
   },
   "todo": {
     "title": "Tehtävälista",
-    "desc": "Asiat, jotka hoidetaan kerran. Pakolliset ovat kunkin ryhmän alussa."
+    "desc": "Asiat, jotka lähes jokaisen Lahteen muuttavan täytyy hoitaa. Jokainen tehdään kerran."
   },
-  "mandatory": "Pakollinen",
   "groups": {
     "before": {
       "title": "Ennen saapumista",
@@ -54,10 +43,6 @@
     "firstWeeks": {
       "title": "Ensimmäiset viikot",
       "desc": "Viralliset asiat ja opintojen aloitus."
-    },
-    "settling": {
-      "title": "Asettuminen",
-      "desc": "Tee Lahdesta koti."
     }
   },
   "tasks": {
@@ -68,10 +53,6 @@
     "housing": {
       "label": "Varmista asuminen",
       "hint": "Allekirjoitettu sopimus ja avainten noutoaika"
-    },
-    "route": {
-      "label": "Suunnittele matka Lahteen",
-      "hint": "Lentokentältä tai satamasta Lahteen, liput ja aikataulu"
     },
     "insurance": {
       "label": "Tarkista sairausvakuutus",
@@ -85,10 +66,6 @@
       "label": "Hanki puhelinnumero",
       "hint": "Prepaid-SIM kioskista, kaupasta tai marketista"
     },
-    "groceries": {
-      "label": "Tee ensimmäiset ruokaostokset",
-      "hint": "Monet kaupat sulkeutuvat sunnuntaisin aikaisin"
-    },
     "uni-mail": {
       "label": "Lue oppilaitoksen sähköpostit",
       "hint": "Etsi orientaation päivämäärät"
@@ -100,34 +77,15 @@
     "bank": {
       "label": "Varaa aika pankkiin",
       "hint": "Ota passi, lupa ja opiskelutodistus"
-    },
-    "student-id": {
-      "label": "Hanki opiskelijakortti",
-      "hint": "Tarvitaan juna- ja ruokaalennuksiin"
-    },
-    "campus": {
-      "label": "Käy kampuksella",
-      "hint": "Löydä opiskelijapalvelut ja luokkahuoneet"
-    },
-    "tickets": {
-      "label": "Hoida bussiliput",
-      "hint": "Tarkista LSL-sovellus ja opiskelija-alennukset"
-    },
-    "event": {
-      "label": "Osallistu yhteen tapahtumaan",
-      "hint": "Opiskelijabileet, kerhoilta tai RCLI-tapaaminen"
-    },
-    "sauna": {
-      "label": "Kokeile saunaa",
-      "hint": "Monissa taloissa on yhteinen sauna"
-    },
-    "winter": {
-      "label": "Valmistaudu talveen",
-      "hint": "Lämpimät kerrokset, hyväpitoiset kengät, heijastin"
-    },
-    "secondhand": {
-      "label": "Käy kirpputorilla",
-      "hint": "Sisusta kotisi edullisesti"
     }
+  },
+  "league": {
+    "title": "Liiga",
+    "desc": "Kaikki oppaan käyttäjät Lahdessa XP:n mukaan järjestettynä. Nouse sijoituksissa tekemällä tehtävälistan ja päivittäisiä tehtäviä.",
+    "you": "Sinä",
+    "rank": "Sija {n}",
+    "loginPrompt": "Kirjaudu sisään, niin pääset mukaan liigaan.",
+    "loginCta": "Kirjaudu sisään",
+    "empty": "Liigassa ei ole vielä ketään."
   }
 }

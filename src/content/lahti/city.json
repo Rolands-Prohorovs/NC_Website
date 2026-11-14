@@ -13,121 +13,56 @@
     {
       "id": "documents",
       "group": "before",
-      "xp": 10,
-      "mandatory": true
+      "xp": 10
     },
     {
       "id": "housing",
       "group": "before",
-      "xp": 15,
-      "mandatory": true
-    },
-    {
-      "id": "route",
-      "group": "before",
-      "xp": 10,
-      "mandatory": false
+      "xp": 15
     },
     {
       "id": "insurance",
       "group": "before",
-      "xp": 10,
-      "mandatory": true
+      "xp": 10
     },
     {
       "id": "keys",
       "group": "first48",
-      "xp": 15,
-      "mandatory": true
+      "xp": 15
     },
     {
       "id": "sim",
       "group": "first48",
-      "xp": 10,
-      "mandatory": true
-    },
-    {
-      "id": "groceries",
-      "group": "first48",
-      "xp": 10,
-      "mandatory": false
+      "xp": 10
     },
     {
       "id": "uni-mail",
       "group": "first48",
-      "xp": 10,
-      "mandatory": true
+      "xp": 10
     },
     {
       "id": "dvv",
       "group": "firstWeeks",
-      "xp": 25,
-      "mandatory": true
+      "xp": 25
     },
     {
       "id": "bank",
       "group": "firstWeeks",
-      "xp": 25,
-      "mandatory": true
-    },
-    {
-      "id": "student-id",
-      "group": "firstWeeks",
-      "xp": 20,
-      "mandatory": false
-    },
-    {
-      "id": "campus",
-      "group": "firstWeeks",
-      "xp": 15,
-      "mandatory": false
-    },
-    {
-      "id": "tickets",
-      "group": "firstWeeks",
-      "xp": 10,
-      "mandatory": false
-    },
-    {
-      "id": "event",
-      "group": "settling",
-      "xp": 20,
-      "mandatory": false
-    },
-    {
-      "id": "sauna",
-      "group": "settling",
-      "xp": 15,
-      "mandatory": false
-    },
-    {
-      "id": "winter",
-      "group": "settling",
-      "xp": 20,
-      "mandatory": false
-    },
-    {
-      "id": "secondhand",
-      "group": "settling",
-      "xp": 10,
-      "mandatory": false
+      "xp": 25
     }
   ],
   "dailyTasks": [
     {
-      "id": "mail"
+      "id": "mail",
+      "xp": 5
     },
     {
-      "id": "applications"
+      "id": "finnish",
+      "xp": 5
     },
     {
-      "id": "finnish"
-    },
-    {
-      "id": "daylight"
-    },
-    {
-      "id": "say-hi"
+      "id": "say-hi",
+      "xp": 5
     }
   ]
 }

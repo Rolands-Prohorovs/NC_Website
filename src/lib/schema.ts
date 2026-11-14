@@ -19,12 +19,10 @@ export const citySchema = z.strictObject({
   name: z.string(),
   languages: z.array(z.string()).min(1),
   stats: z.strictObject({ xp: z.number(), streak: z.number(), checklistDays: z.number() }),
-  // To-do list: done once. `mandatory` = legally or practically required for a newcomer.
-  tasks: z.array(
-    z.strictObject({ id: z.string(), group: z.string(), xp: z.number(), mandatory: z.boolean() })
-  ),
+  // To-do list: only things nearly every newcomer has to do (DECISIONS.md D15). Done once.
+  tasks: z.array(z.strictObject({ id: z.string(), group: z.string(), xp: z.number() })),
   // Small repeatable tasks whose ticks reset every day at local midnight. May be empty.
-  dailyTasks: z.array(z.strictObject({ id: z.string() })),
+  dailyTasks: z.array(z.strictObject({ id: z.string(), xp: z.number() })),
 });
 
 // src/content/<city>/<lang>/site.json — strings used on every page
@@ -115,19 +113,24 @@ export const progressSchema = z.strictObject({
   streakHint: z.string(),
   tasksLabel: z.string(),
   tasksDone: z.string(),
-  // "{done} of {total} mandatory done"
-  mandatoryDone: z.string(),
-  previewNote: z.string(),
   // Daily tasks section; `done` is the counter, e.g. "{done}/{total} today".
   daily: z.strictObject({ title: z.string(), desc: z.string(), done: z.string() }),
   dailyTasks: z.record(z.string(), taskCopy),
   // Heading of the to-do list, above the groups.
   todo: z.strictObject({ title: z.string(), desc: z.string() }),
-  // Badge text on mandatory to-do tasks.
-  mandatory: z.string(),
   // Group order here is the order shown on the page.
   groups: z.record(z.string(), z.strictObject({ title: z.string(), desc: z.string() })),
   tasks: z.record(z.string(), taskCopy),
+  // League table. `rank` takes {n} (screen readers); the login line shows when logged out.
+  league: z.strictObject({
+    title: z.string(),
+    desc: z.string(),
+    you: z.string(),
+    rank: z.string(),
+    loginPrompt: z.string(),
+    loginCta: z.string(),
+    empty: z.string(),
+  }),
 });
 
 // Short format (ROADMAP.md "Content format"): the answer in one sentence, then a few

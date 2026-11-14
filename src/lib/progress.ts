@@ -59,13 +59,13 @@ export type Progress = {
   xp: number;
   doneCount: number;
   total: number;
-  mandatoryDone: number;
-  mandatoryTotal: number;
 };
 
+/** `xp` = baseXp + XP of the ticked to-do tasks + all XP earned from daily tasks. */
 export function useProgress(cityId: string, tasks: Task[], baseXp: number): Progress {
   // Server render and hydration use EMPTY; the saved ticks appear right after.
   const done = useSyncExternalStore(subscribe, () => read(cityId), () => EMPTY);
+  const dailyXp = useSyncExternalStore(subscribe, () => readDaily(cityId).xp, () => 0);
 
   const toggle = useCallback(
     (id: string) => {
@@ -81,20 +81,20 @@ export function useProgress(cityId: string, tasks: Task[], baseXp: number): Prog
     return {
       done,
       toggle,
-      xp: baseXp + known.reduce((sum, task) => sum + task.xp, 0),
+      xp: baseXp + dailyXp + known.reduce((sum, task) => sum + task.xp, 0),
       doneCount: known.length,
       total: tasks.length,
-      mandatoryDone: known.filter((task) => task.mandatory).length,
-      mandatoryTotal: tasks.filter((task) => task.mandatory).length,
     };
-  }, [done, toggle, tasks, baseXp]);
+  }, [done, dailyXp, toggle, tasks, baseXp]);
 }
 
-// ---------- Daily tasks: daily:<cityId> = { date: "YYYY-MM-DD", done: ["taskId", ...] } ----------
+// ---------- Daily tasks: daily:<cityId> = { date: "YYYY-MM-DD", done: ["taskId", ...], xp: 35 } ----------
 // Ticks count only for `date`; on any other (local) day every daily task shows as unchecked.
+// `xp` is all XP ever earned from daily tasks (today's included): ticking adds the task's XP,
+// un-ticking the same day removes it, and it is kept when the ticks reset.
 // TODO: replace with the API's /daily endpoints once the backend (PostgreSQL) exists (API.md).
 
-type DailyState = { date: string; done: ReadonlySet<string> };
+type DailyState = { date: string; done: ReadonlySet<string>; xp: number };
 
 const dailyCache = new Map<string, DailyState>();
 const dailyKeyFor = (cityId: string) => `daily:${cityId}`;
@@ -109,12 +109,19 @@ function today(): string {
 function readDaily(cityId: string): DailyState {
   let state = dailyCache.get(cityId);
   if (!state) {
-    state = { date: '', done: EMPTY };
+    state = { date: '', done: EMPTY, xp: 0 };
     try {
       const raw = localStorage.getItem(dailyKeyFor(cityId));
-      const saved = raw ? (JSON.parse(raw) as { date?: unknown; done?: unknown }) : null;
+      const saved = raw
+        ? (JSON.parse(raw) as { date?: unknown; done?: unknown; xp?: unknown })
+        : null;
       if (saved && typeof saved.date === 'string' && Array.isArray(saved.done))
-        state = { date: saved.date, done: new Set(saved.done as string[]) };
+        state = {
+          date: saved.date,
+          done: new Set(saved.done as string[]),
+          // Missing in data saved before daily tasks gave XP.
+          xp: typeof saved.xp === 'number' && saved.xp > 0 ? saved.xp : 0,
+        };
     } catch {
       /* storage unavailable or corrupt: start empty */
     }
@@ -166,12 +173,16 @@ export function useDaily(cityId: string, tasks: DailyTask[]): Daily {
 
   const toggle = useCallback(
     (id: string) => {
+      const task = tasks.find((t) => t.id === id);
+      if (!task) return;
       const date = today();
-      const next = toggled(dailySnapshot(cityId), id);
-      dailyCache.set(cityId, { date, done: next });
-      save(dailyKeyFor(cityId), { date, done: [...next] });
+      const before = dailySnapshot(cityId);
+      const next = toggled(before, id);
+      const xp = Math.max(0, readDaily(cityId).xp + (before.has(id) ? -task.xp : task.xp));
+      dailyCache.set(cityId, { date, done: next, xp });
+      save(dailyKeyFor(cityId), { date, done: [...next], xp });
     },
-    [cityId]
+    [cityId, tasks]
   );
 
   return useMemo(

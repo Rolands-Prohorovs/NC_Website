@@ -8,11 +8,9 @@
   "streakHint": "Days in a row you opened the guide",
   "tasksLabel": "Tasks",
   "tasksDone": "{done} of {total} done",
-  "mandatoryDone": "{done} of {total} mandatory done",
-  "previewNote": "XP and streak are a preview for now. Your checklist is saved on this device.",
   "daily": {
     "title": "Daily tasks",
-    "desc": "Small things worth doing every day. They reset at midnight.",
+    "desc": "Small things worth doing every day. Each gives XP, and they reset at midnight.",
     "done": "{done}/{total} today"
   },
   "dailyTasks": {
@@ -20,17 +18,9 @@
       "label": "Check your mail and email",
       "hint": "Official letters from Migri, Kela, DVV or the tax office"
     },
-    "applications": {
-      "label": "Check your pending applications",
-      "hint": "Enter Finland or OmaKela, if you are waiting for a decision"
-    },
     "finnish": {
       "label": "Practise Finnish for 10 minutes",
       "hint": "An app, a podcast or the signs in a shop"
-    },
-    "daylight": {
-      "label": "Get outside in daylight",
-      "hint": "Even 15 minutes helps in the dark months"
     },
     "say-hi": {
       "label": "Talk to someone new",
@@ -39,9 +29,8 @@
   },
   "todo": {
     "title": "To do",
-    "desc": "Things to sort out once. Mandatory ones come first in each group."
+    "desc": "The things almost every newcomer to Lahti has to sort out. Each one is done once."
   },
-  "mandatory": "Mandatory",
   "groups": {
     "before": {
       "title": "Before you arrive",
@@ -54,10 +43,6 @@
     "firstWeeks": {
       "title": "First weeks",
       "desc": "Official things and getting set up for your studies."
-    },
-    "settling": {
-      "title": "Settling in",
-      "desc": "Make Lahti feel like home."
     }
   },
   "tasks": {
@@ -68,10 +53,6 @@
     "housing": {
       "label": "Confirm your housing",
       "hint": "Signed contract and a key pickup time"
-    },
-    "route": {
-      "label": "Plan your route to Lahti",
-      "hint": "Airport or port to Lahti, tickets and timetable"
     },
     "insurance": {
       "label": "Check your health insurance",
@@ -85,10 +66,6 @@
       "label": "Get a phone number",
       "hint": "Prepaid SIM from a kiosk, shop or supermarket"
     },
-    "groceries": {
-      "label": "Do your first grocery shop",
-      "hint": "Many shops close early on Sundays"
-    },
     "uni-mail": {
       "label": "Read your university emails",
       "hint": "Find your orientation dates"
@@ -100,34 +77,15 @@
     "bank": {
       "label": "Book a bank appointment",
       "hint": "Bring passport, permit and student certificate"
-    },
-    "student-id": {
-      "label": "Get your student card",
-      "hint": "Needed for discounts on trains and meals"
-    },
-    "campus": {
-      "label": "Visit your campus",
-      "hint": "Find student services and your classrooms"
-    },
-    "tickets": {
-      "label": "Sort out bus tickets",
-      "hint": "Check the LSL app and student discounts"
-    },
-    "event": {
-      "label": "Go to one event",
-      "hint": "A student party, club night or RCLI meeting"
-    },
-    "sauna": {
-      "label": "Try a sauna",
-      "hint": "Many buildings have a shared one"
-    },
-    "winter": {
-      "label": "Prepare for winter",
-      "hint": "Warm layers, boots with grip, a reflector"
-    },
-    "secondhand": {
-      "label": "Visit a second-hand shop",
-      "hint": "Furnish your home cheaply"
     }
+  },
+  "league": {
+    "title": "League",
+    "desc": "Everyone using the guide in Lahti, ranked by XP. Finish to-do and daily tasks to climb.",
+    "you": "You",
+    "rank": "Place {n}",
+    "loginPrompt": "Log in to take your place in the league.",
+    "loginCta": "Log in",
+    "empty": "Nobody is in the league yet."
   }
 }

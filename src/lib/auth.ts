@@ -10,7 +10,7 @@ import { useMemo, useSyncExternalStore } from 'react';
 // same page share it through `useAuth()`.
 
 /** true = localStorage mock below; false = fetch('/api/...') to the real backend. */
-const USE_MOCK_API: boolean = true;
+export const USE_MOCK_API: boolean = true;
 
 export type User = { nickname: string; createdAt: string };
 

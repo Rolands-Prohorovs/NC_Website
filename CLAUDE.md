@@ -43,7 +43,8 @@ A single route, `src/pages/[city]/[...path].astro`, generates all pages from `ge
 - `src/layouts/Site.astro` wraps every city page: `Base.astro` (html `lang`, hreflang alternates, fonts, global CSS) + `Header` island + footer.
 - Info pages (`InfoPage.astro`) are static Astro with no JS; topics use `<details>`.
 - React islands (`client:load`): `Header`, `Home`, `Progress`. Each receives only its own slice of content as props.
-- Checklist progress is shared across islands via a module-level store in `src/lib/progress.ts` (`useProgress`, `useSyncExternalStore`) persisted to `localStorage` key `progress:<cityId>`. Home's stage picker uses `stage:<cityId>`. Both are TODO to move to a PostgreSQL-backed API.
+- Checklist progress is shared across islands via a module-level store in `src/lib/progress.ts` (`useProgress`, `useSyncExternalStore`) persisted to `localStorage` key `progress:<cityId>`. Daily-task ticks and the XP earned from them are in `daily:<cityId>` (`useDaily`). Home's stage picker uses `stage:<cityId>`. All are TODO to move to a PostgreSQL-backed API.
+- XP = to-do task XP + daily task XP (`useProgress().xp`). The league on the Progress page (`src/lib/league.ts`, `useLeague`) ranks users by it; until the backend has the endpoint it shows invented `MOCK_PLAYERS` plus the logged-in user, behind `USE_MOCK_API` from `src/lib/auth.ts`.
 
 **Styling.** Single global stylesheet `src/style/site.css`. Components use plain class names, no CSS modules or framework.
 

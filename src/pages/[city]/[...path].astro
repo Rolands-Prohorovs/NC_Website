@@ -50,7 +50,7 @@ const title =
 
 <Site title={title} city={city} cities={cities} current={page} loc={loc} t={t}>
   {home && <Home client:load city={city} loc={loc} h={home} />}
-  {progress && <Progress client:load city={city} p={progress} t={t} />}
+  {progress && <Progress client:load city={city} loc={loc} p={progress} t={t} />}
   {info && isInfoPage(page) && <InfoPage page={page} copy={info} ui={t.ui} loc={loc} />}
   {auth && isAuthPage(page) && <AuthForm client:load mode={page} cityId={city.id} loc={loc} a={auth} />}
 </Site>

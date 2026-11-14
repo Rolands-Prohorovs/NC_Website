@@ -294,12 +294,6 @@ button.menu-link { width: 100%; border: 0; background: none; font: inherit; text
 .list-head h2 { font-family: var(--display); font-size: 28px; margin: 0; }
 .list-head .block-hint { margin: 4px 0 0; }
 
-/* Mandatory to-do tasks */
-.task-mandatory { box-shadow: inset 4px 0 0 #b3261e; }
-.task-title { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; }
-.badge-mandatory { background: #fdeceb; color: #b3261e; }
-.tile-mandatory { color: #b3261e; font-weight: 600; }
-.meter-mandatory i { background: #b3261e; }
 .group-count { font-weight: 700; font-size: 14px; color: var(--muted); }
 .task-group .block-hint { margin-top: 2px; margin-bottom: 12px; }
 .tasks { display: grid; gap: 8px; max-width: 760px; }
@@ -322,7 +316,17 @@ button.menu-link { width: 100%; border: 0; background: none; font: inherit; text
 .task-text small { color: var(--muted); font-size: 14px; line-height: 1.35; }
 .task input:checked ~ .task-text strong { color: var(--muted); text-decoration: line-through; }
 .task-xp { flex: none; padding: 4px 10px; border-radius: 999px; background: #e4eddc; color: #2f6b2f; font-size: 13px; font-weight: 700; }
-.note { margin: 32px 0 0; padding: 14px 16px; border-radius: 12px; background: #ece7da; color: var(--muted); font-size: 14px; max-width: 760px; }
+
+/* League: one row per user, highest XP first */
+.league { margin: 40px 0 0; }
+.league-list { list-style: none; display: grid; gap: 8px; max-width: 760px; margin: 16px 0 0; padding: 0; }
+.league-row { display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 8px 14px; background: #fff; border: 1px solid var(--line); border-radius: 14px; }
+.league-me { background: var(--bgc); border-color: var(--c); }
+.league-rank { flex: none; width: 28px; text-align: center; font-family: var(--display); font-weight: 700; color: var(--muted); }
+.league-name { flex: 1; min-width: 0; font-weight: 700; overflow-wrap: anywhere; }
+.league-me .badge { background: var(--c); color: #fff; }
+.league-empty, .league-join { margin: 16px 0 0; color: var(--muted); max-width: 760px; }
+.league-join a { color: var(--c); font-weight: 700; }
 
 /* ---------- Login / register ---------- */
 .auth { padding-top: 24px; }
