@@ -22,7 +22,7 @@ type Props = {
 };
 
 /**
- * One header, two layouts (switched in CSS at 900px):
+ * One header, two layouts (switched in CSS at 1100px):
  *  - wide screens: inline nav bar, language switch, XP/streak pills
  *  - narrow screens: brand + burger button that opens a slide-out drawer
  * The account control (Log in, or the nickname with a small menu) is in the top bar on both;
@@ -74,7 +74,7 @@ export default function Header({ city, cities, current, loc, t }: Props) {
       if (e.key === 'Escape') setOpen(false);
     };
     // Close if the viewport grows to the desktop layout while open.
-    const mq = window.matchMedia('(min-width: 900px)');
+    const mq = window.matchMedia('(min-width: 1100px)');
     const onChange = () => mq.matches && setOpen(false);
 
     document.addEventListener('keydown', onKey);
@@ -161,7 +161,7 @@ export default function Header({ city, cities, current, loc, t }: Props) {
                 >
                   {t.ui.account.login}
                 </a>
-                {/* Wide screens only (CSS, 900px): in the burger layout this link is in the drawer. */}
+                {/* Wide screens only (CSS, 1100px): in the burger layout this link is in the drawer. */}
                 <a
                   className="account-register"
                   href={pageUrl(loc, 'register')}
