@@ -292,7 +292,16 @@ button.menu-link { width: 100%; border: 0; background: none; font: inherit; text
 .group-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
 .group-head :is(h2, h3) { font-family: var(--display); font-size: 22px; margin: 0; color: var(--c); }
 
-/* Daily tasks: a tinted panel above the to-do list */
+/* Daily tasks and the league share one row above the to-do list: side by side from 720px
+   (like the stat tiles), stacked in source order on phones. */
+.progress-row { display: grid; gap: 12px; margin-top: 12px; align-items: start; }
+.progress-row > * { min-width: 0; max-width: none; margin: 0; }
+@media (min-width: 720px) {
+  .progress-row { grid-template-columns: 1fr 1fr; }
+  .progress-row > :only-child { grid-column: 1 / -1; }
+}
+
+/* Daily tasks: a tinted panel */
 .daily { max-width: 760px; padding: 16px; border-radius: 18px; background: var(--bgc); }
 .daily .task { min-height: 56px; }
 /* Today's tasks are picked in the browser; these hold their place until then. */
@@ -330,9 +339,9 @@ button.menu-link { width: 100%; border: 0; background: none; font: inherit; text
 
 /* League: ONE card. Heading on top, then a row per user (highest XP first) separated by thin
    lines; the empty state and the login line are rows of the same card. */
-.league { max-width: 760px; margin: 40px 0 0; background: #fff; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
-.league-head { padding: 18px 18px 16px; }
-.league-head h2 { font-family: var(--display); font-size: 28px; line-height: 1.15; margin: 0; }
+.league { background: #fff; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
+.league-head { padding: 16px 18px 14px; }
+.league-head h2 { font-family: var(--display); font-size: 22px; line-height: 1.15; margin: 0; }
 .league-head .block-hint { margin: 4px 0 0; }
 .league-list { list-style: none; margin: 0; padding: 0; }
 .league-row { display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 8px 18px; border-top: 1px solid var(--line); }
@@ -342,6 +351,13 @@ button.menu-link { width: 100%; border: 0; background: none; font: inherit; text
 .league-me .badge { background: var(--c); color: #fff; }
 .league-empty, .league-join { margin: 0; padding: 14px 18px; border-top: 1px solid var(--line); color: var(--muted); }
 .league-join a { color: var(--c); font-weight: 700; }
+/* Next to the short daily list the card would be much taller, so from 720px the rows scroll
+   inside it (3 and a half rows show, hinting at more). The user's own row stays in view. */
+@media (min-width: 720px) {
+  .league-list { max-height: 186px; overflow-y: auto; overscroll-behavior: contain; }
+  .league-list:focus-visible { outline: 3px solid var(--navy); outline-offset: -3px; }
+  .league-me { position: sticky; top: 0; bottom: 0; }
+}
 
 /* ---------- Login / register ---------- */
 .auth { padding-top: 24px; }

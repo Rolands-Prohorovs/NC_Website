@@ -35,13 +35,54 @@ export default function Progress({ city, loc, p, t }: Props) {
       <main className="inner page" data-tone="purple">
         <StatTiles cityId={city.id} progress={progress} p={p} t={t} />
 
-        <DailyTasks
-          city={city}
-          lang={loc.lang}
-          copy={p.daily}
-          xpLabel={t.xp}
-          headingId="daily-title"
-        />
+        {/* Source order = phone order: daily tasks, league, to-do list. */}
+        <div className="progress-row">
+          <DailyTasks
+            city={city}
+            lang={loc.lang}
+            copy={p.daily}
+            xpLabel={t.xp}
+            headingId="daily-title"
+          />
+
+          {/* One card: heading, rows, and the login line or empty state all inside it.
+              On wide screens the list scrolls inside the card, so it is focusable. */}
+          <section className="league" aria-labelledby="league-title">
+            <div className="league-head">
+              <h2 id="league-title">{p.league.title}</h2>
+              <p className="block-hint">{p.league.desc}</p>
+            </div>
+
+            {league && league.length === 0 && <p className="league-empty">{p.league.empty}</p>}
+            {league && league.length > 0 && (
+              <ol className="league-list" tabIndex={0} aria-labelledby="league-title">
+                {league.map((row) => (
+                  <li
+                    key={row.nickname.toLowerCase()}
+                    className={row.me ? 'league-row league-me' : 'league-row'}
+                    aria-current={row.me ? 'true' : undefined}
+                  >
+                    <span className="league-rank">
+                      <span className="sr-only">{fmt(p.league.rank, { n: row.rank })}</span>
+                      <span aria-hidden="true">{MEDALS[row.rank - 1] ?? row.rank}</span>
+                    </span>
+                    <span className="league-name">{row.nickname}</span>
+                    {row.me && <span className="badge">{p.league.you}</span>}
+                    <span className="task-xp">
+                      {row.xp} {t.xp}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            )}
+
+            {auth.status === 'ready' && !auth.user && (
+              <p className="league-join">
+                {p.league.loginPrompt} <a href={loginUrl}>{p.league.loginCta}</a>
+              </p>
+            )}
+          </section>
+        </div>
 
         <div className="list-head">
           <h2>{p.todo.title}</h2>
@@ -87,43 +128,6 @@ export default function Progress({ city, loc, p, t }: Props) {
             </section>
           );
         })}
-
-        {/* One card: heading, rows, and the login line or empty state all inside it. */}
-        <section className="league" aria-labelledby="league-title">
-          <div className="league-head">
-            <h2 id="league-title">{p.league.title}</h2>
-            <p className="block-hint">{p.league.desc}</p>
-          </div>
-
-          {league && league.length === 0 && <p className="league-empty">{p.league.empty}</p>}
-          {league && league.length > 0 && (
-            <ol className="league-list">
-              {league.map((row) => (
-                <li
-                  key={row.nickname.toLowerCase()}
-                  className={row.me ? 'league-row league-me' : 'league-row'}
-                  aria-current={row.me ? 'true' : undefined}
-                >
-                  <span className="league-rank">
-                    <span className="sr-only">{fmt(p.league.rank, { n: row.rank })}</span>
-                    <span aria-hidden="true">{MEDALS[row.rank - 1] ?? row.rank}</span>
-                  </span>
-                  <span className="league-name">{row.nickname}</span>
-                  {row.me && <span className="badge">{p.league.you}</span>}
-                  <span className="task-xp">
-                    {row.xp} {t.xp}
-                  </span>
-                </li>
-              ))}
-            </ol>
-          )}
-
-          {auth.status === 'ready' && !auth.user && (
-            <p className="league-join">
-              {p.league.loginPrompt} <a href={loginUrl}>{p.league.loginCta}</a>
-            </p>
-          )}
-        </section>
       </main>
     </>
   );
