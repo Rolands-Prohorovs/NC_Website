@@ -34,9 +34,9 @@ Goal: show the new content format on one real page.
 
 ## Phase B: Nov 11 to Nov 19 (Rotary presentation) ~10 h
 Goal: the whole site looks like the finished product, on a phone.
-- [ ] Students + Meet people: short format + sources (EN). Students done 2026-11-06 (10 topics, new structure). Meet people is still 6 long-text topics without sources
+- [ ] Students + Meet people: short format + sources (EN). Students done 2026-11-06 (10 topics, new structure). Meet people: the Rotary Club Lahti International section (3 topics, EN + FI) is in the short format with rcli.fi as source since 2026-11-15; the other 5 topics (etiquette, student organisations, events) are still long text without sources
 - [x] Finnish: catch up and translate the new content. Done 2026-11-14: fi/living and fi/students have the same sections, topics and fields as en, with Finnish source links where they exist (SOURCES.md "Finnish versions"). The build now fails if a language drifts from the default one (`checkParity` in `src/lib/content.ts`). Wording still needs a read-through by a native speaker
-- [x] Fill or cut the "coming soon" topics. Cut 2026-11-14: every empty topic and the placeholder feature itself are gone (the schema now rejects a topic without content). Meet people is thin: 6 long-text topics, no sources yet
+- [x] Fill or cut the "coming soon" topics. Cut 2026-11-14: every empty topic and the placeholder feature itself are gone (the schema now rejects a topic without content). Meet people is still thin: 3 sourced Rotary topics (2026-11-15) and 5 long-text topics with no sources yet
 - [x] Home page redesigned as a small dashboard (stats, today's daily tasks, next to-do task), 2026-11-14
 - [ ] Mobile pass on real phones
 - [ ] Demo script for the 19th: open on a phone, pick a stage, follow the first step, tick a task

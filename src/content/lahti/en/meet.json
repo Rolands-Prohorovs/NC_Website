@@ -3,6 +3,86 @@
   "subtitle": "How to make friends in Lahti, and what to expect from Finnish communication.",
   "sections": [
     {
+      "id": "rotary",
+      "title": "Rotary Club Lahti International",
+      "topics": [
+        {
+          "id": "rotary-about",
+          "label": "About the club",
+          "summary": "RCLI is an English-speaking Rotary club in the Lahti region, started to give international residents an easy way into local community life.",
+          "facts": [
+            "English is the club language.",
+            "The club works for integration through community events, and partners with local institutions, businesses and other Rotary clubs.",
+            "Newcomers are welcome to connect and take part."
+          ],
+          "source": {
+            "label": "Rotary Club Lahti International",
+            "url": "https://rcli.fi/"
+          },
+          "checked": "2026-11-15"
+        },
+        {
+          "id": "rotary-meeting",
+          "label": "Come to a meeting",
+          "summary": "Visitors are welcome at the club's weekly meeting.",
+          "steps": [
+            "Meetings are on Wednesday evenings and the venue varies, so check the club calendar on rcli.fi for the next one.",
+            "Email info@rcli.fi beforehand to say you are coming.",
+            "Come along and say hello. As a visitor you see how a meeting works and get to know the club."
+          ],
+          "time": "Wednesday evenings",
+          "links": [
+            {
+              "label": "Club calendar (on the rcli.fi front page)",
+              "url": "https://rcli.fi/"
+            }
+          ],
+          "source": {
+            "label": "Rotary Club Lahti International",
+            "url": "https://rcli.fi/"
+          },
+          "checked": "2026-11-15"
+        },
+        {
+          "id": "rotary-contact",
+          "label": "Get in touch",
+          "summary": "The easiest way to reach the club is by email or on its social media.",
+          "facts": [
+            "Email: info@rcli.fi",
+            "The Contact Us and Become a Member pages on rcli.fi",
+            "Social media: Facebook, Instagram and LinkedIn"
+          ],
+          "links": [
+            {
+              "label": "Contact RCLI",
+              "url": "https://rcli.fi/contact-us/"
+            },
+            {
+              "label": "Become a member",
+              "url": "https://rcli.fi/become-a-member/"
+            },
+            {
+              "label": "RCLI on Facebook",
+              "url": "https://www.facebook.com/profile.php?id=61578098338653"
+            },
+            {
+              "label": "RCLI on Instagram",
+              "url": "https://www.instagram.com/rotaryclublahtiinternational/"
+            },
+            {
+              "label": "RCLI on LinkedIn",
+              "url": "https://www.linkedin.com/company/rotary-club-lahti-international/"
+            }
+          ],
+          "source": {
+            "label": "Rotary Club Lahti International",
+            "url": "https://rcli.fi/contact-us/"
+          },
+          "checked": "2026-11-15"
+        }
+      ]
+    },
+    {
       "id": "etiquette",
       "title": "How Finns communicate",
       "topics": [
@@ -27,10 +107,6 @@
         {
           "label": "Student organisations",
           "body": "Student unions and subject-based associations organise parties, sports, trips and cultural evenings throughout the year. Joining one is the quickest way to meet people, both Finnish and international. Look for information during your orientation week and on your university's social media channels."
-        },
-        {
-          "label": "Rotary Club Lahti International",
-          "body": "RCLI welcomes international students and newcomers to Lahti. We organise events and share local knowledge, and members are happy to help you feel at home. Come to a meeting or an event and say hello."
         }
       ]
     },

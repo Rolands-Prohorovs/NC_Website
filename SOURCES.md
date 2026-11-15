@@ -104,6 +104,22 @@ Not official, but the company's own page is the best source for its own offer.
 | LAB: The ABCs of student events | https://lab.fi/en/story/peek-student-life-abcs-student-events | Living: Things to do (events open to LAB and LUT students) | 2026-11-06 |
 | Fressi, GoGo Express, Kuntokeskus Liikku | https://www.fressi.fi/ , https://www.gogoexpress.fi/ , https://www.liikku.fi/ | Living: Gyms and sports (names and links only; prices and hours not copied) | 2026-11-06 |
 
+## Rotary Club Lahti International
+The club's own site is the source for what the site says about the club. rcli.fi is in English
+only (no language switcher, `/fi/` is 404), so the fi page links to the same URLs.
+
+| Source | URL | Used for | Checked |
+|---|---|---|---|
+| RCLI: front page | https://rcli.fi/ | Meet: About the club (source; English-speaking club in the Lahti region, English as club language, integration through community events, bridges between international residents, local institutions, businesses and other Rotary clubs, newcomers welcome); Come to a meeting (source; weekly meetings on Wednesday evenings, venues vary, visitors welcome, upcoming events in the calendar). The calendar is a Google Calendar embedded in the front page and has no page of its own, so the topic links to the front page | 2026-11-15 |
+| RCLI: About Us | https://rcli.fi/about-us/ | Meet: About the club ("created to give internationals an accessible entry point into community life and service"). Also has charter date, member count, average age and languages: not copied, they change | 2026-11-15 |
+| RCLI: Contact Us | https://rcli.fi/contact-us/ | Meet: Get in touch (source; info@rcli.fi, "visit one of our meetings") | 2026-11-15 |
+| RCLI: Become a Member | https://rcli.fi/become-a-member/ | Meet: Get in touch (link). Lists membership fees (Rotary member €180/year or €45/quarter, associate member €50/year; visitors attend a few meetings free): not on the site, by decision | 2026-11-15 |
+| RCLI on Facebook, Instagram, LinkedIn | https://www.facebook.com/profile.php?id=61578098338653 , https://www.instagram.com/rotaryclublahtiinternational/ , https://www.linkedin.com/company/rotary-club-lahti-international/ | Meet: Get in touch (links, taken from the rcli.fi footer). LinkedIn answers automated requests with 403, so that link was not opened | 2026-11-15 |
+
+Note: "email info@rcli.fi beforehand" is worded on rcli.fi only as "please email info@rcli.fi
+in advance so we know you're coming" in an event post shown on the front page, and as "if you
+are interested in visiting a meeting ... please feel free to contact us" in the meetings text.
+
 ## Finnish versions (fi pages)
 The Finnish pages (`fi/living.json`, `fi/students.json`) have the same topics as the English
 ones and link to the Finnish version of each page where the site has one. Each Finnish URL was

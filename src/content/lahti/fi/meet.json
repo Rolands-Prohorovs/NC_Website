@@ -3,6 +3,86 @@
   "subtitle": "Miten saat ystäviä Lahdessa ja mitä suomalaiselta viestinnältä voi odottaa.",
   "sections": [
     {
+      "id": "rotary",
+      "title": "Rotary Club Lahti International",
+      "topics": [
+        {
+          "id": "rotary-about",
+          "label": "Tietoa klubista",
+          "summary": "RCLI on Lahden seudulla toimiva englanninkielinen rotaryklubi, joka perustettiin tarjoamaan kansainvälisille asukkaille helppo tie mukaan paikalliseen yhteisöön.",
+          "facts": [
+            "Klubin kieli on englanti.",
+            "Klubi edistää kotoutumista yhteisötapahtumien avulla ja tekee yhteistyötä paikallisten organisaatioiden, yritysten ja muiden rotaryklubien kanssa.",
+            "Lahteen muuttaneet ovat tervetulleita tutustumaan ja osallistumaan."
+          ],
+          "source": {
+            "label": "Rotary Club Lahti International (englanniksi)",
+            "url": "https://rcli.fi/"
+          },
+          "checked": "2026-11-15"
+        },
+        {
+          "id": "rotary-meeting",
+          "label": "Tule kokoukseen",
+          "summary": "Vierailijat ovat tervetulleita klubin viikkokokoukseen.",
+          "steps": [
+            "Kokoukset ovat keskiviikkoiltaisin ja paikka vaihtelee, joten katso seuraava kokous klubin kalenterista osoitteessa rcli.fi.",
+            "Lähetä etukäteen sähköpostia osoitteeseen info@rcli.fi ja kerro, että olet tulossa.",
+            "Tule paikalle ja sano hei. Vierailijana näet, miten kokous sujuu, ja tutustut klubiin."
+          ],
+          "time": "keskiviikkoiltaisin",
+          "links": [
+            {
+              "label": "Klubin kalenteri (rcli.fi:n etusivulla, englanniksi)",
+              "url": "https://rcli.fi/"
+            }
+          ],
+          "source": {
+            "label": "Rotary Club Lahti International (englanniksi)",
+            "url": "https://rcli.fi/"
+          },
+          "checked": "2026-11-15"
+        },
+        {
+          "id": "rotary-contact",
+          "label": "Ota yhteyttä",
+          "summary": "Helpoimmin tavoitat klubin sähköpostilla tai sosiaalisessa mediassa.",
+          "facts": [
+            "Sähköposti: info@rcli.fi",
+            "Sivut Contact Us ja Become a Member osoitteessa rcli.fi (englanniksi)",
+            "Sosiaalinen media: Facebook, Instagram ja LinkedIn"
+          ],
+          "links": [
+            {
+              "label": "Ota yhteyttä RCLI:hin (englanniksi)",
+              "url": "https://rcli.fi/contact-us/"
+            },
+            {
+              "label": "Liity jäseneksi (englanniksi)",
+              "url": "https://rcli.fi/become-a-member/"
+            },
+            {
+              "label": "RCLI Facebookissa",
+              "url": "https://www.facebook.com/profile.php?id=61578098338653"
+            },
+            {
+              "label": "RCLI Instagramissa",
+              "url": "https://www.instagram.com/rotaryclublahtiinternational/"
+            },
+            {
+              "label": "RCLI LinkedInissä",
+              "url": "https://www.linkedin.com/company/rotary-club-lahti-international/"
+            }
+          ],
+          "source": {
+            "label": "Rotary Club Lahti International (englanniksi)",
+            "url": "https://rcli.fi/contact-us/"
+          },
+          "checked": "2026-11-15"
+        }
+      ]
+    },
+    {
       "id": "etiquette",
       "title": "Miten suomalaiset viestivät",
       "topics": [
@@ -27,10 +107,6 @@
         {
           "label": "Opiskelijajärjestöt",
           "body": "Opiskelijakunnat ja ainejärjestöt järjestävät bileitä, urheilua, matkoja ja kulttuuri-iltoja pitkin vuotta. Liittyminen on nopein tapa tavata ihmisiä, sekä suomalaisia että kansainvälisiä. Löydät tietoa orientaatioviikolla ja oppilaitoksesi sosiaalisen median kanavista."
-        },
-        {
-          "label": "Rotary Club Lahti International",
-          "body": "RCLI toivottaa kansainväliset opiskelijat ja Lahteen muuttaneet tervetulleiksi. Järjestämme tapahtumia ja jaamme paikallista tietoa, ja jäsenemme auttavat mielellään sinua tuntemaan olosi kotoisaksi. Tule kokoukseen tai tapahtumaan sanomaan hei."
         }
       ]
     },
