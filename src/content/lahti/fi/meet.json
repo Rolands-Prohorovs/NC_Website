@@ -26,11 +26,10 @@
           "label": "Tule kokoukseen",
           "summary": "Vierailijat ovat tervetulleita klubin viikkokokoukseen.",
           "steps": [
-            "Kokoukset ovat keskiviikkoiltaisin ja paikka vaihtelee, joten katso seuraava kokous klubin kalenterista osoitteessa rcli.fi.",
+            "Katso seuraavan kokouksen aika ja paikka klubin kalenterista osoitteessa rcli.fi.",
             "Lähetä etukäteen sähköpostia osoitteeseen info@rcli.fi ja kerro, että olet tulossa.",
             "Tule paikalle ja sano hei. Vierailijana näet, miten kokous sujuu, ja tutustut klubiin."
           ],
-          "time": "keskiviikkoiltaisin",
           "links": [
             {
               "label": "Klubin kalenteri (rcli.fi:n etusivulla, englanniksi)",

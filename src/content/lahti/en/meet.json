@@ -26,11 +26,10 @@
           "label": "Come to a meeting",
           "summary": "Visitors are welcome at the club's weekly meeting.",
           "steps": [
-            "Meetings are on Wednesday evenings and the venue varies, so check the club calendar on rcli.fi for the next one.",
+            "Check the club calendar on rcli.fi for the time and place of the next meeting.",
             "Email info@rcli.fi beforehand to say you are coming.",
             "Come along and say hello. As a visitor you see how a meeting works and get to know the club."
           ],
-          "time": "Wednesday evenings",
           "links": [
             {
               "label": "Club calendar (on the rcli.fi front page)",
