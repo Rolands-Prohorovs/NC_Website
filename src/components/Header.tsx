@@ -25,7 +25,8 @@ type Props = {
  * One header, two layouts (switched in CSS at 900px):
  *  - wide screens: inline nav bar, language switch, XP/streak pills
  *  - narrow screens: brand + burger button that opens a slide-out drawer
- * The account control (Log in, or the nickname with a small menu) is in the top bar on both.
+ * The account control (Log in, or the nickname with a small menu) is in the top bar on both;
+ * wide screens also show Create account next to Log in (on narrow ones it is in the drawer).
  * Language options are links to the same page in that language.
  */
 export default function Header({ city, cities, current, loc, t }: Props) {
@@ -149,16 +150,27 @@ export default function Header({ city, cities, current, loc, t }: Props) {
                 onLogout={logout}
               />
             ) : (
-              <a
-                ref={loginRef}
-                className="account-login"
-                href={loginUrl}
-                aria-current={current === 'login' ? 'page' : undefined}
-                // Hidden (but keeping its space) until we know whether someone is logged in.
-                data-pending={auth.status === 'unknown' ? '' : undefined}
-              >
-                {t.ui.account.login}
-              </a>
+              <>
+                <a
+                  ref={loginRef}
+                  className="account-login"
+                  href={loginUrl}
+                  aria-current={current === 'login' ? 'page' : undefined}
+                  // Hidden (but keeping its space) until we know whether someone is logged in.
+                  data-pending={auth.status === 'unknown' ? '' : undefined}
+                >
+                  {t.ui.account.login}
+                </a>
+                {/* Wide screens only (CSS, 900px): in the burger layout this link is in the drawer. */}
+                <a
+                  className="account-register"
+                  href={pageUrl(loc, 'register')}
+                  aria-current={current === 'register' ? 'page' : undefined}
+                  data-pending={auth.status === 'unknown' ? '' : undefined}
+                >
+                  {t.ui.account.register}
+                </a>
+              </>
             )}
 
             <button

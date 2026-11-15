@@ -64,13 +64,15 @@ button { font-family: inherit; }
 .menu-toggle:hover { background: #eae7df; }
 
 /* Account control: shown in the top bar at every width, next to the burger on phones. */
-.account-login, .account-toggle {
+.account-login, .account-register, .account-toggle {
   display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 8px 14px;
   border-radius: 999px; font: 700 14px var(--font); white-space: nowrap; cursor: pointer;
 }
-.account-login { background: var(--navy); color: #fff; text-decoration: none; }
-.account-login:hover { background: #234a85; }
-.account-login[data-pending] { visibility: hidden; }
+.account-login, .account-register { background: var(--navy); color: #fff; text-decoration: none; }
+:is(.account-login, .account-register):hover { background: #234a85; }
+:is(.account-login, .account-register)[data-pending] { visibility: hidden; }
+/* Create account is in the drawer on phones; in the top bar only with the inline nav (900px). */
+.account-register { display: none; }
 .account { position: relative; min-width: 0; }
 .account-toggle { max-width: 100%; border: 1px solid #d8d5cc; background: #fff; color: var(--navy); }
 .account-toggle:hover { background: #eae7df; }
@@ -103,6 +105,10 @@ button { font-family: inherit; }
   .menu-toggle { display: none; }
   .right { flex-shrink: 0; }
   .account-toggle { max-width: 200px; }
+  /* Two buttons: Create account is the filled one, Log in becomes the outlined one. */
+  .account-register { display: inline-flex; }
+  .account-login { border: 1px solid #d8d5cc; background: #fff; color: var(--navy); }
+  .account-login:hover { background: #eae7df; }
 }
 @media (min-width: 900px) and (max-width: 1100px) {
   .pill-xp { display: none; }
