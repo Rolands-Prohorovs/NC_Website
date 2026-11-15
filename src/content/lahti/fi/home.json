@@ -13,8 +13,6 @@
     "todoAllDone": "Kaikki tehtävälistan asiat on tehty. Hienoa!",
     "todoCta": "Avaa koko lista"
   },
-  "aboutTitle": "Mikä tämä sivusto on?",
-  "about": "Uuteen maahan muuttaessa mieleen nousee paljon pieniä kysymyksiä. Tämä opas vastaa niihin yksi kerrallaan, kätevästi puhelimellasi.",
   "whereTitle": "Missä olet nyt?",
   "whereHint": "Ohjaamme sinut sopivimman ensimmäisen askeleen luo. Voit vaihtaa valintaa milloin tahansa.",
   "stages": [

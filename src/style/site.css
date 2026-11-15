@@ -166,7 +166,6 @@ button.menu-link { width: 100%; border: 0; background: none; font: inherit; text
 .block { margin: 36px 0; }
 .block-title { font-family: var(--display); font-size: 24px; line-height: 1.2; margin: 0 0 6px; }
 .block-hint { margin: 0 0 16px; color: var(--muted); max-width: 60ch; }
-.about p { max-width: 65ch; margin: 0; }
 
 .btn {
   display: inline-flex; align-items: center; min-height: 44px; padding: 10px 20px; border-radius: 999px;

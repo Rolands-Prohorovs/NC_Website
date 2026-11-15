@@ -11,7 +11,7 @@ type Props = { city: City; loc: Locale; h: HomeCopy; p: ProgressCopy; t: SiteCop
 /**
  * Home: a welcome for first-timers and a small dashboard for returning users.
  * Order: stats, today's daily tasks + the to-do list, the stage picker with the best first
- * step, the explore cards, and a short "what is this" at the bottom.
+ * step, and the explore cards.
  * Ticks use the same stores as the Progress page, so the two stay in sync.
  */
 export default function Home({ city, loc, h, p, t }: Props) {
@@ -180,11 +180,6 @@ export default function Home({ city, loc, h, p, t }: Props) {
               );
             })}
           </div>
-        </section>
-
-        <section className="block about" aria-labelledby="about-title">
-          <h2 id="about-title" className="block-title">{h.aboutTitle}</h2>
-          <p>{h.about}</p>
         </section>
       </main>
     </>

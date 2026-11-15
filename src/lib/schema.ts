@@ -121,8 +121,6 @@ export const homeSchema = z.strictObject({
     todoAllDone: z.string(),
     todoCta: z.string(),
   }),
-  aboutTitle: z.string(),
-  about: z.string(),
   whereTitle: z.string(),
   whereHint: z.string(),
   stages: z.array(
