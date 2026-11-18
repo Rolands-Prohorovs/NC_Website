@@ -21,7 +21,7 @@ const publicUser = (user: UserRow) => ({
 });
 
 // Every error has the same shape: { error: { code, message } } (API.md "Basics").
-const fail = (reply: FastifyReply, status: number, code: string, message: string) =>
+export const fail = (reply: FastifyReply, status: number, code: string, message: string) =>
   reply.code(status).send({ error: { code, message } });
 
 // Only a hash of the session token is stored, so a leaked database can't be used to log in.

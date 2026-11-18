@@ -9,6 +9,7 @@ D11, D12, D15, D16, D-open-1 and D-open-5.
 - One API for all cities. City-specific routes have `:city` (`lahti`), the same id as `src/content/<city>/`.
 - Errors: HTTP status + `{ "error": { "code": "nickname_taken", "message": "..." } }`.
   `code` is stable and the frontend maps it to translated text; `message` is for debugging only.
+  A body of the wrong shape (e.g. `done` that isn't a list) is `400 invalid_request`.
 - Dates: `YYYY-MM-DD` for calendar days (streaks), ISO 8601 with timezone for timestamps.
   Streak days are counted in Finnish time (`Europe/Helsinki`).
 - **Auth transport (agreed, Q1):** an httpOnly, Secure, SameSite=Lax session cookie, since the site
@@ -67,14 +68,21 @@ It never needs the text.
 | DELETE | `/api/cities/:city/todo/:taskId` | none | `200` + `Progress`; un-ticks |
 | POST | `/api/cities/:city/todo/import` | `{ "done": ["sim", "keys"] }` | `200` + `Progress` |
 
-- `import` is called once on first login: it merges the device's ticks into the account (union,
-  nothing is removed), then the frontend clears localStorage. Imported ticks don't count as
+- `import` is called on login: it merges the device's ticks into the account (union,
+  nothing is removed), then the frontend clears localStorage. Repeating it is harmless (the
+  frontend currently calls it after every login). Imported ticks don't count as
   streak days (we don't know when they happened).
+- `import` skips ids that are not in `city.json` (old or renamed tasks still stored on a device),
+  so an old device can't make every login fail. `done` must be a list of at most 100 strings,
+  otherwise `400 invalid_request`.
+- All to-do and progress endpoints need a session: `401 not_logged_in` without one.
 - Unknown `:city` or `:taskId`: `404 unknown_city` / `404 unknown_task`.
+- `PUT` and `DELETE` can be repeated: ticking a ticked task or un-ticking an un-ticked one is a
+  no-op that returns `Progress`.
 - There is no `mandatory` flag any more (D15 replaced D13): every to-do task is a must-do.
 - To-do XP: ticking adds the task's XP (from `city.json`), un-ticking removes it again, so
   ticking and un-ticking can't farm XP. Imported ticks give XP too.
-- When every to-do task is done, `todo.badge` becomes `{ "earnedAt": "..." }`. Proposal: the badge
+- When every to-do task is done, `todo.badge` becomes `{ "earnedAt": "..." }`. The badge
   is kept even if a task is un-ticked later.
 
 ### Daily tasks (D16; later on the server, shape agreed now so `Progress` doesn't change)
