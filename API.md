@@ -22,7 +22,7 @@ D11, D12, D15, D16, D-open-1 and D-open-5.
 | POST | `/api/auth/login` | `{ nickname, password }` | `200` + `User` |
 | POST | `/api/auth/logout` | none | `204` |
 | GET | `/api/me` | none | `200` + `User`, or `401` |
-| DELETE | `/api/me` | `{ password }` | `204`; deletes the account and all progress (privacy page) |
+| DELETE | `/api/me` | `{ password }` | `204`; deletes the account and all progress (privacy page). `401 not_logged_in` without a session, `403 wrong_credentials` for a wrong password |
 
 ```json
 // User
@@ -32,7 +32,7 @@ D11, D12, D15, D16, D-open-1 and D-open-5.
 - Nickname (agreed, Q2): 3 to 20 chars, `a-z A-Z 0-9 _ -`, unique case-insensitively.
 - Password (agreed, Q3): min. 8 chars, no other rules; hashed with bcrypt. bcrypt ignores
   everything after 72 bytes, so the max is 72 bytes (`weak_password` above that too).
-- Rate limit on login/register (e.g. 10 tries / 15 min per IP + nickname): `429 too_many_attempts`.
+- Rate limit on login/register (10 tries / 15 min per IP + nickname): `429 too_many_attempts`.
 - Error codes: `nickname_taken`, `invalid_nickname`, `weak_password`, `wrong_credentials`
   (same code for an unknown nickname and a wrong password), `not_logged_in`.
 - **Q4 (D-open-5): forgotten password.** Option A: "make a new account". Option B: register returns
